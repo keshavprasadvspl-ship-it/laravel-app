@@ -13,8 +13,8 @@ class ProductController extends Controller
     {
         $query = Product::where('status', 'publish')->with('categories');
 
-        if ($request->filled('q')) {
-            $search = $request->input('q');
+        $search = $request->input('s') ?? $request->input('search') ?? $request->input('q');
+        if (!empty($search)) {
             $query->where(function ($q) use ($search) {
                 $q->where('title', 'like', "%{$search}%")
                   ->orWhere('cas_number', 'like', "%{$search}%")
