@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Product;
 use App\Services\SeoHelper;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,11 @@ class PageController extends Controller
         // Special template check for contact
         if ($slug === 'contact' || $slug === 'contact-us') {
             return $this->contact();
+        }
+
+        // Dedicated applications hub
+        if ($slug === 'applications') {
+            return $this->applications();
         }
 
         $page = Page::where('slug', $slug)
@@ -34,6 +40,25 @@ class PageController extends Controller
         return view('pages.show', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
     }
 
+    public function applications()
+    {
+        $page = Page::where('slug', 'applications')->first();
+
+        $seo = SeoHelper::generateTags($page, [
+            'title' => 'Industrial Colorant Applications | Textiles, Plastics, Inks, Paints | SD International',
+            'description' => 'Discover tailored color chemistry and industrial applications for Vat Dyes, Solvent Dyes, Pigments and Food Colours across Textiles, Plastics, Inks, Paints, Paper, and Food industries.',
+            'canonical' => url('/applications'),
+        ]);
+
+        $breadcrumbs = [
+            'Home' => url('/'),
+            'Applications' => url('/applications'),
+        ];
+        $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
+
+        return view('pages.applications', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
+    }
+
     public function contact()
     {
         $page = Page::whereIn('slug', ['contact-us', 'contact'])->first();
@@ -51,5 +76,35 @@ class PageController extends Controller
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
         return view('pages.contact', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
+    }
+
+    public function requestQuote(Request $request)
+    {
+        $prefilledProduct = null;
+        if ($request->filled('product')) {
+            $prodSlug = $request->input('product');
+            $prefilledProduct = Product::where('slug', $prodSlug)->orWhere('title', $prodSlug)->first();
+        } elseif ($request->filled('product_id')) {
+            $prefilledProduct = Product::find($request->input('product_id'));
+        }
+
+        $seo = [
+            'site_name' => 'S D International',
+            'title' => 'Request Commercial Quotation & Free Lab Sample | SD International Mumbai',
+            'description' => 'Submit your technical specifications for bulk FOB/CIF pricing, laboratory test samples (50g-500g), Technical Data Sheets (TDS), and Material Safety Data Sheets (MSDS).',
+            'canonical' => url('/request-quote'),
+            'og_image' => 'https://sdinternational.com/wp-content/uploads/2020/07/logo.png',
+            'og_type' => 'website',
+            'robots' => 'index,follow',
+            'url' => url()->current(),
+        ];
+
+        $breadcrumbs = [
+            'Home' => url('/'),
+            'Request a Quote' => url('/request-quote'),
+        ];
+        $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
+
+        return view('pages.quote', compact('prefilledProduct', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
     }
 }

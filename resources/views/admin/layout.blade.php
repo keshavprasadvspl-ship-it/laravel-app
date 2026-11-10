@@ -329,13 +329,29 @@
             <li class="sidebar-item">
                 <a href="{{ route('admin.inquiries.index') }}" class="sidebar-link {{ request()->routeIs('admin.inquiries.*') ? 'active' : '' }}">
                     <span>💬 Quote Inquiries</span>
+                    @php
+                        $unreadInq = \App\Models\Inquiry::where('status', 'new')->count();
+                    @endphp
+                    @if($unreadInq > 0)
+                        <span style="margin-left: auto; background: #ef4444; color: white; font-size: 11px; padding: 2px 7px; border-radius: 10px; font-weight: 700;">{{ $unreadInq }}</span>
+                    @endif
                 </a>
             </li>
 
             <li class="nav-heading">Content & SEO</li>
             <li class="sidebar-item">
+                <a href="{{ route('admin.pages.index') }}" class="sidebar-link {{ request()->routeIs('admin.pages.*') ? 'active' : '' }}">
+                    <span>📄 CMS Pages (242)</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
                 <a href="{{ route('admin.posts.index') }}" class="sidebar-link {{ request()->routeIs('admin.posts.*') ? 'active' : '' }}">
                     <span>📝 Blog Articles (66)</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ route('admin.redirects.index') }}" class="sidebar-link {{ request()->routeIs('admin.redirects.*') ? 'active' : '' }}">
+                    <span>🔀 301 Redirects</span>
                 </a>
             </li>
             <li class="sidebar-item">
@@ -345,6 +361,11 @@
             </li>
 
             <li class="nav-heading">System & Server</li>
+            <li class="sidebar-item">
+                <a href="{{ route('admin.settings.index') }}" class="sidebar-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
+                    <span>⚙️ Site Settings</span>
+                </a>
+            </li>
             <li class="sidebar-item">
                 <a href="{{ route('admin.deploy.index') }}" class="sidebar-link {{ request()->routeIs('admin.deploy.*') ? 'active' : '' }}">
                     <span>🚀 Git Deployment</span>

@@ -307,10 +307,13 @@
 
                     <div class="product-action-buttons">
                         <button type="button" class="btn-quote-large" onclick="openQuoteModal('{{ addslashes($product->title) }}', '{{ $product->slug }}')">
-                            Enquire Now / Get Price
+                            Quick Quote
                         </button>
+                        <a href="{{ route('quote.request', ['product' => $product->slug, 'cas' => $product->cas_number]) }}" class="btn-quote-large" style="background: #0f172a; text-decoration: none; text-align: center;">
+                            🧪 Request Sample / TDS
+                        </a>
                         <a href="https://api.whatsapp.com/send?phone=919920669561&text=Hello%20SD%20International,%20I%20need%20price%20and%20COA%20for%20{{ urlencode($product->title) }}%20(CAS%20{{ $product->cas_number }})" class="btn-whatsapp-large" target="_blank" rel="noopener noreferrer">
-                            💬 WhatsApp Inquiry
+                            💬 WhatsApp
                         </a>
                     </div>
                 </div>

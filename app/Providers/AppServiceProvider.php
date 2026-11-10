@@ -3,6 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
+use App\Models\Setting;
+
+require_once app_path('Helpers/helpers.php');
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +24,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (Schema::hasTable('settings')) {
+            try {
+                $allSettings = Setting::all()->pluck('value', 'key')->toArray();
+                View::share('siteSettings', $allSettings);
+            } catch (\Throwable $e) {
+                View::share('siteSettings', []);
+            }
+        }
     }
 }

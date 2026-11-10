@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectGuestsTo('/admin/login');
         $middleware->validateCsrfTokens(except: [
             'webhook/git-deploy',
+            'api/*',
         ]);
         $middleware->web(append: [
             \App\Http\Middleware\HandleRankMathRedirects::class,

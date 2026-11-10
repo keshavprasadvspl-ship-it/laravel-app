@@ -49,6 +49,41 @@ class ProductController extends Controller
         return view('products.index', compact('products', 'categories', 'seo'));
     }
 
+    public function searchApi(Request $request)
+    {
+        $term = trim($request->input('q') ?? $request->input('s') ?? '');
+        if (strlen($term) < 2) {
+            return response()->json([]);
+        }
+
+        $products = Product::where('status', 'publish')
+            ->where(function ($q) use ($term) {
+                $q->where('title', 'like', "%{$term}%")
+                  ->orWhere('cas_number', 'like', "%{$term}%")
+                  ->orWhere('ci_number', 'like', "%{$term}%")
+                  ->orWhere('relative_name', 'like', "%{$term}%");
+            })
+            ->with('categories')
+            ->take(8)
+            ->get();
+
+        $results = $products->map(function ($p) {
+            $cat = $p->categories->first();
+            return [
+                'id' => $p->id,
+                'title' => $p->title,
+                'slug' => $p->slug,
+                'url' => url('/' . $p->slug),
+                'cas_number' => $p->cas_number,
+                'ci_number' => $p->ci_number,
+                'category' => $cat ? $cat->name : null,
+                'image_url' => $p->image_url ?: 'https://sdinternational.com/wp-content/uploads/2020/07/logo.png',
+            ];
+        });
+
+        return response()->json($results);
+    }
+
     public function show(string $slug)
     {
         $product = Product::where('slug', $slug)

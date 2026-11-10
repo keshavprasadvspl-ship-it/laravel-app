@@ -250,14 +250,15 @@ function googleTranslateElementInit() {
 							<div class="elementor-widget-wrap">
 						<div class="elementor-element elementor-element-18d08e4 elementor-search-form--skin-classic elementor-search-form--button-type-icon elementor-search-form--icon-search elementor-widget elementor-widget-search-form" data-id="18d08e4" data-element_type="widget" data-settings="{&quot;skin&quot;:&quot;classic&quot;,&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="search-form.default">
 				<div class="elementor-widget-container">
-					<form class="elementor-search-form" role="search" action="/" method="get">
+					<form class="elementor-search-form" role="search" action="{{ route('products.index') }}" method="get" style="position: relative;" id="headerSearchForm">
 									<div class="elementor-search-form__container">
-								<input placeholder="Search..." class="elementor-search-form__input" type="search" name="search" title="Search" value="">
+								<input placeholder="Search dyes, CAS#, pigments..." class="elementor-search-form__input" type="search" name="s" id="headerSearchInput" title="Search" value="{{ request('s') }}" autocomplete="off">
 													<button class="elementor-search-form__submit" type="submit" title="Search" aria-label="Search">
 													<i class="fa fa-search" aria-hidden="true"></i>
 							<span class="elementor-screen-only">Search</span>
 											</button>
 											</div>
+									<div id="liveSearchResults" style="display: none; position: absolute; top: calc(100% + 5px); left: 0; right: 0; background: white; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 99999; max-height: 400px; overflow-y: auto; text-align: left;"></div>
 		</form>
 				</div>
 				</div>
@@ -337,6 +338,7 @@ function googleTranslateElementInit() {
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2857"><a href="/sustainability" class="elementor-item menu-link">Sustainability</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a href="/contact" class="elementor-item menu-link">Contact Us</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13595"><a href="/blogs" class="elementor-item menu-link">blogs</a></li>
+<li class="menu-item menu-item-type-post_type"><a href="/request-quote" class="elementor-item menu-link" style="color: #64141f !important; font-weight: 700;">Request Quote</a></li>
 </ul></nav>
 					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
 			<i class="eicon-menu-bar" aria-hidden="true"></i>
@@ -390,6 +392,7 @@ function googleTranslateElementInit() {
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2857"><a href="/sustainability" class="elementor-item menu-link">Sustainability</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a href="/contact" class="elementor-item menu-link">Contact Us</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13595"><a href="/blogs" class="elementor-item menu-link">blogs</a></li>
+<li class="menu-item menu-item-type-post_type"><a href="/request-quote" class="elementor-item menu-link" style="color: #64141f !important; font-weight: 700;">Request Quote</a></li>
 </ul></nav>
 				</div>
 				</div>
@@ -1156,6 +1159,72 @@ window.addEventListener('click', function(e) {
     var modal = document.getElementById('enquiryModalOverlay');
     if (e.target === modal) closeEnquiryModal();
 });
+
+// Live Search Autocomplete
+(function() {
+    var searchInput = document.getElementById('headerSearchInput');
+    var resultsBox = document.getElementById('liveSearchResults');
+    var debounceTimer = null;
+
+    if (!searchInput || !resultsBox) return;
+
+    searchInput.addEventListener('input', function() {
+        var query = this.value.trim();
+        clearTimeout(debounceTimer);
+
+        if (query.length < 2) {
+            resultsBox.style.display = 'none';
+            resultsBox.innerHTML = '';
+            return;
+        }
+
+        debounceTimer = setTimeout(function() {
+            fetch('/api/products/search?q=' + encodeURIComponent(query))
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                    if (!data || data.length === 0) {
+                        resultsBox.innerHTML = '<div style="padding: 14px 16px; color: #64748b; font-size: 13px;">No chemical products matching "<b>' + query + '</b>"</div>';
+                        resultsBox.style.display = 'block';
+                        return;
+                    }
+
+                    var html = '<div style="padding: 8px 12px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b;">Matching Products (' + data.length + ')</div>';
+                    data.forEach(function(item) {
+                        html += '<a href="' + item.url + '" style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid #f1f5f9; text-decoration: none; color: #1e293b; transition: background 0.15s;" onmouseover="this.style.background=\'#f8fafc\'" onmouseout="this.style.background=\'white\'">' +
+                            '<img src="' + item.image_url + '" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; border: 1px solid #e2e8f0; flex-shrink: 0;" />' +
+                            '<div style="flex: 1; min-width: 0;">' +
+                                '<div style="font-weight: 600; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #0f172a;">' + item.title + '</div>' +
+                                '<div style="font-size: 11.5px; color: #64748b; display: flex; gap: 8px; margin-top: 2px;">' +
+                                    (item.cas_number ? '<span>CAS: <b style="font-family:monospace;">' + item.cas_number + '</b></span>' : '') +
+                                    (item.category ? '<span style="background: #e0f2fe; color: #0369a1; padding: 1px 5px; border-radius: 3px; font-size: 10px;">' + item.category + '</span>' : '') +
+                                '</div>' +
+                            '</div>' +
+                        '</a>';
+                    });
+
+                    html += '<a href="/products?s=' + encodeURIComponent(query) + '" style="display: block; padding: 10px; text-align: center; background: #f8fafc; font-size: 12.5px; font-weight: 600; color: #64141f; text-decoration: none;">View All Results in Catalog →</a>';
+
+                    resultsBox.innerHTML = html;
+                    resultsBox.style.display = 'block';
+                })
+                .catch(function(err) {
+                    console.error('Search autocomplete error:', err);
+                });
+        }, 220);
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !resultsBox.contains(e.target)) {
+            resultsBox.style.display = 'none';
+        }
+    });
+
+    searchInput.addEventListener('focus', function() {
+        if (resultsBox.children.length > 0) {
+            resultsBox.style.display = 'block';
+        }
+    });
+})();
 </script>
 
 @stack('scripts')

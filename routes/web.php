@@ -17,6 +17,9 @@ use App\Http\Controllers\Admin\ProductController as AdminProduct;
 use App\Http\Controllers\Admin\CategoryController as AdminCategory;
 use App\Http\Controllers\Admin\InquiryController as AdminInquiry;
 use App\Http\Controllers\Admin\PostController as AdminPost;
+use App\Http\Controllers\Admin\PageController as AdminPage;
+use App\Http\Controllers\Admin\RedirectController as AdminRedirect;
+use App\Http\Controllers\Admin\SettingController as AdminSetting;
 use App\Http\Controllers\Admin\DeployController as AdminDeploy;
 
 /*
@@ -41,11 +44,23 @@ Route::prefix('admin')->group(function () {
         // Categories CRUD
         Route::resource('categories', AdminCategory::class, ['as' => 'admin'])->only(['index', 'store', 'update', 'destroy']);
 
-        // Inquiries Management
-        Route::resource('inquiries', AdminInquiry::class, ['as' => 'admin'])->only(['index', 'destroy']);
+        // CMS Pages Management
+        Route::resource('pages', AdminPage::class, ['as' => 'admin']);
+
+        // 301/302 URL Redirects Management
+        Route::resource('redirects', AdminRedirect::class, ['as' => 'admin'])->only(['index', 'store', 'update', 'destroy']);
+
+        // Inquiries Management & Export
+        Route::get('inquiries/export', [AdminInquiry::class, 'export'])->name('admin.inquiries.export');
+        Route::patch('inquiries/{inquiry}/status', [AdminInquiry::class, 'updateStatus'])->name('admin.inquiries.update_status');
+        Route::resource('inquiries', AdminInquiry::class, ['as' => 'admin'])->only(['index', 'show', 'destroy']);
 
         // Posts / Blogs Management
         Route::resource('posts', AdminPost::class, ['as' => 'admin'])->only(['index', 'store', 'destroy']);
+
+        // Website Global Settings
+        Route::get('settings', [AdminSetting::class, 'index'])->name('admin.settings.index');
+        Route::post('settings', [AdminSetting::class, 'update'])->name('admin.settings.update');
 
         // Git Deployment Management
         Route::get('deploy', [AdminDeploy::class, 'index'])->name('admin.deploy.index');
@@ -71,18 +86,24 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 Route::get('/product/{slug}', function ($slug) {
     return redirect('/' . $slug, 301);
 });
+Route::get('/api/products/search', [ProductController::class, 'searchApi'])->name('api.products.search');
 
 // 3. Category legacy paths
 Route::get('/product-category/{slug}', [CategoryController::class, 'show'])->name('category.legacy');
 
-// 4. Blogs & News
+// 4. Commercial Quote & Sample Requests
+Route::get('/request-quote', [PageController::class, 'requestQuote'])->name('quote.request');
+Route::get('/sample-request', [PageController::class, 'requestQuote'])->name('sample.request');
+
+// 5. Blogs & News
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 
-// 5. Inquiries (Contact & Quote Modal Form submissions)
+// 6. Inquiries Form submissions (Contact, Quote, Sample)
 Route::post('/inquiries', [InquiryController::class, 'store'])->name('inquiries.store');
+Route::post('/api/inquiries', [InquiryController::class, 'store'])->name('api.inquiries.store');
 
-// 6. Sitemaps & Search Engines (Rank Math SEO Compatibility)
+// 7. Sitemaps & Search Engines (Rank Math SEO Compatibility)
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.index');
 Route::get('/sitemap_index.xml', [SitemapController::class, 'index']);
 Route::get('/sitemap-products.xml', [SitemapController::class, 'products']);
@@ -91,13 +112,13 @@ Route::get('/sitemap-pages.xml', [SitemapController::class, 'pages']);
 Route::get('/sitemap-posts.xml', [SitemapController::class, 'posts']);
 Route::get('/robots.txt', [SitemapController::class, 'robots']);
 
-// 7. Core Static CMS Pages
+// 8. Core CMS Pages & Applications
+Route::get('/applications', [PageController::class, 'applications'])->name('applications.index');
 Route::get('/about-us', [PageController::class, 'show'])->defaults('slug', 'about-us');
-Route::get('/applications', [PageController::class, 'show'])->defaults('slug', 'applications');
 Route::get('/certifications', [PageController::class, 'show'])->defaults('slug', 'certifications');
 Route::get('/sustainability', [PageController::class, 'show'])->defaults('slug', 'sustainability');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/contact-us', [PageController::class, 'contact'])->name('contact-us');
 
-// 8. Universal Dynamic Slug Resolver (Must be last)
+// 9. Universal Dynamic Slug Resolver (Must be last)
 Route::get('/{slug}', [FallbackController::class, 'resolve'])->where('slug', '^(?!admin).*$')->name('fallback.resolve');

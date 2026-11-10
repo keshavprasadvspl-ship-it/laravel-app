@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Redirect;
 use App\Services\SeoHelper;
 use Illuminate\Http\Request;
 
@@ -32,9 +33,27 @@ class BlogController extends Controller
         return view('blogs.index', compact('posts', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
     }
 
-    public function show(string $slug)
+    public function show(string $slug, Request $request)
     {
-        $post = Post::where('slug', $slug)->firstOrFail();
+        $post = Post::where('slug', $slug)->first();
+
+        if (!$post) {
+            // Check redirects for blogs/{slug}
+            $cleanSlug = trim($slug, '/');
+            $fullPath = trim($request->path(), '/');
+            $redirect = Redirect::where('source_pattern', 'blogs/' . $cleanSlug)
+                ->orWhere('source_pattern', '/' . $fullPath)
+                ->orWhere('source_pattern', $fullPath)
+                ->first();
+
+            if ($redirect) {
+                return redirect($redirect->destination_url, (int) $redirect->status_code);
+            }
+
+            return response()->view('errors.404', [
+                'slug' => $slug,
+            ], 404);
+        }
 
         $seo = SeoHelper::generateTags($post, [
             'title' => "{$post->title} | SD International",
