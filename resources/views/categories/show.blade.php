@@ -75,20 +75,20 @@
         border-left: 3px solid var(--primary-accent);
     }
     .sidebar-contact-card {
-        background: var(--gold-gradient);
-        color: white;
+        background: #fdf2f3;
+        border: 1px solid #fecdd3;
         border-radius: 8px;
         padding: 24px;
         text-align: center;
     }
     .sidebar-contact-card h4 {
-        color: white;
+        color: var(--primary);
         font-size: 16px;
         margin-bottom: 8px;
     }
     .sidebar-contact-card p {
         font-size: 13px;
-        color: #f8fafc;
+        color: #475569;
         margin-bottom: 18px;
         line-height: 1.5;
     }
@@ -236,7 +236,7 @@
 
             <div class="sidebar-contact-card">
                 <h4>Inquire for {{ $category->name }}</h4>
-                <p style="font-size: 13.5px; color: #4b5563; margin-bottom: 14px;">
+                <p>
                     Contact our sales division for CIF/FOB pricing & COA.
                 </p>
                 <button type="button" class="btn-submit" onclick="openQuoteModal('{{ addslashes($category->name) }}')">Get Category Quote</button>

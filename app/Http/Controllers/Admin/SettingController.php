@@ -53,3 +53,4 @@ class SettingController extends Controller
         return back()->with('success', 'Website settings have been successfully updated!');
     }
 }
+

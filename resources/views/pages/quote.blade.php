@@ -178,7 +178,7 @@
                 </div>
             @endif
 
-            @if ($errors->any())
+            @if (isset($errors) && $errors->any())
                 <div style="background: #fee2e2; color: #991b1b; padding: 16px 20px; border-radius: 6px; margin-bottom: 25px; border: 1px solid #fecaca;">
                     <ul style="margin: 0 0 0 20px;">
                         @foreach ($errors->all() as $error)

@@ -105,7 +105,7 @@
         @endforeach
     </div>
 
-    <div style="display: flex; justify-content: center; margin-bottom: 60px;">
+    <div class="pagination-wrap" style="margin-bottom: 60px;">
         {{ $posts->links() }}
     </div>
 </div>

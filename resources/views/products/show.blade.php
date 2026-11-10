@@ -258,10 +258,57 @@
             grid-template-columns: 1fr;
         }
     }
+
+    @media print {
+        header, footer, nav, .site-header, .site-footer, .elementor-location-header, .elementor-location-footer,
+        .catalog-sidebar, .sidebar-widget, .sidebar-contact-card, .product-action-buttons, .related-section,
+        #quoteModal, .admin-bar, .modal {
+            display: none !important;
+        }
+        body, .container, .product-page-layout, .product-main-col {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            background: #ffffff !important;
+            color: #000000 !important;
+        }
+        .product-page-layout {
+            display: block !important;
+        }
+        .product-hero-grid {
+            display: flex !important;
+            gap: 20px !important;
+            margin-bottom: 20px !important;
+        }
+        .product-main-image-wrap {
+            min-height: auto !important;
+            border: 1px solid #ccc !important;
+        }
+        .specs-table th, .specs-table td {
+            border: 1px solid #333 !important;
+            padding: 6px 10px !important;
+        }
+        .specs-table th {
+            background: #f0f0f0 !important;
+            color: #000 !important;
+        }
+        .print-header-brand {
+            display: block !important;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #64141f;
+            padding-bottom: 10px;
+        }
+    }
 </style>
 
 <div class="container">
     <div class="product-page-layout">
+        <div class="print-header-brand" style="display: none;">
+            <h2 style="margin: 0; color: #64141f; font-size: 24px;">S D INTERNATIONAL</h2>
+            <p style="margin: 2px 0 0; font-size: 12px; color: #555;">Manufacturers & Exporters of Dyes, Pigments & Chemical Intermediates | Mumbai, India | export@sdinternational.com</p>
+            <div style="font-size: 14px; font-weight: bold; margin-top: 8px; text-transform: uppercase;">Technical Data Sheet (TDS)</div>
+        </div>
         <!-- Main Product Content Area -->
         <div class="product-main-col">
             <!-- Hero Grid -->
@@ -312,6 +359,9 @@
                         <a href="{{ route('quote.request', ['product' => $product->slug, 'cas' => $product->cas_number]) }}" class="btn-quote-large" style="background: #0f172a; text-decoration: none; text-align: center;">
                             🧪 Request Sample / TDS
                         </a>
+                        <button type="button" class="btn-quote-large" onclick="window.print()" style="background: #475569; text-decoration: none; text-align: center; display: inline-flex; align-items: center; gap: 6px;">
+                            🖨️ Print TDS
+                        </button>
                         <a href="https://api.whatsapp.com/send?phone=919920669561&text=Hello%20SD%20International,%20I%20need%20price%20and%20COA%20for%20{{ urlencode($product->title) }}%20(CAS%20{{ $product->cas_number }})" class="btn-whatsapp-large" target="_blank" rel="noopener noreferrer">
                             💬 WhatsApp
                         </a>

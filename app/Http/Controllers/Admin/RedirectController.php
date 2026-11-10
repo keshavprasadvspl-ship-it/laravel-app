@@ -61,3 +61,4 @@ class RedirectController extends Controller
         return back()->with('success', 'URL Redirect rule deleted successfully!');
     }
 }
+

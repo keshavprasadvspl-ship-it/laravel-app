@@ -33,8 +33,9 @@ class BlogController extends Controller
         return view('blogs.index', compact('posts', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
     }
 
-    public function show(string $slug, Request $request)
+    public function show(string $slug, ?Request $request = null)
     {
+        $request = $request ?: request();
         $post = Post::where('slug', $slug)->first();
 
         if (!$post) {

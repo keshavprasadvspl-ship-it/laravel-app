@@ -50,18 +50,263 @@
     @stack('styles')
 
     <style>
-        /* Essential compatibility overrides */
+        :root {
+            /* Brand Identity Colors */
+            --primary: #64141f;
+            --primary-hover: #4e0f18;
+            --primary-gradient: linear-gradient(180deg, #951634 0%, #73001B 100%);
+            --primary-dark: #6A0015;
+            --primary-accent: #820024;
+            --gold-gradient: linear-gradient(180deg, #C49F6A 0%, #966F37 100%);
+            --gold-light: #D2AF77;
+            --cream-bg: #F0EAD7;
+            --crimson-bg: #961A2B;
+            --btn-hover: #3a3a3a;
+            --text-dark: #000000;
+            --text-main: #333333;
+            --text-muted: #555555;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --border: #e2e8f0;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+
+            /* Elementor Global Color & Typography mappings */
+            --e-global-color-primary: #64141f;
+            --e-global-color-secondary: #000000;
+            --e-global-color-text: #4b4f58;
+            --e-global-color-accent: #64141f;
+            --e-global-typography-primary-font-family: 'Montserrat', sans-serif;
+            --e-global-typography-primary-font-weight: 600;
+            --e-global-typography-secondary-font-family: 'Open Sans', sans-serif;
+            --e-global-typography-secondary-font-weight: 400;
+            --e-global-typography-text-font-family: 'Open Sans', sans-serif;
+            --e-global-typography-text-font-weight: 400;
+            --e-global-typography-accent-font-family: 'Montserrat', sans-serif;
+            --e-global-typography-accent-font-weight: 600;
+        }
+
+        /* Essential Container Width across all viewports */
+        .container,
+        .site-content > .container,
+        #content > .container {
+            max-width: 1240px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: clamp(16px, 2.5vw, 30px);
+            padding-right: clamp(16px, 2.5vw, 30px);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* General element resets */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background: #fff;
+            background: #ffffff;
             color: #4b4f58;
             overflow-x: hidden;
+            line-height: 1.6;
         }
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
+            color: #0f172a;
         }
+
+        /* Desktop Nav Hover Submenu Dropdowns */
+        .elementor-nav-menu--main li {
+            position: relative;
+        }
+        .elementor-nav-menu--main li:hover > .sub-menu {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+        .elementor-nav-menu--main .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 99999;
+            min-width: 230px;
+            background: #ffffff !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border: 1px solid #e2e8f0;
+            padding: 8px 0;
+            list-style: none;
+            margin: 0;
+            border-radius: 4px;
+        }
+        .elementor-nav-menu--main .sub-menu .sub-menu {
+            top: 0;
+            left: 100%;
+        }
+        .elementor-nav-menu--main .sub-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        .elementor-nav-menu--main .sub-menu li a {
+            display: block;
+            padding: 9px 20px;
+            color: #334155 !important;
+            font-size: 13.5px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            font-weight: 500;
+        }
+        .elementor-nav-menu--main .sub-menu li a:hover {
+            background: #f8fafc;
+            color: var(--primary) !important;
+            padding-left: 24px;
+        }
+
+        /* Global Form Controls & Inputs */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label, .form-label {
+            display: block;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+        .form-control, .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 11px 14px;
+            font-size: 14.5px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            outline: none;
+            box-sizing: border-box;
+            font-family: inherit;
+            background: #ffffff;
+            color: #1e293b;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-control:focus, .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(100, 20, 31, 0.12);
+        }
+
+        /* Global Standard Buttons */
+        .btn-submit, .btn-primary {
+            background: var(--primary);
+            color: #ffffff !important;
+            border: none;
+            border-radius: 6px;
+            padding: 11px 22px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .btn-submit:hover, .btn-primary:hover {
+            background: var(--primary-hover);
+            color: #ffffff !important;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #334155 !important;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-outline:hover {
+            background: #f8fafc;
+            border-color: #94a3b8;
+            color: #0f172a !important;
+        }
+        .btn-enquire, .btn-card-quote {
+            background: var(--primary);
+            color: #ffffff !important;
+            border: none;
+            border-radius: 4px;
+            padding: 7px 14px;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .btn-enquire:hover, .btn-card-quote:hover {
+            background: var(--primary-hover);
+            color: #ffffff !important;
+        }
+
+        /* Global Pagination Styles (fixes oversized Laravel SVG pagination arrows) */
+        .pagination-wrap {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .pagination-wrap nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .pagination-wrap svg {
+            width: 16px !important;
+            height: 16px !important;
+            max-width: 16px !important;
+            max-height: 16px !important;
+            display: inline-block !important;
+        }
+        .pagination-wrap .flex.justify-between.flex-1 {
+            display: none !important; /* Hide mobile duplicate elements */
+        }
+        .pagination-wrap span, .pagination-wrap a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            padding: 0 10px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #334155;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .pagination-wrap a:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: var(--primary);
+        }
+        .pagination-wrap [aria-current="page"] span {
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            border-color: var(--primary) !important;
+        }
+
         /* Mobile menu & dropdown functionality */
         .elementor-nav-menu--dropdown {
             display: none;
@@ -145,7 +390,7 @@
         }
     </style>
 </head>
-<body itemtype='https://schema.org/WebPage' itemscope='itemscope' class="home wp-singular page-template-default page page-id-136 wp-custom-logo wp-theme-astra theme-astra woocommerce-no-js ast-desktop ast-plain-container ast-no-sidebar astra-3.7.10 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent above-header-nav-padding-support ast-full-width-layout ast-sticky-header-shrink ast-inherit-site-logo-sticky elementor-default elementor-kit-17 elementor-page elementor-page-136 astra-addon-3.6.6">
+<body itemtype='https://schema.org/WebPage' itemscope='itemscope' class="{{ request()->is('/') ? 'home page-id-136 elementor-page-136' : 'not-home inner-page' }} wp-custom-logo wp-theme-astra theme-astra woocommerce-no-js ast-desktop ast-plain-container ast-no-sidebar astra-3.7.10 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent above-header-nav-padding-support ast-full-width-layout ast-sticky-header-shrink ast-inherit-site-logo-sticky elementor-default elementor-kit-17 astra-addon-3.6.6">
 
 <a class="skip-link screen-reader-text" href="#content" role="link" title="Skip to content">Skip to content</a>
 
@@ -421,7 +666,6 @@ function googleTranslateElementInit() {
 		</section>
 				</div>
 		</div>
-			<div id="content"
 
     <!-- Main Content Area -->
     <div id="content" class="site-content">

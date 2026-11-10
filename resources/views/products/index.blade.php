@@ -88,6 +88,85 @@
         display: flex;
         justify-content: center;
     }
+    .catalog-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .sidebar-widget {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 22px;
+    }
+    .widget-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--primary-dark, #6A0015);
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--primary-accent, #820024);
+    }
+    .cat-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        max-height: 520px;
+        overflow-y: auto;
+    }
+    .cat-menu-item a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 10px;
+        border-radius: 6px;
+        color: #334155;
+        font-size: 13.5px;
+        text-decoration: none;
+        transition: all 0.15s;
+    }
+    .cat-menu-item a:hover {
+        background: #f1f5f9;
+        color: var(--primary, #64141f);
+        padding-left: 14px;
+    }
+    .sidebar-contact-card {
+        background: var(--gold-gradient, linear-gradient(180deg, #C49F6A 0%, #966F37 100%));
+        color: white;
+        border-radius: 8px;
+        padding: 24px;
+        text-align: center;
+    }
+    .sidebar-contact-card h4 {
+        color: white;
+        font-size: 16px;
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+    .sidebar-contact-card p {
+        font-size: 13px;
+        color: #f8fafc;
+        margin-bottom: 18px;
+        line-height: 1.5;
+    }
+    .sidebar-contact-card .btn-submit {
+        width: 100%;
+        background: var(--primary-gradient, linear-gradient(180deg, #951634 0%, #73001B 100%));
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
+    .sidebar-contact-card .btn-submit:hover {
+        background: var(--btn-hover, #3a3a3a);
+    }
     @media (max-width: 900px) {
         .catalog-layout {
             grid-template-columns: 1fr;
