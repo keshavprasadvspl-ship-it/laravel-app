@@ -7,8 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- SEO Meta Tags -->
-    <title>{{ $seo['title'] ?? 'SD International - Vat & Solvent Dyes Manufacturer in India' }}</title>
-    <meta name="description" content="{{ $seo['description'] ?? 'Leading manufacturer and exporter of Vat Dyes, Solvent Dyes, Disperse Dyes, Food Colours, Organic Pigments, Naphthols, Fast Bases and Salts in India.' }}">
+    <title>{{ $seo['title'] ?? 'SD International - Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases & salts manufacturer in india' }}</title>
+    <meta name="description" content="{{ $seo['description'] ?? 'Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases & salts manufacturer in india' }}">
     @if(!empty($seo['keywords']))
     <meta name="keywords" content="{{ $seo['keywords'] }}">
     @endif
@@ -30,21 +30,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome 5 Free -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- Astra Theme & Elementor CSS (Exact 1:1 replica of live site) -->
-    <link rel="stylesheet" href="{{ asset('css/astra.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/astra-inline.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/astra-addon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/elementor-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/elementor-frontend.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/elementor-global.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/elementor-post-21.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/elementor-post-61.css') }}">
+    <!-- 1. Astra Theme & Addons -->
+    <link rel="stylesheet" href="{{ asset('css/live/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/astra-addon-68597f61992401-66099668.css') }}">
 
-    <!-- Swiper CSS -->
+    <!-- 2. Elementor Core & Pro Stylesheets (100% exact live site replica) -->
+    <link rel="stylesheet" href="{{ asset('css/live/elementor-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/frontend-legacy.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/frontend.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/elementor-pro-frontend.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/powerpack-frontend.min.css') }}">
+
+    <!-- 3. Elementor Kits & Global Tokens -->
+    <link rel="stylesheet" href="{{ asset('css/live/post-17.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/global.css') }}">
+
+    <!-- 4. ElementsKit Widgets Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('css/live/ekiticons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/widget-styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/widget-styles-pro.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/responsive.css') }}">
+
+    <!-- 5. Header 21 & Footer 61 Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('css/live/post-21.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/live/post-61.css') }}">
+
+    <!-- 6. SD International Live Customizer Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('css/live/sd-custom-live.css') }}">
+
+    <!-- 7. Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 
     @stack('styles')
@@ -86,8 +102,7 @@
             --e-global-typography-accent-font-weight: 600;
         }
 
-        /* Essential Container Width across all viewports */
-        .container,
+        /* Essential Container Width across non-elementor views */
         .site-content > .container,
         #content > .container {
             max-width: 1240px;
@@ -99,7 +114,6 @@
             box-sizing: border-box;
         }
 
-        /* General element resets */
         *, *::before, *::after {
             box-sizing: border-box;
         }
@@ -114,16 +128,7 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            color: #0f172a;
-        }
-
-        /* ==========================================================================
-           HEADER 21 STYLING (Top Bar + Main Nav + Mobile Drawer)
-           ========================================================================== */
-
-        /* --- Top Bar Styling (Gold Background #C49F6A) --- */
+        /* Header Top Bar (Gold Bar #C49F6A) */
         .elementor-element-850d87a {
             background-color: #C49F6A !important;
             padding: 6px 0 !important;
@@ -230,7 +235,7 @@
             cursor: pointer !important;
         }
 
-        /* --- Main Navigation Bar Section (Section 3397fd0b) --- */
+        /* Main Navigation Bar (Section 3397fd0b) */
         .elementor-element-3397fd0b {
             background-color: #ffffff !important;
             border-bottom: 1px solid #E1E1E1 !important;
@@ -427,7 +432,7 @@
             left: 100% !important;
         }
 
-        /* --- Responsive Breakpoint Controls --- */
+        /* Responsive Breakpoint Controls */
         @media (min-width: 1025px) {
             .elementor-menu-toggle {
                 display: none !important;
@@ -656,7 +661,7 @@
             color: #ffffff !important;
         }
 
-        /* Global Pagination Styles (fixes oversized Laravel SVG pagination arrows) */
+        /* Global Pagination Styles */
         .pagination-wrap {
             margin-top: 40px;
             display: flex;
@@ -678,7 +683,7 @@
             display: inline-block !important;
         }
         .pagination-wrap .flex.justify-between.flex-1 {
-            display: none !important; /* Hide mobile duplicate elements */
+            display: none !important;
         }
         .pagination-wrap span, .pagination-wrap a {
             display: inline-flex;
@@ -722,6 +727,7 @@
             from { transform: translateY(-100%); }
             to { transform: translateY(0); }
         }
+
         /* Modal Enquiry Popup */
         #enquiryModalOverlay {
             display: none;
@@ -758,6 +764,7 @@
             color: #64141f;
             font-weight: 700;
         }
+
         /* WhatsApp Floating Button */
         .sd-whatsapp-float {
             position: fixed;
@@ -783,19 +790,19 @@
         }
     </style>
 </head>
-<body itemtype='https://schema.org/WebPage' itemscope='itemscope' class="{{ request()->is('/') ? 'home page-id-136 elementor-page-136' : 'not-home inner-page' }} wp-custom-logo wp-theme-astra theme-astra woocommerce-no-js ast-desktop ast-plain-container ast-no-sidebar astra-3.7.10 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent above-header-nav-padding-support ast-full-width-layout ast-sticky-header-shrink ast-inherit-site-logo-sticky elementor-default elementor-kit-17 astra-addon-3.6.6">
+<body itemtype='https://schema.org/WebPage' itemscope='itemscope' class="{{ request()->is('/') ? 'home page-template-default page page-id-136 wp-custom-logo wp-theme-astra theme-astra woocommerce-no-js ast-desktop ast-plain-container ast-no-sidebar astra-3.7.10 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent above-header-nav-padding-support ast-full-width-layout ast-sticky-header-shrink ast-inherit-site-logo-sticky elementor-default elementor-kit-17 elementor-page elementor-page-136 astra-addon-3.6.6' : 'not-home inner-page wp-custom-logo wp-theme-astra theme-astra ast-desktop ast-plain-container ast-no-sidebar astra-3.7.10 astra-addon-3.6.6' }}">
 
 <a class="skip-link screen-reader-text" href="#content" role="link" title="Skip to content">Skip to content</a>
 
 <div class="hfeed site" id="page">
 
     @if(session('success'))
-<div style="background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; padding:12px 18px; border-radius:6px; margin:15px; font-weight:600; text-align:center;">
-    ✓ {{ session('success') }}
-</div>
-@endif
+    <div style="background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; padding:12px 18px; border-radius:6px; margin:15px; font-weight:600; text-align:center;">
+        ✓ {{ session('success') }}
+    </div>
+    @endif
 
-    <!-- Header 21 (Exact Live Header) -->
+    <!-- Exact Header 21 -->
     <div data-elementor-type="header" data-elementor-id="21" class="elementor elementor-21 elementor-location-header">
 		<div class="elementor-section-wrap">
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-850d87a elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="850d87a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
@@ -888,16 +895,16 @@ function googleTranslateElementInit() {
 							<div class="elementor-widget-wrap">
 						<div class="elementor-element elementor-element-18d08e4 elementor-search-form--skin-classic elementor-search-form--button-type-icon elementor-search-form--icon-search elementor-widget elementor-widget-search-form" data-id="18d08e4" data-element_type="widget" data-settings="{&quot;skin&quot;:&quot;classic&quot;,&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="search-form.default">
 				<div class="elementor-widget-container">
-					<form class="elementor-search-form" role="search" action="{{ route('products.index') }}" method="get" style="position: relative;" id="headerSearchForm">
-									<div class="elementor-search-form__container">
-								<input placeholder="Search dyes, CAS#, pigments..." class="elementor-search-form__input" type="search" name="s" id="headerSearchInput" title="Search" value="{{ request('s') }}" autocomplete="off">
-													<button class="elementor-search-form__submit" type="submit" title="Search" aria-label="Search">
-													<i class="fa fa-search" aria-hidden="true"></i>
-							<span class="elementor-screen-only">Search</span>
-											</button>
-											</div>
-									<div id="liveSearchResults" style="display: none; position: absolute; top: calc(100% + 5px); left: 0; right: 0; background: white; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 99999; max-height: 400px; overflow-y: auto; text-align: left;"></div>
-		</form>
+					<form class="elementor-search-form" role="search" action="/products" method="get" style="position: relative;" id="headerSearchForm">
+<div class="elementor-search-form__container">
+<input placeholder="Search dyes, CAS#, pigments..." class="elementor-search-form__input" type="search" name="s" id="headerSearchInput" title="Search" value="{{ request('s') }}" autocomplete="off">
+<button class="elementor-search-form__submit" type="submit" title="Search" aria-label="Search">
+<i class="fa fa-search" aria-hidden="true"></i>
+<span class="elementor-screen-only">Search</span>
+</button>
+</div>
+<div id="liveSearchResults" style="display: none; position: absolute; top: calc(100% + 5px); left: 0; right: 0; background: white; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 99999; max-height: 400px; overflow-y: auto; text-align: left;"></div>
+</form>
 				</div>
 				</div>
 						</div>
@@ -916,7 +923,7 @@ function googleTranslateElementInit() {
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
 													<a href="/">
-							<img width="300" height="91" src="/uploads/2020/07/logo-180x55.png" class="attachment-full size-full" alt="" srcset="/uploads/2020/07/logo.png 300w, /uploads/2020/07/logo-120x36.png 120w, /uploads/2020/07/logo-64x19.png 64w, /uploads/2020/07/logo-180x55.png 180w" sizes="(max-width: 300px) 100vw, 300px" />								</a>
+							<img width="300" height="91" src="/uploads/2020/07/logo.png" class="attachment-full size-full" alt="" srcset="/uploads/2020/07/logo.png 300w, /uploads/2020/07/logo-120x36.png 120w, /uploads/2020/07/logo-64x19.png 64w, /uploads/2020/07/logo-180x55.png 180w" sizes="(max-width: 300px) 100vw, 300px" />								</a>
 														</div>
 						</div>
 				</div>
@@ -974,9 +981,8 @@ function googleTranslateElementInit() {
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2873"><a href="/applications" class="elementor-item menu-link">Applications</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2882"><a href="/certifications" class="elementor-item menu-link">Certifications</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2857"><a href="/sustainability" class="elementor-item menu-link">Sustainability</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a href="/contact" class="elementor-item menu-link">Contact Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a href="/contact" onclick="event.preventDefault(); openEnquiryModal();" class="elementor-item menu-link">Contact Us</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13595"><a href="/blogs" class="elementor-item menu-link">Blogs</a></li>
-<li class="menu-item menu-item-type-post_type"><a href="/request-quote" class="elementor-item menu-link" style="color: #64141f !important; font-weight: 700;">Request Quote</a></li>
 </ul></nav>
 					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
 			<i class="eicon-menu-bar" aria-hidden="true"></i>
@@ -1028,9 +1034,8 @@ function googleTranslateElementInit() {
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2873"><a href="/applications" class="elementor-item menu-link">Applications</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2882"><a href="/certifications" class="elementor-item menu-link">Certifications</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2857"><a href="/sustainability" class="elementor-item menu-link">Sustainability</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a href="/contact" class="elementor-item menu-link">Contact Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a href="/contact" onclick="event.preventDefault(); openEnquiryModal();" class="elementor-item menu-link">Contact Us</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13595"><a href="/blogs" class="elementor-item menu-link">Blogs</a></li>
-<li class="menu-item menu-item-type-post_type"><a href="/request-quote" class="elementor-item menu-link" style="color: #64141f !important; font-weight: 700;">Request Quote</a></li>
 </ul></nav>
 				</div>
 				</div>
@@ -1043,7 +1048,7 @@ function googleTranslateElementInit() {
 						<div class="elementor-element elementor-element-f006f4c elementor-align-right elementor-widget elementor-widget-button" data-id="f006f4c" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="/contact" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+			<a href="/contact" onclick="event.preventDefault(); openEnquiryModal();" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Enquiry Now</span>
 		</span>
@@ -1059,13 +1064,28 @@ function googleTranslateElementInit() {
 		</section>
 				</div>
 		</div>
+			<div id="content" class="site-content">
+		<div class="ast-container">
+		
+
+	<div id="primary" class="content-area primary">
+
+		
+					<main id="main" class="site-main">
+				
 
     <!-- Main Content Area -->
     <div id="content" class="site-content">
-        @yield('content')
+        <div class="ast-container">
+            <div id="primary" class="content-area primary">
+                <main id="main" class="site-main">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
     </div>
 
-    <!-- Footer 61 (Exact Live Footer) -->
+    <!-- Exact Footer 61 -->
     <div data-elementor-type="footer" data-elementor-id="61" class="elementor elementor-61 elementor-location-footer">
 		<div class="elementor-section-wrap">
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-f9b6c5f elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="f9b6c5f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
@@ -1213,7 +1233,7 @@ function googleTranslateElementInit() {
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/solvent-dyes/">
+											<a href="/solvent-dyes">
 
 											<span class="elementor-icon-list-text">Solvent Dyes</span>
 											</a>
@@ -1271,49 +1291,49 @@ function googleTranslateElementInit() {
 				<div class="elementor-widget-container">
 					<ul class="elementor-icon-list-items">
 							<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/tartrazine-dyes/">
+											<a href="/tartrazine-dyes">
 
 											<span class="elementor-icon-list-text">Tartrazine Dyes</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/sunset-yellow-f-d-c-colours/">
+											<a href="/sunset-yellow-f-d-c-colours">
 
 											<span class="elementor-icon-list-text">Sunset Yellow F D & C Colours</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/carmoisine-f-d-c-colours/">
+											<a href="/carmoisine-f-d-c-colours">
 
 											<span class="elementor-icon-list-text">Carmoisine F D & C Colours</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/ponceau-4r-f-d-c-colours/">
+											<a href="/ponceau-4r-f-d-c-colours">
 
 											<span class="elementor-icon-list-text">Ponceau 4R F D & C Colours</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/amaranth-f-d-c-colours/">
+											<a href="/amaranth-f-d-c-colours">
 
 											<span class="elementor-icon-list-text">Amaranth F D & C Colours</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/altura-red-f-d-c-colours/">
+											<a href="/altura-red-f-d-c-colours">
 
 											<span class="elementor-icon-list-text">Altura Red F D & C Colours</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/brilliant-blue-fcf-f-d-c-colours/">
+											<a href="/brilliant-blue-fcf-f-d-c-colours">
 
 											<span class="elementor-icon-list-text">Brilliant Blue Fcf F D & C Colours</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="https://sdinternational.com/indigo-carmine-f-d-c-colours/">
+											<a href="/indigo-carmine-f-d-c-colours">
 
 											<span class="elementor-icon-list-text">Indigo Carmine F D & C Colours</span>
 											</a>
@@ -1492,218 +1512,7 @@ function googleTranslateElementInit() {
 				</div>
 		</div>
 			</div><!-- #page -->
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/astra\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
-		<!-- Click to Chat - https://holithemes.com/plugins/click-to-chat/  v4.45 -->
-			<style id="ht-ctc-entry-animations">.ht_ctc_entry_animation{animation-duration:0.4s;animation-fill-mode:both;animation-delay:0s;animation-iteration-count:1;}			@keyframes ht_ctc_anim_corner {0% {opacity: 0;transform: scale(0);}100% {opacity: 1;transform: scale(1);}}.ht_ctc_an_entry_corner {animation-name: ht_ctc_anim_corner;animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);transform-origin: bottom var(--side, right);}
-			</style>						<div class="ht-ctc ht-ctc-chat ctc-analytics ctc_wp_desktop style-2  ht_ctc_entry_animation ht_ctc_an_entry_corner " id="ht-ctc-chat"  
-				style="display: none;  position: fixed; bottom: 15px; right: 15px;"   >
-												<div class="ht_ctc_style ht_ctc_chat_style">
-								<div  style="display: flex; justify-content: center; align-items: center;  " class="ctc-analytics ctc_s_2">
-	<p class="ctc-analytics ctc_cta ctc_cta_stick ht-ctc-cta  ht-ctc-cta-hover " style="padding: 0px 16px; line-height: 1.6; font-size: 15px; background-color: #25D366; color: #ffffff; border-radius:10px; margin:0 10px;  display: none; order: 0; "></p>
-	<svg style="pointer-events:none; display:block; height:50px; width:50px;" width="50px" height="50px" viewBox="0 0 1024 1024">
-        <defs>
-        <path id="htwasqicona-chat" d="M1023.941 765.153c0 5.606-.171 17.766-.508 27.159-.824 22.982-2.646 52.639-5.401 66.151-4.141 20.306-10.392 39.472-18.542 55.425-9.643 18.871-21.943 35.775-36.559 50.364-14.584 14.56-31.472 26.812-50.315 36.416-16.036 8.172-35.322 14.426-55.744 18.549-13.378 2.701-42.812 4.488-65.648 5.3-9.402.336-21.564.505-27.15.505l-504.226-.081c-5.607 0-17.765-.172-27.158-.509-22.983-.824-52.639-2.646-66.152-5.4-20.306-4.142-39.473-10.392-55.425-18.542-18.872-9.644-35.775-21.944-50.364-36.56-14.56-14.584-26.812-31.471-36.415-50.314-8.174-16.037-14.428-35.323-18.551-55.744-2.7-13.378-4.487-42.812-5.3-65.649-.334-9.401-.503-21.563-.503-27.148l.08-504.228c0-5.607.171-17.766.508-27.159.825-22.983 2.646-52.639 5.401-66.151 4.141-20.306 10.391-39.473 18.542-55.426C34.154 93.24 46.455 76.336 61.07 61.747c14.584-14.559 31.472-26.812 50.315-36.416 16.037-8.172 35.324-14.426 55.745-18.549 13.377-2.701 42.812-4.488 65.648-5.3 9.402-.335 21.565-.504 27.149-.504l504.227.081c5.608 0 17.766.171 27.159.508 22.983.825 52.638 2.646 66.152 5.401 20.305 4.141 39.472 10.391 55.425 18.542 18.871 9.643 35.774 21.944 50.363 36.559 14.559 14.584 26.812 31.471 36.415 50.315 8.174 16.037 14.428 35.323 18.551 55.744 2.7 13.378 4.486 42.812 5.3 65.649.335 9.402.504 21.564.504 27.15l-.082 504.226z"/>
-        </defs>
-        <linearGradient id="htwasqiconb-chat" gradientUnits="userSpaceOnUse" x1="512.001" y1=".978" x2="512.001" y2="1025.023">
-            <stop offset="0" stop-color="#61fd7d"/>
-            <stop offset="1" stop-color="#2bb826"/>
-        </linearGradient>
-        <use xlink:href="#htwasqicona-chat" overflow="visible" style="fill: url(#htwasqiconb-chat)" fill="url(#htwasqiconb-chat)"/>
-        <g>
-            <path style="fill: #FFFFFF;" fill="#FFF" d="M783.302 243.246c-69.329-69.387-161.529-107.619-259.763-107.658-202.402 0-367.133 164.668-367.214 367.072-.026 64.699 16.883 127.854 49.017 183.522l-52.096 190.229 194.665-51.047c53.636 29.244 114.022 44.656 175.482 44.682h.151c202.382 0 367.128-164.688 367.21-367.094.039-98.087-38.121-190.319-107.452-259.706zM523.544 808.047h-.125c-54.767-.021-108.483-14.729-155.344-42.529l-11.146-6.612-115.517 30.293 30.834-112.592-7.259-11.544c-30.552-48.579-46.688-104.729-46.664-162.379.066-168.229 136.985-305.096 305.339-305.096 81.521.031 158.154 31.811 215.779 89.482s89.342 134.332 89.312 215.859c-.066 168.243-136.984 305.118-305.209 305.118zm167.415-228.515c-9.177-4.591-54.286-26.782-62.697-29.843-8.41-3.062-14.526-4.592-20.645 4.592-6.115 9.182-23.699 29.843-29.053 35.964-5.352 6.122-10.704 6.888-19.879 2.296-9.176-4.591-38.74-14.277-73.786-45.526-27.275-24.319-45.691-54.359-51.043-63.543-5.352-9.183-.569-14.146 4.024-18.72 4.127-4.109 9.175-10.713 13.763-16.069 4.587-5.355 6.117-9.183 9.175-15.304 3.059-6.122 1.529-11.479-.765-16.07-2.293-4.591-20.644-49.739-28.29-68.104-7.447-17.886-15.013-15.466-20.645-15.747-5.346-.266-11.469-.322-17.585-.322s-16.057 2.295-24.467 11.478-32.113 31.374-32.113 76.521c0 45.147 32.877 88.764 37.465 94.885 4.588 6.122 64.699 98.771 156.741 138.502 21.892 9.45 38.982 15.094 52.308 19.322 21.98 6.979 41.982 5.995 57.793 3.634 17.628-2.633 54.284-22.189 61.932-43.615 7.646-21.427 7.646-39.791 5.352-43.617-2.294-3.826-8.41-6.122-17.585-10.714z"/>
-        </g>
-        </svg></div>
-								</div>
-							</div>
-							<span class="ht_ctc_chat_data" data-settings="{&quot;number&quot;:&quot;919920669561&quot;,&quot;pre_filled&quot;:&quot;Hello S D International!\r\nName:\r\nLike to know more information about - &#039;Home&#039; - https:\/\/sdinternational.com\/&quot;,&quot;dis_m&quot;:&quot;show&quot;,&quot;dis_d&quot;:&quot;show&quot;,&quot;css&quot;:&quot;cursor: pointer; z-index: 99999999;&quot;,&quot;pos_d&quot;:&quot;position: fixed; bottom: 15px; right: 15px;&quot;,&quot;pos_m&quot;:&quot;position: fixed; bottom: 15px; right: 15px;&quot;,&quot;side_d&quot;:&quot;right&quot;,&quot;side_m&quot;:&quot;right&quot;,&quot;schedule&quot;:&quot;no&quot;,&quot;se&quot;:150,&quot;ani&quot;:&quot;no-animation&quot;,&quot;page_id&quot;:136,&quot;url_target_d&quot;:&quot;_blank&quot;,&quot;ga&quot;:&quot;yes&quot;,&quot;gtm&quot;:&quot;1&quot;,&quot;fb&quot;:&quot;yes&quot;,&quot;webhook_format&quot;:&quot;json&quot;,&quot;g_init&quot;:&quot;default&quot;,&quot;g_an_event_name&quot;:&quot;chat: {number}&quot;,&quot;gtm_event_name&quot;:&quot;Click to Chat&quot;,&quot;pixel_event_name&quot;:&quot;Click to Chat by HoliThemes&quot;}" data-rest="fc3eeb6d4d"></span>
-						<div data-elementor-type="popup" data-elementor-id="11717" class="elementor elementor-11717 elementor-location-popup" data-elementor-settings="{&quot;timing&quot;:[]}">
-		<div class="elementor-section-wrap">
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-124031e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="124031e" data-element_type="section" data-settings="{&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-							<div class="elementor-row">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9efcdef" data-id="9efcdef" data-element_type="column">
-			<div class="elementor-column-wrap elementor-element-populated">
-							<div class="elementor-widget-wrap">
-						<div class="elementor-element elementor-element-1dae787 elementor-view-default elementor-widget elementor-widget-icon" data-id="1dae787" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="icon.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-icon-wrapper">
-			<div class="elementor-icon">
-			<i aria-hidden="true" class="far fa-envelope"></i>			</div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-0271836 elementor-widget elementor-widget-heading" data-id="0271836" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h6 class="elementor-heading-title elementor-size-default"> Get Best Quote </h6>		</div>
-				</div>
-				<div class="elementor-element elementor-element-607e221 elementor-widget elementor-widget-text-editor" data-id="607e221" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-								<div class="elementor-text-editor elementor-clearfix">
-				<p class="elementor-icon-box-description">Fill out the form and we’ll be in touch as soon as possible.</p>					</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-3a03ae4 pp-contact-form-7-button-custom elementor-widget elementor-widget-pp-contact-form-7" data-id="3a03ae4" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="pp-contact-form-7.default">
-				<div class="elementor-widget-container">
-							<div class="pp-contact-form pp-contact-form-7 placeholder-show">
-										
-<div class="wpcf7 no-js" id="wpcf7-f5893-o1" lang="en-US" dir="ltr" data-wpcf7-id="5893">
-<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-<form action="{{ route('inquiries.store') }}" method="POST" class="wpcf7-form init">
-@csrf
 
-<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="5893" /><input type="hidden" name="_wpcf7_version" value="6.1.7" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5893-o1" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" /><input type="hidden" name="_wpcf7_recaptcha_response" value="" />
-</fieldset>
-<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" value="" type="text" name="your-name" /></span>
-</p>
-<p><span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" value="" type="email" name="your-email" /></span>
-</p>
-<p><span class="wpcf7-form-control-wrap" data-name="tel-590"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone No" value="" type="tel" name="tel-590" /></span>
-</p>
-<p><span class="wpcf7-form-control-wrap" data-name="text-589"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Country" value="" type="text" name="text-589" /></span>
-</p>
-<p><span class="wpcf7-form-control-wrap" data-name="text-33"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="City" value="" type="text" name="text-33" /></span>
-</p>
-<p><span class="wpcf7-form-control-wrap" data-name="text-589"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Company Name" value="" type="text" name="text-589" /></span>
-</p>
-<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="32" rows="5" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Whether you have a question about Color, Pricing, Custom color, or anything else, our team is ready to answer all your questions" name="your-message"></textarea></span>
-</p>
-<p><span class="elementor-button-content-wrapper"><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send" /></span>
-</p><p style="display: none !important;" class="akismet-fields-container" data-prefix="_wpcf7_ak_"><label>&#916;<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="_wpcf7_ak_js" value="219"/><script>
-document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );
-</script>
-</p><div class="wpcf7-response-output" aria-hidden="true"></div>
-</form>
-</div>
-				</div>
-						</div>
-				</div>
-						</div>
-					</div>
-		</div>
-								</div>
-					</div>
-		</section>
-				</div>
-		</div>
-			<script type="text/javascript">
-		(function () {
-			var c = document.body.className;
-			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-			document.body.className = c;
-		})();
-	</script>
-	<link rel='stylesheet' id='odometer-css' href='https://sdinternational.com/wp-content/plugins/powerpack-elements/assets/lib/odometer/odometer-theme-default.css?ver=2.8.1' media='all' />
-<link rel='stylesheet' id='elementor-post-11717-css' href='/uploads/elementor/css/post-11717.css?ver=1790878462' media='all' />
-<link rel='stylesheet' id='e-animations-css' href='https://sdinternational.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.6.5' media='all' />
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/widgets/chart/assets/js/chart.js?ver=6.8.12" id="chart-kit-js-js"></script>
-
-<script src="https://sdinternational.com/wp-content/themes/astra/assets/js/minified/style.min.js?ver=3.7.10" id="astra-theme-js-js"></script>
-
-
-<script src="https://sdinternational.com/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
-<script src="https://sdinternational.com/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
-<script id="wp-i18n-js-after">
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-</script>
-<script src="https://sdinternational.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.7" id="swv-js"></script>
-<script id="contact-form-7-js-before">
-var wpcf7 = {
-    "api": {
-        "root": "https:\/\/sdinternational.com\/wp-json\/",
-        "namespace": "contact-form-7\/v1"
-    },
-    "cached": 1
-};
-</script>
-<script src="https://sdinternational.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.7" id="contact-form-7-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.4.2" id="jquery-blockui-js"></script>
-
-
-<script src="https://sdinternational.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.4.2" id="js-cookie-js"></script>
-<script id="woocommerce-js-extra">
-var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
-</script>
-<script src="https://sdinternational.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.4.2" id="woocommerce-js"></script>
-
-
-<script src="https://sdinternational.com/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js"></script>
-<script id="astra-addon-js-js-extra">
-var astraAddon = {"sticky_active":"","svgIconClose":"<span class=\"ast-icon icon-close\"><\/span>","header_main_stick":"0","header_above_stick":"0","header_below_stick":"0","stick_header_meta":"","header_main_stick_meta":"","header_above_stick_meta":"","header_below_stick_meta":"","sticky_header_on_devices":"desktop","sticky_header_style":"none","sticky_hide_on_scroll":"0","break_point":"921","tablet_break_point":"921","mobile_break_point":"544","header_main_shrink":"1","header_logo_width":"","responsive_header_logo_width":{"desktop":"180","tablet":"","mobile":""},"stick_origin_position":"","site_layout":"ast-full-width-layout","site_content_width":"1240","site_layout_padded_width":"1200","site_layout_box_width":"1200","header_builder_active":"","component_limit":"10","product_plus_minus_text":{"plus_qty":"Plus Quantity","minus_qty":"Minus Quantity"},"is_header_builder_active":""};
-</script>
-<script src="/uploads/astra-addon/astra-addon-68597f619bebc1-86784616.js?ver=3.6.6" id="astra-addon-js-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/astra-addon/addons/woocommerce/assets/js/minified/single-product-ajax-cart.min.js?ver=3.6.6" id="astra-single-product-ajax-cart-js"></script>
-
-
-<script src="https://sdinternational.com/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widget-scripts.js?ver=2.5.7" id="ekit-widget-scripts-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/modules/parallax/assets/js/TweenMax.min.js?ver=2.2.3" id="tweenmax-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/modules/parallax/assets/js/jquery.easing.1.3.js?ver=2.2.3" id="jquery-easing-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/powerpack-elements/assets/lib/tilt/tilt.jquery.min.js?ver=1.1.19" id="tilt-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/modules/parallax/assets/js/anime.js?ver=2.2.3" id="animejs-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/modules/parallax/assets/js/magician.js?ver=2.2.3" id="magicianjs-js"></script>
-
-<script src="https://sdinternational.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
-<script id="wpcf7-recaptcha-js-before">
-var wpcf7_recaptcha = {
-    "sitekey": "6LcmWlccAAAAAIjteYwPGK3wOKi93YeCqpRoFCQ0",
-    "actions": {
-        "homepage": "homepage",
-        "contactform": "contactform"
-    }
-};
-</script>
-<script src="https://sdinternational.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=6.1.7" id="wpcf7-recaptcha-js"></script>
-
-
-<script src="https://sdinternational.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1" id="smartmenus-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/powerpack-elements/assets/lib/odometer/odometer.min.js?ver=0.4.8" id="odometer-js"></script>
-
-
-<script src="https://sdinternational.com/wp-content/plugins/powerpack-elements/assets/lib/slick/slick.min.js?ver=2.8.1" id="pp-slick-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/powerpack-elements/assets/lib/jquery-resize/jquery.resize.min.js?ver=0.5.3" id="jquery-resize-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.2.1" id="elementor-pro-webpack-runtime-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.6.5" id="elementor-webpack-runtime-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.6.5" id="elementor-frontend-modules-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.2.1" id="elementor-sticky-js"></script>
-
-
-<script src="https://sdinternational.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6" id="swiper-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.6.5" id="share-link-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0" id="elementor-dialog-js"></script>
-<script id="elementor-frontend-js-before">
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},
-"version":"3.6.5","is_static":false,"experimentalFeatures":{"e_import_export":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true,"form-submissions":true},"urls":{"assets":"https:\/\/sdinternational.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":136,"title":"SD%20International%20-%20Vat%20dyes%20manufacturer%20in%20india%2C%20solvent%20dyes%20manufacturer%20in%20india%2C%20Disperse%20dyes%2C%20food%20colours%2C%20organic%20pigments%2C%20Naphthols%2C%20fast%20bases%20%26%20salts%20manufacturer%20in%20india","excerpt":"","featuredImage":false}};
-</script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.5" id="elementor-frontend-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.2.1" id="pro-preloaded-elements-handlers-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit-lite/widgets/init/assets/js/animate-circle.js?ver=2.5.7" id="animate-circle-js"></script>
-<script id="elementskit-elementor-js-extra">
-var ekit_config = {"ajaxurl":"https:\/\/sdinternational.com\/wp-admin\/admin-ajax.php","nonce":"44b8f1d29b"};
-</script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit-lite/widgets/init/assets/js/elementor.js?ver=2.5.7" id="elementskit-elementor-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/widgets/init/assets/js/elementor.js?ver=2.2.3" id="elementskit-elementor-pro-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/modules/sticky-content/assets/js/jquery.sticky.js?ver=2.2.3" id="elementskit-sticky-content-script-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/modules/sticky-content/assets/js/init.js?ver=2.2.3" id="elementskit-sticky-content-script-init-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/modules/parallax/assets/js/widget-init.js?ver=2.2.3" id="elementskit-parallax-widget-init-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementskit/modules/parallax/assets/js/section-init.js?ver=2.2.3" id="elementskit-parallax-section-init-js"></script>
-<script src="https://sdinternational.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.6.5" id="preloaded-modules-js"></script>
-<script src="https://sdinternational.com/wp-includes/js/underscore.min.js?ver=1.13.7" id="underscore-js"></script>
-<script id="wp-util-js-extra">
-var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
-</script>
-<script src="https://sdinternational.com/wp-includes/js/wp-util.min.js?ver=6.8.12" id="wp-util-js"></script>
-
-
-			<script>
-			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
-			</script>
-				</body>
-<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'bom1plzcpnl503353'},{'dcenter':'bom1'},{'cp_id':'9512740'},{'cp_cache':''},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script></html>
-
-<!-- Page supported by LiteSpeed Cache 4.6 on 2026-10-29 17:42:14 -->
 
 </div>
 
@@ -1791,12 +1600,6 @@ document.querySelectorAll('a[href*="/contact"], .elementor-element-f006f4c a, .e
     }
 });
 
-// Close modal on click outside
-window.addEventListener('click', function(e) {
-    var modal = document.getElementById('enquiryModalOverlay');
-    if (e.target === modal) closeEnquiryModal();
-});
-
 // Live Search Autocomplete
 (function() {
     var searchInput = document.getElementById('headerSearchInput');
@@ -1820,22 +1623,19 @@ window.addEventListener('click', function(e) {
                 .then(function(res) { return res.json(); })
                 .then(function(data) {
                     if (!data || data.length === 0) {
-                        resultsBox.innerHTML = '<div style="padding: 14px 16px; color: #64748b; font-size: 13px;">No chemical products matching "<b>' + query + '</b>"</div>';
+                        resultsBox.innerHTML = '<div style="padding: 12px 16px; color: #64748b; font-size: 13px;">No matching products found.</div>';
                         resultsBox.style.display = 'block';
                         return;
                     }
 
-                    var html = '<div style="padding: 8px 12px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b;">Matching Products (' + data.length + ')</div>';
+                    var html = '';
                     data.forEach(function(item) {
-                        html += '<a href="' + item.url + '" style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid #f1f5f9; text-decoration: none; color: #1e293b; transition: background 0.15s;" onmouseover="this.style.background=\'#f8fafc\'" onmouseout="this.style.background=\'white\'">' +
-                            '<img src="' + item.image_url + '" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; border: 1px solid #e2e8f0; flex-shrink: 0;" />' +
-                            '<div style="flex: 1; min-width: 0;">' +
-                                '<div style="font-weight: 600; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #0f172a;">' + item.title + '</div>' +
-                                '<div style="font-size: 11.5px; color: #64748b; display: flex; gap: 8px; margin-top: 2px;">' +
-                                    (item.cas_number ? '<span>CAS: <b style="font-family:monospace;">' + item.cas_number + '</b></span>' : '') +
-                                    (item.category ? '<span style="background: #e0f2fe; color: #0369a1; padding: 1px 5px; border-radius: 3px; font-size: 10px;">' + item.category + '</span>' : '') +
-                                '</div>' +
+                        html += '<a href="' + item.url + '" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid #f1f5f9; text-decoration: none; color: #1e293b; transition: background 0.15s;">' +
+                            '<div>' +
+                                '<div style="font-weight: 600; font-size: 13.5px; color: #64141f;">' + item.title + '</div>' +
+                                (item.cas_number ? '<div style="font-size: 11.5px; color: #64748b;">CAS: ' + item.cas_number + '</div>' : '') +
                             '</div>' +
+                            '<span style="font-size: 11px; background: #f1f5f9; padding: 3px 8px; border-radius: 4px; color: #475569;">' + item.category + '</span>' +
                         '</a>';
                     });
 

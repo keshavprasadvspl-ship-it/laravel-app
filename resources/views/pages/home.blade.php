@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/elementor-post-136.css') }}">
+<link rel="stylesheet" href="{{ asset('css/live/post-136.css') }}">
 <style>
     /* Swiper slider height & styling */
     .elementor-slides-wrapper.swiper-container {
@@ -105,7 +105,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 					<div class="elementor-swiper">
 			<div class="elementor-slides-wrapper elementor-main-swiper swiper-container" dir="ltr" data-animation="fadeInUp">
 				<div class="swiper-wrapper elementor-slides">
-					<div class="elementor-repeater-item-a47c4f0 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="https://sdinternational.com/product-category/dyes/vat-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">VAT DYES</div></div></a></div><div class="elementor-repeater-item-499da75 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="https://sdinternational.com/product-category/dyes/solvent-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">Solvent Dyes</div></div></a></div><div class="elementor-repeater-item-de77fd1 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="https://sdinternational.com/product-category/dyes/disperse-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">Disperse Dyes </div></div></a></div><div class="elementor-repeater-item-7a31708 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="https://sdinternational.com/product-category/f-d-c-colours/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">F D & C Colors </div></div></a></div>				</div>
+					<div class="elementor-repeater-item-a47c4f0 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/product-category/dyes/vat-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">VAT DYES</div></div></a></div><div class="elementor-repeater-item-499da75 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/product-category/dyes/solvent-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">Solvent Dyes</div></div></a></div><div class="elementor-repeater-item-de77fd1 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/product-category/dyes/disperse-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">Disperse Dyes </div></div></a></div><div class="elementor-repeater-item-7a31708 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/product-category/f-d-c-colours/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">F D & C Colors </div></div></a></div>				</div>
 															<div class="swiper-pagination"></div>
 																<div class="elementor-swiper-button elementor-swiper-button-prev">
 							<i class="eicon-chevron-left" aria-hidden="true"></i>
@@ -716,7 +716,17 @@ Mr. Jagdeep Mehta ( Chairman & Managing Director )<br>Mr. Dhruv Mehta &nbsp;&nbs
 
 	
 	
-</article>
+</article><!-- #post-## -->
+
+			</main><!-- #main -->
+			
+		
+	</div><!-- #primary -->
+
+
+	</div> <!-- ast-container -->
+	</div><!-- #content -->
+		<div 
 
 @endsection
 
@@ -740,42 +750,6 @@ document.addEventListener('DOMContentLoaded', function() {
             clickable: true,
         },
     });
-
-    // Animate Counter Numbers (Some Interesting Facts)
-    var counters = document.querySelectorAll('.elementor-counter-number');
-    var animated = false;
-
-    function runCounters() {
-        if (animated) return;
-        counters.forEach(function(c) {
-            var target = parseInt(c.getAttribute('data-to-value') || c.textContent.trim(), 10);
-            if (!target) return;
-            var current = 0;
-            var step = Math.ceil(target / 40);
-            var timer = setInterval(function() {
-                current += step;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                c.textContent = current;
-            }, 30);
-        });
-        animated = true;
-    }
-
-    // Trigger counter when in view
-    var factsSec = document.querySelector('.elementor-element-425a92a3');
-    if (factsSec) {
-        var observer = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) {
-                runCounters();
-            }
-        }, { threshold: 0.3 });
-        observer.observe(factsSec);
-    } else {
-        runCounters();
-    }
 });
 </script>
 @endpush
