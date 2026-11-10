@@ -119,52 +119,452 @@
             color: #0f172a;
         }
 
-        /* Desktop Nav Hover Submenu Dropdowns */
-        .elementor-nav-menu--main li {
-            position: relative;
+        /* ==========================================================================
+           HEADER 21 STYLING (Top Bar + Main Nav + Mobile Drawer)
+           ========================================================================== */
+
+        /* --- Top Bar Styling (Gold Background #C49F6A) --- */
+        .elementor-element-850d87a {
+            background-color: #C49F6A !important;
+            padding: 6px 0 !important;
+            min-height: 42px !important;
+            display: flex !important;
+            align-items: center !important;
+            border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+        }
+        .elementor-element-850d87a > .elementor-container {
+            max-width: 1280px !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 0 clamp(16px, 2vw, 30px) !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .elementor-element-850d87a .elementor-row {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
+        }
+        .elementor-element-5a8a921 {
+            width: auto !important;
+            flex: 0 0 auto !important;
+        }
+        .elementor-element-5a8a921 ul.elementor-icon-list-items {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 18px !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .elementor-element-5a8a921 .elementor-icon-list-item a {
+            color: #ffffff !important;
+            text-decoration: none !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+        }
+        .elementor-element-d1a6b87 {
+            width: auto !important;
+            flex: 0 0 auto !important;
+        }
+        .elementor-element-d1a6b87 ul.elementor-icon-list-items {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 12px !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .elementor-element-d1a6b87 .elementor-icon-list-item a {
+            color: #ffffff !important;
+            font-size: 15px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+        .elementor-element-3d68fb3 {
+            width: auto !important;
+            flex: 0 0 auto !important;
+        }
+        .elementor-element-fa0359c {
+            width: auto !important;
+            flex: 0 0 auto !important;
+            min-width: 240px !important;
+        }
+        .elementor-search-form__container {
+            display: flex !important;
+            align-items: center !important;
+            background-color: #E7D8C2 !important;
+            border-radius: 4px !important;
+            overflow: hidden !important;
+            height: 32px !important;
+        }
+        .elementor-search-form__input {
+            background: transparent !important;
+            border: none !important;
+            outline: none !important;
+            padding: 0 12px !important;
+            font-size: 13px !important;
+            color: #333333 !important;
+            flex: 1 !important;
+            height: 100% !important;
+        }
+        .elementor-search-form__submit {
+            background: #64141F !important;
+            color: #ffffff !important;
+            border: none !important;
+            outline: none !important;
+            width: 34px !important;
+            height: 100% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+        }
+
+        /* --- Main Navigation Bar Section (Section 3397fd0b) --- */
+        .elementor-element-3397fd0b {
+            background-color: #ffffff !important;
+            border-bottom: 1px solid #E1E1E1 !important;
+            padding: 10px 0 !important;
+            position: relative !important;
+            z-index: 1000 !important;
+        }
+        .elementor-element-3397fd0b > .elementor-container {
+            max-width: 1280px !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 0 clamp(16px, 2vw, 30px) !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .elementor-element-3397fd0b .elementor-row {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            flex-wrap: nowrap !important;
+        }
+
+        /* Col 1: Logo */
+        .elementor-element-3397fd0b .elementor-element-35fca2aa {
+            width: auto !important;
+            flex: 0 0 auto !important;
+        }
+        .elementor-element-3397fd0b .elementor-element-6318580 img {
+            max-width: 210px !important;
+            width: auto !important;
+            height: 52px !important;
+            object-fit: contain !important;
+            display: block !important;
+        }
+
+        /* Col 2: Navigation Menu */
+        .elementor-element-3397fd0b .elementor-element-3aa8b45e {
+            width: auto !important;
+            flex: 1 1 auto !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+        }
+        .elementor-element-71fa8a5 {
+            width: 100% !important;
+        }
+        .elementor-element-71fa8a5 .elementor-widget-container {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+        }
+
+        /* Desktop Main Horizontal Navigation */
+        .elementor-nav-menu--main {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+            width: 100% !important;
+        }
+        .elementor-nav-menu--main ul.elementor-nav-menu {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+            list-style: none !important;
+            list-style-type: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            gap: 2px !important;
+        }
+        .elementor-nav-menu--main ul.elementor-nav-menu > li {
+            display: inline-flex !important;
+            align-items: center !important;
+            list-style: none !important;
+            list-style-type: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+        }
+        .elementor-nav-menu--main ul.elementor-nav-menu > li::before,
+        .elementor-nav-menu--main ul.elementor-nav-menu > li::after {
+            display: none !important;
+            content: none !important;
+        }
+        .elementor-nav-menu--main .elementor-item {
+            display: inline-block !important;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.3px !important;
+            color: #64141F !important;
+            padding: 8px 9px !important;
+            text-decoration: none !important;
+            white-space: nowrap !important;
+            transition: color 0.2s ease !important;
+            background: transparent !important;
+            border: none !important;
+        }
+        .elementor-nav-menu--main .elementor-item:hover,
+        .elementor-nav-menu--main .elementor-item.elementor-item-active {
+            color: #951634 !important;
+            background: transparent !important;
+        }
+
+        /* Col 3: Enquiry Now Button */
+        .elementor-element-3397fd0b .elementor-element-9d55ed1 {
+            width: auto !important;
+            flex: 0 0 auto !important;
+            margin-left: 14px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+        }
+        .elementor-element-f006f4c .elementor-button {
+            background: linear-gradient(180deg, #951634 0%, #73001B 100%) !important;
+            color: #ffffff !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            padding: 9px 20px !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            white-space: nowrap !important;
+            box-shadow: 0 3px 10px rgba(100,20,31,0.2) !important;
+            transition: background 0.2s, transform 0.1s !important;
+        }
+        .elementor-element-f006f4c .elementor-button:hover {
+            background: #3a3a3a !important;
+            color: #ffffff !important;
+        }
+
+        /* Desktop Dropdown Submenus */
+        .elementor-nav-menu--main .sub-menu {
+            display: none !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            min-width: 220px !important;
+            background: #ffffff !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 6px !important;
+            padding: 8px 0 !important;
+            margin: 0 !important;
+            list-style: none !important;
+            z-index: 99999 !important;
+            text-align: left !important;
         }
         .elementor-nav-menu--main li:hover > .sub-menu {
             display: block !important;
             visibility: visible !important;
             opacity: 1 !important;
-            pointer-events: auto !important;
-        }
-        .elementor-nav-menu--main .sub-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 99999;
-            min-width: 230px;
-            background: #ffffff !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            border: 1px solid #e2e8f0;
-            padding: 8px 0;
-            list-style: none;
-            margin: 0;
-            border-radius: 4px;
-        }
-        .elementor-nav-menu--main .sub-menu .sub-menu {
-            top: 0;
-            left: 100%;
         }
         .elementor-nav-menu--main .sub-menu li {
-            margin: 0;
-            padding: 0;
+            display: block !important;
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+            width: 100% !important;
         }
-        .elementor-nav-menu--main .sub-menu li a {
-            display: block;
-            padding: 9px 20px;
+        .elementor-nav-menu--main .sub-menu li::before,
+        .elementor-nav-menu--main .sub-menu li::after {
+            display: none !important;
+            content: none !important;
+        }
+        .elementor-nav-menu--main .sub-menu li a,
+        .elementor-nav-menu--main .elementor-sub-item {
+            display: block !important;
+            padding: 8px 18px !important;
             color: #334155 !important;
-            font-size: 13.5px;
-            text-decoration: none;
-            transition: all 0.15s ease;
-            font-weight: 500;
+            font-size: 13.5px !important;
+            font-weight: 500 !important;
+            text-transform: none !important;
+            text-decoration: none !important;
+            white-space: nowrap !important;
+            transition: all 0.15s ease !important;
         }
         .elementor-nav-menu--main .sub-menu li a:hover {
-            background: #f8fafc;
-            color: var(--primary) !important;
-            padding-left: 24px;
+            background: #fdf2f3 !important;
+            color: #64141f !important;
+            padding-left: 22px !important;
+        }
+        .elementor-nav-menu--main .sub-menu .sub-menu {
+            top: 0 !important;
+            left: 100% !important;
+        }
+
+        /* --- Responsive Breakpoint Controls --- */
+        @media (min-width: 1025px) {
+            .elementor-menu-toggle {
+                display: none !important;
+            }
+            nav.elementor-nav-menu--dropdown {
+                display: none !important;
+            }
+            .elementor-nav-menu--main {
+                display: flex !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .elementor-element-3397fd0b .elementor-row {
+                flex-wrap: nowrap !important;
+                justify-content: space-between !important;
+            }
+            .elementor-element-3397fd0b .elementor-element-35fca2aa {
+                max-width: 180px !important;
+            }
+            .elementor-element-3397fd0b .elementor-element-6318580 img {
+                max-width: 150px !important;
+                height: 40px !important;
+            }
+            .elementor-nav-menu--main {
+                display: none !important;
+            }
+            .elementor-element-3397fd0b .elementor-element-3aa8b45e {
+                flex: 0 0 auto !important;
+                order: 3 !important;
+            }
+            .elementor-element-3397fd0b .elementor-element-9d55ed1 {
+                flex: 0 0 auto !important;
+                order: 2 !important;
+                margin-left: auto !important;
+                margin-right: 10px !important;
+            }
+            .elementor-element-f006f4c .elementor-button {
+                padding: 7px 14px !important;
+                font-size: 13px !important;
+            }
+            .elementor-menu-toggle {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 38px !important;
+                height: 38px !important;
+                border: 1px solid #e2e8f0 !important;
+                border-radius: 4px !important;
+                background: #ffffff !important;
+                color: #64141F !important;
+                font-size: 20px !important;
+                cursor: pointer !important;
+            }
+            .elementor-menu-toggle i.eicon-menu-bar::before {
+                content: "\f0c9" !important;
+                font-family: "Font Awesome 5 Free" !important;
+                font-weight: 900 !important;
+            }
+            nav.elementor-nav-menu--dropdown {
+                display: none;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                background: #ffffff !important;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+                border-top: 2px solid #64141f !important;
+                z-index: 999999 !important;
+                padding: 15px 24px !important;
+                box-sizing: border-box !important;
+                max-height: 80vh !important;
+                overflow-y: auto !important;
+            }
+            nav.elementor-nav-menu--dropdown.show-dropdown {
+                display: block !important;
+            }
+            nav.elementor-nav-menu--dropdown ul.elementor-nav-menu {
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            nav.elementor-nav-menu--dropdown ul.elementor-nav-menu > li {
+                list-style: none !important;
+                border-bottom: 1px solid #f1f5f9 !important;
+                margin: 0 !important;
+                padding: 4px 0 !important;
+                text-align: left !important;
+            }
+            nav.elementor-nav-menu--dropdown ul.elementor-nav-menu > li::before,
+            nav.elementor-nav-menu--dropdown ul.elementor-nav-menu > li::after {
+                display: none !important;
+                content: none !important;
+            }
+            nav.elementor-nav-menu--dropdown .elementor-item {
+                display: block !important;
+                color: #0f172a !important;
+                font-size: 14px !important;
+                font-weight: 600 !important;
+                text-decoration: none !important;
+                padding: 8px 0 !important;
+                text-transform: uppercase !important;
+                font-family: 'Montserrat', sans-serif !important;
+            }
+            nav.elementor-nav-menu--dropdown .elementor-item:hover {
+                color: #64141f !important;
+            }
+            nav.elementor-nav-menu--dropdown .sub-menu {
+                display: block !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: none !important;
+                border-left: 2px solid #fecdd3 !important;
+                padding-left: 14px !important;
+                margin: 4px 0 8px 6px !important;
+                background: transparent !important;
+                list-style: none !important;
+            }
+            nav.elementor-nav-menu--dropdown .sub-menu li {
+                list-style: none !important;
+                border: none !important;
+                padding: 3px 0 !important;
+            }
+            nav.elementor-nav-menu--dropdown .sub-menu li a {
+                font-size: 13px !important;
+                color: #475569 !important;
+                text-transform: none !important;
+                font-weight: 500 !important;
+                display: block !important;
+                text-decoration: none !important;
+            }
+            nav.elementor-nav-menu--dropdown .sub-menu li a:hover {
+                color: #64141f !important;
+            }
         }
 
         /* Global Form Controls & Inputs */
@@ -307,13 +707,6 @@
             border-color: var(--primary) !important;
         }
 
-        /* Mobile menu & dropdown functionality */
-        .elementor-nav-menu--dropdown {
-            display: none;
-        }
-        .elementor-nav-menu--dropdown.show-dropdown {
-            display: block !important;
-        }
         /* Sticky header */
         .elementor-element-3397fd0b.is-sticky {
             position: fixed !important;
@@ -582,7 +975,7 @@ function googleTranslateElementInit() {
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2882"><a href="/certifications" class="elementor-item menu-link">Certifications</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2857"><a href="/sustainability" class="elementor-item menu-link">Sustainability</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a href="/contact" class="elementor-item menu-link">Contact Us</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13595"><a href="/blogs" class="elementor-item menu-link">blogs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13595"><a href="/blogs" class="elementor-item menu-link">Blogs</a></li>
 <li class="menu-item menu-item-type-post_type"><a href="/request-quote" class="elementor-item menu-link" style="color: #64141f !important; font-weight: 700;">Request Quote</a></li>
 </ul></nav>
 					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
@@ -636,7 +1029,7 @@ function googleTranslateElementInit() {
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2882"><a href="/certifications" class="elementor-item menu-link">Certifications</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2857"><a href="/sustainability" class="elementor-item menu-link">Sustainability</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a href="/contact" class="elementor-item menu-link">Contact Us</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13595"><a href="/blogs" class="elementor-item menu-link">blogs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13595"><a href="/blogs" class="elementor-item menu-link">Blogs</a></li>
 <li class="menu-item menu-item-type-post_type"><a href="/request-quote" class="elementor-item menu-link" style="color: #64141f !important; font-weight: 700;">Request Quote</a></li>
 </ul></nav>
 				</div>
