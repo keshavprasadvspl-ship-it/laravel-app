@@ -97,6 +97,10 @@ Route::get('/sample-request', [PageController::class, 'requestQuote'])->name('sa
 
 // 5. Blogs & News
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/page/{page}', function($page) {
+    request()->merge(['page' => $page]);
+    return app(BlogController::class)->index();
+})->where('page', '[0-9]+');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 
 // 6. Inquiries Form submissions (Contact, Quote, Sample)

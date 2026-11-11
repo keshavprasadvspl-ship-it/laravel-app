@@ -1728,7 +1728,7 @@ function googleTranslateElementInit() {
 		</div>
 			
 
-@if(Request::is("/") || Request::routeIs("home"))
+@if(Request::is("/") || Request::routeIs("home") || Request::is("blogs") || Request::is("blogs/page/*"))
     @yield("content")
 @else
     <div id="content" class="site-content">

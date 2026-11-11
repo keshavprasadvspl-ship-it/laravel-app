@@ -214,6 +214,7 @@ class DatabaseSeeder extends Seeder
             }
         }
 
+        $this->call(LiveBlogSeeder::class);
         $this->command->info("All data successfully seeded!");
     }
 }
