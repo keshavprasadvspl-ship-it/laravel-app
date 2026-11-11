@@ -21,6 +21,11 @@ class PageController extends Controller
             return $this->applications();
         }
 
+        // Dedicated sustainability page
+        if ($slug === 'sustainability') {
+            return $this->sustainability();
+        }
+
         $page = Page::where('slug', $slug)
             ->orWhere('slug', trim($slug, '/'))
             ->firstOrFail();
@@ -57,6 +62,25 @@ class PageController extends Controller
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
         return view('pages.applications', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
+    }
+
+    public function sustainability()
+    {
+        $page = Page::where('slug', 'sustainability')->first();
+
+        $seo = SeoHelper::generateTags($page, [
+            'title' => 'Sustainability | Social & Environmental Responsibility | SD International',
+            'description' => 'SD International is committed to sustainable chemical manufacturing, environmental responsibility, and maintaining healthy communities with eco-friendly dyes and pigments.',
+            'canonical' => url('/sustainability'),
+        ]);
+
+        $breadcrumbs = [
+            'Home' => url('/'),
+            'Sustainability' => url('/sustainability'),
+        ];
+        $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
+
+        return view('pages.sustainability', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
     }
 
     public function contact()
