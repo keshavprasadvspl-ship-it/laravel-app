@@ -102,3 +102,4 @@ class LiveBlogSeeder extends Seeder
         }
     }
 }
+

@@ -817,7 +817,7 @@ ul.elementor-nav-menu > li::after {
         display: none !important;
     }
 
-    /* Desktop Navigation Dropdown Menus */
+    /* Desktop Navigation Dropdown Menus - Astra & SD International Exact Replica */
     .elementor-nav-menu--main li {
         position: relative !important;
     }
@@ -826,16 +826,28 @@ ul.elementor-nav-menu > li::after {
         position: absolute !important;
         top: 100% !important;
         left: 0 !important;
-        min-width: 230px !important;
+        width: 240px !important;
+        min-width: 240px !important;
         background: #ffffff !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-        border: 1px solid #e2e8f0 !important;
-        border-radius: 4px !important;
-        padding: 6px 0 !important;
+        box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1) !important;
+        border: 1px solid #eaeaea !important;
+        border-top: 2px solid #64141F !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
         margin: 0 !important;
         list-style: none !important;
         z-index: 999999 !important;
         text-align: left !important;
+    }
+    /* Hover bridge between nav item and dropdown */
+    .elementor-nav-menu--main > ul.elementor-nav-menu > li > ul.sub-menu::before {
+        content: "" !important;
+        position: absolute !important;
+        top: -10px !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 10px !important;
+        background: transparent !important;
     }
     /* Open on hover / focus */
     .elementor-nav-menu--main li:hover > ul.sub-menu,
@@ -850,46 +862,98 @@ ul.elementor-nav-menu > li::after {
         position: relative !important;
         margin: 0 !important;
         padding: 0 !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        list-style: none !important;
+    }
+    .elementor-nav-menu--main ul.sub-menu li:last-child {
+        border-bottom: none !important;
     }
     .elementor-nav-menu--main ul.sub-menu li a {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        padding: 8px 16px !important;
-        color: #333333 !important;
-        font-size: 13.5px !important;
-        font-family: "Montserrat", sans-serif !important;
-        font-weight: 500 !important;
+        padding: 10px 20px !important;
+        color: #000000 !important;
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
         text-decoration: none !important;
         white-space: nowrap !important;
-        transition: all 0.15s ease !important;
+        transition: background-color 0.15s ease, color 0.15s ease !important;
         border: none !important;
         background: transparent !important;
     }
-    .elementor-nav-menu--main ul.sub-menu li a:hover {
+    /* Dropdown Level 1 (DYES, F D & C COLOURS, PIGMENTS, OTHER PRODUCTS) uppercase bold styling */
+    .elementor-nav-menu--main > ul.elementor-nav-menu > li > ul.sub-menu > li > a {
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        font-size: 13.5px !important;
+        letter-spacing: 0.3px !important;
+    }
+    /* Nested flyouts Level 2 & 3 styling */
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu li a {
+        font-weight: 500 !important;
+        text-transform: capitalize !important;
+        font-size: 13.5px !important;
+        color: #333333 !important;
+    }
+    /* Highlight parent link and active row while hovering inside child submenus */
+    .elementor-nav-menu--main ul.sub-menu li:hover > a,
+    .elementor-nav-menu--main ul.sub-menu li a:hover,
+    .elementor-nav-menu--main ul.sub-menu li a:focus,
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu li:hover > a,
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu li a:hover,
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu li a:focus,
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu ul.sub-menu li:hover > a,
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu ul.sub-menu li a:hover,
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu ul.sub-menu li a:focus {
         background-color: #64141F !important;
-        color: #ffffff !important;
+        color: #FFFFFF !important;
     }
-    /* 2nd level sub-submenus fly out to the right */
+    /* 2nd and 3rd level submenus fly out to the right */
     .elementor-nav-menu--main ul.sub-menu li > ul.sub-menu {
-        top: 0 !important;
+        top: -2px !important;
         left: 100% !important;
-        margin-left: 1px !important;
+        width: 250px !important;
+        min-width: 250px !important;
+        border-top: 2px solid #64141F !important;
     }
-    /* Chevron arrow indicators */
-    .elementor-nav-menu--main li.menu-item-has-children > a::after {
-        content: " \f107";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: 10px;
-        margin-left: 5px;
+    /* Hover bridge between Level 1 and flyouts */
+    .elementor-nav-menu--main ul.sub-menu li > ul.sub-menu::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -15px !important;
+        width: 15px !important;
+        height: 100% !important;
+        background: transparent !important;
     }
+    /* Top-level Products downward chevron */
+    .elementor-nav-menu--main > ul.elementor-nav-menu > li.menu-item-has-children > a::after {
+        content: "" !important;
+        display: inline-block !important;
+        width: 5px !important;
+        height: 5px !important;
+        border-right: 2px solid currentColor !important;
+        border-bottom: 2px solid currentColor !important;
+        transform: rotate(45deg) !important;
+        margin-left: 6px !important;
+        margin-bottom: 2px !important;
+        vertical-align: middle !important;
+        transition: transform 0.2s ease !important;
+    }
+    /* Right chevron for items with submenus */
     .elementor-nav-menu--main ul.sub-menu li.menu-item-has-children > a::after {
-        content: " \f105";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: 10px;
-        margin-left: 10px;
+        content: "" !important;
+        display: inline-block !important;
+        width: 6px !important;
+        height: 6px !important;
+        border-top: 1.5px solid currentColor !important;
+        border-right: 1.5px solid currentColor !important;
+        transform: rotate(45deg) !important;
+        margin-left: 15px !important;
+        flex-shrink: 0 !important;
+        transition: border-color 0.15s ease !important;
     }
     .elementor-element-3397fd0b .elementor-container,
     .elementor-element-3397fd0b .elementor-row {
@@ -1601,7 +1665,7 @@ function googleTranslateElementInit() {
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2842"><a href="/about-us/" class="elementor-item menu-link">About Us</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2977"><a href="#" class="elementor-item elementor-item-anchor menu-link">Products</a>
 <ul class="sub-menu elementor-nav-menu--dropdown">
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8520"><a href="https://www.sdinternational.com/dyes/" class="elementor-sub-item menu-link">DYES</a>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8520"><a href="/dyes/" class="elementor-sub-item menu-link">DYES</a>
 	<ul class="sub-menu elementor-nav-menu--dropdown">
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8503"><a href="/basic-dyes/" class="elementor-sub-item menu-link">Basic Dyes</a></li>
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8506"><a href="/disperse-dyes/" class="elementor-sub-item menu-link">Disperse Dyes</a></li>
@@ -1619,8 +1683,8 @@ function googleTranslateElementInit() {
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8507"><a href="/metal-complex-solvent-dyes/" class="elementor-sub-item menu-link">Metal Complex Solvent Dyes</a></li>
 	</ul>
 </li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10881"><a href="https://www.sdinternational.com/f-d-c-colours/" class="elementor-sub-item menu-link">F D &#038; C COLOURS</a></li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10882"><a href="https://www.sdinternational.com/pigments/" class="elementor-sub-item menu-link">PIGMENTS</a>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10881"><a href="/f-d-c-colours/" class="elementor-sub-item menu-link">F D &#038; C COLOURS</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10882"><a href="/pigments/" class="elementor-sub-item menu-link">PIGMENTS</a>
 	<ul class="sub-menu elementor-nav-menu--dropdown">
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8527"><a href="/organic-pigments/" class="elementor-sub-item menu-link">Organic Pigments</a></li>
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8526"><a href="/high-performance-pigments/" class="elementor-sub-item menu-link">High Performance Pigments</a></li>
@@ -1629,7 +1693,7 @@ function googleTranslateElementInit() {
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-13432"><a href="/ultra-marine-pigments/" class="elementor-sub-item menu-link">Ultra Marine Pigments</a></li>
 	</ul>
 </li>
-	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-13186"><a href="/other-products/" class="elementor-sub-item menu-link">Other Products</a>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-13186"><a href="/other-products/" class="elementor-sub-item menu-link">OTHER PRODUCTS</a>
 	<ul class="sub-menu elementor-nav-menu--dropdown">
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-13190"><a href="/naphthols/" class="elementor-sub-item menu-link">Naphthols</a></li>
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-13188"><a href="/fast-colour-bases/" class="elementor-sub-item menu-link">Fast Colour Bases</a></li>
@@ -1654,7 +1718,7 @@ function googleTranslateElementInit() {
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2842"><a href="/about-us/" class="elementor-item menu-link">About Us</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2977"><a href="#" class="elementor-item elementor-item-anchor menu-link">Products</a>
 <ul class="sub-menu elementor-nav-menu--dropdown">
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8520"><a href="https://www.sdinternational.com/dyes/" class="elementor-sub-item menu-link">DYES</a>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8520"><a href="/dyes/" class="elementor-sub-item menu-link">DYES</a>
 	<ul class="sub-menu elementor-nav-menu--dropdown">
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8503"><a href="/basic-dyes/" class="elementor-sub-item menu-link">Basic Dyes</a></li>
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8506"><a href="/disperse-dyes/" class="elementor-sub-item menu-link">Disperse Dyes</a></li>
@@ -1672,8 +1736,8 @@ function googleTranslateElementInit() {
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8507"><a href="/metal-complex-solvent-dyes/" class="elementor-sub-item menu-link">Metal Complex Solvent Dyes</a></li>
 	</ul>
 </li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10881"><a href="https://www.sdinternational.com/f-d-c-colours/" class="elementor-sub-item menu-link">F D &#038; C COLOURS</a></li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10882"><a href="https://www.sdinternational.com/pigments/" class="elementor-sub-item menu-link">PIGMENTS</a>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10881"><a href="/f-d-c-colours/" class="elementor-sub-item menu-link">F D &#038; C COLOURS</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10882"><a href="/pigments/" class="elementor-sub-item menu-link">PIGMENTS</a>
 	<ul class="sub-menu elementor-nav-menu--dropdown">
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8527"><a href="/organic-pigments/" class="elementor-sub-item menu-link">Organic Pigments</a></li>
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-8526"><a href="/high-performance-pigments/" class="elementor-sub-item menu-link">High Performance Pigments</a></li>
@@ -1682,7 +1746,7 @@ function googleTranslateElementInit() {
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-13432"><a href="/ultra-marine-pigments/" class="elementor-sub-item menu-link">Ultra Marine Pigments</a></li>
 	</ul>
 </li>
-	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-13186"><a href="/other-products/" class="elementor-sub-item menu-link">Other Products</a>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-13186"><a href="/other-products/" class="elementor-sub-item menu-link">OTHER PRODUCTS</a>
 	<ul class="sub-menu elementor-nav-menu--dropdown">
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-13190"><a href="/naphthols/" class="elementor-sub-item menu-link">Naphthols</a></li>
 		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-13188"><a href="/fast-colour-bases/" class="elementor-sub-item menu-link">Fast Colour Bases</a></li>
