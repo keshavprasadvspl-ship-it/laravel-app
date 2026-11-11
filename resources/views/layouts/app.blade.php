@@ -770,6 +770,13 @@ h5 {
 		
 
 <style id="sd-perfection-css">
+/* CRITICAL: Force all elements to be 100% visible (no missing content) */
+.elementor-invisible,
+[data-animation].elementor-invisible {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 /* Guarantee 100% Horizontal Nav Row without bullet points */
 ul.elementor-nav-menu,
 ul.elementor-nav-menu > li,
@@ -830,28 +837,517 @@ ul.elementor-nav-menu > li::after {
         flex: 0 0 13% !important;
     }
 }
-/* Ensure hero slider container is visible with proper height */
+
+/* CRITICAL: Fix Left and Right Margins/Padding across the whole homepage */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+#page.hfeed.site {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+/* Remove Astra theme container width constraint on full-width Elementor homepage */
+.home #content,
+.home .site-content,
+.home .site-content > .ast-container,
+.home #primary,
+.home #main,
+.home article.post-136,
+.home .entry-content,
+.home .elementor-136,
+.home .elementor-inner,
+.home .elementor-section-wrap {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Full Width & Stretched Sections span 100% of viewport width */
+.elementor-section.elementor-section-stretched,
+.elementor-section.elementor-section-full_width {
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Boxed sections: exactly 1240px max-width, perfectly centered, modest 15px padding */
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1240px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box !important;
+}
+
+/* Full Width Sections Inner Container */
+.elementor-section.elementor-section-full_width > .elementor-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Section 1: Hero Slider */
+.elementor-element-6dada31 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 .elementor-element-6dada31 .elementor-slides-wrapper.swiper-container {
-    height: 540px;
-    position: relative;
-    overflow: hidden;
+    height: 540px !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 .elementor-element-6dada31 .swiper-slide {
-    height: 540px;
-    position: relative;
+    height: 540px !important;
+    width: 100% !important;
+    position: relative !important;
 }
 .elementor-element-6dada31 .swiper-slide-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
+    position: absolute !important;
+    inset: 0 !important;
+    background-size: cover !important;
+    background-position: center !important;
 }
-@media (max-width: 767px) {
-    .elementor-element-6dada31 .elementor-slides-wrapper.swiper-container,
-    .elementor-element-6dada31 .swiper-slide {
-        height: 280px;
+.elementor-element-6dada31 .swiper-slide-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    text-decoration: none !important;
+}
+.elementor-element-6dada31 .elementor-slide-heading {
+    color: #ffffff !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 50px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
+}
+
+/* Section 2: 4 Feature Boxes */
+.elementor-element-7bc0d733 {
+    background: linear-gradient(180deg, #C49F6A 0%, #966F37 100%) !important;
+    padding: 30px 0 !important;
+    width: 100% !important;
+}
+.elementor-element-7bc0d733 > .elementor-container {
+    max-width: 1240px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+.elementor-element-7bc0d733 .elementor-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 15px !important;
+    width: 100% !important;
+    align-items: stretch !important;
+}
+.elementor-element-7bc0d733 .elementor-column.elementor-col-25 {
+    width: 25% !important;
+    flex: 1 1 25% !important;
+    max-width: 25% !important;
+    display: flex !important;
+}
+.elementor-element-7bc0d733 .elementor-column-wrap {
+    width: 100% !important;
+    display: flex !important;
+}
+.elementor-element-7bc0d733 .elementor-widget-wrap {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.elementor-element-7bc0d733 .elementor-widget-pp-info-box {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.elementor-element-7bc0d733 .pp-info-box {
+    background: #ffffff !important;
+    border-radius: 6px !important;
+    padding: 24px 18px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
+    text-align: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+.elementor-element-7bc0d733 .pp-info-box-title {
+    color: #64141F !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    margin: 12px 0 8px 0 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+.elementor-element-7bc0d733 .pp-info-box-description {
+    color: #4b4f58 !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+.elementor-element-7bc0d733 .pp-info-box-image img {
+    max-width: 48px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* Section 3: Overview */
+.elementor-element-45040261 {
+    padding: 50px 0 !important;
+    background: #ffffff !important;
+}
+.elementor-element-45040261 > .elementor-container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+.elementor-element-45040261 .elementor-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+.elementor-element-45040261 .elementor-column.elementor-col-50 {
+    width: 50% !important;
+    flex: 1 1 50% !important;
+}
+.elementor-element-45040261 img {
+    border-radius: 8px !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+.elementor-element-45040261 .elementor-heading-title {
+    color: #64141F !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+    font-family: "Montserrat", sans-serif !important;
+    line-height: 1.3 !important;
+}
+.elementor-element-45040261 p {
+    color: #4b4f58 !important;
+    font-size: 14.5px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 12px !important;
+}
+
+/* Section 4: Sustainability */
+.elementor-element-1ebb905d {
+    padding: 50px 0 !important;
+    background: #faf8f5 !important;
+    width: 100% !important;
+}
+.elementor-element-1ebb905d > .elementor-container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+.elementor-element-1ebb905d .elementor-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+.elementor-element-1ebb905d .elementor-column.elementor-col-50 {
+    width: 50% !important;
+    flex: 1 1 50% !important;
+}
+.elementor-element-1ebb905d img {
+    border-radius: 8px !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+.elementor-element-1ebb905d .elementor-heading-title {
+    color: #000000 !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 15px !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+.elementor-element-1ebb905d p {
+    color: #4b4f58 !important;
+    font-size: 14.5px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 20px !important;
+}
+.elementor-element-1ebb905d .elementor-button {
+    background: #64141F !important;
+    color: #ffffff !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    padding: 10px 24px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+}
+
+/* Section 5: Stats Facts */
+.elementor-element-425a92a3 {
+    padding: 50px 0 !important;
+    background: #ffffff !important;
+}
+.elementor-element-425a92a3 > .elementor-container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+.elementor-element-425a92a3 .elementor-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+.elementor-element-425a92a3 .elementor-column.elementor-col-25 {
+    width: 25% !important;
+    flex: 1 1 25% !important;
+}
+
+/* Section 6: Testimonials */
+.elementor-element-0dd5e11 {
+    background: #73001B !important;
+    padding: 50px 0 !important;
+    width: 100% !important;
+}
+.elementor-element-0dd5e11 > .elementor-container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+.elementor-element-0dd5e11 .elementor-heading-title {
+    color: #ffffff !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 35px !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+.elementor-element-0dd5e11 .pp-testimonials-wrap {
+    width: 100% !important;
+}
+.elementor-element-0dd5e11 .pp-testimonials-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 24px !important;
+    flex-wrap: wrap !important;
+}
+.elementor-element-0dd5e11 .pp-testimonial-slide {
+    flex: 1 1 300px !important;
+    max-width: 360px !important;
+    text-align: center !important;
+}
+.elementor-element-0dd5e11 .pp-testimonial-image img {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50% !important;
+    border: 3px solid #ffffff !important;
+    margin: 0 auto 15px auto !important;
+    display: block !important;
+    object-fit: cover !important;
+}
+.elementor-element-0dd5e11 .pp-testimonial-description {
+    color: #ffffff !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    font-style: italic !important;
+    margin-bottom: 12px !important;
+}
+.elementor-element-0dd5e11 .pp-testimonial-title {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+}
+.elementor-element-0dd5e11 .pp-testimonial-company {
+    color: #D2AF77 !important;
+    font-size: 12px !important;
+}
+
+/* Section 7: Pre-Footer Banner */
+.elementor-element-5a5c4582 {
+    background: linear-gradient(180deg, #C49F6A 0%, #966F37 100%) !important;
+    padding: 30px 0 !important;
+    width: 100% !important;
+}
+.elementor-element-5a5c4582 > .elementor-container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+.elementor-element-5a5c4582 .elementor-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+.elementor-element-5a5c4582 .elementor-button {
+    background: #64141F !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border-radius: 4px !important;
+    padding: 10px 22px !important;
+}
+
+/* Footer Section 2c99f6d */
+.elementor-element-2c99f6d {
+    background: #64141F !important;
+    padding: 50px 0 30px 0 !important;
+    width: 100% !important;
+}
+.elementor-element-2c99f6d > .elementor-container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+.elementor-element-2c99f6d .elementor-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+.elementor-element-2c99f6d .elementor-column.elementor-col-25 {
+    width: 25% !important;
+    flex: 1 1 25% !important;
+}
+.elementor-element-2c99f6d h4,
+.elementor-element-2c99f6d h5,
+.elementor-element-2c99f6d .elementor-heading-title {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 20px !important;
+}
+.elementor-element-2c99f6d ul.elementor-icon-list-items {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.elementor-element-2c99f6d ul.elementor-icon-list-items li {
+    list-style: none !important;
+    margin-bottom: 8px !important;
+}
+.elementor-element-2c99f6d ul.elementor-icon-list-items a {
+    color: #ffffff !important;
+    opacity: 0.85 !important;
+    text-decoration: none !important;
+    font-size: 13.5px !important;
+    transition: opacity 0.2s !important;
+}
+.elementor-element-2c99f6d ul.elementor-icon-list-items a:hover {
+    opacity: 1 !important;
+    color: #D2AF77 !important;
+}
+
+/* Sub-Footer Section 21a00a3 */
+.elementor-element-21a00a3 {
+    background: #C49F6A !important;
+    padding: 12px 0 !important;
+    width: 100% !important;
+}
+.elementor-element-21a00a3 > .elementor-container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+.elementor-element-21a00a3 .elementor-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+.elementor-element-21a00a3 p,
+.elementor-element-21a00a3 a {
+    color: #ffffff !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .elementor-element-7bc0d733 .elementor-row {
+        flex-wrap: wrap !important;
+    }
+    .elementor-element-7bc0d733 .elementor-column.elementor-col-25 {
+        width: 50% !important;
+        flex: 1 1 50% !important;
+        max-width: 50% !important;
+    }
+    .elementor-element-45040261 .elementor-row,
+    .elementor-element-1ebb905d .elementor-row {
+        flex-direction: column !important;
+    }
+    .elementor-element-45040261 .elementor-column.elementor-col-50,
+    .elementor-element-1ebb905d .elementor-column.elementor-col-50 {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+    .elementor-element-2c99f6d .elementor-row {
+        flex-wrap: wrap !important;
+    }
+    .elementor-element-2c99f6d .elementor-column.elementor-col-25 {
+        width: 50% !important;
+        flex: 1 1 50% !important;
     }
 }
+@media (max-width: 767px) {
+    .elementor-element-7bc0d733 .elementor-column.elementor-col-25,
+    .elementor-element-425a92a3 .elementor-column.elementor-col-25,
+    .elementor-element-2c99f6d .elementor-column.elementor-col-25 {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+}
+
 /* Popup modal styling */
 #elementor-popup-modal-11717 {
     display: none;
@@ -1885,6 +2381,26 @@ document.addEventListener("DOMContentLoaded", function() {
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true
+            }
+        });
+    }
+    // Testimonials slick carousel fallback
+    if (typeof jQuery !== "undefined" && typeof jQuery.fn.slick !== "undefined") {
+        jQuery(".pp-testimonials.pp-slick-slider").each(function() {
+            if (!jQuery(this).hasClass("slick-initialized")) {
+                jQuery(this).slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    speed: 600,
+                    dots: true,
+                    arrows: false,
+                    responsive: [
+                        { breakpoint: 1025, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+                        { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+                    ]
+                });
             }
         });
     }
