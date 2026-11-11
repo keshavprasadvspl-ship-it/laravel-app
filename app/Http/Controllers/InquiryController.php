@@ -16,6 +16,7 @@ class InquiryController extends Controller
             'phone' => 'nullable|string|max:50',
             'company' => 'nullable|string|max:200',
             'country' => 'nullable|string|max:100',
+            'city' => 'nullable|string|max:100',
             'inquiry_type' => 'nullable|string|in:quote,sample,tds,msds,general',
             'product_name' => 'nullable|string|max:200',
             'product_slug' => 'nullable|string|max:200',
@@ -43,7 +44,9 @@ class InquiryController extends Controller
             'inquiry_type' => $validated['inquiry_type'] ?? 'quote',
             'product_name' => $validated['product_name'] ?? null,
             'product_slug' => $validated['product_slug'] ?? null,
-            'message' => $validated['message'] ?? null,
+            'message' => !empty($validated['city']) 
+                ? ("City: " . $validated['city'] . ($validated['message'] ? ("\n\n" . $validated['message']) : '')) 
+                : ($validated['message'] ?? null),
             'ip_address' => $request->ip(),
             'status' => Inquiry::STATUS_NEW,
         ]);
