@@ -4,19 +4,39 @@
 <link rel="stylesheet" href="{{ asset('css/live/post-13522.css') }}">
 <style>
     /* Exact pixel-perfect blog archive styling matching SD International live site */
-    .elementor-13522 .elementor-element.elementor-element-fc02641 .elementor-posts-container .elementor-post__thumbnail {
-        padding-bottom: calc(1.11 * 100%);
-        position: relative;
-        overflow: hidden;
+    .elementor-13522 .elementor-element.elementor-element-fc02641 .elementor-posts-container .elementor-post__thumbnail__link {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        padding-bottom: calc(1.11 * 100%) !important;
+        overflow: hidden !important;
     }
-    .elementor-13522 .elementor-element.elementor-element-fc02641 .elementor-posts-container .elementor-post__thumbnail img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+    .elementor-13522 .elementor-element.elementor-element-fc02641 .elementor-posts-container .elementor-post__thumbnail {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding-bottom: 0 !important;
+        overflow: hidden !important;
+    }
+    .elementor-13522 .elementor-element.elementor-element-fc02641 .elementor-posts-container .elementor-post__thumbnail img,
+    .elementor-posts-container .elementor-post__thumbnail img,
+    .elementor-post__card .elementor-post__thumbnail img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        transform: none !important;
+        transition: transform 0.4s ease !important;
+    }
+    .elementor-post__card:hover .elementor-post__thumbnail img {
+        transform: scale(1.05) !important;
     }
     .elementor-13522 .elementor-post__card {
         background: #ffffff;
@@ -147,7 +167,7 @@
                                                         <div class="elementor-post__card">
                                                             <a class="elementor-post__thumbnail__link" href="{{ url('/blogs/' . $post->slug) }}" target="_blank">
                                                                 <div class="elementor-post__thumbnail">
-                                                                    <img width="150" height="150" src="{{ asset($post->image_url) }}" class="attachment-thumbnail size-thumbnail" alt="{{ $post->title }}" decoding="async" loading="lazy" />
+                                                                    <img src="{{ asset($post->image_url) }}" alt="{{ $post->title }}" decoding="async" loading="lazy" />
                                                                 </div>
                                                             </a>
                                                             <div class="elementor-post__text">

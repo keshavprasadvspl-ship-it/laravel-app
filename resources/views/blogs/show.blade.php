@@ -1,123 +1,181 @@
 @extends('layouts.app')
 
-@section('content')
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/live/post-13570.css') }}">
 <style>
-    .article-layout {
-        display: grid;
-        grid-template-columns: 1fr 320px;
-        gap: 45px;
-        padding: 45px 0 80px;
+    /* Exact pixel-perfect single blog post styling matching SD International live site */
+    .elementor-13570 {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 30px 20px 80px;
     }
-    .article-header {
-        margin-bottom: 30px;
+    .elementor-13570 .elementor-element-f5efd57 {
+        margin: 20px 0 25px;
     }
-    .article-header h1 {
-        font-size: 32px;
-        color: #0f172a;
-        line-height: 1.3;
-        margin-bottom: 12px;
+    .elementor-13570 .elementor-element-f5efd57 .elementor-heading-title {
+        color: #870B28 !important;
+        font-family: "Poppins", "Montserrat", sans-serif !important;
+        font-size: 38px !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+        text-align: left;
     }
-    .article-meta {
-        color: #64748b;
-        font-size: 13.5px;
-        display: flex;
-        gap: 20px;
+    .elementor-13570 .elementor-element-3fe7c4b {
+        margin-bottom: 35px;
+        text-align: center;
     }
-    .article-featured-image {
-        margin-bottom: 30px;
-        border-radius: 8px;
-        overflow: hidden;
-        max-height: 420px;
+    .elementor-13570 .elementor-element-3fe7c4b img {
+        width: 100% !important;
+        max-width: 1000px !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        border-radius: 0 !important;
     }
-    .article-featured-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .elementor-13570 .elementor-element-b5b2aa4 {
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.85 !important;
+        color: #333333 !important;
     }
-    .article-body {
-        font-size: 16px;
-        line-height: 1.8;
-        color: #334155;
+    .elementor-13570 .elementor-element-b5b2aa4 p {
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.85 !important;
+        color: #333333 !important;
+        margin-bottom: 22px !important;
     }
-    .article-body h2 {
-        font-size: 24px;
-        margin: 30px 0 15px;
-        color: #0f172a;
+    .elementor-13570 .elementor-element-b5b2aa4 h2 {
+        font-family: "Poppins", "Montserrat", sans-serif !important;
+        color: #870B28 !important;
+        font-size: 26px !important;
+        font-weight: 600 !important;
+        line-height: 1.35 !important;
+        margin-top: 35px !important;
+        margin-bottom: 16px !important;
     }
-    .article-body h3 {
-        font-size: 20px;
-        margin: 25px 0 12px;
-        color: #0f172a;
+    .elementor-13570 .elementor-element-b5b2aa4 h3 {
+        font-family: "Poppins", "Montserrat", sans-serif !important;
+        color: #870B28 !important;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        line-height: 1.4 !important;
+        margin-top: 28px !important;
+        margin-bottom: 14px !important;
     }
-    .article-body p {
-        margin-bottom: 20px;
+    .elementor-13570 .elementor-element-b5b2aa4 ol,
+    .elementor-13570 .elementor-element-b5b2aa4 ul {
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.8 !important;
+        color: #333333 !important;
+        margin: 0 0 22px 0 !important;
+        padding-left: 28px !important;
     }
-    .article-body ul, .article-body ol {
-        margin: 0 0 20px 24px;
+    .elementor-13570 .elementor-element-b5b2aa4 li {
+        margin-bottom: 10px !important;
+        line-height: 1.75 !important;
     }
-    .article-body li {
-        margin-bottom: 8px;
+    .elementor-13570 .elementor-element-b5b2aa4 a {
+        color: #64141F !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        transition: color 0.2s ease !important;
     }
-    .recent-post-link {
-        display: block;
-        padding: 10px 0;
-        border-bottom: 1px dashed #e2e8f0;
-        font-size: 14px;
-        font-weight: 600;
-        color: #1e293b;
+    .elementor-13570 .elementor-element-b5b2aa4 a:hover {
+        color: #000000 !important;
+        text-decoration: underline !important;
     }
-    .recent-post-link:hover {
-        color: var(--primary);
+    .elementor-13570 .elementor-element-b5b2aa4 b,
+    .elementor-13570 .elementor-element-b5b2aa4 strong {
+        font-weight: 600 !important;
+        color: #111111 !important;
     }
-    @media (max-width: 900px) {
-        .article-layout {
-            grid-template-columns: 1fr;
+
+    @media (max-width: 768px) {
+        .elementor-13570 .elementor-element-f5efd57 .elementor-heading-title {
+            font-size: 28px !important;
+        }
+        .elementor-13570 .elementor-element-b5b2aa4 h2 {
+            font-size: 22px !important;
+        }
+        .elementor-13570 {
+            padding: 20px 15px 50px;
         }
     }
 </style>
+@endpush
 
-<div class="container">
-    <div class="article-layout">
-        <!-- Main Article -->
-        <article>
-            <div class="article-header">
-                <h1>{{ $post->title }}</h1>
-                <div class="article-meta">
-                    <span>✍️ Written by Technical Editorial Team</span>
-                    <span>📅 {{ optional($post->created_at)->format('F d, Y') ?? 'Published' }}</span>
-                </div>
+@section('content')
+<div id="content" class="site-content">
+    <div class="ast-container">
+        <div data-elementor-type="single-post" data-elementor-id="13570" class="elementor elementor-13570 elementor-location-single ast-article-single">
+            <div class="elementor-section-wrap">
+
+                <!-- 1. Post Title Section -->
+                <section class="elementor-section elementor-top-section elementor-element elementor-element-f24a696 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f24a696" data-element_type="section">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bd2fbd6" data-id="bd2fbd6" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-f5efd57 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="f5efd57" data-element_type="widget" data-widget_type="theme-post-title.default">
+                                            <div class="elementor-widget-container">
+                                                <h1 class="elementor-heading-title elementor-size-default">{{ $post->title }}</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Featured Image Section -->
+                @if($post->image_url)
+                <section class="elementor-section elementor-top-section elementor-element elementor-element-1e6796c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1e6796c" data-element_type="section">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-79b70ec" data-id="79b70ec" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-3fe7c4b elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="3fe7c4b" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-image">
+                                                    <img width="1000" height="668" src="{{ asset($post->image_url) }}" class="attachment-large size-large" alt="{{ $post->title }}" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @endif
+
+                <!-- 3. Post Content Section -->
+                <section class="elementor-section elementor-top-section elementor-element elementor-element-69e4f13 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="69e4f13" data-element_type="section">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-fd2440b" data-id="fd2440b" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-b5b2aa4 elementor-widget elementor-widget-theme-post-content" data-id="b5b2aa4" data-element_type="widget" data-widget_type="theme-post-content.default">
+                                            <div class="elementor-widget-container">
+                                                {!! $post->content !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-
-            @if($post->image_url)
-                <div class="article-featured-image">
-                    <img src="{{ $post->image_url }}" alt="{{ $post->title }}">
-                </div>
-            @endif
-
-            <div class="article-body">
-                {!! $post->content !!}
-            </div>
-        </article>
-
-        <!-- Sidebar -->
-        <aside>
-            <div class="sidebar-widget">
-                <h3 class="widget-title">Recent Articles</h3>
-                @foreach($recentPosts as $r)
-                    <a href="{{ url('/blogs/' . $r->slug) }}" class="recent-post-link">
-                        {{ $r->title }}
-                    </a>
-                @endforeach
-            </div>
-
-            <div class="sidebar-contact-card">
-                <h4>Looking for High Grade Dyes?</h4>
-                <p style="font-size: 13.5px; color: #4b5563; margin-bottom: 15px;">
-                    SD International manufactures over 600 dyes and pigment formulations.
-                </p>
-                <button type="button" class="btn-quote-large" style="width: 100%;" onclick="openQuoteModal()">Get Product Catalog</button>
-            </div>
-        </aside>
+        </div>
     </div>
 </div>
 @endsection
