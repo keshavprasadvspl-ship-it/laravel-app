@@ -118,9 +118,10 @@ Route::get('/robots.txt', [SitemapController::class, 'robots']);
 
 // 8. Core CMS Pages & Applications
 Route::get('/applications', [PageController::class, 'applications'])->name('applications.index');
-Route::get('/about-us', [PageController::class, 'show'])->defaults('slug', 'about-us');
-Route::get('/certifications', [PageController::class, 'show'])->defaults('slug', 'certifications');
-Route::get('/sustainability', [PageController::class, 'show'])->defaults('slug', 'sustainability');
+Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about.index');
+Route::get('/about', [PageController::class, 'aboutUs']);
+Route::get('/certifications', [PageController::class, 'certifications'])->name('certifications.index');
+Route::get('/sustainability', [PageController::class, 'sustainability'])->name('sustainability.index');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/contact-us', [PageController::class, 'contact'])->name('contact-us');
 

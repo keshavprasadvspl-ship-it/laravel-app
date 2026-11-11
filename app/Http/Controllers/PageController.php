@@ -31,6 +31,11 @@ class PageController extends Controller
             return $this->certifications();
         }
 
+        // Dedicated about us page
+        if ($slug === 'about-us' || $slug === 'about') {
+            return $this->aboutUs();
+        }
+
         $page = Page::where('slug', $slug)
             ->orWhere('slug', trim($slug, '/'))
             ->firstOrFail();
@@ -105,6 +110,25 @@ class PageController extends Controller
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
         return view('pages.certifications', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
+    }
+
+    public function aboutUs()
+    {
+        $page = Page::whereIn('slug', ['about-us', 'about'])->first();
+
+        $seo = SeoHelper::generateTags($page, [
+            'title' => 'About Us | SD International - Leading Dyes & Chemicals Manufacturer',
+            'description' => 'S D International is an ISO 9001: 2015-Certified premier dyes & chemicals manufacturer and supplier offering a vast portfolio of Colorants to customers across 50+ countries.',
+            'canonical' => url('/about-us'),
+        ]);
+
+        $breadcrumbs = [
+            'Home' => url('/'),
+            'About Us' => url('/about-us'),
+        ];
+        $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
+
+        return view('pages.about', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
     }
 
     public function contact()
