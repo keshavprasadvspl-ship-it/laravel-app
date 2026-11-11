@@ -1,87 +1,15 @@
-@extends('layouts.app')
+@extends("layouts.app")
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/live/post-136.css') }}">
-<style>
-    /* Swiper slider height & styling */
-    .elementor-slides-wrapper.swiper-container {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: 540px;
-    }
-    .elementor-slides-wrapper .swiper-slide {
-        position: relative;
-        height: 540px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .elementor-slides-wrapper .swiper-slide-bg {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        z-index: 1;
-    }
-    .elementor-slides-wrapper .swiper-slide-inner {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        width: 100%;
-    }
-    .elementor-slide-heading {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 50px;
-        font-weight: 700;
-        color: #ffffff;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        letter-spacing: 1px;
-    }
-    .elementor-swiper-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        cursor: pointer;
-        width: 48px;
-        height: 48px;
-        background: #ffffff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #000000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        transition: all 0.2s ease;
-    }
-    .elementor-swiper-button:hover {
-        background: #64141f;
-        color: #ffffff;
-    }
-    .elementor-swiper-button-prev { left: 24px; }
-    .elementor-swiper-button-next { right: 24px; }
-    .swiper-pagination-bullet-active {
-        background: #64141f !important;
-    }
+@section("content")
+<div id="content" class="site-content">
+		<div class="ast-container">
+		
 
-    @media (max-width: 767px) {
-        .elementor-slides-wrapper.swiper-container,
-        .elementor-slides-wrapper .swiper-slide {
-            height: 280px;
-        }
-        .elementor-slide-heading {
-            font-size: 26px;
-        }
-    }
-</style>
-@endpush
+	<div id="primary" class="content-area primary">
 
-@section('content')
-
-<article
+		
+					<main id="main" class="site-main">
+				<article
 class="post-136 page type-page status-publish ast-article-single" id="post-136" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 		<header class="entry-header ast-header-without-markup">
 		
@@ -105,7 +33,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 					<div class="elementor-swiper">
 			<div class="elementor-slides-wrapper elementor-main-swiper swiper-container" dir="ltr" data-animation="fadeInUp">
 				<div class="swiper-wrapper elementor-slides">
-					<div class="elementor-repeater-item-a47c4f0 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/product-category/dyes/vat-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">VAT DYES</div></div></a></div><div class="elementor-repeater-item-499da75 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/product-category/dyes/solvent-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">Solvent Dyes</div></div></a></div><div class="elementor-repeater-item-de77fd1 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/product-category/dyes/disperse-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">Disperse Dyes </div></div></a></div><div class="elementor-repeater-item-7a31708 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/product-category/f-d-c-colours/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">F D & C Colors </div></div></a></div>				</div>
+					<div class="elementor-repeater-item-a47c4f0 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/products?category=dyes/vat-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">VAT DYES</div></div></a></div><div class="elementor-repeater-item-499da75 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/products?category=dyes/products?category=solvent-dyes"><div class="swiper-slide-contents"><div class="elementor-slide-heading">Solvent Dyes</div></div></a></div><div class="elementor-repeater-item-de77fd1 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/products?category=dyes/disperse-dyes/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">Disperse Dyes </div></div></a></div><div class="elementor-repeater-item-7a31708 swiper-slide"><div class="swiper-slide-bg"></div><a class="swiper-slide-inner" href="/products?category=f-d-c-colours/"><div class="swiper-slide-contents"><div class="elementor-slide-heading">F D & C Colors </div></div></a></div>				</div>
 															<div class="swiper-pagination"></div>
 																<div class="elementor-swiper-button elementor-swiper-button-prev">
 							<i class="eicon-chevron-left" aria-hidden="true"></i>
@@ -318,7 +246,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 				<div class="elementor-element elementor-element-72a18c85 elementor-align-center elementor-widget elementor-widget-button" data-id="72a18c85" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="/sustainability" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+			<a href="/sustainability/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 						<span class="elementor-button-content-wrapper">
 							<span class="elementor-button-icon elementor-align-icon-right">
 				<i aria-hidden="true" class="fas fa-arrow-right"></i>			</span>
@@ -726,30 +654,5 @@ Mr. Jagdeep Mehta ( Chairman & Managing Director )<br>Mr. Dhruv Mehta &nbsp;&nbs
 
 	</div> <!-- ast-container -->
 	</div><!-- #content -->
-		<div 
-
+		
 @endsection
-
-@push('scripts')
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Hero Swiper Slider
-    var heroSwiper = new Swiper('.elementor-slides-wrapper.swiper-container', {
-        loop: true,
-        autoplay: {
-            delay: 4500,
-            disableOnInteraction: false,
-        },
-        speed: 800,
-        navigation: {
-            nextEl: '.elementor-swiper-button-next',
-            prevEl: '.elementor-swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-});
-</script>
-@endpush

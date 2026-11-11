@@ -1,0 +1,24 @@
+
+/** Bellows Custom Menu Styles (Customizer) **/
+/* main */
+.bellows.bellows-main, .bellows.bellows-main .bellows-menu-item, .bellows.bellows-main .bellows-menu-item .bellows-target { font-family:Poppins; }
+
+
+
+/** Bellows Custom Tweaks (General Settings) **/
+.bellows{margin:20px 0;max-width:100%;--bellows-item-padding-v:10px;--bellows-item-padding-h:28px;--bellows-sub-item-padding-v:10px;--bellows-sub-item-padding-h:var(--bellows-item-padding-h);--bellows-indent:30px;--bellows-indent-level-offset:1;--bellows-toggle-width:30px;--bellows-level:0;--bellows-tree-toggle-w:0px;--bellows-focus-outline:none;--bellows-focus-visible-outline:auto}
+.bellows .bellows-nav .bellows-subtoggle {
+    height: 100%;
+    width: var(--bellows-toggle-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    color: inherit;
+}
+
+/* Status: Loaded from Transient */
+
