@@ -157,8 +157,83 @@ ul.elementor-nav-menu > li::after {
     .elementor-menu-toggle {
         display: none !important;
     }
-    .elementor-nav-menu--dropdown {
+    nav.elementor-nav-menu--dropdown.elementor-nav-menu__container {
         display: none !important;
+    }
+
+    /* Desktop Navigation Dropdown Menus */
+    .elementor-nav-menu--main li {
+        position: relative !important;
+    }
+    .elementor-nav-menu--main ul.sub-menu {
+        display: none !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        min-width: 230px !important;
+        background: #ffffff !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 4px !important;
+        padding: 6px 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        z-index: 999999 !important;
+        text-align: left !important;
+    }
+    /* Open on hover / focus */
+    .elementor-nav-menu--main li:hover > ul.sub-menu,
+    .elementor-nav-menu--main li:focus-within > ul.sub-menu {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    .elementor-nav-menu--main ul.sub-menu li {
+        display: block !important;
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .elementor-nav-menu--main ul.sub-menu li a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 8px 16px !important;
+        color: #333333 !important;
+        font-size: 13.5px !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.15s ease !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    .elementor-nav-menu--main ul.sub-menu li a:hover {
+        background-color: #64141F !important;
+        color: #ffffff !important;
+    }
+    /* 2nd level sub-submenus fly out to the right */
+    .elementor-nav-menu--main ul.sub-menu li > ul.sub-menu {
+        top: 0 !important;
+        left: 100% !important;
+        margin-left: 1px !important;
+    }
+    /* Chevron arrow indicators */
+    .elementor-nav-menu--main li.menu-item-has-children > a::after {
+        content: " \f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 10px;
+        margin-left: 5px;
+    }
+    .elementor-nav-menu--main ul.sub-menu li.menu-item-has-children > a::after {
+        content: " \f105";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 10px;
+        margin-left: 10px;
     }
     .elementor-element-3397fd0b .elementor-container,
     .elementor-element-3397fd0b .elementor-row {
@@ -806,7 +881,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var toggles = document.querySelectorAll(".elementor-menu-toggle");
     toggles.forEach(function(btn) {
         btn.addEventListener("click", function() {
-            var dd = document.querySelector(".elementor-nav-menu--dropdown");
+            var dd = document.querySelector("nav.elementor-nav-menu--dropdown");
             if (dd) {
                 dd.style.display = (dd.style.display === "block" ? "none" : "block");
             }
