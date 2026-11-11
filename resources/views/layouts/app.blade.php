@@ -821,6 +821,12 @@ ul.elementor-nav-menu > li::after {
     .elementor-nav-menu--main li {
         position: relative !important;
     }
+    /* Eliminate Elementor post-21 30px air gap */
+    html body .elementor-21 .elementor-element.elementor-element-71fa8a5 .elementor-nav-menu--main > .elementor-nav-menu > li > .elementor-nav-menu--dropdown,
+    html body .elementor-element.elementor-element-71fa8a5 .elementor-nav-menu--main > .elementor-nav-menu > li > .elementor-nav-menu--dropdown {
+        margin-top: 0 !important;
+        margin: 0 !important;
+    }
     .elementor-nav-menu--main ul.sub-menu {
         display: none !important;
         position: absolute !important;
@@ -839,19 +845,20 @@ ul.elementor-nav-menu > li::after {
         z-index: 999999 !important;
         text-align: left !important;
     }
-    /* Hover bridge between nav item and dropdown */
+    /* Generous hover bridge between nav item and dropdown */
     .elementor-nav-menu--main > ul.elementor-nav-menu > li > ul.sub-menu::before {
         content: "" !important;
         position: absolute !important;
-        top: -10px !important;
+        top: -20px !important;
         left: 0 !important;
         width: 100% !important;
-        height: 10px !important;
+        height: 20px !important;
         background: transparent !important;
     }
-    /* Open on hover / focus */
+    /* Open on hover / focus / active class */
     .elementor-nav-menu--main li:hover > ul.sub-menu,
-    .elementor-nav-menu--main li:focus-within > ul.sub-menu {
+    .elementor-nav-menu--main li:focus-within > ul.sub-menu,
+    .elementor-nav-menu--main li.menu-item-hovered > ul.sub-menu {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -899,12 +906,15 @@ ul.elementor-nav-menu > li::after {
     }
     /* Highlight parent link and active row while hovering inside child submenus */
     .elementor-nav-menu--main ul.sub-menu li:hover > a,
+    .elementor-nav-menu--main ul.sub-menu li.menu-item-hovered > a,
     .elementor-nav-menu--main ul.sub-menu li a:hover,
     .elementor-nav-menu--main ul.sub-menu li a:focus,
     .elementor-nav-menu--main ul.sub-menu ul.sub-menu li:hover > a,
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu li.menu-item-hovered > a,
     .elementor-nav-menu--main ul.sub-menu ul.sub-menu li a:hover,
     .elementor-nav-menu--main ul.sub-menu ul.sub-menu li a:focus,
     .elementor-nav-menu--main ul.sub-menu ul.sub-menu ul.sub-menu li:hover > a,
+    .elementor-nav-menu--main ul.sub-menu ul.sub-menu ul.sub-menu li.menu-item-hovered > a,
     .elementor-nav-menu--main ul.sub-menu ul.sub-menu ul.sub-menu li a:hover,
     .elementor-nav-menu--main ul.sub-menu ul.sub-menu ul.sub-menu li a:focus {
         background-color: #64141F !important;
@@ -922,10 +932,10 @@ ul.elementor-nav-menu > li::after {
     .elementor-nav-menu--main ul.sub-menu li > ul.sub-menu::before {
         content: "" !important;
         position: absolute !important;
-        top: 0 !important;
-        left: -15px !important;
-        width: 15px !important;
-        height: 100% !important;
+        top: -15px !important;
+        left: -25px !important;
+        width: 30px !important;
+        height: calc(100% + 30px) !important;
         background: transparent !important;
     }
     /* Top-level Products downward chevron */
@@ -2502,6 +2512,49 @@ document.addEventListener("DOMContentLoaded", function() {
             var dd = document.querySelector("nav.elementor-nav-menu--dropdown");
             if (dd) {
                 dd.style.display = (dd.style.display === "block" ? "none" : "block");
+            }
+        });
+    });
+
+    // Desktop Navigation Graceful Hover Intent & Delay Controller
+    var menuItemsWithChildren = document.querySelectorAll(".elementor-nav-menu--main li.menu-item-has-children");
+    menuItemsWithChildren.forEach(function(item) {
+        var hideTimeout = null;
+
+        item.addEventListener("mouseenter", function() {
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+                hideTimeout = null;
+            }
+            // Close unrelated sibling submenus
+            var parentUl = item.closest("ul");
+            if (parentUl) {
+                Array.from(parentUl.children).forEach(function(sib) {
+                    if (sib !== item && sib.classList.contains("menu-item-hovered")) {
+                        sib.classList.remove("menu-item-hovered");
+                    }
+                });
+            }
+            item.classList.add("menu-item-hovered");
+        });
+
+        item.addEventListener("mouseleave", function() {
+            hideTimeout = setTimeout(function() {
+                item.classList.remove("menu-item-hovered");
+            }, 300);
+        });
+    });
+
+    // Also close flyout if hovering over a sibling leaf item (e.g. F D & C COLOURS)
+    document.querySelectorAll(".elementor-nav-menu--main li:not(.menu-item-has-children)").forEach(function(leafItem) {
+        leafItem.addEventListener("mouseenter", function() {
+            var parentUl = leafItem.closest("ul");
+            if (parentUl) {
+                Array.from(parentUl.children).forEach(function(sib) {
+                    if (sib.classList.contains("menu-item-hovered")) {
+                        sib.classList.remove("menu-item-hovered");
+                    }
+                });
             }
         });
     });
