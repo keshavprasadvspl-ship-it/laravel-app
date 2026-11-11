@@ -26,6 +26,11 @@ class PageController extends Controller
             return $this->sustainability();
         }
 
+        // Dedicated certifications page
+        if ($slug === 'certifications') {
+            return $this->certifications();
+        }
+
         $page = Page::where('slug', $slug)
             ->orWhere('slug', trim($slug, '/'))
             ->firstOrFail();
@@ -81,6 +86,25 @@ class PageController extends Controller
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
         return view('pages.sustainability', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
+    }
+
+    public function certifications()
+    {
+        $page = Page::where('slug', 'certifications')->first();
+
+        $seo = SeoHelper::generateTags($page, [
+            'title' => 'Certifications | ISO 9001:2015 & Export House | SD International',
+            'description' => 'SD International is an ISO 9001:2015 Certified company, recognized Two Star Export House, and AEO-T1 Certified exporter by the Ministry of Finance & Commerce, India.',
+            'canonical' => url('/certifications'),
+        ]);
+
+        $breadcrumbs = [
+            'Home' => url('/'),
+            'Certifications' => url('/certifications'),
+        ];
+        $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
+
+        return view('pages.certifications', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
     }
 
     public function contact()
