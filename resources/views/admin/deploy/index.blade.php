@@ -290,8 +290,7 @@
 
             <form action="{{ route('admin.deploy.run') }}" method="POST" id="deployForm">
                 @csrf
-                <button type="submit" class="btn-deploy" id="deployBtn"
-                    onclick="return confirmDeploy()">
+                <button type="submit" class="btn-deploy" id="deployBtn">
                     🚀 Deploy Now
                 </button>
             </form>
@@ -397,20 +396,36 @@ GIT_REMOTE=origin</pre>
 @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 <script>
-function confirmDeploy() {
-    if (!confirm('⚠️ Are you sure you want to deploy?\n\nThis will run git pull and restart caches on the live server.')) return false;
-    document.getElementById('deployBtn').disabled = true;
-    document.getElementById('deployBtn').innerHTML = '⏳ Deploying...';
-    document.getElementById('deploySpinner').style.display = 'flex';
-    return true;
+const deployForm = document.getElementById('deployForm');
+if (deployForm) {
+    deployForm.addEventListener('submit', function(e) {
+        if (!confirm('⚠️ Are you sure you want to deploy?\n\nThis will sync with GitHub and refresh caches on the live server.')) {
+            e.preventDefault();
+            return false;
+        }
+        const btn = document.getElementById('deployBtn');
+        const spinner = document.getElementById('deploySpinner');
+        // Defer disabling so the browser completes the POST submission first
+        setTimeout(function() {
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '⏳ Deploying...';
+            }
+        }, 0);
+        if (spinner) {
+            spinner.style.display = 'flex';
+        }
+    });
 }
 
 function copyWebhook() {
     const url = document.getElementById('webhookUrl').textContent;
+    const btn = event ? event.target : null;
     navigator.clipboard.writeText(url).then(() => {
-        const btn = event.target;
-        btn.textContent = '✅ Copied!';
-        setTimeout(() => btn.textContent = '📋 Copy', 2000);
+        if (btn) {
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => btn.textContent = '📋 Copy', 2000);
+        }
     });
 }
 
