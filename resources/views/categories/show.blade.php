@@ -197,8 +197,36 @@
         justify-content: center;
     }
     @media (max-width: 900px) {
+        .cat-page-header {
+            padding: 20px 0;
+            margin-bottom: 18px;
+        }
+        .cat-page-header h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
         .catalog-layout {
             grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 0 0 32px;
+        }
+        .catalog-sidebar {
+            order: 2;
+            gap: 16px;
+        }
+        .catalog-grid {
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 14px;
+        }
+        .prod-thumb {
+            height: 140px;
+            padding: 10px;
+        }
+        .sidebar-widget {
+            padding: 16px;
+        }
+        .pagination-wrap {
+            margin-top: 24px;
         }
     }
 </style>

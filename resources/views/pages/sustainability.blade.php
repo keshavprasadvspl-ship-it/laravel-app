@@ -107,9 +107,12 @@
         .elementor-2843 .elementor-element-e2c973,
         .elementor-2843 .elementor-element-102efcf6 {
             width: 100% !important;
+            flex: 0 0 auto !important;
+            max-width: 100% !important;
+            height: auto !important;
         }
         .elementor-2843 .elementor-element-39c0ab08 {
-            margin-bottom: 30px !important;
+            margin-bottom: 18px !important;
             text-align: center !important;
         }
         .elementor-2843 .elementor-element-39c0ab08 img {
@@ -117,6 +120,42 @@
         }
         .elementor-2843 .elementor-element-c53cd58 .elementor-text-editor p {
             text-align: center !important;
+            margin-bottom: 18px !important;
+        }
+    }
+    @media (max-width: 767px) {
+        .elementor-2843 .elementor-element-668d7e47 {
+            padding: 22px 12px 18px 12px !important;
+        }
+        .elementor-2843 .elementor-element-441d5f3f {
+            padding: 22px 12px 10px 12px !important;
+        }
+        .elementor-2843 .elementor-element-799ec4d5 {
+            padding: 10px 12px 26px 12px !important;
+        }
+        .elementor-2843 .elementor-element-4098d130 .elementor-heading-title,
+        .elementor-2843 .elementor-element-3fdb3769 .elementor-heading-title,
+        .elementor-2843 .elementor-element-41ed20a3 .elementor-heading-title,
+        .elementor-2843 .elementor-element-e37a7f .elementor-heading-title {
+            font-size: 22px !important;
+        }
+        .elementor-2843 .elementor-divider-separator {
+            margin: 10px auto !important;
+        }
+        .elementor-2843 .elementor-element-17673d4f .elementor-text-editor p,
+        .elementor-2843 .elementor-element-c53cd58 .elementor-text-editor p {
+            font-size: 14px !important;
+            line-height: 1.65 !important;
+            margin: 12px auto 16px !important;
+        }
+        .elementor-2843 .pp-logo-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 14px !important;
+            margin-bottom: 8px !important;
+        }
+        .elementor-2843 .pp-logo-grid img {
+            width: 82px !important;
+            height: 82px !important;
         }
     }
 </style>

@@ -170,6 +170,35 @@
     @media (max-width: 900px) {
         .catalog-layout {
             grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 18px 0 32px;
+        }
+        .catalog-sidebar {
+            order: 2;
+            gap: 16px;
+        }
+        .catalog-header {
+            margin-bottom: 18px;
+        }
+        .catalog-header h1 {
+            font-size: 22px;
+        }
+        .catalog-grid {
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 14px;
+        }
+        .prod-thumb {
+            height: 140px;
+            padding: 10px;
+        }
+        .cat-menu-list {
+            max-height: 240px;
+        }
+        .sidebar-widget {
+            padding: 16px;
+        }
+        .pagination-wrap {
+            margin-top: 24px;
         }
     }
 </style>

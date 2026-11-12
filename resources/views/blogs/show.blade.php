@@ -94,14 +94,21 @@
     }
 
     @media (max-width: 768px) {
+        .elementor-13570 .elementor-element-f5efd57 {
+            margin: 8px 0 14px !important;
+        }
         .elementor-13570 .elementor-element-f5efd57 .elementor-heading-title {
-            font-size: 28px !important;
+            font-size: 24px !important;
+        }
+        .elementor-13570 .elementor-element-3fe7c4b {
+            margin-bottom: 18px !important;
         }
         .elementor-13570 .elementor-element-b5b2aa4 h2 {
-            font-size: 22px !important;
+            font-size: 20px !important;
+            margin-top: 22px !important;
         }
         .elementor-13570 {
-            padding: 20px 15px 50px;
+            padding: 16px 14px 28px !important;
         }
     }
 </style>

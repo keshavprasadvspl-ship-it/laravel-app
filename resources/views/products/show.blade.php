@@ -253,9 +253,31 @@
     @media (max-width: 991px) {
         .product-page-layout {
             grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 18px 0 32px;
         }
         .product-hero-grid {
             grid-template-columns: 1fr;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+        .product-main-image-wrap {
+            min-height: 220px;
+            padding: 14px;
+        }
+        .product-main-image-wrap img {
+            max-height: 210px;
+        }
+        .product-meta-header h1 {
+            font-size: 22px;
+        }
+        .specs-table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+        }
+        .related-section {
+            margin-top: 24px;
         }
     }
 

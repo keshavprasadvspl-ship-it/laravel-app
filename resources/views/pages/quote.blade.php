@@ -148,11 +148,30 @@
         margin-bottom: 12px;
     }
     @media (max-width: 900px) {
+        .quote-hero {
+            padding: 24px 0;
+        }
+        .quote-hero h1 {
+            font-size: 24px;
+        }
+        .quote-hero p {
+            font-size: 14.5px;
+        }
         .quote-layout {
             grid-template-columns: 1fr;
+            gap: 22px;
+            padding: 22px 0 36px;
+        }
+        .quote-form-card {
+            padding: 20px 16px;
+        }
+        .quote-sidebar-card {
+            padding: 20px 16px;
+            margin-bottom: 16px;
         }
         .form-grid-2 {
             grid-template-columns: 1fr;
+            gap: 0;
         }
     }
 </style>

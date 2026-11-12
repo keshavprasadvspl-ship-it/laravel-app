@@ -58,6 +58,28 @@
         color: var(--primary-dark);
         font-weight: 700;
     }
+    @media (max-width: 767px) {
+        .page-hero {
+            padding: 22px 0;
+            margin-bottom: 20px;
+        }
+        .page-hero h1 {
+            font-size: 24px;
+        }
+        .page-body-container {
+            padding-bottom: 32px;
+            font-size: 14.5px;
+            line-height: 1.65;
+        }
+        .page-body-container h2 {
+            font-size: 20px;
+            margin: 20px 0 12px;
+        }
+        .page-body-container table {
+            display: block;
+            overflow-x: auto;
+        }
+    }
 </style>
 
 <div class="page-hero">

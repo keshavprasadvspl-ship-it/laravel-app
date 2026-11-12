@@ -145,6 +145,37 @@
         clip: rect(0, 0, 0, 0);
         border: 0;
     }
+    @media (max-width: 767px) {
+        .elementor-13522 {
+            padding: 16px 12px 24px 12px !important;
+        }
+        .elementor-13522 .elementor-element.elementor-element-fc02641 .elementor-posts-container,
+        .elementor-13522 .elementor-posts-container {
+            grid-template-columns: 1fr !important;
+            gap: 18px !important;
+        }
+        .elementor-13522 .elementor-post__text {
+            padding: 0 18px !important;
+            margin-top: 20px !important;
+        }
+        .elementor-13522 .elementor-post__title {
+            font-size: 18px !important;
+            margin-bottom: 12px !important;
+        }
+        .elementor-13522 .elementor-post__excerpt {
+            margin-bottom: 14px !important;
+        }
+        .elementor-13522 .elementor-post__read-more {
+            margin-bottom: 16px !important;
+        }
+        .elementor-13522 .elementor-post__meta-data {
+            padding: 12px 18px !important;
+        }
+        .elementor-13522 .elementor-pagination {
+            margin-top: 24px !important;
+            margin-bottom: 10px !important;
+        }
+    }
 </style>
 @endpush
 

@@ -117,6 +117,56 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+    @media (max-width: 767px) {
+        .elementor-2835 {
+            padding: 18px 0 26px 0 !important;
+        }
+        .elementor-2835 .elementor-section.elementor-section-boxed > .elementor-container {
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+        .elementor-2835 .elementor-element.elementor-element-36bc3020 .elementor-heading-title {
+            font-size: 18px !important;
+            line-height: 24px !important;
+            margin-bottom: 14px !important;
+        }
+        .elementor-2835 .elementor-element.elementor-element-ac569cd .elementor-heading-title,
+        .elementor-2835 .elementor-element.elementor-element-609cb3e .elementor-heading-title {
+            font-size: 22px !important;
+            line-height: 28px !important;
+            margin-bottom: 14px !important;
+        }
+        .elementor-2835 .elementor-text-editor p {
+            font-size: 14px !important;
+            line-height: 1.65 !important;
+            margin-bottom: 14px !important;
+            text-align: left !important;
+        }
+        .elementor-2835 .elementor-element.elementor-element-677e2fb1 ul {
+            margin: 10px 0 14px 20px !important;
+        }
+        .elementor-2835 .elementor-element.elementor-element-677e2fb1 ul li {
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+        }
+        .elementor-2835 .elementor-element.elementor-element-41864eb2 {
+            padding: 16px 0 8px 0 !important;
+            margin-top: 8px !important;
+        }
+        .elementor-2835 .elementor-element.elementor-element-504cd57 .elementor-heading-title {
+            font-size: 22px !important;
+            line-height: 28px !important;
+        }
+        .elementor-2835 .elementor-element.elementor-element-44125c3a .elementor-heading-title {
+            font-size: 24px !important;
+            line-height: 32px !important;
+            margin-bottom: 8px !important;
+        }
+        .elementor-2835 .elementor-element.elementor-element-4d0927d7 p,
+        .elementor-2835 .elementor-element.elementor-element-1435c83 p {
+            text-align: center !important;
+        }
+    }
 </style>
 @endpush
 
