@@ -74,7 +74,7 @@
         margin-top: 20px;
     }
     .btn-quote-large {
-        background: var(--primary-gradient);
+        background: var(--primary-gradient, linear-gradient(180deg, #951634 0%, #64141F 100%));
         color: white !important;
         font-family: var(--font-heading);
         font-weight: 700;

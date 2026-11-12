@@ -94,7 +94,7 @@
     }
     .sidebar-contact-card .btn-submit {
         width: 100%;
-        background: var(--primary-gradient);
+        background: var(--primary-gradient, linear-gradient(180deg, #951634 0%, #64141F 100%));
         color: white;
         border: none;
         padding: 10px;
@@ -178,7 +178,7 @@
         border-top: 1px solid #f1f5f9;
     }
     .btn-card-quote {
-        background: var(--primary-gradient);
+        background: var(--primary-gradient, linear-gradient(180deg, #951634 0%, #64141F 100%));
         color: white;
         border: none;
         padding: 6px 14px;

@@ -147,7 +147,11 @@
     }
     @media (max-width: 767px) {
         .elementor-13522 {
-            padding: 16px 12px 24px 12px !important;
+            padding: 14px 12px 24px 12px !important;
+        }
+        .elementor-13522 .elementor-element.elementor-element-fc02641 > .elementor-widget-container {
+            margin: 0 !important;
+            padding: 0 !important;
         }
         .elementor-13522 .elementor-element.elementor-element-fc02641 .elementor-posts-container,
         .elementor-13522 .elementor-posts-container {

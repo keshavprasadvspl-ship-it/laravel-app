@@ -107,6 +107,24 @@
             width: 100% !important;
             object-fit: cover !important;
         }
+        .elementor-2858 .elementor-inner-section .elementor-row {
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
+        }
+        .elementor-2858 .elementor-inner-section .elementor-column.elementor-col-50 {
+            width: 48% !important;
+            flex: 0 0 48% !important;
+        }
+        .elementor-2858 .elementor-inner-section .elementor-column.elementor-col-50 .elementor-widget-wrap {
+            padding: 4px 0 !important;
+        }
+        .elementor-2858 .elementor-mobile-align-right,
+        .elementor-2858 .elementor-mobile-align-right .elementor-icon-list-items,
+        .elementor-2858 .elementor-mobile-align-right .elementor-icon-list-item {
+            text-align: left !important;
+            justify-content: flex-start !important;
+        }
     }
 </style>
 @endpush

@@ -1605,6 +1605,7 @@ html, body {
         color: #222222 !important;
         text-decoration: none !important;
         text-transform: uppercase !important;
+        text-align: left !important;
         background: transparent !important;
     }
     html body .elementor-element-71fa8a5 nav.elementor-nav-menu--dropdown ul.sub-menu li a {
@@ -1768,13 +1769,20 @@ html, body {
     }
 
     /* Hero Slider Mobile Sizing */
+    .elementor-136 .elementor-element.elementor-element-c6343c8 > .elementor-widget-container {
+        margin: 0 !important;
+    }
+    .elementor-element-6dada31,
+    .elementor-element-6dada31 .elementor-swiper,
     .elementor-element-6dada31 .elementor-slides-wrapper.swiper-container,
     .elementor-element-6dada31 .swiper-slide {
         height: 240px !important;
         width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
     }
     .elementor-element-6dada31 .swiper-slide-inner {
-        padding: 0 38px !important;
+        padding: 0 46px !important;
     }
     .elementor-element-6dada31 .elementor-slide-heading {
         font-size: 26px !important;
@@ -1782,9 +1790,28 @@ html, body {
         text-align: center !important;
     }
     .elementor-element-6dada31 .elementor-swiper-button {
-        font-size: 20px !important;
-        width: 30px !important;
-        height: 30px !important;
+        font-size: 16px !important;
+        width: 32px !important;
+        height: 32px !important;
+        background: rgba(0, 0, 0, 0.45) !important;
+        color: #ffffff !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .elementor-element-6dada31 .elementor-swiper-button i {
+        background: transparent !important;
+        padding: 0 !important;
+        color: #ffffff !important;
+        font-size: 15px !important;
+        line-height: 1 !important;
+    }
+    .elementor-element-6dada31 .elementor-swiper-button-prev {
+        left: 10px !important;
+    }
+    .elementor-element-6dada31 .elementor-swiper-button-next {
+        right: 10px !important;
     }
 
     /* Compact Section Spacing & Vertical Stacking */
@@ -1799,6 +1826,9 @@ html, body {
         width: 100% !important;
         flex: 0 0 auto !important;
         max-width: 100% !important;
+    }
+    .elementor-element-7bc0d733 .elementor-column.elementor-col-25 > .elementor-element-populated {
+        margin: 0 12px !important;
     }
     .elementor-element-7bc0d733 .pp-info-box {
         padding: 18px 16px !important;
