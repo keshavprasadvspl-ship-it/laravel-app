@@ -42,6 +42,15 @@ class Product extends Model
         if ($this->image_url && file_exists(public_path(ltrim($this->image_url, '/')))) {
             return asset(ltrim($this->image_url, '/'));
         }
-        return asset('uploads/woocommerce-placeholder-120x120.png');
+        if ($this->image_url && (str_starts_with($this->image_url, 'http://') || str_starts_with($this->image_url, 'https://'))) {
+            return $this->image_url;
+        }
+        if ($this->image_url) {
+            return 'https://sdinternational.com/wp-content' . (str_starts_with($this->image_url, '/') ? '' : '/') . $this->image_url;
+        }
+        if (file_exists(public_path('uploads/woocommerce-placeholder-120x120.png'))) {
+            return asset('uploads/woocommerce-placeholder-120x120.png');
+        }
+        return 'https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';
     }
 }

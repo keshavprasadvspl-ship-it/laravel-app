@@ -730,7 +730,7 @@
                             @php
                                 $bannerReplacement = '<div class="col-md-5">
                                     <div class="category-featured-card">
-                                        <img src="' . $category->featured_image_url . '" alt="' . e($category->name) . ' manufacturer, exporter, supplier in Mumbai- India" class="category-featured-img">
+                                        <img src="' . $category->featured_image_url . '" alt="' . e($category->name) . ' manufacturer, exporter, supplier in Mumbai- India" class="category-featured-img" onerror="this.onerror=null; this.src=\'' . ($category->slug === 'other-products' ? 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg' : 'https://sdinternational.com/wp-content/uploads/2022/04/' . $category->slug . '.jpg') . '\';">
                                         <button type="button" class="btn-category-enquiry" onclick="openCategoryQuoteModal(\'' . addslashes($category->name) . '\', \'' . $category->slug . '\')">
                                             Enquiry Now
                                         </button>
@@ -743,7 +743,7 @@
                             {{-- Standard fallback layout with banner on top left and text on right --}}
                             <div class="category-inner-banner-row">
                                 <div class="category-featured-card">
-                                    <img src="{{ $category->featured_image_url }}" alt="{{ $category->name }} manufacturer, exporter, supplier in Mumbai- India" class="category-featured-img">
+                                    <img src="{{ $category->featured_image_url }}" alt="{{ $category->name }} manufacturer, exporter, supplier in Mumbai- India" class="category-featured-img" onerror="this.onerror=null; this.src='{{ $category->slug === 'other-products' ? 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg' : 'https://sdinternational.com/wp-content/uploads/2022/04/' . $category->slug . '.jpg' }}';">
                                     <button type="button" class="btn-category-enquiry" onclick="openCategoryQuoteModal('{{ addslashes($category->name) }}', '{{ $category->slug }}')">
                                         Enquiry Now
                                     </button>
@@ -849,7 +849,7 @@
                         <li class="product-category-card">
                             <a href="{{ url('/' . $child->slug) }}">
                                 <div class="cat-thumb-box">
-                                    <img src="{{ $child->thumbnail_url }}" alt="{{ $child->name }}" width="120" height="120">
+                                    <img src="{{ $child->thumbnail_url }}" alt="{{ $child->name }}" width="120" height="120" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2022/04/{{ $child->slug }}-120x120.jpg';">
                                 </div>
                                 <h2 class="woocommerce-loop-category__title">
                                     {{ $child->name }}
@@ -868,7 +868,7 @@
                         <li class="product-item-card">
                             <div class="product-thumb-wrap">
                                 <a href="{{ $product->url }}">
-                                    <img src="{{ $product->thumbnail_url }}" alt="{{ $product->title }}" width="120" height="120">
+                                    <img src="{{ $product->thumbnail_url }}" alt="{{ $product->title }}" width="120" height="120" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';">
                                 </a>
                             </div>
                             <span class="product-category-label">{{ $category->name }}</span>
@@ -892,7 +892,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/plastic-polymers') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/plastics.jpg') }}" alt="Plastic & Polymers">
+                                <img src="{{ asset('uploads/applications/plastics.jpg') }}" alt="Plastic & Polymers" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/plastics.jpg';">
                             </div>
                             <h5 class="industry-title">Plastic &amp; Polymers</h5>
                         </a>
@@ -901,7 +901,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/textiles') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/textile.jpg') }}" alt="Textiles">
+                                <img src="{{ asset('uploads/applications/textile.jpg') }}" alt="Textiles" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/textile.jpg';">
                             </div>
                             <h5 class="industry-title">Textiles</h5>
                         </a>
@@ -910,7 +910,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/leather') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/lather.jpg') }}" alt="Leather">
+                                <img src="{{ asset('uploads/applications/lather.jpg') }}" alt="Leather" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/lather.jpg';">
                             </div>
                             <h5 class="industry-title">Leather</h5>
                         </a>
@@ -919,7 +919,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/petroleum-lubricants') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/petro.jpg') }}" alt="Petroleum & Lubricants">
+                                <img src="{{ asset('uploads/applications/petro.jpg') }}" alt="Petroleum & Lubricants" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/petro.jpg';">
                             </div>
                             <h5 class="industry-title">Petroleum &amp; Lubricants</h5>
                         </a>
@@ -928,7 +928,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/paper-pulp') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/papper.jpg') }}" alt="Paper & Pulp">
+                                <img src="{{ asset('uploads/applications/papper.jpg') }}" alt="Paper & Pulp" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/papper.jpg';">
                             </div>
                             <h5 class="industry-title">Paper &amp; Pulp</h5>
                         </a>
@@ -937,7 +937,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/printing-inks') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/ink.jpg') }}" alt="Printing Inks">
+                                <img src="{{ asset('uploads/applications/ink.jpg') }}" alt="Printing Inks" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/ink.jpg';">
                             </div>
                             <h5 class="industry-title">Printing Inks</h5>
                         </a>
@@ -946,7 +946,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/food-drug-cosmetics') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/food_drug_cos.jpg') }}" alt="Food Drug & Cosmetics">
+                                <img src="{{ asset('uploads/applications/food_drug_cos.jpg') }}" alt="Food Drug & Cosmetics" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/food_drug_cos.jpg';">
                             </div>
                             <h5 class="industry-title">Food Drug &amp; Cosmetics</h5>
                         </a>
@@ -955,7 +955,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/coating') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/coatings.jpg') }}" alt="Coatings">
+                                <img src="{{ asset('uploads/applications/coatings.jpg') }}" alt="Coatings" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/coatings.jpg';">
                             </div>
                             <h5 class="industry-title">Coatings</h5>
                         </a>
@@ -964,7 +964,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/wood-stains') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/wood_stain.jpg') }}" alt="Wood Stains">
+                                <img src="{{ asset('uploads/applications/wood_stain.jpg') }}" alt="Wood Stains" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/wood_stain.jpg';">
                             </div>
                             <h5 class="industry-title">Wood Stains</h5>
                         </a>
@@ -973,7 +973,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/smoke-dyes') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/smoke.jpg') }}" alt="Smoke Dyes">
+                                <img src="{{ asset('uploads/applications/smoke.jpg') }}" alt="Smoke Dyes" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/smoke.jpg';">
                             </div>
                             <h5 class="industry-title">Smoke Dyes</h5>
                         </a>

@@ -14,8 +14,19 @@ auth.json
 npm-debug.log
 yarn-error.log
 
-# User uploads - managed separately on server
-/public/uploads
+# User uploads - allow essential theme assets, categories, applications, and icons
+/public/uploads/*
+!/public/uploads/2022
+!/public/uploads/2022/**
+!/public/uploads/applications
+!/public/uploads/applications/**
+!/public/uploads/icons
+!/public/uploads/icons/**
+!/public/uploads/certifications
+!/public/uploads/certifications/**
+!/public/uploads/sustainability
+!/public/uploads/sustainability/**
+!/public/uploads/woocommerce-placeholder-120x120.png
 
 # Storage (logs, cache, sessions)
 /storage/logs/*.log

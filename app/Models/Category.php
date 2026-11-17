@@ -38,24 +38,47 @@ class Category extends Model
 
     public function getFeaturedImageUrlAttribute(): string
     {
+        // 1. Explicit image on model
         if ($this->image && file_exists(public_path($this->image))) {
             return asset($this->image);
         }
 
+        // 2. other-products banner
+        if ($this->slug === 'other-products' || $this->slug === 'other_products') {
+            if (file_exists(public_path('uploads/2022/05/other-product.jpg'))) {
+                return asset('uploads/2022/05/other-product.jpg');
+            }
+            return 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg';
+        }
+
+        // 3. Local slug path
         $slugPath = 'uploads/2022/04/' . $this->slug . '.jpg';
         if (file_exists(public_path($slugPath))) {
             return asset($slugPath);
         }
 
-        if ($this->slug === 'other-products' && file_exists(public_path('uploads/2022/05/other-product.jpg'))) {
-            return asset('uploads/2022/05/other-product.jpg');
+        // 4. Parent category image
+        if ($this->parent) {
+            $parentSlug = $this->parent->slug;
+            if ($parentSlug === 'other-products' || $parentSlug === 'other_products') {
+                if (file_exists(public_path('uploads/2022/05/other-product.jpg'))) {
+                    return asset('uploads/2022/05/other-product.jpg');
+                }
+                return 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg';
+            }
+            $parentPath = 'uploads/2022/04/' . $parentSlug . '.jpg';
+            if (file_exists(public_path($parentPath))) {
+                return asset($parentPath);
+            }
         }
 
-        if ($this->parent && file_exists(public_path('uploads/2022/04/' . $this->parent->slug . '.jpg'))) {
-            return asset('uploads/2022/04/' . $this->parent->slug . '.jpg');
+        // 5. If local dyes.jpg exists
+        if (file_exists(public_path('uploads/2022/04/dyes.jpg'))) {
+            return asset('uploads/2022/04/dyes.jpg');
         }
 
-        return asset('uploads/2022/04/dyes.jpg');
+        // 6. Live site fallback
+        return "https://sdinternational.com/wp-content/uploads/2022/04/{$this->slug}.jpg";
     }
 
     public function getThumbnailUrlAttribute(): string
@@ -64,7 +87,15 @@ class Category extends Model
         if (file_exists(public_path($thumbPath))) {
             return asset($thumbPath);
         }
-        return $this->featured_image_url;
+
+        // If full image exists locally, return it
+        $slugPath = 'uploads/2022/04/' . $this->slug . '.jpg';
+        if (file_exists(public_path($slugPath))) {
+            return asset($slugPath);
+        }
+
+        // Live site CDN fallback
+        return "https://sdinternational.com/wp-content/uploads/2022/04/{$this->slug}-120x120.jpg";
     }
 
     public static function getSidebarCategories()
