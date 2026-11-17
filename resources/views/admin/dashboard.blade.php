@@ -63,6 +63,7 @@
     </div>
 
     <div class="quick-actions">
+        <a href="{{ route('admin.deploy.index') }}" class="btn" style="background: #64141f; color: #ffffff; border: 1px solid #64141f; font-weight: 600;">🚀 Git Deployment</a>
         <a href="{{ route('admin.products.create') }}" class="btn btn-primary">+ Add Product</a>
         <a href="{{ route('admin.pages.create') }}" class="btn btn-outline">+ Add CMS Page</a>
         <a href="{{ route('admin.inquiries.index') }}" class="btn btn-outline">View Inquiries @if($stats['new_inquiries'] > 0)<span class="badge badge-danger" style="margin-left: 4px;">{{ $stats['new_inquiries'] }} NEW</span>@endif</a>
@@ -122,6 +123,49 @@
         <div>
             <div class="stat-val">{{ number_format($stats['total_redirects']) }}</div>
             <div class="stat-lbl">301 Redirects</div>
+        </div>
+    </div>
+</div>
+
+<!-- Git Deployment & Live Synchronization Status -->
+<div class="card" style="margin-bottom: 25px; border-left: 4px solid #64141f; background: linear-gradient(to right, #ffffff, #fdf8f8);">
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 18px;">🚀</span>
+            <strong>Git Deployment &amp; Server Synchronization</strong>
+            <span style="background: #dcfce7; color: #166534; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px; margin-left: 6px;">
+                ● Branch: {{ $gitInfo['branch'] ?? 'master' }}
+            </span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <form action="{{ route('admin.deploy.cache') }}" method="POST" style="margin: 0;">
+                @csrf
+                <button type="submit" class="btn btn-outline btn-sm" onclick="return confirm('Clear application caches?')" style="font-size: 12px; padding: 5px 10px;">
+                    🗑️ Clear Caches
+                </button>
+            </form>
+            <a href="{{ route('admin.deploy.index') }}" class="btn btn-primary btn-sm" style="background: #64141f; border-color: #64141f; font-size: 12px; padding: 5px 12px;">
+                🚀 Deploy Console &rarr;
+            </a>
+        </div>
+    </div>
+    <div class="card-body" style="padding: 16px 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; font-size: 13px;">
+            <div>
+                <span style="color: var(--text-muted); display: block; font-size: 11.5px; text-transform: uppercase; font-weight: 600;">Active Commit</span>
+                <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #0f172a;">#{{ $gitInfo['shortSha'] ?? 'HEAD' }}</code>
+                <span style="color: #334155; margin-left: 4px;">{{ Str::limit($gitInfo['message'] ?? 'Latest commit', 45) }}</span>
+            </div>
+            <div>
+                <span style="color: var(--text-muted); display: block; font-size: 11.5px; text-transform: uppercase; font-weight: 600;">Last Deployed</span>
+                <span style="color: #334155;">{{ $gitInfo['date'] ?? 'Recently' }} by {{ $gitInfo['author'] ?? 'Admin' }}</span>
+            </div>
+            <div>
+                <span style="color: var(--text-muted); display: block; font-size: 11.5px; text-transform: uppercase; font-weight: 600;">Status</span>
+                <span style="color: {{ ($gitInfo['isClean'] ?? true) ? '#16a34a' : '#d97706' }}; font-weight: 600;">
+                    {{ ($gitInfo['isClean'] ?? true) ? '✓ Repository In Sync' : '⚠️ Uncommitted Local Changes' }}
+                </span>
+            </div>
         </div>
     </div>
 </div>

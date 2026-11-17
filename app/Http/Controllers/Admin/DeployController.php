@@ -304,7 +304,8 @@ class DeployController extends Controller
         $output = [];
         $code   = 0;
         $basePath = escapeshellarg(base_path());
-        $fullCmd = "cd {$basePath} && {$cmd}";
+        $prefix = (PHP_OS_FAMILY !== 'Windows') ? "git config --global --add safe.directory {$basePath} 2>/dev/null; " : "";
+        $fullCmd = "cd {$basePath} && {$prefix}{$cmd}";
         exec($fullCmd, $output, $code);
         return ['output' => implode("\n", $output), 'code' => $code];
     }

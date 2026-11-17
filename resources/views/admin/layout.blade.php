@@ -392,6 +392,9 @@
                 <span style="font-weight: 600; color: #475569;">SD International Management System</span>
             </div>
             <div class="topbar-right">
+                <a href="{{ route('admin.deploy.index') }}" class="btn-live-site" style="background: #fdf2f3; color: #64141f; border-color: #fecdd3; font-weight: 600;">
+                    <span>🚀 Git Deploy</span>
+                </a>
                 <a href="{{ url('/') }}" target="_blank" class="btn-live-site">
                     <span>🌐 View Live Website ↗</span>
                 </a>

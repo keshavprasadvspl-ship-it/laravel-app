@@ -28,6 +28,38 @@ class DashboardController extends Controller
         $recentInquiries = Inquiry::latest()->take(6)->get();
         $recentProducts = Product::latest()->take(6)->get();
 
-        return view('admin.dashboard', compact('stats', 'recentInquiries', 'recentProducts'));
+        // Git repository status for quick deployment widget
+        $gitInfo = [
+            'branch' => 'master',
+            'shortSha' => '—',
+            'message' => '—',
+            'date' => '—',
+            'author' => '—',
+            'isClean' => true,
+        ];
+
+        try {
+            $basePath = escapeshellarg(base_path());
+            $branchOut = @shell_exec("cd {$basePath} && git branch --show-current 2>&1");
+            if ($branchOut && trim($branchOut) !== '') {
+                $gitInfo['branch'] = trim($branchOut);
+            }
+
+            $logOut = @shell_exec("cd {$basePath} && git log -1 --format=\"%h|%s|%an|%ci\" 2>&1");
+            if ($logOut && str_contains($logOut, '|')) {
+                $parts = explode('|', trim($logOut), 4);
+                $gitInfo['shortSha'] = $parts[0] ?? '—';
+                $gitInfo['message'] = $parts[1] ?? '—';
+                $gitInfo['author'] = $parts[2] ?? '—';
+                $gitInfo['date'] = $parts[3] ?? '—';
+            }
+
+            $statusOut = @shell_exec("cd {$basePath} && git status --short 2>&1");
+            $gitInfo['isClean'] = empty(trim($statusOut ?? ''));
+        } catch (\Throwable $e) {
+            // Silently fallback to defaults
+        }
+
+        return view('admin.dashboard', compact('stats', 'recentInquiries', 'recentProducts', 'gitInfo'));
     }
 }
