@@ -33,4 +33,15 @@ class Product extends Model
     {
         return $this->categories->first();
     }
+
+    public function getThumbnailUrlAttribute(): string
+    {
+        if ($this->image_url && file_exists(public_path($this->image_url))) {
+            return asset($this->image_url);
+        }
+        if ($this->image_url && file_exists(public_path(ltrim($this->image_url, '/')))) {
+            return asset(ltrim($this->image_url, '/'));
+        }
+        return asset('uploads/woocommerce-placeholder-120x120.png');
+    }
 }

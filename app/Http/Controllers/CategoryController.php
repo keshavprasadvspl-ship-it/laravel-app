@@ -11,13 +11,44 @@ class CategoryController extends Controller
 {
     public function show(string $slug)
     {
-        $category = Category::where('slug', $slug)
-            ->with(['children', 'products' => function ($q) {
+        $category = Category::where('slug', $slug)->firstOrFail();
+
+        // Get direct child categories with product count
+        $childCategories = Category::where('parent_id', $category->wp_term_id ?: $category->id)
+            ->where('name', 'not like', '%Manufacturer%')
+            ->where('name', 'not like', '%Exporter%')
+            ->where('name', 'not like', '%Supplier%')
+            ->where('name', 'not like', '%In %')
+            ->withCount(['products' => function ($q) {
                 $q->where('status', 'publish');
             }])
-            ->firstOrFail();
+            ->orderBy('name')
+            ->get();
 
-        $products = $category->products()->paginate(24)->withQueryString();
+        if ($childCategories->isEmpty()) {
+            $childCategories = Category::where('parent_id', $category->id)
+                ->where('name', 'not like', '%Manufacturer%')
+                ->where('name', 'not like', '%Exporter%')
+                ->where('name', 'not like', '%Supplier%')
+                ->where('name', 'not like', '%In %')
+                ->withCount(['products' => function ($q) {
+                    $q->where('status', 'publish');
+                }])
+                ->orderBy('name')
+                ->get();
+        }
+
+        // Direct products query
+        $productsQuery = $category->products()->where('status', 'publish');
+
+        if ($category->products()->where('status', 'publish')->count() === 0 && $childCategories->isNotEmpty()) {
+            $descendantIds = $childCategories->pluck('id')->toArray();
+            $products = Product::whereHas('categories', function ($q) use ($descendantIds) {
+                $q->whereIn('categories.id', $descendantIds);
+            })->where('status', 'publish')->paginate(24)->withQueryString();
+        } else {
+            $products = $productsQuery->paginate(24)->withQueryString();
+        }
 
         $seo = SeoHelper::generateTags($category, [
             'title' => "{$category->name} Manufacturer, Exporter, Supplier in India | SD International",
@@ -28,13 +59,12 @@ class CategoryController extends Controller
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Products' => url('/products'),
             $category->name => url('/' . $category->slug),
         ];
 
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
         $allCategories = Category::getSidebarCategories();
 
-        return view('categories.show', compact('category', 'products', 'seo', 'breadcrumbs', 'breadcrumbSchema', 'allCategories'));
+        return view('categories.show', compact('category', 'childCategories', 'products', 'seo', 'breadcrumbs', 'breadcrumbSchema', 'allCategories'));
     }
 }

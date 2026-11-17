@@ -36,6 +36,37 @@ class Category extends Model
         return url('/' . $this->slug);
     }
 
+    public function getFeaturedImageUrlAttribute(): string
+    {
+        if ($this->image && file_exists(public_path($this->image))) {
+            return asset($this->image);
+        }
+
+        $slugPath = 'uploads/2022/04/' . $this->slug . '.jpg';
+        if (file_exists(public_path($slugPath))) {
+            return asset($slugPath);
+        }
+
+        if ($this->slug === 'other-products' && file_exists(public_path('uploads/2022/05/other-product.jpg'))) {
+            return asset('uploads/2022/05/other-product.jpg');
+        }
+
+        if ($this->parent && file_exists(public_path('uploads/2022/04/' . $this->parent->slug . '.jpg'))) {
+            return asset('uploads/2022/04/' . $this->parent->slug . '.jpg');
+        }
+
+        return asset('uploads/2022/04/dyes.jpg');
+    }
+
+    public function getThumbnailUrlAttribute(): string
+    {
+        $thumbPath = 'uploads/2022/04/' . $this->slug . '-120x120.jpg';
+        if (file_exists(public_path($thumbPath))) {
+            return asset($thumbPath);
+        }
+        return $this->featured_image_url;
+    }
+
     public static function getSidebarCategories()
     {
         return static::whereHas('products')
