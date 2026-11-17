@@ -38,16 +38,16 @@ class CategoryController extends Controller
                 ->get();
         }
 
-        // Direct products query
+        // Direct products query - show all products without pagination
         $productsQuery = $category->products()->where('status', 'publish');
 
         if ($category->products()->where('status', 'publish')->count() === 0 && $childCategories->isNotEmpty()) {
             $descendantIds = $childCategories->pluck('id')->toArray();
             $products = Product::whereHas('categories', function ($q) use ($descendantIds) {
                 $q->whereIn('categories.id', $descendantIds);
-            })->where('status', 'publish')->paginate(24)->withQueryString();
+            })->where('status', 'publish')->orderBy('title')->get();
         } else {
-            $products = $productsQuery->paginate(24)->withQueryString();
+            $products = $productsQuery->orderBy('title')->get();
         }
 
         $seo = SeoHelper::generateTags($category, [

@@ -935,9 +935,11 @@
                     @endforeach
                 </ul>
 
+            @if(method_exists($products, 'hasPages') && $products->hasPages())
                 <div class="d-flex justify-content-center my-4">
                     {{ $products->links('pagination::bootstrap-5') }}
                 </div>
+            @endif
             @endif
 
             <!-- 4. Industries We Serve (Elementor Inner Sections 1986e67 & a33570f) -->
