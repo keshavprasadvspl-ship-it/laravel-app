@@ -59,8 +59,21 @@ class CategoryController extends Controller
 
         $breadcrumbs = [
             'Home' => url('/'),
-            $category->name => url('/' . $category->slug),
         ];
+
+        // Include parent category hierarchy (e.g. Home / Dyes / Direct Dyes)
+        $ancestors = [];
+        $curr = $category->parent;
+        while ($curr) {
+            $ancestors[] = $curr;
+            $curr = $curr->parent;
+        }
+
+        foreach (array_reverse($ancestors) as $anc) {
+            $breadcrumbs[$anc->name] = url('/' . $anc->slug);
+        }
+
+        $breadcrumbs[$category->name] = url('/' . $category->slug);
 
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
         $allCategories = Category::getSidebarCategories();

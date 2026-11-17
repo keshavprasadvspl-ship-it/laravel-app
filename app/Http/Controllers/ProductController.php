@@ -99,13 +99,21 @@ class ProductController extends Controller
             'og_type' => 'product',
         ]);
 
-        // Breadcrumbs
+        // Breadcrumbs with category hierarchy
         $primaryCat = $product->categories->first();
         $breadcrumbs = [
             'Home' => url('/'),
-            'Products' => url('/products'),
         ];
         if ($primaryCat) {
+            $catAncestors = [];
+            $c = $primaryCat->parent;
+            while ($c) {
+                $catAncestors[] = $c;
+                $c = $c->parent;
+            }
+            foreach (array_reverse($catAncestors) as $anc) {
+                $breadcrumbs[$anc->name] = url('/' . $anc->slug);
+            }
             $breadcrumbs[$primaryCat->name] = url('/' . $primaryCat->slug);
         }
         $breadcrumbs[$product->title] = url('/' . $product->slug);

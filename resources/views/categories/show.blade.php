@@ -744,9 +744,24 @@
     <section class="category-breadcrumb-section">
         <div class="archive-container">
             <nav class="woocommerce-breadcrumb">
-                <a href="{{ url('/') }}">Home</a>
-                <span class="delimiter">&#47;</span>
-                <span>{{ $category->name }}</span>
+                @if(!empty($breadcrumbs))
+                    @foreach($breadcrumbs as $title => $link)
+                        @if(!$loop->last)
+                            <a href="{{ $link }}">{{ $title }}</a>
+                            <span class="delimiter">&#47;</span>
+                        @else
+                            <span>{{ $title }}</span>
+                        @endif
+                    @endforeach
+                @else
+                    <a href="{{ url('/') }}">Home</a>
+                    @if($category->parent)
+                        <span class="delimiter">&#47;</span>
+                        <a href="{{ url('/' . $category->parent->slug) }}">{{ $category->parent->name }}</a>
+                    @endif
+                    <span class="delimiter">&#47;</span>
+                    <span>{{ $category->name }}</span>
+                @endif
             </nav>
         </div>
     </section>
