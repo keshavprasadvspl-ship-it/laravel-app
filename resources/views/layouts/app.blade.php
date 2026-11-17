@@ -9,15 +9,15 @@
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 	
 <!-- Search Engine Optimization by Rank Math - https://s.rankmath.com/home -->
-<title>SD International - Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases &amp; salts manufacturer in india</title>
-<meta name="description" content="Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases &amp; salts manufacturer in india"/>
-<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
-<link rel="canonical" href="/" />
+<title>{{ $seo['title'] ?? 'SD International - Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases & salts manufacturer in india' }}</title>
+<meta name="description" content="{{ $seo['description'] ?? 'Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases & salts manufacturer in india' }}"/>
+<meta name="robots" content="{{ $seo['robots'] ?? 'follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large' }}"/>
+<link rel="canonical" href="{{ $seo['canonical'] ?? url()->current() }}" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="SD International - Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases &amp; salts manufacturer in india" />
-<meta property="og:description" content="Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases &amp; salts manufacturer in india" />
-<meta property="og:url" content="/" />
+<meta property="og:type" content="{{ $seo['og_type'] ?? 'website' }}" />
+<meta property="og:title" content="{{ $seo['title'] ?? 'SD International - Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases & salts manufacturer in india' }}" />
+<meta property="og:description" content="{{ $seo['description'] ?? 'Vat dyes manufacturer in india, solvent dyes manufacturer in india, Disperse dyes, food colours, organic pigments, Naphthols, fast bases & salts manufacturer in india' }}" />
+<meta property="og:url" content="{{ $seo['canonical'] ?? url()->current() }}" />
 <meta property="og:site_name" content="S D International" />
 <meta property="og:updated_time" content="2025-11-06T18:51:11+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -2287,7 +2287,7 @@ function googleTranslateElementInit() {
 		</div>
 			
 
-@if(Request::is("/") || Request::routeIs("home") || Request::is("blogs") || Request::is("blogs/page/*"))
+@if(Request::is("/") || Request::routeIs("home") || Request::is("blogs") || Request::is("blogs/*") || Request::is("blogs/page/*") || isset($product) || isset($category))
     @yield("content")
 @else
     <div id="content" class="site-content">
@@ -2448,7 +2448,7 @@ function googleTranslateElementInit() {
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="/products?category=solvent-dyes">
+											<a href="/solvent-dyes/">
 
 											<span class="elementor-icon-list-text">Solvent Dyes</span>
 											</a>
@@ -2597,6 +2597,12 @@ function googleTranslateElementInit() {
 											<a href="/pu-foam-pigments/">
 
 											<span class="elementor-icon-list-text">PU Foam Pigments</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="/ultra-marine-pigments/">
+
+											<span class="elementor-icon-list-text">Ultramarine Pigments</span>
 											</a>
 									</li>
 						</ul>
@@ -3123,6 +3129,35 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             }
         });
+    }
+    // PowerPack counter animation
+    const counters = document.querySelectorAll('.pp-counter-number[data-to]');
+    if (counters.length > 0 && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    obs.unobserve(el);
+                    const target = parseInt(el.getAttribute('data-to'), 10) || 0;
+                    const duration = parseInt(el.getAttribute('data-speed'), 10) || 1500;
+                    const start = 0;
+                    const startTime = performance.now();
+                    function update(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const easeOut = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(start + (target - start) * easeOut);
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        } else {
+                            el.textContent = target;
+                        }
+                    }
+                    requestAnimationFrame(update);
+                }
+            });
+        }, { threshold: 0.2 });
+        counters.forEach(c => observer.observe(c));
     }
 });
 </script>

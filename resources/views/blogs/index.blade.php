@@ -236,7 +236,7 @@
                                                         <a class="page-numbers prev" href="{{ url('/blogs/page/' . ($posts->currentPage() - 1)) }}">&laquo;</a>
                                                     @endif
 
-                                                    @for ($i = 1; $i <= min(5, $posts->lastPage()); $i++)
+                                                    @for ($i = 1; $i <= min(8, $posts->lastPage()); $i++)
                                                         @if ($i == $posts->currentPage())
                                                             <span aria-current="page" class="page-numbers current"><span class="elementor-screen-only">Page</span>{{ $i }}</span>
                                                         @else
@@ -244,7 +244,7 @@
                                                         @endif
                                                     @endfor
 
-                                                    @if ($posts->hasMorePages() && $posts->currentPage() > 1)
+                                                    @if ($posts->hasMorePages())
                                                         <a class="page-numbers next" href="{{ url('/blogs/page/' . ($posts->currentPage() + 1)) }}">&raquo;</a>
                                                     @endif
                                                 </nav>

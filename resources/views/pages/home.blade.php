@@ -302,7 +302,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 					<div class="pp-counter-number-title-wrap">
 								<div class="pp-counter-number-wrap">
 						<div class="pp-counter-number pp-counter-number-32890997" data-from="0" data-to="700" data-speed="1500" data-separator="yes" data-separator-char="">
-				0			</div>
+				700			</div>
 							<span class="pp-counter-number-suffix">
 					+				</span>
 						</div>
@@ -338,7 +338,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 					<div class="pp-counter-number-title-wrap">
 								<div class="pp-counter-number-wrap">
 						<div class="pp-counter-number pp-counter-number-127fea33" data-from="0" data-to="300" data-speed="1500" data-separator="yes" data-separator-char="">
-				0			</div>
+				300			</div>
 							<span class="pp-counter-number-suffix">
 					+				</span>
 						</div>
@@ -374,7 +374,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 					<div class="pp-counter-number-title-wrap">
 								<div class="pp-counter-number-wrap">
 						<div class="pp-counter-number pp-counter-number-534f0d7" data-from="0" data-to="50" data-speed="1500" data-separator="yes" data-separator-char="">
-				0			</div>
+				50			</div>
 					</div>
 		
 													<div class="pp-counter-num-divider-wrap">

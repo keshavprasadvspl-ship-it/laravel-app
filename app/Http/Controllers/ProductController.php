@@ -119,13 +119,13 @@ class ProductController extends Controller
             $relatedProducts = $primaryCat->products()
                 ->where('products.id', '!=', $product->id)
                 ->where('products.status', 'publish')
-                ->take(4)
+                ->take(6)
                 ->get();
         }
         if ($relatedProducts->isEmpty()) {
             $relatedProducts = Product::where('id', '!=', $product->id)
                 ->where('status', 'publish')
-                ->take(4)
+                ->take(6)
                 ->get();
         }
 

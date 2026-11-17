@@ -13,11 +13,17 @@ class BlogController extends Controller
     {
         $posts = Post::latest()->paginate(10);
 
+        $canonical = $posts->currentPage() > 1 
+            ? url('/blogs/page/' . $posts->currentPage()) 
+            : url('/blogs');
+
         $seo = [
             'site_name' => 'S D International',
-            'title' => 'Blogs & Industry Insights | SD International',
+            'title' => $posts->currentPage() > 1 
+                ? 'Blogs & Industry Insights - Page ' . $posts->currentPage() . ' | SD International'
+                : 'Blogs & Industry Insights | SD International',
             'description' => 'Read latest technical guides, industrial applications, and news on Vat Dyes, Solvent Dyes, Pigments and Chemical Intermediates by SD International.',
-            'canonical' => url('/blogs'),
+            'canonical' => $canonical,
             'og_image' => 'https://sdinternational.com/wp-content/uploads/2020/07/logo.png',
             'og_type' => 'website',
             'robots' => 'index,follow',
