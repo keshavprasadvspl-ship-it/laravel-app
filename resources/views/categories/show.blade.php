@@ -7,17 +7,21 @@
        Replicated 1:1 from https://sdinternational.com/dyes/
        ========================================================================== */
 
-    /* Universal container matching live Astra container */
+    /* Universal container matching live Astra full-width layout */
     .archive-page-wrap {
         background: #ffffff;
         color: #000000;
         font-family: 'Poppins', sans-serif;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     .archive-container {
-        max-width: 1240px;
-        margin: 0 auto;
-        padding: 0 20px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 30px;
+        box-sizing: border-box;
     }
 
     /* 1. Breadcrumb Bar (Elementor Section 7b8eef9) */
@@ -56,8 +60,8 @@
 
     .archive-main-grid {
         display: grid;
-        grid-template-columns: minmax(0, 78%) minmax(0, 22%);
-        gap: 30px;
+        grid-template-columns: minmax(0, 80%) minmax(0, 20%);
+        gap: 25px;
         align-items: start;
     }
 
@@ -668,6 +672,10 @@
     }
 
     @media (max-width: 767px) {
+        .archive-container {
+            padding: 0 15px;
+        }
+
         .products-grid-columns-6 {
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
