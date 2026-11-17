@@ -96,21 +96,46 @@
 
     .category-inner-banner-row {
         display: grid;
-        grid-template-columns: 240px 1fr;
-        gap: 24px;
+        grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+        gap: 25px;
         margin-bottom: 24px;
         align-items: start;
+    }
+
+    .term-description-box .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .term-description-box .col-md-5 {
+        flex: 0 0 42%;
+        max-width: 42%;
+        padding-right: 15px;
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+
+    .term-description-box .col-md-7 {
+        flex: 0 0 58%;
+        max-width: 58%;
+        padding-right: 15px;
+        padding-left: 15px;
+        box-sizing: border-box;
     }
 
     .category-featured-card {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .category-featured-img {
         width: 100%;
-        max-width: 240px;
+        max-width: 100%;
         height: auto;
+        aspect-ratio: 600 / 400;
         border-radius: 20px 0px 20px 0px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         object-fit: cover;
@@ -119,9 +144,9 @@
 
     .btn-category-enquiry {
         width: 100%;
-        max-width: 240px;
+        max-width: 100%;
         margin-top: 14px;
-        padding: 10px 16px;
+        padding: 11px 18px;
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
         font-weight: 600;
@@ -319,10 +344,11 @@
         align-items: center;
         text-align: center;
         background: #ffffff;
-        padding: 12px 10px;
+        padding: 0 0 12px 0;
         border-radius: 6px;
         transition: transform 0.2s, box-shadow 0.2s;
         border: 1px solid transparent;
+        overflow: hidden;
     }
 
     .product-category-card:hover {
@@ -341,20 +367,22 @@
     }
 
     .cat-thumb-box {
-        width: 120px;
-        height: 120px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
         margin-bottom: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        border-radius: 4px;
+        border-radius: 0;
         background: #f8fafc;
     }
 
     .cat-thumb-box img {
-        width: 120px;
-        height: 120px;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
         display: block;
         transition: transform 0.3s ease;
@@ -388,12 +416,13 @@
         background: #ffffff;
         border: 1px solid #e2e8f0;
         border-radius: 6px;
-        padding: 14px 10px;
+        padding: 0 0 14px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         transition: transform 0.2s, box-shadow 0.2s;
+        overflow: hidden;
     }
 
     .product-item-card:hover {
@@ -403,21 +432,24 @@
     }
 
     .product-thumb-wrap {
-        width: 120px;
-        height: 120px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
         margin-bottom: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        background: #f8fafc;
     }
 
     .product-thumb-wrap img {
-        width: 120px;
-        height: 120px;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
         display: block;
-        border-radius: 4px;
+        border-radius: 0;
     }
 
     .product-category-label {
@@ -493,7 +525,8 @@
 
     .industry-image-wrap img {
         width: 100%;
-        height: 125px;
+        height: 205px;
+        aspect-ratio: 5 / 4;
         object-fit: cover;
         display: block;
     }
@@ -857,7 +890,7 @@
                         <li class="product-category-card">
                             <a href="{{ url('/' . $child->slug) }}">
                                 <div class="cat-thumb-box">
-                                    <img src="{{ $child->thumbnail_url }}" alt="{{ $child->name }}" width="120" height="120" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2022/04/{{ $child->slug }}-120x120.jpg';">
+                                    <img src="{{ $child->thumbnail_url }}" alt="{{ $child->name }}" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2022/04/{{ $child->slug }}-120x120.jpg';">
                                 </div>
                                 <h2 class="woocommerce-loop-category__title">
                                     {{ $child->name }}
@@ -876,7 +909,7 @@
                         <li class="product-item-card">
                             <div class="product-thumb-wrap">
                                 <a href="{{ $product->url }}">
-                                    <img src="{{ $product->thumbnail_url }}" alt="{{ $product->title }}" width="120" height="120" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';">
+                                    <img src="{{ $product->thumbnail_url }}" alt="{{ $product->title }}" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';">
                                 </a>
                             </div>
                             <span class="product-category-label">{{ $category->name }}</span>
