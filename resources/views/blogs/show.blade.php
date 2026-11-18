@@ -92,6 +92,30 @@
         font-weight: 600 !important;
         color: #111111 !important;
     }
+    .elementor-13570 .elementor-element-b5b2aa4 table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin: 22px 0 28px !important;
+        font-size: 14.5px !important;
+        display: block;
+        overflow-x: auto;
+    }
+    .elementor-13570 .elementor-element-b5b2aa4 table th,
+    .elementor-13570 .elementor-element-b5b2aa4 table td {
+        border: 1px solid #d1d5db !important;
+        padding: 11px 14px !important;
+        text-align: left !important;
+        vertical-align: top !important;
+        line-height: 1.6 !important;
+    }
+    .elementor-13570 .elementor-element-b5b2aa4 table th {
+        background: #870B28 !important;
+        color: #ffffff !important;
+        font-weight: 600 !important;
+    }
+    .elementor-13570 .elementor-element-b5b2aa4 table tr:nth-child(even) td {
+        background: #f9fafb !important;
+    }
 
     @media (max-width: 768px) {
         .elementor-13570 .elementor-element-f5efd57 {
@@ -150,7 +174,12 @@
                                         <div class="elementor-element elementor-element-3fe7c4b elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="3fe7c4b" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-image">
-                                                    <img width="1000" height="668" src="{{ asset($post->image_url) }}" class="attachment-large size-large" alt="{{ $post->title }}" />
+                                                    @php
+                                                        $featFallback = str_starts_with($post->image_url, 'http')
+                                                            ? $post->image_url
+                                                            : 'https://sdinternational.com/wp-content' . (str_starts_with($post->image_url, '/') ? '' : '/') . $post->image_url;
+                                                    @endphp
+                                                    <img width="1000" height="668" src="{{ asset($post->image_url) }}" class="attachment-large size-large" alt="{{ $post->title }}" onerror="this.onerror=null;this.src='{{ $featFallback }}';" />
                                                 </div>
                                             </div>
                                         </div>

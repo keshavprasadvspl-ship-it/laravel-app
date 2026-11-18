@@ -62,6 +62,18 @@ class BlogController extends Controller
             ], 404);
         }
 
+        // Hydrate full content from synced snapshot if DB record still has truncated placeholder text
+        $plainLen = strlen(trim(strip_tags($post->content ?? '')));
+        if ($plainLen < 500) {
+            $jsonPath = database_path('data/blog_full_contents.json');
+            if (file_exists($jsonPath)) {
+                $articles = json_decode(file_get_contents($jsonPath), true) ?: [];
+                if (!empty($articles[$post->slug]['content'])) {
+                    $post->content = $articles[$post->slug]['content'];
+                }
+            }
+        }
+
         $seo = SeoHelper::generateTags($post, [
             'title' => "{$post->title} | SD International",
             'description' => $post->excerpt ?: substr(strip_tags($post->content), 0, 160),

@@ -198,23 +198,35 @@
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-posts-container elementor-posts elementor-posts--skin-cards elementor-grid elementor-has-item-ratio">
                                                     @foreach($posts as $post)
+                                                    @php
+                                                        $cardExcerpt = trim($post->excerpt ?? '');
+                                                        if ($cardExcerpt === '') {
+                                                            $cardExcerpt = \Illuminate\Support\Str::limit(
+                                                                trim(preg_replace('/\s+/', ' ', html_entity_decode(strip_tags($post->content ?? ''), ENT_QUOTES, 'UTF-8'))),
+                                                                165
+                                                            );
+                                                        }
+                                                        $blogImgFallback = $post->image_url
+                                                            ? (str_starts_with($post->image_url, 'http') ? $post->image_url : 'https://sdinternational.com/wp-content' . (str_starts_with($post->image_url, '/') ? '' : '/') . $post->image_url)
+                                                            : 'https://sdinternational.com/wp-content/uploads/2020/07/logo.png';
+                                                    @endphp
                                                     <article class="elementor-post elementor-grid-item post-{{ $post->id }} post type-post status-publish format-standard has-post-thumbnail hentry category-blogs">
                                                         <div class="elementor-post__card">
-                                                            <a class="elementor-post__thumbnail__link" href="{{ url('/blogs/' . $post->slug) }}" target="_blank">
+                                                            <a class="elementor-post__thumbnail__link" href="{{ url('/blogs/' . $post->slug) }}">
                                                                 <div class="elementor-post__thumbnail">
-                                                                    <img src="{{ asset($post->image_url) }}" alt="{{ $post->title }}" decoding="async" loading="lazy" />
+                                                                    <img src="{{ asset($post->image_url) }}" alt="{{ $post->title }}" decoding="async" loading="lazy" onerror="this.onerror=null;this.src='{{ $blogImgFallback }}';" />
                                                                 </div>
                                                             </a>
                                                             <div class="elementor-post__text">
                                                                 <h1 class="elementor-post__title">
-                                                                    <a href="{{ url('/blogs/' . $post->slug) }}" target="_blank">
+                                                                    <a href="{{ url('/blogs/' . $post->slug) }}">
                                                                         {{ $post->title }}
                                                                     </a>
                                                                 </h1>
                                                                 <div class="elementor-post__excerpt">
-                                                                    <p>{{ $post->excerpt }}</p>
+                                                                    <p>{{ $cardExcerpt }}</p>
                                                                 </div>
-                                                                <a class="elementor-post__read-more" href="{{ url('/blogs/' . $post->slug) }}" target="_blank">
+                                                                <a class="elementor-post__read-more" href="{{ url('/blogs/' . $post->slug) }}">
                                                                     Read More »
                                                                 </a>
                                                             </div>
