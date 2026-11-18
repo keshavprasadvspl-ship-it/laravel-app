@@ -88,19 +88,26 @@ class ProductController extends Controller
     {
         $product = Product::where('slug', $slug)
             ->where('status', 'publish')
-            ->with(['categories', 'seo'])
+            ->with(['categories.parent', 'seo'])
             ->firstOrFail();
 
         $seo = SeoHelper::generateTags($product, [
             'title' => "{$product->title} | CAS no {$product->cas_number} manufacturer, exporter, supplier in Mumbai- India",
             'description' => $product->short_description ?: "Buy high purity {$product->title} from SD International - leading manufacturer, supplier and exporter in India.",
             'canonical' => url('/' . $product->slug),
-            'og_image' => $product->image_url ?: 'https://sdinternational.com/wp-content/uploads/2020/07/logo.png',
+            'og_image' => $product->thumbnail_url,
             'og_type' => 'product',
         ]);
 
-        // Breadcrumbs with category hierarchy
-        $primaryCat = $product->categories->first();
+        // Choose most specific non-SEO category (prefer child category like Basic Dyes over parent Dyes)
+        $cleanCats = $product->categories->filter(function ($cat) {
+            return !preg_match('/(Manufacturer|Exporter|Supplier|In )/i', $cat->name);
+        });
+        $primaryCat = $cleanCats->first(fn ($cat) => !empty($cat->parent_id) && $cat->parent_id > 0)
+            ?? $cleanCats->first()
+            ?? $product->categories->first();
+
+        // Breadcrumbs with full category hierarchy (Home / Dyes / Basic Dyes / Product)
         $breadcrumbs = [
             'Home' => url('/'),
         ];
@@ -121,24 +128,162 @@ class ProductController extends Controller
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
         $productSchema = SeoHelper::productSchema($product);
 
-        // Related products
+        // Related products (12 items = 2 rows of 6 matching live template 2712)
         $relatedProducts = collect();
         if ($primaryCat) {
             $relatedProducts = $primaryCat->products()
+                ->with('categories')
                 ->where('products.id', '!=', $product->id)
                 ->where('products.status', 'publish')
-                ->take(6)
+                ->take(12)
                 ->get();
         }
-        if ($relatedProducts->isEmpty()) {
-            $relatedProducts = Product::where('id', '!=', $product->id)
+        if ($relatedProducts->count() < 12) {
+            $excludeIds = $relatedProducts->pluck('id')->push($product->id)->all();
+            $extra = Product::with('categories')
+                ->whereNotIn('id', $excludeIds)
                 ->where('status', 'publish')
-                ->take(6)
+                ->take(12 - $relatedProducts->count())
                 ->get();
+            $relatedProducts = $relatedProducts->concat($extra);
         }
+
+        // Process rich product content & generate dynamic TOC items
+        [$renderedContent, $tocItems] = $this->prepareProductContent($product);
 
         $allCategories = Category::getSidebarCategories();
 
-        return view('products.show', compact('product', 'seo', 'breadcrumbs', 'breadcrumbSchema', 'productSchema', 'relatedProducts', 'allCategories'));
+        return view('products.show', compact(
+            'product',
+            'primaryCat',
+            'seo',
+            'breadcrumbs',
+            'breadcrumbSchema',
+            'productSchema',
+            'relatedProducts',
+            'renderedContent',
+            'tocItems',
+            'allCategories'
+        ));
+    }
+
+    /**
+     * Printable Technical Data Sheet (TDS) PDF view.
+     */
+    public function tds(string $slug)
+    {
+        $product = Product::where('slug', $slug)
+            ->where('status', 'publish')
+            ->with(['categories.parent'])
+            ->firstOrFail();
+
+        $cleanCats = $product->categories->filter(fn ($cat) => !preg_match('/(Manufacturer|Exporter|Supplier|In )/i', $cat->name));
+        $primaryCat = $cleanCats->first(fn ($cat) => !empty($cat->parent_id) && $cat->parent_id > 0)
+            ?? $cleanCats->first()
+            ?? $product->categories->first();
+
+        return view('products.tds', compact('product', 'primaryCat'));
+    }
+
+    /**
+     * Transform stored WordPress product content into styled HTML matching Elementor template 2712
+     * with gold CTA callout banner, functional Download PDF button, Enquiry triggers, and TOC anchors.
+     */
+    private function prepareProductContent(Product $product): array
+    {
+        $raw = trim($product->content ?? '');
+        $cleanName = trim(preg_replace('/\s*\|.*$/', '', $product->title));
+        $tdsUrl = route('products.tds', $product->slug);
+
+        $pdfButtonHtml = '<a href="' . e($tdsUrl) . '" target="_blank" rel="noopener" class="sd-download-pdf-btn" title="Download Technical Data Sheet (PDF)">'
+            . '<span class="sd-pdf-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15h6"/><path d="M9 11h6"/></svg><span>PDF</span></span>'
+            . '<span class="sd-pdf-label">Download PDF</span>'
+            . '</a>';
+
+        $goldBannerHtml = '<div class="product-gold-cta-banner">'
+            . 'For more detailed information about ' . e($product->title) . ' chemical, its chemical composition, physical properties, uses and applications or your exact chemical needs, call us at <a href="tel:+919920669561">+91 99206 69561</a> contact SD International.'
+            . '</div>';
+
+        if ($raw === '') {
+            $attrs = is_array($product->attributes_json) ? $product->attributes_json : [];
+            $synonym = $attrs['commercial-name']['value'] ?? ($product->relative_name ?: $cleanName);
+            $catLabel = $product->categories->first()?->name ?? 'Dyes & Chemicals';
+            $raw = "<h2>{$cleanName}</h2>\n"
+                . "<p>{$cleanName} belongs to the category of {$catLabel}"
+                . ($product->cas_number ? " having CAS number {$product->cas_number}." : ".")
+                . ($synonym ? " The synonym of {$cleanName} is {$synonym}." : "")
+                . ($product->molecular_weight ? " The molecular weight of {$cleanName} is {$product->molecular_weight} g/mol" : "")
+                . ($product->molecular_formula ? " and the molecular formula is {$product->molecular_formula}." : ".")
+                . ($product->ci_number ? " The colour index number is {$product->ci_number}." : "")
+                . ($product->physical_appearance ? " The physical appearance of {$cleanName} is {$product->physical_appearance}." : "")
+                . "</p>\n"
+                . "<h3>{$cleanName} Latest Price</h3>\n"
+                . "<table><tbody><tr><td>{$cleanName} latest price:</td><td>NA*</td></tr></tbody></table>\n"
+                . "<p><strong><em>*Prices shown above are provisional prices and may change due to different market conditions for latest prices please Contact Us at +91 99206 69561 or send enquiry through the Enquiry Form to get the final price within hours.</em></strong></p>\n"
+                . "<h4>Specifications of {$cleanName}</h4>\n"
+                . "<p>{$cleanName} Technical Parameters / Specifications, please {$pdfButtonHtml}</p>\n"
+                . "<p><em><strong>Note: Looking for something specific? Customisation is also available with above products. Please specify in the Enquire now page.</strong></em></p>\n";
+        } else {
+            // Replace legacy download.jpg image with functional Download PDF button
+            $raw = preg_replace('/<img[^>]+download\.jpg[^>]*>/i', $pdfButtonHtml, $raw);
+
+            // Convert bare text lines separated by blank lines into proper paragraphs while preserving HTML tags
+            $lines = preg_split("/\r\n|\n|\r/", $raw);
+            $htmlParts = [];
+            $inTable = false;
+            foreach ($lines as $line) {
+                $trimmed = trim($line);
+                if ($trimmed === '') continue;
+                if (stripos($trimmed, '<table') !== false) $inTable = true;
+                if ($inTable || preg_match('/^<(h[1-6]|div|table|tbody|thead|tr|td|th|ul|ol|li|p|blockquote|section|\/)/i', $trimmed)) {
+                    $htmlParts[] = $trimmed;
+                } else {
+                    $htmlParts[] = '<p>' . $trimmed . '</p>';
+                }
+                if (stripos($trimmed, '</table>') !== false) $inTable = false;
+            }
+            $raw = implode("\n", $htmlParts);
+        }
+
+        // Inject Gold Gradient CTA banner right before the "Latest Price" heading (matching live Elementor 11806)
+        if (preg_match('/<h[2-4][^>]*>[^<]*Latest Price[^<]*<\/h[2-4]>/i', $raw)) {
+            $raw = preg_replace(
+                '/(<h[2-4][^>]*>[^<]*Latest Price[^<]*<\/h[2-4]>)/i',
+                $goldBannerHtml . "\n$1",
+                $raw,
+                1
+            );
+        } else {
+            // Otherwise inject after first paragraph
+            $raw = preg_replace('/(<\/p>)/i', "$1\n" . $goldBannerHtml, $raw, 1);
+        }
+
+        // Make "Enquiry Form" and "Enquire now page" clickable modal triggers
+        $escapedTitle = addslashes($product->title);
+        $escapedSlug = addslashes($product->slug);
+        $raw = preg_replace(
+            '/\b(Enquiry Form|Enquire now page)\b/i',
+            '<a href="javascript:void(0)" class="inline-enquiry-link" onclick="openProductQuoteModal(\'' . $escapedTitle . '\', \'' . $escapedSlug . '\')">$1</a>',
+            $raw
+        );
+
+        // Attach anchor IDs to all h2/h3/h4 headings and build Table of Contents array
+        $tocItems = [];
+        $idx = 0;
+        $raw = preg_replace_callback('/<(h[2-4])([^>]*)>([\s\S]*?)<\/\1>/i', function ($m) use (&$tocItems, &$idx) {
+            $tag = $m[1];
+            $attrs = $m[2];
+            $inner = trim(preg_replace('/\s+/', ' ', strip_tags($m[3])));
+            $anchorId = 'toc-heading-' . $idx++;
+            if ($inner !== '') {
+                $tocItems[] = [
+                    'id' => $anchorId,
+                    'label' => html_entity_decode($inner, ENT_QUOTES, 'UTF-8'),
+                ];
+            }
+            return "<{$tag} id=\"{$anchorId}\"{$attrs}>{$m[3]}</{$tag}>";
+        }, $raw);
+
+        return [$raw, $tocItems];
     }
 }

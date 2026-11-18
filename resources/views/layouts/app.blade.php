@@ -104,6 +104,7 @@ html{font-size:93.75%;}a,.page-title{color:#64141f;}a:hover,a:focus{color:var(--
 <link rel='stylesheet' id='bellows-vanilla-css' href='/css/live/vanilla.css' media='all' />
 <link rel='stylesheet' id='sib-front-css-css' href='/css/live/mailin-front.css' media='all' />
 <link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Open+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.8.12' media='all' />
+<link rel='stylesheet' id='google-fonts-teko-merriweather' href='https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Teko:wght@400;500;600;700&display=swap' media='all' />
 <link rel='stylesheet' id='elementor-icons-shared-0-css' href='/css/live/fontawesome.min.css' media='all' />
 <link rel='stylesheet' id='elementor-icons-fa-solid-css' href='/css/live/solid.min.css' media='all' />
 <link rel='stylesheet' id='elementor-icons-fa-regular-css' href='/css/live/regular.min.css' media='all' />
@@ -1196,6 +1197,29 @@ html, body {
     object-fit: contain !important;
     margin: 0 auto !important;
     display: block !important;
+}
+
+/* Section 2 Left-to-Right Staggered Load Animation */
+.elementor-element-7bc0d733 {
+    overflow-x: hidden !important;
+}
+@keyframes sdFadeInLeftCard {
+    0% {
+        opacity: 0;
+        transform: translateX(-70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.elementor-element-7bc0d733 .elementor-column.elementor-col-25.sd-ltr-ready {
+    opacity: 0;
+    transform: translateX(-70px);
+    will-change: transform, opacity;
+}
+.elementor-element-7bc0d733 .elementor-column.elementor-col-25.sd-ltr-animate {
+    animation: sdFadeInLeftCard 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* Section 3: Overview */

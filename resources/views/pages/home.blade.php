@@ -654,5 +654,46 @@ Mr. Jagdeep Mehta ( Chairman & Managing Director )<br>Mr. Dhruv Mehta &nbsp;&nbs
 
 	</div> <!-- ast-container -->
 	</div><!-- #content -->
-		
+
+<script>
+(function() {
+    function initFeatureCardsAnimation() {
+        var section = document.querySelector('.elementor-element-7bc0d733');
+        if (!section) return;
+        var cols = Array.prototype.slice.call(section.querySelectorAll('.elementor-column.elementor-col-25'));
+        if (!cols.length) return;
+
+        cols.forEach(function(col) {
+            col.classList.add('sd-ltr-ready');
+        });
+
+        function triggerAnimation() {
+            cols.forEach(function(col, idx) {
+                col.style.animationDelay = (idx * 160) + 'ms';
+                col.classList.add('sd-ltr-animate');
+            });
+        }
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries, obs) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        triggerAnimation();
+                        obs.disconnect();
+                    }
+                });
+            }, { threshold: 0.15 });
+            observer.observe(section);
+        } else {
+            triggerAnimation();
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFeatureCardsAnimation);
+    } else {
+        initFeatureCardsAnimation();
+    }
+})();
+</script>
 @endsection

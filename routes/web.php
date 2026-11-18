@@ -83,6 +83,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // 2. Catalog & Products
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/{slug}/tds', [ProductController::class, 'tds'])->name('products.tds');
 Route::get('/product/{slug}', function ($slug) {
     return redirect('/' . $slug, 301);
 });
