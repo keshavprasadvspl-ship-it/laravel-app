@@ -128,13 +128,40 @@ class ProductController extends Controller
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
         $productSchema = SeoHelper::productSchema($product);
 
-        // Related products (12 items = 2 rows of 6 matching live template 2712)
+        // Related products (12 items = 2 rows of 6 matching live WooCommerce/Elementor template 2712 1:1)
         $relatedProducts = collect();
-        if ($primaryCat) {
+        $wpRelatedMapPath = database_path('data/wp_related_products.json');
+        $wpRelatedLabels = [];
+
+        if ($product->wp_id && file_exists($wpRelatedMapPath)) {
+            static $wpRelatedData = null;
+            if ($wpRelatedData === null) {
+                $wpRelatedData = json_decode(file_get_contents($wpRelatedMapPath), true) ?: [];
+            }
+            $wpRelatedIds = $wpRelatedData['related'][(string) $product->wp_id] ?? [];
+            $wpRelatedLabels = $wpRelatedData['labels'] ?? [];
+
+            if (!empty($wpRelatedIds)) {
+                $fetched = Product::with('categories')
+                    ->whereIn('wp_id', $wpRelatedIds)
+                    ->where('status', 'publish')
+                    ->get()
+                    ->keyBy('wp_id');
+
+                $relatedProducts = collect($wpRelatedIds)
+                    ->map(fn ($wpId) => $fetched->get($wpId))
+                    ->filter()
+                    ->values();
+            }
+        }
+
+        // Fallback for newly created admin products not in WP snapshot
+        if ($relatedProducts->isEmpty() && $primaryCat) {
             $relatedProducts = $primaryCat->products()
                 ->with('categories')
                 ->where('products.id', '!=', $product->id)
                 ->where('products.status', 'publish')
+                ->orderByDesc('wp_id')
                 ->take(12)
                 ->get();
         }
@@ -143,9 +170,19 @@ class ProductController extends Controller
             $extra = Product::with('categories')
                 ->whereNotIn('id', $excludeIds)
                 ->where('status', 'publish')
+                ->orderByDesc('wp_id')
                 ->take(12 - $relatedProducts->count())
                 ->get();
             $relatedProducts = $relatedProducts->concat($extra);
+        }
+
+        // Attach exact category subtitle label matching live site
+        foreach ($relatedProducts as $rel) {
+            $rel->setAttribute(
+                'related_cat_label',
+                $wpRelatedLabels[(string) $rel->wp_id]
+                    ?? ($rel->categories->first()?->name ?? 'Dyes & Chemicals')
+            );
         }
 
         // Process rich product content & generate dynamic TOC items

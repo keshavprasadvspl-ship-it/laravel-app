@@ -1129,8 +1129,7 @@
             <ul class="related-grid-6">
                 @foreach($relatedProducts as $rel)
                     @php
-                        $relCleanCat = $rel->categories->first(fn ($c) => !preg_match('/(Manufacturer|Exporter|Supplier|In )/i', $c->name)) ?? $rel->categories->first();
-                        $relCatLabel = $relCleanCat ? ($relCleanCat->name . ' Manufacturers in India') : 'Dyes Manufacturers in India';
+                        $relCatLabel = $rel->related_cat_label ?: ($rel->categories->first()?->name ?? 'Dyes & Chemicals');
                         $relFallback = $rel->image_url
                             ? (str_starts_with($rel->image_url, 'http') ? $rel->image_url : 'https://sdinternational.com/wp-content' . (str_starts_with($rel->image_url, '/') ? '' : '/') . $rel->image_url)
                             : 'https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';
