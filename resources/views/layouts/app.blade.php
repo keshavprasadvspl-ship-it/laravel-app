@@ -1139,10 +1139,17 @@ html, body {
     display: flex !important;
     flex-direction: column !important;
 }
+.elementor-element-7bc0d733 .elementor-widget-pp-info-box > .elementor-widget-container,
+.elementor-element-7bc0d733 .pp-info-box-container {
+    height: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
 .elementor-element-7bc0d733 .pp-info-box {
     background: #ffffff !important;
     border-radius: 6px !important;
-    padding: 24px 18px !important;
+    padding: 28px 18px !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
     text-align: center !important;
     width: 100% !important;
@@ -1165,9 +1172,28 @@ html, body {
     line-height: 1.6 !important;
     margin: 0 !important;
 }
-.elementor-element-7bc0d733 .pp-info-box-image img {
-    max-width: 48px !important;
+.elementor-element-7bc0d733 .pp-info-box-icon-wrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 14px !important;
+}
+.elementor-element-7bc0d733 .pp-info-box-icon {
+    padding: 8px 0 !important;
+    margin: 0 auto !important;
+    width: auto !important;
     height: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.elementor-element-7bc0d733 .pp-info-box-icon img,
+.elementor-element-7bc0d733 .pp-info-box-image img {
+    width: 80px !important;
+    height: 80px !important;
+    max-width: 80px !important;
+    object-fit: contain !important;
     margin: 0 auto !important;
     display: block !important;
 }

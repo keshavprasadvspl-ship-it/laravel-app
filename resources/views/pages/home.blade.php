@@ -66,7 +66,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 		<div class="pp-info-box">
 							<div class="pp-info-box-icon-wrap">
 												<span class="pp-info-box-icon pp-icon">
-			<img decoding="async" src="/uploads/elementor/thumbs/color_management-r7lgmnbluc67hyj0pn3xwj1cb6wz7hwk01abl8selk.png" title="color_management.png" alt="color_management.png" />		</span>
+			<img decoding="async" src="/uploads/icons/color_management.png" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/elementor/thumbs/color_management-r7lgmnbluc67hyj0pn3xwj1cb6wz7hwk01abl8selk.png';" title="Color Management" alt="Color Management" />		</span>
 											</div>
 						<div class="pp-info-box-content">
 				<div class="pp-info-box-title-wrap">
@@ -95,7 +95,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 		<div class="pp-info-box">
 							<div class="pp-info-box-icon-wrap">
 												<span class="pp-info-box-icon pp-icon">
-			<img decoding="async" src="/uploads/elementor/thumbs/scientist-r7lgmuubd0gi2u83hqcygh5129vwx2qep2i7fgh97s.png" title="scientist.png" alt="scientist.png" />		</span>
+			<img decoding="async" src="/uploads/icons/scientist.png" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/elementor/thumbs/scientist-r7lgmuubd0gi2u83hqcygh5129vwx2qep2i7fgh97s.png';" title="Research & Test Lab" alt="Research & Test Lab" />		</span>
 											</div>
 						<div class="pp-info-box-content">
 				<div class="pp-info-box-title-wrap">
@@ -124,7 +124,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 		<div class="pp-info-box">
 							<div class="pp-info-box-icon-wrap">
 												<span class="pp-info-box-icon pp-icon">
-			<img decoding="async" src="/uploads/elementor/thumbs/contract_manufacturing-r7lgmczdr5s1y8y1e0n1n3n9rybxutriam3zb77qi0.png" title="contract_manufacturing.png" alt="contract_manufacturing.png" />		</span>
+			<img decoding="async" src="/uploads/icons/contract_manufacturing.png" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/elementor/thumbs/contract_manufacturing-r7lgmczdr5s1y8y1e0n1n3n9rybxutriam3zb77qi0.png';" title="Contract Manufacturing" alt="Contract Manufacturing" />		</span>
 											</div>
 						<div class="pp-info-box-content">
 				<div class="pp-info-box-title-wrap">
@@ -153,7 +153,7 @@ class="post-136 page type-page status-publish ast-article-single" id="post-136" 
 		<div class="pp-info-box">
 							<div class="pp-info-box-icon-wrap">
 												<span class="pp-info-box-icon pp-icon">
-			<img decoding="async" src="/uploads/elementor/thumbs/thirst-r7lglyvswn8r43iiocjn3p7cv69fnd7j8obp41sn3c.png" title="thirst.png" alt="thirst.png" />		</span>
+			<img decoding="async" src="/uploads/icons/thirst.png" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/elementor/thumbs/thirst-r7lglyvswn8r43iiocjn3p7cv69fnd7j8obp41sn3c.png';" title="Quality Guaranteed" alt="Quality Guaranteed" />		</span>
 											</div>
 						<div class="pp-info-box-content">
 				<div class="pp-info-box-title-wrap">
