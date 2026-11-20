@@ -394,44 +394,115 @@ class PageController extends Controller
         // Transform content for seamless viewing
         $content = $page->content;
 
-        // 1. Convert legacy /product/... links to direct /{slug}
-        $content = preg_replace_callback('/href="(?:\/product\/|https:\/\/sdinternational\.com\/product\/)([^"]+)"/i', function ($m) {
+        // 1. Strip staging and live external hostnames
+        $content = preg_replace('#https?://(?:moccasin-worm-620280\.hostingersite\.com|sdinternational\.com)#i', '', $content);
+
+        // 2. Convert /product/... links and enrich product card titles with CAS numbers
+        $content = preg_replace_callback('/<a[^>]*href="\/product\/([^"]+)"[^>]*><h2>(.*?)<\/h2><\/a>/i', function ($m) {
             $parts = explode('/', trim($m[1], '/'));
-            $productSlug = array_pop($parts);
-            return 'href="/' . $productSlug . '"';
+            $slug = array_pop($parts);
+            $clean = trim($slug);
+            $prod = Product::where('slug', $clean)
+                ->orWhere('slug', $clean . '-dyes')
+                ->orWhere('slug', str_replace('-dyes', '', $clean))
+                ->first();
+            $targetSlug = $prod ? $prod->slug : $clean;
+            $targetTitle = ($prod && !empty($prod->title)) ? $prod->title : $m[2];
+            return '<a href="/' . $targetSlug . '"><h2>' . e($targetTitle) . '</h2></a>';
         }, $content);
 
-        // 2. Convert /product-category/... links to direct /{slug}
-        $content = preg_replace_callback('/href="(?:\/product-category\/|https:\/\/sdinternational\.com\/product-category\/)([^"]+)"/i', function ($m) {
+        // Also convert any remaining /product/... links (such as image wrapper anchors)
+        $content = preg_replace_callback('/href="\/product\/([^"]+)"/i', function ($m) {
+            $parts = explode('/', trim($m[1], '/'));
+            $slug = array_pop($parts);
+            $clean = trim($slug);
+            $prod = Product::where('slug', $clean)
+                ->orWhere('slug', $clean . '-dyes')
+                ->orWhere('slug', str_replace('-dyes', '', $clean))
+                ->first();
+            return 'href="/' . ($prod ? $prod->slug : $clean) . '"';
+        }, $content);
+
+        // 3. Convert /product-category/... links to direct /{slug}
+        $content = preg_replace_callback('/href="\/product-category\/([^"]+)"/i', function ($m) {
             $parts = explode('/', trim($m[1], '/'));
             $catSlug = array_pop($parts);
-            return 'href="/' . $catSlug . '"';
+            return 'href="/' . trim($catSlug) . '"';
         }, $content);
 
-        // 3. Mark the products <ul> with class country-products-grid
+        // 4. Mark the products <ul> with class country-products-grid
         $content = preg_replace('/<ul>(?=\s*<li[^>]*>\s*<a[^>]*>\s*<img)/i', '<ul class="country-products-grid">', $content);
 
-        // 4. Wrap category text inside <li> in a badge
+        // 5. Wrap category text inside <li> in a badge
         $content = preg_replace('/(<\/a>)\s*([A-Za-z\s&;,]+?)\s*(<a[^>]*><h2>)/i', '$1<span class="country-prod-cat">$2</span>$3', $content);
 
-        // 5. Ensure image onerror fallback to live CDN
+        // 6. Format Industries / Applications section into 5-column responsive grid
+        $appPattern = '/<a[^>]*href="\/applications\/([^"\/]+)\/?"[^>]*>\s*<img[^>]*src="([^"]+)"[^>]*>\s*<\/a>\s*<a[^>]*href="\/applications\/\1\/?"[^>]*role="button"[^>]*>\s*(.*?)\s*<\/a>/is';
+        if (preg_match_all($appPattern, $content, $appMatches, PREG_SET_ORDER)) {
+            $gridHtml = '<div class="country-industries-grid">';
+            foreach ($appMatches as $am) {
+                $appSlug = trim($am[1]);
+                $appImg = trim($am[2]);
+                $appTitle = trim(strip_tags($am[3]));
+                $cleanImg = preg_replace('#^https?://[^/]+#', '', $appImg);
+                if (!str_starts_with($cleanImg, '/')) $cleanImg = '/' . $cleanImg;
+                if (str_starts_with($cleanImg, '/uploads/')) $cleanImg = '/wp-content' . $cleanImg;
+                $fallback = 'https://sdinternational.com' . $cleanImg;
+
+                $gridHtml .= '<div class="country-industry-card">';
+                $gridHtml .= '  <a href="/applications/' . $appSlug . '">';
+                $gridHtml .= '    <div class="country-industry-img">';
+                $gridHtml .= '      <img src="' . $cleanImg . '" onerror="this.onerror=null;this.src=\'' . $fallback . '\';" alt="' . e($appTitle) . '">';
+                $gridHtml .= '    </div>';
+                $gridHtml .= '    <div class="country-industry-btn">' . e($appTitle) . '</div>';
+                $gridHtml .= '  </a>';
+                $gridHtml .= '</div>';
+            }
+            $gridHtml .= '</div>';
+
+            $firstApp = $appMatches[0][0];
+            $lastApp = end($appMatches)[0];
+            $firstPos = strpos($content, $firstApp);
+            $lastPos = strpos($content, $lastApp) + strlen($lastApp);
+            if ($firstPos !== false && $lastPos !== false && $lastPos > $firstPos) {
+                $content = substr($content, 0, $firstPos) . $gridHtml . substr($content, $lastPos);
+            }
+        }
+
+        // 7. Format World Map and Export Destinations side-by-side section
+        if (str_contains($content, 'world_map.png') && preg_match('/<p>[^<]*?destinations including India[^<]*?<\/p>(.*?)(<img[^>]*?world_map\.png[^>]*?>)/is', $content, $mapMatch)) {
+            $linksHtml = trim($mapMatch[1]);
+            
+            // Clean country links
+            $linksHtml = preg_replace('/href="(?:\/dyes\/)?dyes-supplier-in-([^"\/]+)\/?"/i', 'href="/dyes/dyes-supplier-in-$1"', $linksHtml);
+            
+            $destRow = '<div class="country-destinations-row">' .
+                       '  <div class="country-destinations-col">' .
+                       '    <h3 class="country-destinations-heading">Exporter of best quality Dyes, Pigments and Chemical Auxiliaries’ products:</h3>' .
+                       '    <p class="country-destinations-sub">S D International offers product categories to companies in the sector of plastics, paints, printing inks, textiles, wood, and paper mills across markets to several destinations worldwide:</p>' .
+                       '    <div class="country-destinations-links">' . $linksHtml . '</div>' .
+                       '  </div>' .
+                       '  <div class="country-destinations-map">' .
+                       '    <img src="/wp-content/uploads/2020/07/world_map.png" onerror="this.onerror=null;this.src=\'https://sdinternational.com/wp-content/uploads/2020/07/world_map.png\';" alt="SD International Global Export Presence">' .
+                       '  </div>' .
+                       '</div>';
+
+            $content = str_replace($mapMatch[0], $destRow, $content);
+        }
+
+        // 8. Ensure image onerror fallback to live CDN
         $content = preg_replace_callback('/<img([^>]+)src="([^"]+)"([^>]*)>/i', function($m) {
-            $attrs = $m[1] . ' ' . $m[3];
             $src = $m[2];
-            if (str_starts_with($src, '/wp-content/')) {
-                $liveFallback = 'https://sdinternational.com' . $src;
-            } elseif (str_starts_with($src, '/uploads/')) {
-                $liveFallback = 'https://sdinternational.com/wp-content' . $src;
-            } else {
-                $liveFallback = $src;
-            }
-            if (!str_contains($attrs, 'onerror')) {
-                return '<img' . $m[1] . 'src="' . $src . '" onerror="this.onerror=null;this.src=\'' . $liveFallback . '\';"' . $m[3] . '>';
-            }
-            return $m[0];
+            $cleanPath = preg_replace('#^https?://[^/]+#', '', $src);
+            if (!str_starts_with($cleanPath, '/')) $cleanPath = '/' . $cleanPath;
+            if (str_starts_with($cleanPath, '/uploads/')) $cleanPath = '/wp-content' . $cleanPath;
+            $liveFallback = 'https://sdinternational.com' . $cleanPath;
+            $attrs = $m[1] . ' ' . $m[3];
+            $attrs = preg_replace('/onerror="[^"]*"/i', '', $attrs);
+            return '<img' . $attrs . ' src="' . $cleanPath . '" onerror="this.onerror=null;this.src=\'' . $liveFallback . '\';">';
         }, $content);
 
-        // 6. Hook up Contact Form 7 to /inquiries endpoint
+        // 9. Hook up Contact Form 7 to /inquiries endpoint
         $csrfToken = csrf_token();
         $inquiriesUrl = route('inquiries.store');
         $content = preg_replace(

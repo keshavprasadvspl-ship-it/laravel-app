@@ -45,6 +45,15 @@ class FallbackController extends Controller
 
         // 2. Check Product (most common)
         $product = Product::where('slug', $cleanSlug)->where('status', 'publish')->first();
+        if (!$product) {
+            $product = Product::where('slug', $cleanSlug . '-dyes')
+                ->orWhere('slug', str_replace('-dyes', '', $cleanSlug))
+                ->where('status', 'publish')
+                ->first();
+            if ($product) {
+                return redirect('/' . $product->slug, 301);
+            }
+        }
         if ($product) {
             return app(ProductController::class)->show($cleanSlug);
         }
