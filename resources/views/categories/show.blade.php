@@ -823,9 +823,9 @@
                             <li class="bellows-tree-item">
                                 <div class="bellows-header-row" onclick="toggleArchiveAccordion('cat-dyes')">
                                     <a href="{{ url('/dyes') }}">DYES</a>
-                                    <span id="indicator-cat-dyes" class="bellows-toggle-indicator">{{ ($category->slug === 'dyes' || ($category->parent && $category->parent->slug === 'dyes') || in_array($category->slug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes'])) ? '−' : '+' }}</span>
+                                    <span id="indicator-cat-dyes" class="bellows-toggle-indicator">{{ ($category->slug === 'dyes' || ($category->parent && $category->parent->slug === 'dyes') || in_array($category->slug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes', 'liquid-solvent-dyes'])) ? '−' : '+' }}</span>
                                 </div>
-                                <ul id="cat-dyes" class="bellows-sub-tree" style="display: {{ ($category->slug === 'dyes' || ($category->parent && $category->parent->slug === 'dyes') || in_array($category->slug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes'])) ? 'block' : 'none' }};">
+                                <ul id="cat-dyes" class="bellows-sub-tree" style="display: {{ ($category->slug === 'dyes' || ($category->parent && $category->parent->slug === 'dyes') || in_array($category->slug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes', 'liquid-solvent-dyes'])) ? 'block' : 'none' }};">
                                     <li><a href="{{ url('/basic-dyes') }}" class="{{ $category->slug === 'basic-dyes' ? 'active' : '' }}">Basic Dyes</a></li>
                                     <li><a href="{{ url('/disperse-dyes') }}" class="{{ $category->slug === 'disperse-dyes' ? 'active' : '' }}">Disperse Dyes</a></li>
                                     <li><a href="{{ url('/solvent-dyes') }}" class="{{ $category->slug === 'solvent-dyes' ? 'active' : '' }}">Solvent Dyes</a></li>
@@ -836,6 +836,7 @@
                                     <li><a href="{{ url('/reactive-dyes') }}" class="{{ $category->slug === 'reactive-dyes' ? 'active' : '' }}">Reactive Dyes</a></li>
                                     <li><a href="{{ url('/metal-complex-solvent-dyes') }}" class="{{ $category->slug === 'metal-complex-solvent-dyes' ? 'active' : '' }}">Metal Complex Solvent Dyes</a></li>
                                     <li><a href="{{ url('/powder-solvent-dyes') }}" class="{{ $category->slug === 'powder-solvent-dyes' ? 'active' : '' }}">Powder Solvent Dyes</a></li>
+                                    <li><a href="{{ url('/liquid-solvent-dyes') }}" class="{{ $category->slug === 'liquid-solvent-dyes' ? 'active' : '' }}">Liquid Solvent Dyes</a></li>
                                 </ul>
                             </li>
 

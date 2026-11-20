@@ -38,9 +38,17 @@ class Category extends Model
 
     public function getFeaturedImageUrlAttribute(): string
     {
-        // 1. Explicit image on model
-        if ($this->image && file_exists(public_path($this->image))) {
-            return asset($this->image);
+        // 1. Explicit image_url or image on model
+        $img = $this->image_url ?: $this->image;
+        if ($img) {
+            $trimmed = ltrim($img, '/');
+            if (file_exists(public_path($trimmed))) {
+                return asset($trimmed);
+            }
+            if (str_starts_with($img, 'http://') || str_starts_with($img, 'https://')) {
+                return $img;
+            }
+            return 'https://sdinternational.com/wp-content/' . $trimmed;
         }
 
         // 2. other-products banner

@@ -911,7 +911,7 @@
     $activeCatSlug = $primaryCat ? $primaryCat->slug : '';
     $activeParentSlug = ($primaryCat && $primaryCat->parent) ? $primaryCat->parent->slug : '';
 
-    $isDyesActive = ($activeCatSlug === 'dyes' || $activeParentSlug === 'dyes' || in_array($activeCatSlug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes']));
+    $isDyesActive = ($activeCatSlug === 'dyes' || $activeParentSlug === 'dyes' || in_array($activeCatSlug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes', 'liquid-solvent-dyes']));
     $isFdcActive = ($activeCatSlug === 'f-d-c-colours' || $activeParentSlug === 'f-d-c-colours' || str_contains($activeCatSlug, 'f-d-c') || str_contains($activeCatSlug, 'lake'));
     $isPigmentsActive = ($activeCatSlug === 'pigments' || $activeParentSlug === 'pigments' || in_array($activeCatSlug, ['organic-pigments', 'high-performance-pigments', 'fluorescent-pigments', 'pu-foam-pigments', 'ultramarine-pigments']));
     $isOtherActive = ($activeCatSlug === 'other-products' || $activeParentSlug === 'other-products' || in_array($activeCatSlug, ['naphthols', 'fast-colour-bases', 'fast-colour-salts', 'pyrazolone-intermediates', 'auxiliaries']));
@@ -1062,6 +1062,7 @@
                                     <li><a href="{{ url('/reactive-dyes') }}" class="{{ $activeCatSlug === 'reactive-dyes' ? 'active' : '' }}">Reactive Dyes</a></li>
                                     <li><a href="{{ url('/metal-complex-solvent-dyes') }}" class="{{ $activeCatSlug === 'metal-complex-solvent-dyes' ? 'active' : '' }}">Metal Complex Solvent Dyes</a></li>
                                     <li><a href="{{ url('/powder-solvent-dyes') }}" class="{{ $activeCatSlug === 'powder-solvent-dyes' ? 'active' : '' }}">Powder Solvent Dyes</a></li>
+                                    <li><a href="{{ url('/liquid-solvent-dyes') }}" class="{{ $activeCatSlug === 'liquid-solvent-dyes' ? 'active' : '' }}">Liquid Solvent Dyes</a></li>
                                 </ul>
                             </li>
 
