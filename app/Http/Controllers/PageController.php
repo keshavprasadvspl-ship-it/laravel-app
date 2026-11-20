@@ -104,12 +104,23 @@ class PageController extends Controller
             abort(404);
         }
 
+        if ($targetSlug === 'plastic-polymers') {
+            $partialPath = resource_path('views/pages/partials/plastic_polymers_content.html');
+            if (file_exists($partialPath)) {
+                $content = file_get_contents($partialPath);
+            } else {
+                $content = $page->content;
+            }
+        } else {
+            $content = $page->content;
+        }
+
         // 1. Convert legacy /product/... links to direct /{slug}
         $content = preg_replace_callback('/href="\/product\/([^"]+)"/i', function ($m) {
             $parts = explode('/', trim($m[1], '/'));
             $prodSlug = end($parts);
             return 'href="/' . $prodSlug . '"';
-        }, $page->content);
+        }, $content);
 
         // 2. Replace /wp-content/uploads/ with /uploads/
         $content = str_replace('/wp-content/uploads/', '/uploads/', $content);

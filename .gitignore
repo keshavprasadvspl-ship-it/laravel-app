@@ -16,6 +16,8 @@ yarn-error.log
 
 # User uploads - allow essential theme assets, categories, applications, and icons
 /public/uploads/*
+!/public/uploads/2020
+!/public/uploads/2020/**
 !/public/uploads/2022
 !/public/uploads/2022/**
 !/public/uploads/applications

@@ -2,166 +2,148 @@
 
 @section('content')
 <style>
-    /* Application Detail Page Styling */
-    .app-breadcrumb-bar {
-        background: #f8fafc;
-        border-bottom: 1px solid #e2e8f0;
-        padding: 14px 0;
-        font-size: 13.5px;
-        font-family: 'Open Sans', sans-serif;
-    }
-    .app-breadcrumb-list {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        color: #64748b;
-    }
-    .app-breadcrumb-list a {
-        color: #64748b;
-        text-decoration: none;
-        transition: color 0.15s;
-    }
-    .app-breadcrumb-list a:hover {
-        color: #73001B;
-    }
-    .app-breadcrumb-list .sep {
-        color: #cbd5e1;
-    }
-    .app-breadcrumb-list .active {
-        color: #1e293b;
-        font-weight: 600;
-    }
-
-    /* Page Hero */
-    .app-hero-section {
-        background: linear-gradient(135deg, #fdf8f8 0%, #fef2f2 100%);
-        border-bottom: 1px solid #fecaca;
-        padding: 40px 0 35px;
-        margin-bottom: 35px;
-        text-align: center;
-    }
-    .app-hero-title {
-        font-family: 'Teko', 'Montserrat', sans-serif;
-        font-size: 38px;
-        font-weight: 600;
-        color: #73001B;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin: 0 0 10px;
-    }
-    .app-hero-subtitle {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 15px;
-        color: #64748b;
-        max-width: 720px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
-
-    /* Application Products & Content Area */
+    /* Application Detail Page Styling - Matching sdinternational.com/applications/plastic-polymers/ */
     .app-content-container {
-        max-width: 1200px;
+        max-width: 1240px;
         margin: 0 auto;
-        padding: 0 15px 60px;
+        padding: 35px 20px 60px;
+        min-height: 50vh;
     }
 
-    .app-products-wrap h2 {
-        font-family: 'Teko', 'Montserrat', sans-serif;
-        font-size: 30px;
-        font-weight: 600;
-        color: #73001B;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin: 30px 0 20px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #73001B;
+    /* Headings */
+    .elementor-heading-title,
+    .app-products-wrap > h2,
+    .app-products-wrap .elementor-heading-title {
+        font-family: 'Teko', 'Montserrat', sans-serif !important;
+        font-size: 34px !important;
+        font-weight: 600 !important;
+        color: #73001B !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        margin: 10px 0 25px !important;
+        padding: 0 !important;
+        border: none !important;
+        line-height: 1.2 !important;
     }
 
     /* 6-Column Responsive Product Grid */
+    .pp-woocommerce ul.products,
     .app-products-wrap ul.products,
     .app-products-wrap ul.products-grid-columns-6 {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 20px;
-        list-style: none;
-        padding: 0;
-        margin: 25px 0 45px;
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        gap: 28px 18px !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 20px 0 50px !important;
     }
 
+    /* Individual Product Card */
+    .pp-woocommerce ul.products > li.product,
     .app-products-wrap ul.products > li,
     .app-products-wrap ul.products-grid-columns-6 > li {
-        background: #ffffff;
-        border: 1px solid #eef2f6;
-        border-radius: 8px;
-        padding: 0 0 14px;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        overflow: visible !important;
+        transition: none !important;
+    }
+
+    .pp-woo-product-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        overflow: hidden;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        width: 100%;
     }
 
-    .app-products-wrap ul.products > li:hover,
-    .app-products-wrap ul.products-grid-columns-6 > li:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        border-color: #fecaca;
+    /* Circular Thumbnail */
+    .pp-woo-products-thumbnail-wrap,
+    .app-products-wrap ul.products > li > a:first-child {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-bottom: 12px !important;
+        text-decoration: none !important;
     }
 
-    /* Thumbnails */
+    .pp-woo-products-thumbnail-wrap img,
     .app-products-wrap ul.products > li img,
-    .app-products-wrap ul.products-grid-columns-6 > li img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        display: block;
-        background: #f8fafc;
-        border-bottom: 1px solid #f1f5f9;
+    .app-products-wrap ul.products-grid-columns-6 > li img,
+    .attachment-shop_catalog {
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 250px !important;
+        object-fit: cover !important;
+        background: #f8fafc !important;
+        border: 1px solid #eef2f6 !important;
+        display: block !important;
+        margin: 0 auto !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
     }
 
-    /* Links & Typography */
-    .app-products-wrap ul.products > li a,
-    .app-products-wrap ul.products-grid-columns-6 > li a {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        width: 100%;
+    .pp-woocommerce ul.products > li.product:hover img,
+    .app-products-wrap ul.products > li:hover img {
+        transform: scale(1.06);
+        box-shadow: 0 6px 18px rgba(115, 0, 27, 0.16);
     }
 
+    /* Product Summary */
+    .pp-woo-products-summary-wrap {
+        text-align: center;
+        width: 100%;
+        padding: 0 4px;
+    }
+
+    /* Category Label */
+    .pp-woo-product-category,
+    .app-products-wrap ul.products > li > span.cat-label {
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        color: #7a7a7a !important;
+        letter-spacing: 0.5px !important;
+        display: block !important;
+        margin-bottom: 5px !important;
+        text-align: center !important;
+    }
+
+    /* Product Title */
+    .woocommerce-loop-product__title,
     .app-products-wrap ul.products > li h2,
     .app-products-wrap ul.products-grid-columns-6 > li h2 {
         font-family: 'Open Sans', sans-serif !important;
         font-size: 13.5px !important;
         font-weight: 600 !important;
-        color: #1e293b !important;
-        line-height: 1.4 !important;
-        margin: 10px 10px 4px !important;
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
+        color: #333333 !important;
+        line-height: 1.35 !important;
+        margin: 0 !important;
         text-transform: none !important;
         letter-spacing: normal !important;
-        transition: color 0.15s ease;
+        border: none !important;
+        padding: 0 !important;
+        text-align: center !important;
+        transition: color 0.15s ease !important;
     }
 
-    .app-products-wrap ul.products > li a:hover h2,
-    .app-products-wrap ul.products-grid-columns-6 > li a:hover h2 {
+    .pp-loop-product__link,
+    .woocommerce-LoopProduct-link,
+    .app-products-wrap ul.products > li a {
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+
+    .pp-loop-product__link:hover .woocommerce-loop-product__title,
+    .app-products-wrap ul.products > li a:hover h2 {
         color: #73001B !important;
-    }
-
-    /* Category text inside li */
-    .app-products-wrap ul.products > li > span.cat-label,
-    .app-products-wrap ul.products-grid-columns-6 > li > span.cat-label {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 11px;
-        text-transform: uppercase;
-        color: #94a3b8;
-        letter-spacing: 0.5px;
-        margin-top: 6px;
     }
 
     /* Industries We Serve Section */
@@ -244,10 +226,11 @@
 
     /* Responsive Breakpoints */
     @media (max-width: 1200px) {
+        .pp-woocommerce ul.products,
         .app-products-wrap ul.products,
         .app-products-wrap ul.products-grid-columns-6 {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 22px 14px !important;
         }
         .app-industries-grid {
             grid-template-columns: repeat(3, 1fr);
@@ -255,13 +238,11 @@
     }
 
     @media (max-width: 768px) {
-        .app-hero-title {
-            font-size: 28px;
-        }
+        .pp-woocommerce ul.products,
         .app-products-wrap ul.products,
         .app-products-wrap ul.products-grid-columns-6 {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 18px 12px !important;
         }
         .app-industries-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -270,10 +251,11 @@
     }
 
     @media (max-width: 480px) {
+        .pp-woocommerce ul.products,
         .app-products-wrap ul.products,
         .app-products-wrap ul.products-grid-columns-6 {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 14px 10px !important;
         }
         .app-industries-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -285,36 +267,13 @@
     }
 </style>
 
-<!-- 1. Breadcrumbs Bar -->
-<nav class="app-breadcrumb-bar" aria-label="breadcrumb">
-    <div class="container">
-        <ul class="app-breadcrumb-list">
-            <li><a href="{{ url('/') }}">Home</a></li>
-            <li class="sep">/</li>
-            <li><a href="{{ url('/applications') }}">Applications</a></li>
-            <li class="sep">/</li>
-            <li class="active">{{ $page->title }}</li>
-        </ul>
-    </div>
-</nav>
-
-<!-- 2. Hero Section -->
-<section class="app-hero-section">
-    <div class="container">
-        <h1 class="app-hero-title">{{ $page->title }}</h1>
-        <p class="app-hero-subtitle">
-            SD International manufactures, supplies, and exports premier industrial colorants, dyes, and pigment solutions tailored for {{ strtolower($page->title) }}.
-        </p>
-    </div>
-</section>
-
-<!-- 3. Main Products & Content -->
+<!-- Main Products & Content -->
 <main class="app-content-container">
     <div class="app-products-wrap">
         {!! $content !!}
     </div>
 
-    <!-- 4. Industries We Serve Grid -->
+    <!-- Industries We Serve Grid (Exact 10 images matching liquid-solvent-dyes) -->
     <div class="app-industries-section">
         <h4 class="app-section-heading">Industries We Serve</h4>
         <div class="app-industries-grid">
@@ -322,7 +281,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/plastic-polymers') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/plastics.jpg') }}" alt="Plastic & Polymers" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/plastics.jpg';">
+                        <img src="{{ asset('uploads/2020/07/plastic_polymer.jpg') }}" alt="Plastic & Polymers" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/plastic_polymer.jpg';">
                     </div>
                     <div class="ind-title">Plastic &amp; Polymers</div>
                 </a>
@@ -331,7 +290,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/textiles') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/textile.jpg') }}" alt="Textiles" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/textile.jpg';">
+                        <img src="{{ asset('uploads/2020/07/textiles.jpg') }}" alt="Textiles" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/textiles.jpg';">
                     </div>
                     <div class="ind-title">Textiles</div>
                 </a>
@@ -340,7 +299,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/leather') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/lather.jpg') }}" alt="Leather" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/lather.jpg';">
+                        <img src="{{ asset('uploads/2020/07/lather.jpg') }}" alt="Leather" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/lather.jpg';">
                     </div>
                     <div class="ind-title">Leather</div>
                 </a>
@@ -349,7 +308,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/petroleum-lubricants') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/petro.jpg') }}" alt="Petroleum & Lubricants" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/petro.jpg';">
+                        <img src="{{ asset('uploads/2020/07/petroleum_and_lubricant.jpg') }}" alt="Petroleum & Lubricants" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/petroleum_and_lubricant.jpg';">
                     </div>
                     <div class="ind-title">Petroleum &amp; Lubricants</div>
                 </a>
@@ -358,7 +317,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/paper-pulp') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/papper.jpg') }}" alt="Paper & Pulp" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/papper.jpg';">
+                        <img src="{{ asset('uploads/2020/07/paper_and_pulp.jpg') }}" alt="Paper & Pulp" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/paper_and_pulp.jpg';">
                     </div>
                     <div class="ind-title">Paper &amp; Pulp</div>
                 </a>
@@ -367,7 +326,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/printing-inks') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/ink.jpg') }}" alt="Printing Inks" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/ink.jpg';">
+                        <img src="{{ asset('uploads/2020/07/ink_industry.jpg') }}" alt="Printing Inks" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/ink_industry.jpg';">
                     </div>
                     <div class="ind-title">Printing Inks</div>
                 </a>
@@ -376,7 +335,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/food-drug-cosmetics') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/food_drug_cos.jpg') }}" alt="Food Drug & Cosmetics" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/food_drug_cos.jpg';">
+                        <img src="{{ asset('uploads/2020/07/food_drug_app-1.jpg') }}" alt="Food Drug & Cosmetics" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/food_drug_app-1.jpg';">
                     </div>
                     <div class="ind-title">Food Drug &amp; Cosmetics</div>
                 </a>
@@ -385,7 +344,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/coating') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/coatings.jpg') }}" alt="Coatings" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/coatings.jpg';">
+                        <img src="{{ asset('uploads/2020/07/coating_dyes.jpg') }}" alt="Coatings" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/coating_dyes.jpg';">
                     </div>
                     <div class="ind-title">Coatings</div>
                 </a>
@@ -394,7 +353,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/wood-stains') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/wood_stain.jpg') }}" alt="Wood Stains" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/wood_stain.jpg';">
+                        <img src="{{ asset('uploads/2020/07/wood_stain_treatment.jpg') }}" alt="Wood Stains" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/wood_stain_treatment.jpg';">
                     </div>
                     <div class="ind-title">Wood Stains</div>
                 </a>
@@ -403,7 +362,7 @@
             <div class="app-industry-card">
                 <a href="{{ url('/applications/smoke-dyes') }}">
                     <div class="ind-img-wrap">
-                        <img src="{{ asset('uploads/applications/smoke.jpg') }}" alt="Smoke Dyes" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/smoke.jpg';">
+                        <img src="{{ asset('uploads/2020/07/smoke-dyes.jpg') }}" alt="Smoke Dyes" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/smoke-dyes.jpg';">
                     </div>
                     <div class="ind-title">Smoke Dyes</div>
                 </a>

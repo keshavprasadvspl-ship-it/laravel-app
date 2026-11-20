@@ -937,21 +937,21 @@
         : 'https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';
 
     $industriesList = [
-        ['title' => 'Plastic & Polymers', 'url' => '/applications/plastic-polymers', 'img' => 'plastics.jpg'],
-        ['title' => 'Textiles', 'url' => '/applications/textiles', 'img' => 'textile.jpg'],
-        ['title' => 'Leather', 'url' => '/applications/leather', 'img' => 'lather.jpg'],
-        ['title' => 'Petroleum & Lubricants', 'url' => '/applications/petroleum-lubricants', 'img' => 'petro.jpg'],
-        ['title' => 'Paper & Pulp', 'url' => '/applications/paper-pulp', 'img' => 'papper.jpg'],
-        ['title' => 'Printing Inks', 'url' => '/applications/printing-inks', 'img' => 'ink.jpg'],
-        ['title' => 'Food Drug & Cosmetics', 'url' => '/applications/food-drug-cosmetics', 'img' => 'food_drug_cos.jpg'],
-        ['title' => 'Coatings', 'url' => '/applications/coating', 'img' => 'coatings.jpg'],
-        ['title' => 'Wood Stains', 'url' => '/applications/wood-stains', 'img' => 'wood_stain.jpg'],
-        ['title' => 'Smoke Dyes', 'url' => '/applications/smoke-dyes', 'img' => 'smoke.jpg'],
-        ['title' => 'Pigment Intermediates', 'url' => '/applications/pigment-intermediates', 'img' => 'pigmanets_intermediates_app.jpg'],
-        ['title' => 'Wax', 'url' => '/applications/wax', 'img' => 'wax.jpg'],
-        ['title' => 'Rubber', 'url' => '/applications/rubber', 'img' => 'rubberq.jpg'],
-        ['title' => 'Glass', 'url' => '/applications/glass', 'img' => 'glass.jpg'],
-        ['title' => 'Intermediates', 'url' => '/applications/intermediates', 'img' => 'interm.jpg'],
+        ['title' => 'Plastic & Polymers', 'url' => '/applications/plastic-polymers', 'path' => 'uploads/2020/07/plastic_polymer.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/plastic_polymer.jpg'],
+        ['title' => 'Textiles', 'url' => '/applications/textiles', 'path' => 'uploads/2020/07/textiles.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/textiles.jpg'],
+        ['title' => 'Leather', 'url' => '/applications/leather', 'path' => 'uploads/2020/07/lather.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/lather.jpg'],
+        ['title' => 'Petroleum & Lubricants', 'url' => '/applications/petroleum-lubricants', 'path' => 'uploads/2020/07/petroleum_and_lubricant.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/petroleum_and_lubricant.jpg'],
+        ['title' => 'Paper & Pulp', 'url' => '/applications/paper-pulp', 'path' => 'uploads/2020/07/paper_and_pulp.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/paper_and_pulp.jpg'],
+        ['title' => 'Printing Inks', 'url' => '/applications/printing-inks', 'path' => 'uploads/2020/07/ink_industry.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/ink_industry.jpg'],
+        ['title' => 'Food Drug & Cosmetics', 'url' => '/applications/food-drug-cosmetics', 'path' => 'uploads/2020/07/food_drug_app-1.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/food_drug_app-1.jpg'],
+        ['title' => 'Coatings', 'url' => '/applications/coating', 'path' => 'uploads/2020/07/coating_dyes.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/coating_dyes.jpg'],
+        ['title' => 'Wood Stains', 'url' => '/applications/wood-stains', 'path' => 'uploads/2020/07/wood_stain_treatment.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/wood_stain_treatment.jpg'],
+        ['title' => 'Smoke Dyes', 'url' => '/applications/smoke-dyes', 'path' => 'uploads/2020/07/smoke-dyes.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/smoke-dyes.jpg'],
+        ['title' => 'Pigment Intermediates', 'url' => '/applications/pigment-intermediates', 'path' => 'uploads/applications/pigmanets_intermediates_app.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/pigmanets_intermediates_app.jpg'],
+        ['title' => 'Wax', 'url' => '/applications/wax', 'path' => 'uploads/applications/wax.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/wax.jpg'],
+        ['title' => 'Rubber', 'url' => '/applications/rubber', 'path' => 'uploads/applications/rubberq.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/rubberq.jpg'],
+        ['title' => 'Glass', 'url' => '/applications/glass', 'path' => 'uploads/applications/glass.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/glass.jpg'],
+        ['title' => 'Intermediates', 'url' => '/applications/intermediates', 'path' => 'uploads/applications/interm.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/interm.jpg'],
     ];
 @endphp
 
@@ -1159,9 +1159,9 @@
                     <div class="industry-card-item">
                         <a href="{{ url($ind['url']) }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/' . $ind['img']) }}"
+                                <img src="{{ asset($ind['path']) }}"
                                      alt="{{ $ind['title'] }}"
-                                     onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/{{ $ind['img'] }}';">
+                                     onerror="this.onerror=null; this.src='{{ $ind['live'] }}';">
                             </div>
                             <h5 class="industry-title">{{ $ind['title'] }}</h5>
                         </a>

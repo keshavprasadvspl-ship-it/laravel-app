@@ -951,7 +951,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/plastic-polymers') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/plastics.jpg') }}" alt="Plastic & Polymers" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/plastics.jpg';">
+                                <img src="{{ asset('uploads/2020/07/plastic_polymer.jpg') }}" alt="Plastic & Polymers" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/plastic_polymer.jpg';">
                             </div>
                             <h5 class="industry-title">Plastic &amp; Polymers</h5>
                         </a>
@@ -960,7 +960,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/textiles') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/textile.jpg') }}" alt="Textiles" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/textile.jpg';">
+                                <img src="{{ asset('uploads/2020/07/textiles.jpg') }}" alt="Textiles" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/textiles.jpg';">
                             </div>
                             <h5 class="industry-title">Textiles</h5>
                         </a>
@@ -969,7 +969,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/leather') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/lather.jpg') }}" alt="Leather" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/lather.jpg';">
+                                <img src="{{ asset('uploads/2020/07/lather.jpg') }}" alt="Leather" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/lather.jpg';">
                             </div>
                             <h5 class="industry-title">Leather</h5>
                         </a>
@@ -978,7 +978,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/petroleum-lubricants') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/petro.jpg') }}" alt="Petroleum & Lubricants" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/petro.jpg';">
+                                <img src="{{ asset('uploads/2020/07/petroleum_and_lubricant.jpg') }}" alt="Petroleum & Lubricants" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/petroleum_and_lubricant.jpg';">
                             </div>
                             <h5 class="industry-title">Petroleum &amp; Lubricants</h5>
                         </a>
@@ -987,7 +987,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/paper-pulp') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/papper.jpg') }}" alt="Paper & Pulp" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/papper.jpg';">
+                                <img src="{{ asset('uploads/2020/07/paper_and_pulp.jpg') }}" alt="Paper & Pulp" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/paper_and_pulp.jpg';">
                             </div>
                             <h5 class="industry-title">Paper &amp; Pulp</h5>
                         </a>
@@ -996,7 +996,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/printing-inks') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/ink.jpg') }}" alt="Printing Inks" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/ink.jpg';">
+                                <img src="{{ asset('uploads/2020/07/ink_industry.jpg') }}" alt="Printing Inks" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/ink_industry.jpg';">
                             </div>
                             <h5 class="industry-title">Printing Inks</h5>
                         </a>
@@ -1005,7 +1005,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/food-drug-cosmetics') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/food_drug_cos.jpg') }}" alt="Food Drug & Cosmetics" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/food_drug_cos.jpg';">
+                                <img src="{{ asset('uploads/2020/07/food_drug_app-1.jpg') }}" alt="Food Drug & Cosmetics" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/food_drug_app-1.jpg';">
                             </div>
                             <h5 class="industry-title">Food Drug &amp; Cosmetics</h5>
                         </a>
@@ -1014,7 +1014,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/coating') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/coatings.jpg') }}" alt="Coatings" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/coatings.jpg';">
+                                <img src="{{ asset('uploads/2020/07/coating_dyes.jpg') }}" alt="Coatings" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/coating_dyes.jpg';">
                             </div>
                             <h5 class="industry-title">Coatings</h5>
                         </a>
@@ -1023,7 +1023,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/wood-stains') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/wood_stain.jpg') }}" alt="Wood Stains" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/wood_stain.jpg';">
+                                <img src="{{ asset('uploads/2020/07/wood_stain_treatment.jpg') }}" alt="Wood Stains" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/wood_stain_treatment.jpg';">
                             </div>
                             <h5 class="industry-title">Wood Stains</h5>
                         </a>
@@ -1032,7 +1032,7 @@
                     <div class="industry-card-item">
                         <a href="{{ url('/applications/smoke-dyes') }}">
                             <div class="industry-image-wrap">
-                                <img src="{{ asset('uploads/applications/smoke.jpg') }}" alt="Smoke Dyes" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/applications/smoke.jpg';">
+                                <img src="{{ asset('uploads/2020/07/smoke-dyes.jpg') }}" alt="Smoke Dyes" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/smoke-dyes.jpg';">
                             </div>
                             <h5 class="industry-title">Smoke Dyes</h5>
                         </a>
