@@ -397,6 +397,75 @@ class PageController extends Controller
         // 1. Strip staging and live external hostnames
         $content = preg_replace('#https?://(?:moccasin-worm-620280\.hostingersite\.com|sdinternational\.com)#i', '', $content);
 
+        // 1b. Extract top intro content and active category sidebar for 2-column layout
+        $introHtml = '';
+        $sidebarData = [
+            'category' => 'DYES',
+            'category_url' => '/dyes',
+            'items' => [
+                ['title' => 'Vat Dyes', 'url' => '/vat-dyes'],
+                ['title' => 'Solvent Dyes', 'url' => '/solvent-dyes'],
+                ['title' => 'Metal Complex Solvent Dyes', 'url' => '/metal-complex-solvent-dyes'],
+                ['title' => 'Disperse Dyes', 'url' => '/disperse-dyes'],
+                ['title' => 'Direct Dyes', 'url' => '/direct-dyes'],
+                ['title' => 'Basic Dyes', 'url' => '/basic-dyes'],
+                ['title' => 'Cationic Dyes', 'url' => '/cationic-dyes'],
+                ['title' => 'Acid Dyes', 'url' => '/acid-dyes'],
+                ['title' => 'Reactive dyes', 'url' => '/reactive-dyes'],
+            ]
+        ];
+
+        if ($prefix === 'pigments') {
+            $sidebarData = [
+                'category' => 'PIGMENTS',
+                'category_url' => '/pigments',
+                'items' => [
+                    ['title' => 'Organic Pigments', 'url' => '/organic-pigments'],
+                    ['title' => 'High Performance Pigments', 'url' => '/high-performance-pigments'],
+                    ['title' => 'PU foam pigments', 'url' => '/pu-foam-pigments'],
+                    ['title' => 'Fluorescent Pigments', 'url' => '/fluorescent-pigments'],
+                ]
+            ];
+        }
+
+        if (preg_match('/<!-- \.pp-modal-popup -->/i', $content, $m, PREG_OFFSET_CAPTURE)) {
+            $afterPopupOffset = $m[0][1] + strlen($m[0][0]);
+            $cleanTop = substr($content, $afterPopupOffset);
+
+            $posRange = stripos($cleanTop, '<h5>Products Range</h5>');
+            if ($posRange !== false) {
+                $introHtml = trim(substr($cleanTop, 0, $posRange));
+
+                if (preg_match('/<h5>Products Range<\/h5>\s*<h5><a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a><\/h5>\s*<ul>(.*?)<\/ul>/is', $cleanTop, $catMatch)) {
+                    $catUrl = trim($catMatch[1]);
+                    $catTitle = trim(strip_tags($catMatch[2]));
+                    preg_match_all('/<a[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/is', $catMatch[3], $rawItems, PREG_SET_ORDER);
+                    if (!empty($rawItems)) {
+                        $parsedItems = [];
+                        foreach ($rawItems as $ri) {
+                            $rLink = trim($ri[1]);
+                            $rTitle = trim(strip_tags($ri[2]));
+                            $parts = explode('/', trim($rLink, '/'));
+                            $cleanLink = '/' . array_pop($parts);
+                            $parsedItems[] = [
+                                'title' => $rTitle,
+                                'url' => $cleanLink,
+                            ];
+                        }
+                        $sidebarData = [
+                            'category' => $catTitle,
+                            'category_url' => $catUrl ?: '/' . strtolower($catTitle),
+                            'items' => $parsedItems,
+                        ];
+                    }
+                }
+            }
+
+            if (preg_match('/<ul[^>]*>(?=\s*<li[^>]*>\s*<a[^>]*>\s*<img)/is', $cleanTop, $swMatch, PREG_OFFSET_CAPTURE)) {
+                $content = substr($cleanTop, $swMatch[0][1]);
+            }
+        }
+
         // 2. Convert /product/... links and enrich product card titles with CAS numbers
         $content = preg_replace_callback('/<a[^>]*href="\/product\/([^"]+)"[^>]*><h2>(.*?)<\/h2><\/a>/i', function ($m) {
             $parts = explode('/', trim($m[1], '/'));
@@ -516,6 +585,8 @@ class PageController extends Controller
         return view('pages.country_landing', compact(
             'page',
             'renderedContent',
+            'introHtml',
+            'sidebarData',
             'parentSection',
             'siblingPages',
             'seo',
