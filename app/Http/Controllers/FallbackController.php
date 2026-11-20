@@ -61,6 +61,28 @@ class FallbackController extends Controller
             return app(PageController::class)->show($cleanSlug);
         }
 
+        // 4b. Multi-segment country landing page handler (e.g. /dyes/dyes-supplier-in-bangladesh)
+        if (str_contains($cleanSlug, '/')) {
+            $parts = explode('/', $cleanSlug);
+            $childSlug = array_pop($parts);
+            $prefix = array_shift($parts);
+
+            $page = Page::where('slug', $childSlug)->orWhere('slug', $cleanSlug)->first();
+            if ($page) {
+                return app(PageController::class)->showCountryPage($prefix ?: 'dyes', $page->slug);
+            }
+
+            $category = Category::where('slug', $childSlug)->orWhere('slug', $cleanSlug)->first();
+            if ($category) {
+                return app(CategoryController::class)->show($category->slug);
+            }
+
+            $product = Product::where('slug', $childSlug)->orWhere('slug', $cleanSlug)->where('status', 'publish')->first();
+            if ($product) {
+                return app(ProductController::class)->show($product->slug);
+            }
+        }
+
         // 5. Check Blog / Post (Redirect to canonical /blogs/{slug})
         $post = Post::where('slug', $cleanSlug)->first();
         if ($post) {

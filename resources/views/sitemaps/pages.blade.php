@@ -25,8 +25,22 @@
         <priority>0.8</priority>
     </url>
 @foreach($pages as $page)
+    @php
+        $pageUrl = url('/' . $page->slug);
+        if (str_starts_with($page->slug, 'dyes-supplier-in-')) {
+            $pageUrl = url('/dyes/' . $page->slug);
+        } elseif (str_starts_with($page->slug, 'pigments-supplier-in-')) {
+            $pageUrl = url('/pigments/' . $page->slug);
+        } elseif (str_starts_with($page->slug, 'f-d-c-colours-supplier-in-')) {
+            $pageUrl = url('/f-d-c-colours/' . $page->slug);
+        } elseif (str_starts_with($page->slug, 'naphthols-fast-bases-fast-salts-supplier-in-')) {
+            $pageUrl = url('/naphthols-fast-bases-fast-salts/' . $page->slug);
+        } elseif (str_starts_with($page->slug, 'intermediates-supplier-in-')) {
+            $pageUrl = url('/intermediates/' . $page->slug);
+        }
+    @endphp
     <url>
-        <loc>{{ url('/' . $page->slug) }}</loc>
+        <loc>{{ $pageUrl }}</loc>
         <lastmod>{{ optional($page->updated_at)->toAtomString() ?: now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

@@ -40,6 +40,11 @@ class PageController extends Controller
             ->orWhere('slug', trim($slug, '/'))
             ->firstOrFail();
 
+        // Dedicated rendering for Country Landing Pages
+        if (str_contains($page->slug, '-supplier-in-') || str_contains($page->slug, '-in-')) {
+            return $this->renderCountryPage($page);
+        }
+
         $seo = SeoHelper::generateTags($page, [
             'title' => "{$page->title} | SD International",
             'description' => "Learn more about {$page->title} at SD International - premier manufacturer and global exporter of industrial dyes and chemicals.",
@@ -277,5 +282,174 @@ class PageController extends Controller
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
         return view('pages.quote', compact('prefilledProduct', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
+    }
+
+    /**
+     * Show country landing pages under their canonical section prefix (e.g. /dyes/dyes-supplier-in-bangladesh)
+     */
+    public function showCountryPage(string $prefix, string $slug)
+    {
+        $cleanSlug = trim($slug, " /\t\n\r\0\x0B");
+
+        $page = Page::where('slug', $cleanSlug)
+            ->orWhere('slug', $prefix . '-' . $cleanSlug)
+            ->first();
+
+        if ($page) {
+            return $this->renderCountryPage($page, $prefix);
+        }
+
+        // Check if $cleanSlug is a category
+        $cat = \App\Models\Category::where('slug', $cleanSlug)->first();
+        if ($cat) {
+            return app(CategoryController::class)->show($cat->slug);
+        }
+
+        // Check if $cleanSlug is a product
+        $prod = Product::where('slug', $cleanSlug)->where('status', 'publish')->first();
+        if ($prod) {
+            return app(ProductController::class)->show($prod->slug);
+        }
+
+        abort(404);
+    }
+
+    /**
+     * Render a country landing page with structured layout, product swatches, and sibling country navigation
+     */
+    public function renderCountryPage(Page $page, ?string $prefix = null)
+    {
+        $slug = $page->slug;
+
+        // Deduce family prefix if not passed
+        if (!$prefix) {
+            if (str_starts_with($slug, 'dyes-')) {
+                $prefix = 'dyes';
+            } elseif (str_starts_with($slug, 'pigments-')) {
+                $prefix = 'pigments';
+            } elseif (str_starts_with($slug, 'f-d-c-colours-')) {
+                $prefix = 'f-d-c-colours';
+            } elseif (str_starts_with($slug, 'naphthols-fast-bases-fast-salts-')) {
+                $prefix = 'naphthols-fast-bases-fast-salts';
+            } elseif (str_starts_with($slug, 'intermediates-')) {
+                $prefix = 'intermediates';
+            } else {
+                $prefix = 'dyes';
+            }
+        }
+
+        $sectionTitles = [
+            'dyes' => 'Dyes',
+            'pigments' => 'Pigments',
+            'f-d-c-colours' => 'F D & C Colours',
+            'naphthols-fast-bases-fast-salts' => 'Naphthols, Fast Bases & Fast Salts',
+            'intermediates' => 'Intermediates',
+        ];
+
+        $parentSection = [
+            'slug' => $prefix,
+            'title' => $sectionTitles[$prefix] ?? ucwords(str_replace('-', ' ', $prefix)),
+        ];
+
+        $canonicalUrl = url('/' . $prefix . '/' . $page->slug);
+        $seo = SeoHelper::generateTags($page, [
+            'title' => "{$page->title} | SD International",
+            'description' => "SD International is a premier manufacturer, supplier, and exporter of {$page->title}. Browse high-grade products, technical specifications, and request quotes.",
+            'canonical' => $canonicalUrl,
+        ]);
+
+        $breadcrumbs = [
+            'Home' => url('/'),
+            $parentSection['title'] => url('/' . $parentSection['slug']),
+            $page->title => $canonicalUrl,
+        ];
+        $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
+
+        // Fetch sibling country landing pages in the same family
+        $familyPrefix = match($prefix) {
+            'dyes' => 'dyes-supplier-in-',
+            'pigments' => 'pigments-supplier-in-',
+            'f-d-c-colours' => 'f-d-c-colours-supplier-in-',
+            'naphthols-fast-bases-fast-salts' => 'naphthols-fast-bases-fast-salts-supplier-in-',
+            'intermediates' => 'intermediates-supplier-in-',
+            default => 'dyes-supplier-in-',
+        };
+
+        $siblings = Page::where('slug', 'like', $familyPrefix . '%')
+            ->orderBy('title')
+            ->get(['slug', 'title']);
+
+        $siblingPages = [];
+        foreach ($siblings as $sib) {
+            $countryName = ucwords(str_replace('-', ' ', str_replace($familyPrefix, '', $sib->slug)));
+            $siblingPages[] = [
+                'slug' => $sib->slug,
+                'title' => $sib->title,
+                'country_name' => $countryName,
+                'url' => '/' . $prefix . '/' . $sib->slug,
+                'is_current' => $sib->slug === $page->slug,
+            ];
+        }
+
+        // Transform content for seamless viewing
+        $content = $page->content;
+
+        // 1. Convert legacy /product/... links to direct /{slug}
+        $content = preg_replace_callback('/href="(?:\/product\/|https:\/\/sdinternational\.com\/product\/)([^"]+)"/i', function ($m) {
+            $parts = explode('/', trim($m[1], '/'));
+            $productSlug = array_pop($parts);
+            return 'href="/' . $productSlug . '"';
+        }, $content);
+
+        // 2. Convert /product-category/... links to direct /{slug}
+        $content = preg_replace_callback('/href="(?:\/product-category\/|https:\/\/sdinternational\.com\/product-category\/)([^"]+)"/i', function ($m) {
+            $parts = explode('/', trim($m[1], '/'));
+            $catSlug = array_pop($parts);
+            return 'href="/' . $catSlug . '"';
+        }, $content);
+
+        // 3. Mark the products <ul> with class country-products-grid
+        $content = preg_replace('/<ul>(?=\s*<li[^>]*>\s*<a[^>]*>\s*<img)/i', '<ul class="country-products-grid">', $content);
+
+        // 4. Wrap category text inside <li> in a badge
+        $content = preg_replace('/(<\/a>)\s*([A-Za-z\s&;,]+?)\s*(<a[^>]*><h2>)/i', '$1<span class="country-prod-cat">$2</span>$3', $content);
+
+        // 5. Ensure image onerror fallback to live CDN
+        $content = preg_replace_callback('/<img([^>]+)src="([^"]+)"([^>]*)>/i', function($m) {
+            $attrs = $m[1] . ' ' . $m[3];
+            $src = $m[2];
+            if (str_starts_with($src, '/wp-content/')) {
+                $liveFallback = 'https://sdinternational.com' . $src;
+            } elseif (str_starts_with($src, '/uploads/')) {
+                $liveFallback = 'https://sdinternational.com/wp-content' . $src;
+            } else {
+                $liveFallback = $src;
+            }
+            if (!str_contains($attrs, 'onerror')) {
+                return '<img' . $m[1] . 'src="' . $src . '" onerror="this.onerror=null;this.src=\'' . $liveFallback . '\';"' . $m[3] . '>';
+            }
+            return $m[0];
+        }, $content);
+
+        // 6. Hook up Contact Form 7 to /inquiries endpoint
+        $csrfToken = csrf_token();
+        $inquiriesUrl = route('inquiries.store');
+        $content = preg_replace(
+            '/<form action="[^"]*admin-ajax\.php[^"]*" method="post"[^>]*>/i',
+            '<form action="' . $inquiriesUrl . '" method="post"><input type="hidden" name="_token" value="' . $csrfToken . '"><input type="hidden" name="inquiry_type" value="quote">',
+            $content
+        );
+
+        $renderedContent = $content;
+
+        return view('pages.country_landing', compact(
+            'page',
+            'renderedContent',
+            'parentSection',
+            'siblingPages',
+            'seo',
+            'breadcrumbs',
+            'breadcrumbSchema'
+        ));
     }
 }

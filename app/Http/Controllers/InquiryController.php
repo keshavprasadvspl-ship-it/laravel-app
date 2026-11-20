@@ -10,6 +10,26 @@ class InquiryController extends Controller
 {
     public function store(Request $request)
     {
+        // Support Contact Form 7 legacy field aliases
+        if (!$request->has('name') && $request->filled('your-name')) {
+            $request->merge(['name' => $request->input('your-name')]);
+        }
+        if (!$request->has('email') && $request->filled('your-email')) {
+            $request->merge(['email' => $request->input('your-email')]);
+        }
+        if (!$request->has('phone') && $request->filled('tel-590')) {
+            $request->merge(['phone' => $request->input('tel-590')]);
+        }
+        if (!$request->has('message') && $request->filled('your-message')) {
+            $request->merge(['message' => $request->input('your-message')]);
+        }
+        if (!$request->has('city') && $request->filled('text-33')) {
+            $request->merge(['city' => $request->input('text-33')]);
+        }
+        if (!$request->has('country') && $request->filled('text-589')) {
+            $request->merge(['country' => $request->input('text-589')]);
+        }
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:150',
             'email' => 'required|email|max:150',
