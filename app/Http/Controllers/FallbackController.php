@@ -27,6 +27,12 @@ class FallbackController extends Controller
             return redirect($redirect->destination_url, (int) $redirect->status_code);
         }
 
+        // Applications sub-page handler
+        if (str_starts_with($fullPath, 'applications/')) {
+            $appSlug = substr($fullPath, strlen('applications/'));
+            return app(PageController::class)->showApplication($appSlug);
+        }
+
         // 2. Check Product (most common)
         $product = Product::where('slug', $cleanSlug)->where('status', 'publish')->first();
         if ($product) {

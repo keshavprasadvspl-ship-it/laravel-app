@@ -74,6 +74,68 @@ class PageController extends Controller
         return view('pages.applications', compact('page', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
     }
 
+    public function showApplication(string $slug)
+    {
+        $cleanSlug = trim($slug, '/');
+
+        $aliasMap = [
+            'coatings' => 'coating',
+            'plastic-polymer' => 'plastic-polymers',
+            'plastics-polymers' => 'plastic-polymers',
+            'paper-and-pulp' => 'paper-pulp',
+            'food-drugs-cosmetics' => 'food-drug-cosmetics',
+            'wood-stain' => 'wood-stains',
+            'smoke-dye' => 'smoke-dyes',
+        ];
+
+        $targetSlug = $aliasMap[$cleanSlug] ?? $cleanSlug;
+
+        $page = Page::where('slug', $targetSlug)
+            ->orWhere('slug', $cleanSlug)
+            ->orWhere('slug', 'like', '%' . $cleanSlug . '%')
+            ->first();
+
+        if (!$page) {
+            $titleSearch = str_replace('-', ' ', $cleanSlug);
+            $page = Page::where('title', 'like', '%' . $titleSearch . '%')->first();
+        }
+
+        if (!$page) {
+            abort(404);
+        }
+
+        // 1. Convert legacy /product/... links to direct /{slug}
+        $content = preg_replace_callback('/href="\/product\/([^"]+)"/i', function ($m) {
+            $parts = explode('/', trim($m[1], '/'));
+            $prodSlug = end($parts);
+            return 'href="/' . $prodSlug . '"';
+        }, $page->content);
+
+        // 2. Replace /wp-content/uploads/ with /uploads/
+        $content = str_replace('/wp-content/uploads/', '/uploads/', $content);
+
+        // 3. Add live CDN fallback onerror for images
+        $content = preg_replace('/<img([^>]+)src="([^">]+)"([^>]*)>/i', '<img$1src="$2"$3 onerror="this.onerror=null; this.src=\'https://sdinternational.com/wp-content$2\';">', $content);
+
+        // 4. Ensure ul has WooCommerce / product-grid classes
+        $content = preg_replace('/<ul>/i', '<ul class="products columns-6 products-grid-columns-6">', $content, 1);
+
+        $seo = SeoHelper::generateTags($page, [
+            'title' => "{$page->title} Applications | SD International",
+            'description' => "Explore {$page->title} industrial colorant applications at SD International.",
+            'canonical' => url('/applications/' . $cleanSlug),
+        ]);
+
+        $breadcrumbs = [
+            'Home' => url('/'),
+            'Applications' => url('/applications'),
+            $page->title => url('/applications/' . $cleanSlug),
+        ];
+        $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
+
+        return view('pages.application_detail', compact('page', 'content', 'seo', 'breadcrumbs', 'breadcrumbSchema'));
+    }
+
     public function sustainability()
     {
         $page = Page::where('slug', 'sustainability')->first();

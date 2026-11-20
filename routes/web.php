@@ -98,8 +98,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{slug}/tds', [ProductController::class, 'tds'])->name('products.tds');
 Route::get('/product/{slug}', function ($slug) {
-    return redirect('/' . $slug, 301);
-});
+    $parts = explode('/', trim($slug, '/'));
+    $productSlug = array_pop($parts);
+    return redirect('/' . $productSlug, 301);
+})->where('slug', '.*');
 Route::get('/api/products/search', [ProductController::class, 'searchApi'])->name('api.products.search');
 
 // 3. Category legacy paths
@@ -144,6 +146,7 @@ Route::get('/robots.txt', [SitemapController::class, 'robots']);
 
 // 8. Core CMS Pages & Applications
 Route::get('/applications', [PageController::class, 'applications'])->name('applications.index');
+Route::get('/applications/{slug}', [PageController::class, 'showApplication'])->name('applications.show');
 Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about.index');
 Route::get('/about', [PageController::class, 'aboutUs']);
 Route::get('/certifications', [PageController::class, 'certifications'])->name('certifications.index');
