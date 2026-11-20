@@ -1326,6 +1326,7 @@ html, body {
 .elementor-element-425a92a3 {
     padding: 50px 0 !important;
     background: #ffffff !important;
+    overflow-x: hidden !important;
 }
 .elementor-element-425a92a3 > .elementor-container {
     max-width: 1240px !important;
@@ -1342,6 +1343,42 @@ html, body {
 .elementor-element-425a92a3 .elementor-column.elementor-col-25 {
     width: 25% !important;
     flex: 1 1 25% !important;
+}
+
+/* Section 5 Stats Facts Fade-Up Animation */
+@keyframes sdFadeInUpFact {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@-webkit-keyframes sdFadeInUpFact {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+.elementor-element-425a92a3 .elementor-column.elementor-col-25.sd-fadeup-ready {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    will-change: transform, opacity;
+}
+.elementor-element-425a92a3 .elementor-column.elementor-col-25.sd-fadeup-animate {
+    -webkit-animation: sdFadeInUpFact 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: sdFadeInUpFact 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* Section 6: Testimonials */
@@ -3188,6 +3225,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (entry.isIntersecting) {
                     const el = entry.target;
                     obs.unobserve(el);
+                    if (el.dataset.sdCounted) return;
+                    el.dataset.sdCounted = 'true';
                     const target = parseInt(el.getAttribute('data-to'), 10) || 0;
                     const duration = parseInt(el.getAttribute('data-speed'), 10) || 1500;
                     const start = 0;

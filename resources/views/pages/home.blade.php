@@ -689,10 +689,75 @@ Mr. Jagdeep Mehta ( Chairman & Managing Director )<br>Mr. Dhruv Mehta &nbsp;&nbs
         }
     }
 
+    function initFactsSectionAnimation() {
+        var section = document.querySelector('.elementor-element-425a92a3');
+        if (!section) return;
+        var cols = Array.prototype.slice.call(section.querySelectorAll('.elementor-column.elementor-col-25'));
+        if (!cols.length) return;
+
+        cols.forEach(function(col) {
+            col.classList.add('sd-fadeup-ready');
+        });
+
+        function animateCounter(counterEl) {
+            if (!counterEl || counterEl.dataset.sdCounted) return;
+            counterEl.dataset.sdCounted = 'true';
+            var target = parseInt(counterEl.getAttribute('data-to'), 10) || 0;
+            var duration = parseInt(counterEl.getAttribute('data-speed'), 10) || 1500;
+            var startTime = performance.now();
+            counterEl.textContent = '0';
+            function step(now) {
+                var elapsed = now - startTime;
+                var progress = Math.min(elapsed / duration, 1);
+                var easeOut = 1 - Math.pow(1 - progress, 3);
+                counterEl.textContent = Math.floor(target * easeOut);
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    counterEl.textContent = target;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        function triggerAnimation() {
+            cols.forEach(function(col, idx) {
+                var delay = idx * 140;
+                col.style.animationDelay = delay + 'ms';
+                col.classList.add('sd-fadeup-animate');
+
+                var counter = col.querySelector('.pp-counter-number[data-to]');
+                if (counter) {
+                    setTimeout(function() {
+                        animateCounter(counter);
+                    }, delay);
+                }
+            });
+        }
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries, obs) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        triggerAnimation();
+                        obs.disconnect();
+                    }
+                });
+            }, { threshold: 0.15 });
+            observer.observe(section);
+        } else {
+            triggerAnimation();
+        }
+    }
+
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initFeatureCardsAnimation);
+        document.addEventListener('DOMContentLoaded', function() {
+            initFeatureCardsAnimation();
+            initFactsSectionAnimation();
+        });
     } else {
         initFeatureCardsAnimation();
+        initFactsSectionAnimation();
     }
 })();
 </script>
