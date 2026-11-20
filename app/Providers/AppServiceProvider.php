@@ -27,13 +27,13 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrapFive();
 
-        if (Schema::hasTable('settings')) {
-            try {
+        try {
+            if (Schema::hasTable('settings')) {
                 $allSettings = Setting::all()->pluck('value', 'key')->toArray();
                 View::share('siteSettings', $allSettings);
-            } catch (\Throwable $e) {
-                View::share('siteSettings', []);
             }
+        } catch (\Throwable $e) {
+            View::share('siteSettings', []);
         }
     }
 }

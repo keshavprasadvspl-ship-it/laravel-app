@@ -16,6 +16,12 @@ class FallbackController extends Controller
         $cleanSlug = trim($slug, '/');
         $fullPath = trim($request->path(), '/');
 
+        // Normalize spaces or pluses into hyphens for canonical SEO URLs
+        if (preg_match('/[\s+]/', $cleanSlug)) {
+            $normalizedSlug = preg_replace('/[\s+]+/', '-', $cleanSlug);
+            return redirect('/' . $normalizedSlug, 301);
+        }
+
         // 1. Check SEO Redirects first
         $redirect = Redirect::where('source_pattern', $cleanSlug)
             ->orWhere('source_pattern', $fullPath)
