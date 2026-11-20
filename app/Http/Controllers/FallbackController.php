@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Page;
+use App\Models\Post;
 use App\Models\Redirect;
 use Illuminate\Http\Request;
 
@@ -44,7 +45,13 @@ class FallbackController extends Controller
             return app(PageController::class)->show($cleanSlug);
         }
 
-        // 5. If not found, return custom branded 404
+        // 5. Check Blog / Post (Redirect to canonical /blogs/{slug})
+        $post = Post::where('slug', $cleanSlug)->first();
+        if ($post) {
+            return redirect('/blogs/' . $cleanSlug, 301);
+        }
+
+        // 6. If not found, return custom branded 404
         return response()->view('errors.404', [
             'slug' => $slug,
         ], 404);

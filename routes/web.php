@@ -99,10 +99,22 @@ Route::get('/sample-request', [PageController::class, 'requestQuote'])->name('sa
 // 5. Blogs & News
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/page/{page}', function($page) {
+    if ((int)$page <= 1) {
+        return redirect()->route('blogs.index', [], 301);
+    }
     request()->merge(['page' => $page]);
     return app(BlogController::class)->index();
 })->where('page', '[0-9]+');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
+Route::get('/blog/{slug}', function($slug) {
+    return redirect('/blogs/' . trim($slug, '/'), 301);
+});
+Route::get('/blog', function() {
+    return redirect()->route('blogs.index', [], 301);
+});
+Route::get('/uncategorized/{slug}', function($slug) {
+    return redirect('/blogs/' . trim($slug, '/'), 301);
+});
 
 // 6. Inquiries Form submissions (Contact, Quote, Sample)
 Route::post('/inquiries', [InquiryController::class, 'store'])->name('inquiries.store');

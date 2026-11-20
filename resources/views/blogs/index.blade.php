@@ -245,14 +245,14 @@
 
                                                 <nav class="elementor-pagination" role="navigation" aria-label="Pagination">
                                                     @if ($posts->currentPage() > 1)
-                                                        <a class="page-numbers prev" href="{{ url('/blogs/page/' . ($posts->currentPage() - 1)) }}">&laquo;</a>
+                                                        <a class="page-numbers prev" href="{{ $posts->currentPage() == 2 ? url('/blogs') : url('/blogs/page/' . ($posts->currentPage() - 1)) }}">&laquo;</a>
                                                     @endif
 
-                                                    @for ($i = 1; $i <= min(8, $posts->lastPage()); $i++)
+                                                    @for ($i = 1; $i <= $posts->lastPage(); $i++)
                                                         @if ($i == $posts->currentPage())
                                                             <span aria-current="page" class="page-numbers current"><span class="elementor-screen-only">Page</span>{{ $i }}</span>
                                                         @else
-                                                            <a class="page-numbers" href="{{ url('/blogs/page/' . $i) }}"><span class="elementor-screen-only">Page</span>{{ $i }}</a>
+                                                            <a class="page-numbers" href="{{ $i == 1 ? url('/blogs') : url('/blogs/page/' . $i) }}"><span class="elementor-screen-only">Page</span>{{ $i }}</a>
                                                         @endif
                                                     @endfor
 
