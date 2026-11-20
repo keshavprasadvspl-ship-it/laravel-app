@@ -91,6 +91,23 @@ Route::get('/system/run-migrate', function () {
 | Public Website Routes
 |--------------------------------------------------------------------------
 */
+// Media / Uploads Fallback (redirect missing assets to live CDN)
+Route::get('/uploads/{path}', function ($path) {
+    $localPath = public_path('uploads/' . $path);
+    if (file_exists($localPath)) {
+        return response()->file($localPath);
+    }
+    return redirect('https://sdinternational.com/wp-content/uploads/' . $path, 302);
+})->where('path', '.*');
+
+Route::get('/wp-content/uploads/{path}', function ($path) {
+    $localPath = public_path('uploads/' . $path);
+    if (file_exists($localPath)) {
+        return response()->file($localPath);
+    }
+    return redirect('https://sdinternational.com/wp-content/uploads/' . $path, 302);
+})->where('path', '.*');
+
 // 1. Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

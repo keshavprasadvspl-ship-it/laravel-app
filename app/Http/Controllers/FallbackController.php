@@ -27,6 +27,16 @@ class FallbackController extends Controller
             return redirect($redirect->destination_url, (int) $redirect->status_code);
         }
 
+        // Media/uploads fallback for missing assets
+        if (str_starts_with($fullPath, 'uploads/') || str_starts_with($fullPath, 'wp-content/uploads/')) {
+            $imgPath = preg_replace('#^(?:wp-content/)?uploads/#i', '', $fullPath);
+            $localPath = public_path('uploads/' . $imgPath);
+            if (file_exists($localPath)) {
+                return response()->file($localPath);
+            }
+            return redirect('https://sdinternational.com/wp-content/uploads/' . $imgPath, 302);
+        }
+
         // Applications sub-page handler
         if (str_starts_with($fullPath, 'applications/')) {
             $appSlug = substr($fullPath, strlen('applications/'));

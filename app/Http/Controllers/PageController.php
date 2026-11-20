@@ -122,13 +122,39 @@ class PageController extends Controller
             return 'href="/' . $prodSlug . '"';
         }, $content);
 
-        // 2. Replace /wp-content/uploads/ with /uploads/
-        $content = str_replace('/wp-content/uploads/', '/uploads/', $content);
+        // 2. Ensure all image tags have a valid source
+        $content = preg_replace_callback('/<img([^>]+)>/i', function ($m) {
+            $tag = $m[1];
+            // If already an absolute URL (http/https), leave untouched
+            if (preg_match('/src="https?:\/\//i', $tag)) {
+                return '<img' . $tag . '>';
+            }
+            // If src starts with /uploads/ or /wp-content/uploads/
+            if (preg_match('/src="([^"]+)"/i', $tag, $srcMatch)) {
+                $src = $srcMatch[1];
+                $cleanUploadPath = preg_replace('#^/(?:wp-content/)?uploads/#i', '', $src);
+                $liveUrl = 'https://sdinternational.com/wp-content/uploads/' . $cleanUploadPath;
+                $localPath = public_path('uploads/' . $cleanUploadPath);
 
-        // 3. Add live CDN fallback onerror for images
-        $content = preg_replace('/<img([^>]+)src="([^">]+)"([^>]*)>/i', '<img$1src="$2"$3 onerror="this.onerror=null; this.src=\'https://sdinternational.com/wp-content$2\';">', $content);
+                if (file_exists($localPath)) {
+                    $newTag = preg_replace('/src="[^"]+"/i', 'src="' . asset('uploads/' . $cleanUploadPath) . '"', $tag);
+                    if (!str_contains($newTag, 'onerror=')) {
+                        $newTag .= ' onerror="this.onerror=null; this.src=\'' . $liveUrl . '\';"';
+                    }
+                    return '<img' . $newTag . '>';
+                } else {
+                    $newTag = preg_replace('/src="[^"]+"/i', 'src="' . $liveUrl . '"', $tag);
+                    $newTag = preg_replace_callback('/srcset="([^"]+)"/i', function ($sm) {
+                        $fixed = preg_replace('#/(?:wp-content/)?uploads/#i', 'https://sdinternational.com/wp-content/uploads/', $sm[1]);
+                        return 'srcset="' . $fixed . '"';
+                    }, $newTag);
+                    return '<img' . $newTag . '>';
+                }
+            }
+            return '<img' . $tag . '>';
+        }, $content);
 
-        // 4. Ensure ul has WooCommerce / product-grid classes
+        // 3. Ensure ul has WooCommerce / product-grid classes
         $content = preg_replace('/<ul>/i', '<ul class="products columns-6 products-grid-columns-6">', $content, 1);
 
         $seo = SeoHelper::generateTags($page, [
