@@ -41,7 +41,32 @@ class CategoryController extends Controller
         // Direct products query - show all products without pagination
         $productsQuery = $category->products()->where('status', 'publish');
 
-        if ($category->products()->where('status', 'publish')->count() === 0 && $childCategories->isNotEmpty()) {
+        if ($category->slug === 'liquid-solvent-dyes' && $productsQuery->count() === 0) {
+            $liquidSlugs = [
+                'solvent-blue-79',
+                'solvent-blue-98',
+                'solvent-green-33',
+                'solvent-orange-98',
+                'solvent-red-164',
+                'solvent-red-19e',
+                'solvent-yellow-107',
+                'solvent-yellow-124',
+                'solvent-yellow-175',
+            ];
+            $matchedProducts = Product::whereIn('slug', $liquidSlugs)->where('status', 'publish')->orderBy('title')->get();
+            if ($matchedProducts->isNotEmpty()) {
+                try {
+                    $category->products()->syncWithoutDetaching($matchedProducts->pluck('id')->toArray());
+                    if (empty($category->image_url)) {
+                        $category->image_url = '/uploads/2026/04/solvent-dyes-e1775805465464.jpg';
+                        $category->save();
+                    }
+                } catch (\Throwable $e) {}
+                $products = $matchedProducts;
+            } else {
+                $products = $productsQuery->orderBy('title')->get();
+            }
+        } elseif ($category->products()->where('status', 'publish')->count() === 0 && $childCategories->isNotEmpty()) {
             $descendantIds = $childCategories->pluck('id')->toArray();
             $products = Product::whereHas('categories', function ($q) use ($descendantIds) {
                 $q->whereIn('categories.id', $descendantIds);

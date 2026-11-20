@@ -73,6 +73,19 @@ Route::prefix('admin')->group(function () {
 // Auto-Deploy Webhook Endpoint (GitHub / GitLab / Bitbucket)
 Route::post('/webhook/git-deploy', [AdminDeploy::class, 'webhook'])->name('webhook.git-deploy');
 
+// Direct migration & cache clear helper (useful on shared hosting without terminal)
+Route::get('/system/run-migrate', function () {
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    $migrateOutput = \Illuminate\Support\Facades\Artisan::output();
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    return response()->json([
+        'success' => true,
+        'migrate_output' => $migrateOutput,
+        'timestamp' => now()->toDateTimeString(),
+    ]);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Public Website Routes

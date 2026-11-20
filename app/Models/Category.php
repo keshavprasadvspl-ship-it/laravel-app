@@ -59,6 +59,14 @@ class Category extends Model
             return 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg';
         }
 
+        // liquid-solvent-dyes banner
+        if ($this->slug === 'liquid-solvent-dyes') {
+            if (file_exists(public_path('uploads/2026/04/solvent-dyes-e1775805465464.jpg'))) {
+                return asset('uploads/2026/04/solvent-dyes-e1775805465464.jpg');
+            }
+            return 'https://sdinternational.com/wp-content/uploads/2026/04/solvent-dyes-e1775805465464.jpg';
+        }
+
         // 3. Local slug path
         $slugPath = 'uploads/2022/04/' . $this->slug . '.jpg';
         if (file_exists(public_path($slugPath))) {

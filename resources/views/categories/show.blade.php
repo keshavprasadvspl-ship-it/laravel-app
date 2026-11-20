@@ -786,7 +786,7 @@
                             @php
                                 $bannerReplacement = '<div class="col-md-5">
                                     <div class="category-featured-card">
-                                        <img src="' . $category->featured_image_url . '" alt="' . e($category->name) . ' manufacturer, exporter, supplier in Mumbai- India" class="category-featured-img" onerror="this.onerror=null; this.src=\'' . ($category->slug === 'other-products' ? 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg' : 'https://sdinternational.com/wp-content/uploads/2022/04/' . $category->slug . '.jpg') . '\';">
+                                        <img src="' . $category->featured_image_url . '" alt="' . e($category->name) . ' manufacturer, exporter, supplier in Mumbai- India" class="category-featured-img" onerror="this.onerror=null; this.src=\'' . ($category->slug === 'liquid-solvent-dyes' ? 'https://sdinternational.com/wp-content/uploads/2026/04/solvent-dyes-e1775805465464.jpg' : ($category->slug === 'other-products' ? 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg' : 'https://sdinternational.com/wp-content/uploads/2022/04/' . $category->slug . '.jpg')) . '\';">
                                         <button type="button" class="btn-category-enquiry" onclick="openCategoryQuoteModal(\'' . addslashes($category->name) . '\', \'' . $category->slug . '\')">
                                             Enquiry Now
                                         </button>
@@ -799,7 +799,7 @@
                             {{-- Standard fallback layout with banner on top left and text on right --}}
                             <div class="category-inner-banner-row">
                                 <div class="category-featured-card">
-                                    <img src="{{ $category->featured_image_url }}" alt="{{ $category->name }} manufacturer, exporter, supplier in Mumbai- India" class="category-featured-img" onerror="this.onerror=null; this.src='{{ $category->slug === 'other-products' ? 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg' : 'https://sdinternational.com/wp-content/uploads/2022/04/' . $category->slug . '.jpg' }}';">
+                                    <img src="{{ $category->featured_image_url }}" alt="{{ $category->name }} manufacturer, exporter, supplier in Mumbai- India" class="category-featured-img" onerror="this.onerror=null; this.src='{{ $category->slug === 'liquid-solvent-dyes' ? 'https://sdinternational.com/wp-content/uploads/2026/04/solvent-dyes-e1775805465464.jpg' : ($category->slug === 'other-products' ? 'https://sdinternational.com/wp-content/uploads/2022/05/other-product.jpg' : 'https://sdinternational.com/wp-content/uploads/2022/04/' . $category->slug . '.jpg') }}';">
                                     <button type="button" class="btn-category-enquiry" onclick="openCategoryQuoteModal('{{ addslashes($category->name) }}', '{{ $category->slug }}')">
                                         Enquiry Now
                                     </button>
