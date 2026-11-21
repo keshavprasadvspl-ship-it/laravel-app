@@ -11,7 +11,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $posts = Post::latest()->paginate(10);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         $canonical = $posts->currentPage() > 1 
             ? url('/blogs/page/' . $posts->currentPage()) 
