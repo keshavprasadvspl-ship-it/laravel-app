@@ -74,6 +74,9 @@ class BlogController extends Controller
             }
         }
 
+        // Format content with proper paragraphs matching WordPress wpautop
+        $post->content = wpautop($post->content ?? '');
+
         $seo = SeoHelper::generateTags($post, [
             'title' => "{$post->title} | SD International",
             'description' => $post->excerpt ?: substr(strip_tags($post->content), 0, 160),

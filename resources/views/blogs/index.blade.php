@@ -114,25 +114,34 @@
         content: "•";
         margin: 0 8px;
     }
-    .elementor-13522 .elementor-pagination {
+    .elementor-13522 .elementor-pagination,
+    .elementor-pagination {
         text-align: center;
-        margin-top: 40px;
-        margin-bottom: 20px;
+        margin-top: 45px;
+        margin-bottom: 25px;
     }
-    .elementor-13522 .elementor-pagination .page-numbers {
+    .elementor-13522 .elementor-pagination .page-numbers,
+    .elementor-pagination .page-numbers {
         display: inline-block;
         font-family: 'Open Sans', sans-serif;
-        font-size: 15px;
-        color: #7a7a7a;
+        font-size: 16px;
+        font-weight: 600;
+        color: #64141F !important;
         text-decoration: none;
-        padding: 4px 8px;
+        padding: 4px 10px;
         margin: 0 4px;
         transition: color 0.2s ease;
+        line-height: 1.5;
+    }
+    .elementor-13522 .elementor-pagination a.page-numbers:hover,
+    .elementor-pagination a.page-numbers:hover {
+        color: #000000 !important;
     }
     .elementor-13522 .elementor-pagination .page-numbers.current,
-    .elementor-13522 .elementor-pagination .page-numbers:hover {
-        color: #000000;
-        font-weight: 700;
+    .elementor-pagination .page-numbers.current {
+        color: #000000 !important;
+        font-weight: 700 !important;
+        cursor: default;
     }
     .elementor-screen-only {
         position: absolute;
@@ -244,21 +253,13 @@
                                                 </div>
 
                                                 <nav class="elementor-pagination" role="navigation" aria-label="Pagination">
-                                                    @if ($posts->currentPage() > 1)
-                                                        <a class="page-numbers prev" href="{{ $posts->currentPage() == 2 ? url('/blogs') : url('/blogs/page/' . ($posts->currentPage() - 1)) }}">&laquo;</a>
-                                                    @endif
-
-                                                    @for ($i = 1; $i <= $posts->lastPage(); $i++)
+                                                    @for ($i = 1; $i <= min(5, $posts->lastPage()); $i++)
                                                         @if ($i == $posts->currentPage())
                                                             <span aria-current="page" class="page-numbers current"><span class="elementor-screen-only">Page</span>{{ $i }}</span>
                                                         @else
                                                             <a class="page-numbers" href="{{ $i == 1 ? url('/blogs') : url('/blogs/page/' . $i) }}"><span class="elementor-screen-only">Page</span>{{ $i }}</a>
                                                         @endif
                                                     @endfor
-
-                                                    @if ($posts->hasMorePages())
-                                                        <a class="page-numbers next" href="{{ url('/blogs/page/' . ($posts->currentPage() + 1)) }}">&raquo;</a>
-                                                    @endif
                                                 </nav>
                                             </div>
                                         </div>

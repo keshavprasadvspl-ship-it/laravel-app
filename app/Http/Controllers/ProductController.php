@@ -264,22 +264,8 @@ class ProductController extends Controller
             // Replace legacy download.jpg image with functional Download PDF button
             $raw = preg_replace('/<img[^>]+download\.jpg[^>]*>/i', $pdfButtonHtml, $raw);
 
-            // Convert bare text lines separated by blank lines into proper paragraphs while preserving HTML tags
-            $lines = preg_split("/\r\n|\n|\r/", $raw);
-            $htmlParts = [];
-            $inTable = false;
-            foreach ($lines as $line) {
-                $trimmed = trim($line);
-                if ($trimmed === '') continue;
-                if (stripos($trimmed, '<table') !== false) $inTable = true;
-                if ($inTable || preg_match('/^<(h[1-6]|div|table|tbody|thead|tr|td|th|ul|ol|li|p|blockquote|section|\/)/i', $trimmed)) {
-                    $htmlParts[] = $trimmed;
-                } else {
-                    $htmlParts[] = '<p>' . $trimmed . '</p>';
-                }
-                if (stripos($trimmed, '</table>') !== false) $inTable = false;
-            }
-            $raw = implode("\n", $htmlParts);
+            // Convert bare text lines and raw markup into proper paragraphs using wpautop
+            $raw = wpautop($raw);
         }
 
         // Inject Gold Gradient CTA banner right before the "Latest Price" heading (matching live Elementor 11806)

@@ -44,25 +44,35 @@
         font-size: 15px !important;
         line-height: 1.85 !important;
         color: #333333 !important;
+        margin-top: 0 !important;
         margin-bottom: 22px !important;
     }
     .elementor-13570 .elementor-element-b5b2aa4 h2 {
         font-family: "Poppins", "Montserrat", sans-serif !important;
-        color: #870B28 !important;
+        color: #000000 !important;
         font-size: 26px !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
         line-height: 1.35 !important;
-        margin-top: 35px !important;
+        margin-top: 36px !important;
         margin-bottom: 16px !important;
     }
     .elementor-13570 .elementor-element-b5b2aa4 h3 {
         font-family: "Poppins", "Montserrat", sans-serif !important;
-        color: #870B28 !important;
+        color: #000000 !important;
         font-size: 20px !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
         line-height: 1.4 !important;
         margin-top: 28px !important;
         margin-bottom: 14px !important;
+    }
+    .elementor-13570 .elementor-element-b5b2aa4 h4 {
+        font-family: "Poppins", "Montserrat", sans-serif !important;
+        color: #000000 !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        line-height: 1.4 !important;
+        margin-top: 24px !important;
+        margin-bottom: 12px !important;
     }
     .elementor-13570 .elementor-element-b5b2aa4 ol,
     .elementor-13570 .elementor-element-b5b2aa4 ul {
@@ -200,7 +210,7 @@
                                     <div class="elementor-widget-wrap">
                                         <div class="elementor-element elementor-element-b5b2aa4 elementor-widget elementor-widget-theme-post-content" data-id="b5b2aa4" data-element_type="widget" data-widget_type="theme-post-content.default">
                                             <div class="elementor-widget-container">
-                                                {!! $post->content !!}
+                                                {!! wpautop($post->content) !!}
                                             </div>
                                         </div>
                                     </div>

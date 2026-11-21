@@ -18,4 +18,9 @@ class Post extends Model
     {
         return url('/blogs/' . $this->slug);
     }
+
+    public function getFormattedContentAttribute(): string
+    {
+        return wpautop($this->content ?? '');
+    }
 }
