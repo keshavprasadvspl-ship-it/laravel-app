@@ -38,6 +38,48 @@ class CategoryController extends Controller
                 ->get();
         }
 
+        if ($childCategories->isEmpty()) {
+            $parentMap = [
+                'dyes' => [
+                    'acid-dyes',
+                    'basic-dyes',
+                    'cationic-dyes',
+                    'direct-dyes',
+                    'disperse-dyes',
+                    'metal-complex-solvent-dyes',
+                    'powder-solvent-dyes',
+                    'reactive-dyes',
+                    'vat-dyes',
+                ],
+                'pigments' => [
+                    'organic-pigments',
+                    'high-performance-pigments',
+                    'fluorescent-pigments',
+                    'pu-foam-pigments',
+                    'ultra-marine-pigments',
+                ],
+                'other-products' => [
+                    'naphthols',
+                    'fast-colour-bases',
+                    'fast-colour-salts',
+                    'pyrazolone-intermediates',
+                    'auxiliaries',
+                ],
+            ];
+
+            if (isset($parentMap[$category->slug])) {
+                $childCategories = Category::whereIn('slug', $parentMap[$category->slug])
+                    ->withCount(['products' => function ($q) {
+                        $q->where('status', 'publish');
+                    }])
+                    ->get()
+                    ->sortBy(function ($cat) use ($parentMap, $category) {
+                        return array_search($cat->slug, $parentMap[$category->slug]);
+                    })
+                    ->values();
+            }
+        }
+
         // Direct products query - show all products without pagination
         $productsQuery = $category->products()->where('status', 'publish');
 

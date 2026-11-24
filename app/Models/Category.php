@@ -99,19 +99,20 @@ class Category extends Model
 
     public function getThumbnailUrlAttribute(): string
     {
-        $thumbPath = 'uploads/2022/04/' . $this->slug . '-120x120.jpg';
+        $thumbSlug = $this->slug === 'powder-solvent-dyes' ? 'solvent-dyes' : $this->slug;
+        $thumbPath = 'uploads/2022/04/' . $thumbSlug . '-120x120.jpg';
         if (file_exists(public_path($thumbPath))) {
             return asset($thumbPath);
         }
 
         // If full image exists locally, return it
-        $slugPath = 'uploads/2022/04/' . $this->slug . '.jpg';
+        $slugPath = 'uploads/2022/04/' . $thumbSlug . '.jpg';
         if (file_exists(public_path($slugPath))) {
             return asset($slugPath);
         }
 
         // Live site CDN fallback
-        return "https://sdinternational.com/wp-content/uploads/2022/04/{$this->slug}-120x120.jpg";
+        return "https://sdinternational.com/wp-content/uploads/2022/04/{$thumbSlug}-120x120.jpg";
     }
 
     public static function getSidebarCategories()
