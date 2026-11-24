@@ -1,0 +1,2859 @@
+{
+    "Dyes": {
+        "slug": "dyes",
+        "children": {
+            "Basic Dyes": {
+                "slug": "basic-dyes",
+                "products": [
+                    {
+                        "name": "Basic Green 1 (Diamond Green) Dyes",
+                        "slug": "basic-green-1-diamond-green-dyes"
+                    },
+                    {
+                        "name": "Basic Green 4 (Malachite Green) Dyes",
+                        "slug": "basic-green-4-malachite-green-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 7 (Victoria Blue Bo) Dyes",
+                        "slug": "basic-blue-7-victoria-blue-bo-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 9 (Methylene Blue Bb) Dyes",
+                        "slug": "basic-blue-9-methylene-blue-bb-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 11 (Bluer) Dyes",
+                        "slug": "basic-blue-11-bluer-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 26 (Victoria Blue B 1) Dyes",
+                        "slug": "basic-blue-26-victoria-blue-b-1-dyes"
+                    },
+                    {
+                        "name": "Basic Yellow 2 (Auramine 0) Dyes",
+                        "slug": "basic-yellow-2-auramine-0-dyes"
+                    },
+                    {
+                        "name": "Basic Yellow 28, Cationic Gold Yellow X-Gl Dyes",
+                        "slug": "basic-yellow-28-cationic-gold-yellow-x-gl-dyes"
+                    },
+                    {
+                        "name": "Basic Yellow 40 Dyes",
+                        "slug": "basic-yellow-40-dyes"
+                    },
+                    {
+                        "name": "Basic Violet 1 (Methyl Violet) Dyes",
+                        "slug": "basic-violet-1-methyl-violet-dyes"
+                    },
+                    {
+                        "name": "Basic Violet 10 (Rhodamine B)  Dyes",
+                        "slug": "basic-violet-10-rhodamine-b-dyes"
+                    },
+                    {
+                        "name": "Basic Violet 11 Dyes",
+                        "slug": "basic-violet-11-dyes"
+                    },
+                    {
+                        "name": "Basic Violet 11:1 Dyes",
+                        "slug": "basic-violet-111-dyes"
+                    },
+                    {
+                        "name": "Basic Brown 1 Dyes",
+                        "slug": "basic-brown-1-dyes"
+                    },
+                    {
+                        "name": "Basic Brown 4 Dyes",
+                        "slug": "basic-brown-4-dyes"
+                    },
+                    {
+                        "name": "Basic Red 1 (Rhodamine 6G) Dyes",
+                        "slug": "basic-red-1-rhodamine-6g-dyes"
+                    }
+                ]
+            },
+            "Disperse Dyes": {
+                "slug": "disperse-dyes",
+                "products": [
+                    {
+                        "name": "Disperse Blue 56 Dyes",
+                        "slug": "disperse-blue-56-dyes"
+                    },
+                    {
+                        "name": "Disperse Blue 56:1 Dyes",
+                        "slug": "disperse-blue-561-dyes"
+                    },
+                    {
+                        "name": "Disperse Blue 60 (200%) Dyes",
+                        "slug": "disperse-blue-60-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Blue 79 (200%) Dyes",
+                        "slug": "disperse-blue-79-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Blue 165 (200%) Dyes",
+                        "slug": "disperse-blue-165-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Blue 183 (200%) Dyes",
+                        "slug": "disperse-blue-183-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Blue 354 (200%) Dyes",
+                        "slug": "disperse-blue-354-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Blue Grxf (200%) Dyes",
+                        "slug": "disperse-blue-grxf-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Blue Bbls (200%) Dyes",
+                        "slug": "disperse-blue-bbls-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Cyanide Blue B (200%) Dyes",
+                        "slug": "disperse-cyanide-blue-b-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Navy Blue Exsf (200%) Dyes",
+                        "slug": "disperse-navy-blue-exsf-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Violet 26 (200%) Dyes",
+                        "slug": "disperse-violet-26-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Violet 33 Dyes",
+                        "slug": "disperse-violet-33-dyes"
+                    },
+                    {
+                        "name": "Disperse Violet 63 (200%) Dyes",
+                        "slug": "disperse-violet-63-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Brown 1  (150%) Dyes",
+                        "slug": "disperse-brown-1-150-dyes"
+                    },
+                    {
+                        "name": "Disperse Black Exsf (300%) Dyes",
+                        "slug": "disperse-black-exsf-300-dyes"
+                    },
+                    {
+                        "name": "Disperse Yellow 79 (200%) Dyes",
+                        "slug": "disperse-yellow-79-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Yellow 82 (100%) Dyes",
+                        "slug": "disperse-yellow-82-100-dyes"
+                    },
+                    {
+                        "name": "Disperse Yellow 114 (200%) Dyes",
+                        "slug": "disperse-yellow-114-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Yellow 184 (400%) Dyes",
+                        "slug": "disperse-yellow-184-400-dyes"
+                    },
+                    {
+                        "name": "Disperse Yellow 211 (200%) Dyes",
+                        "slug": "disperse-yellow-211-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Orange 25 (200%) Dyes",
+                        "slug": "disperse-orange-25-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 1 (200%) Dyes",
+                        "slug": "disperse-red-1-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 13 (200%) Dyes",
+                        "slug": "disperse-red-13-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 50 (200%) Dyes",
+                        "slug": "disperse-red-50-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 54 (150%) Dyes",
+                        "slug": "disperse-red-54-150-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 60 (200%) Dyes",
+                        "slug": "disperse-red-60-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 152 (200%) Dyes",
+                        "slug": "disperse-red-152-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 167 (200%) Dyes",
+                        "slug": "disperse-red-167-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 277 (100%) Dyes",
+                        "slug": "disperse-red-277-100-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 343 (100% And 200%) Dyes",
+                        "slug": "disperse-red-343-100-and-200-dyes"
+                    },
+                    {
+                        "name": "Disperse Red 362 (100%) Dyes",
+                        "slug": "disperse-red-362-100-dyes"
+                    }
+                ]
+            },
+            "Powder Solvent Dyes": {
+                "slug": "powder-solvent-dyes",
+                "products": [
+                    {
+                        "name": "Solvent Black 5 Dyes",
+                        "slug": "solvent-black-5-dyes"
+                    },
+                    {
+                        "name": "Solvent Black 7 Dyes",
+                        "slug": "solvent-black-7-dyes"
+                    },
+                    {
+                        "name": "Solvent Black 46 Dyes",
+                        "slug": "solvent-black-46-dyes"
+                    },
+                    {
+                        "name": "Solvent Brown 53 Dyes",
+                        "slug": "solvent-brown-53-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 4 Dyes",
+                        "slug": "solvent-blue-4-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 6 Dyes",
+                        "slug": "solvent-blue-6-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 35 Dyes",
+                        "slug": "solvent-blue-35-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 36 Dyes",
+                        "slug": "solvent-blue-36-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 45 Dyes",
+                        "slug": "solvent-blue-45-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 67 Dyes",
+                        "slug": "solvent-blue-67-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 101 Dyes",
+                        "slug": "solvent-blue-101-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 104 Dyes",
+                        "slug": "solvent-blue-104-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 122 Dyes",
+                        "slug": "solvent-blue-122-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 128 Dyes",
+                        "slug": "solvent-blue-128-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 13 Dyes",
+                        "slug": "solvent-violet-13-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 14 Dyes",
+                        "slug": "solvent-violet-14-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 38 Dyes",
+                        "slug": "solvent-violet-38-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 57 Dyes",
+                        "slug": "solvent-violet-57-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 59 Dyes",
+                        "slug": "solvent-violet-59-dyes"
+                    },
+                    {
+                        "name": "Solvent Green 3 Dyes",
+                        "slug": "solvent-green-3-dyes"
+                    },
+                    {
+                        "name": "Solvent Green 5 Dyes",
+                        "slug": "solvent-green-5-dyes"
+                    },
+                    {
+                        "name": "Solvent Green 7 Dyes",
+                        "slug": "solvent-green-7-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 2 Dyes",
+                        "slug": "solvent-orange-2-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 3 Dyes",
+                        "slug": "solvent-orange-3-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 7 Dyes",
+                        "slug": "solvent-orange-7-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 60 Dyes",
+                        "slug": "solvent-orange-60-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 63 Dyes",
+                        "slug": "solvent-orange-63-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 86 Dyes",
+                        "slug": "solvent-orange-86-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 105 Dyes",
+                        "slug": "solvent-orange-105-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 1 Dyes",
+                        "slug": "solvent-red-1-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 18 Dyes",
+                        "slug": "solvent-red-18-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 19 Dyes",
+                        "slug": "solvent-red-19-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 23 Dyes",
+                        "slug": "solvent-red-23-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 24 Dyes",
+                        "slug": "solvent-red-24-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 27 Dyes",
+                        "slug": "solvent-red-27-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 49 Dyes",
+                        "slug": "solvent-red-49-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 52 Dyes",
+                        "slug": "solvent-red-52-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 111 Dyes",
+                        "slug": "solvent-red-111-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 135 Dyes",
+                        "slug": "solvent-red-135-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 146 Dyes",
+                        "slug": "solvent-red-146-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 149 Dyes",
+                        "slug": "solvent-red-149-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 164 Dyes",
+                        "slug": "solvent-red-164-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 168 Dyes",
+                        "slug": "solvent-red-168-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 172 Dyes",
+                        "slug": "solvent-red-172-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 179 Dyes",
+                        "slug": "solvent-red-179-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 195 Dyes",
+                        "slug": "solvent-red-195-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 196 Dyes",
+                        "slug": "solvent-red-196-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 197 Dyes",
+                        "slug": "solvent-red-197-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 207 Dyes",
+                        "slug": "solvent-red-207-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 227 Dyes",
+                        "slug": "solvent-red-227-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 242 Dyes",
+                        "slug": "solvent-red-242-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 2 Dyes",
+                        "slug": "solvent-yellow-2-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 14 Dyes",
+                        "slug": "solvent-yellow-14-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 33 Dyes",
+                        "slug": "solvent-yellow-33-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 43 Dyes",
+                        "slug": "solvent-yellow-43-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 44 Dyes",
+                        "slug": "solvent-yellow-44-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 72 Dyes",
+                        "slug": "solvent-yellow-72-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 93 Dyes",
+                        "slug": "solvent-yellow-93-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 114 Dyes",
+                        "slug": "solvent-yellow-114-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 145 Dyes",
+                        "slug": "solvent-yellow-145-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 157 Dyes",
+                        "slug": "solvent-yellow-157-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 160 Dyes",
+                        "slug": "solvent-yellow-160-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 163 Dyes",
+                        "slug": "solvent-yellow-163-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 172 Dyes",
+                        "slug": "solvent-yellow-172-dyes"
+                    }
+                ]
+            },
+            "Vat Dyes": {
+                "slug": "vat-dyes",
+                "products": [
+                    {
+                        "name": "Vat Blue 1 Dyes",
+                        "slug": "vat-blue-1-dyes"
+                    },
+                    {
+                        "name": "Vat Blue 4 Dyes",
+                        "slug": "vat-blue-4-dyes"
+                    },
+                    {
+                        "name": "Vat Blue 6  Dyes",
+                        "slug": "vat-blue-6-dyes"
+                    },
+                    {
+                        "name": "Vat Blue 18 Dyes",
+                        "slug": "vat-blue-18-dyes"
+                    },
+                    {
+                        "name": "Vat Blue 20 Dyes",
+                        "slug": "vat-blue-20-dyes"
+                    },
+                    {
+                        "name": "Vat Blue 66 Dyes",
+                        "slug": "vat-blue-66-dyes"
+                    },
+                    {
+                        "name": "Vat Green 1 Dyes",
+                        "slug": "vat-green-1-dyes"
+                    },
+                    {
+                        "name": "Vat Green 3 Dyes",
+                        "slug": "vat-green-3-dyes"
+                    },
+                    {
+                        "name": "Vat Green 13 Dyes",
+                        "slug": "vat-green-13-dyes"
+                    },
+                    {
+                        "name": "Vat Violet 1 Dyes",
+                        "slug": "vat-violet-1-dyes"
+                    },
+                    {
+                        "name": "Vat Violet 3 (Cdpmdpf) Dyes",
+                        "slug": "vat-violet-3-cdpmdpf-dyes"
+                    },
+                    {
+                        "name": "Vat Violet 9 Dyes",
+                        "slug": "vat-violet-9-dyes"
+                    },
+                    {
+                        "name": "Vat Yellow 1 Dyes",
+                        "slug": "vat-yellow-1-dyes"
+                    },
+                    {
+                        "name": "Vat Yellow 2 Dyes",
+                        "slug": "vat-yellow-2-dyes"
+                    },
+                    {
+                        "name": "Vat Yellow 33 Dyes",
+                        "slug": "vat-yellow-33-dyes"
+                    },
+                    {
+                        "name": "Vat Orange 1 (Cdpmdpf) Dyes",
+                        "slug": "vat-orange-1-cdpmdpf-dyes"
+                    },
+                    {
+                        "name": "Vat Orange 3 Dyes",
+                        "slug": "vat-orange-3-dyes"
+                    },
+                    {
+                        "name": "Vat Orange 5 Dyes",
+                        "slug": "vat-orange-5-dyes"
+                    },
+                    {
+                        "name": "Vat Orange 7 Dyes",
+                        "slug": "vat-orange-7-dyes"
+                    },
+                    {
+                        "name": "Vat Red 1 (Cdp/Md/Mf/Cosmetic) Dyes",
+                        "slug": "vat-red-1-cdp-md-mf-cosmetic-dyes"
+                    },
+                    {
+                        "name": "Vat Red 10 Dyes",
+                        "slug": "vat-red-10-dyes"
+                    },
+                    {
+                        "name": "Vat Red 13 Dyes",
+                        "slug": "vat-red-13-dyes"
+                    },
+                    {
+                        "name": "Vat Red 14 Dyes",
+                        "slug": "vat-red-14-dyes"
+                    },
+                    {
+                        "name": "Vat Red 15 Dyes",
+                        "slug": "vat-red-15-dyes"
+                    },
+                    {
+                        "name": "Vat Red 29 Dyes",
+                        "slug": "vat-red-29-dyes"
+                    },
+                    {
+                        "name": "Vat Red 41 Dyes",
+                        "slug": "vat-red-41-dyes"
+                    },
+                    {
+                        "name": "Vat Black 8 Dyes",
+                        "slug": "vat-black-8-dyes"
+                    },
+                    {
+                        "name": "Vat Black 16 Dyes",
+                        "slug": "vat-black-16-dyes"
+                    },
+                    {
+                        "name": "Vat Black 25 Dyes",
+                        "slug": "vat-black-25-dyes"
+                    },
+                    {
+                        "name": "Vat Black 27 Dyes",
+                        "slug": "vat-black-27-dyes"
+                    },
+                    {
+                        "name": "Vat Black 29 Dyes",
+                        "slug": "vat-black-29-dyes"
+                    }
+                ]
+            },
+            "Acid Dyes": {
+                "slug": "acid-dyes",
+                "products": [
+                    {
+                        "name": "Acid Yellow 3 Dyes",
+                        "slug": "acid-yellow-3-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 17 Dyes",
+                        "slug": "acid-yellow-17-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 23 Dyes",
+                        "slug": "acid-yellow-23-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 36",
+                        "slug": "acid-yellow-36-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 42 Dyes",
+                        "slug": "acid-yellow-42-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 49 Dyes",
+                        "slug": "acid-yellow-49-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 73 Dyes",
+                        "slug": "acid-yellow-73-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 99 Dyes",
+                        "slug": "acid-yellow-99-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 110 Dyes",
+                        "slug": "acid-yellow-110-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 151 Dyes",
+                        "slug": "acid-yellow-151-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 186 Dyes",
+                        "slug": "acid-yellow-186-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 204 Dyes",
+                        "slug": "acid-yellow-204-dyes"
+                    },
+                    {
+                        "name": "Acid Yellow 250  Dyes",
+                        "slug": "acid-yellow-250-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 3  Dyes",
+                        "slug": "acid-orange-3-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 7 Dyes",
+                        "slug": "acid-orange-7-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 10 Dyes",
+                        "slug": "acid-orange-10-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 24 Dyes",
+                        "slug": "acid-orange-24-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 56 Dyes",
+                        "slug": "acid-orange-56-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 60 Dyes",
+                        "slug": "acid-orange-60-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 74 Dyes",
+                        "slug": "acid-orange-74-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 80 Dyes",
+                        "slug": "acid-orange-80-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 86 Dyes",
+                        "slug": "acid-orange-86-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 142 Dyes",
+                        "slug": "acid-orange-142-dyes"
+                    },
+                    {
+                        "name": "Acid Orange 156 Dyes",
+                        "slug": "acid-orange-156-dyes"
+                    },
+                    {
+                        "name": "Acid Red 1  Dyes",
+                        "slug": "acid-red-1-dyes"
+                    },
+                    {
+                        "name": "Acid Red 6 Dyes",
+                        "slug": "acid-red-6-dyes"
+                    },
+                    {
+                        "name": "Acid Red 14 Dyes",
+                        "slug": "acid-red-14-dyes"
+                    },
+                    {
+                        "name": "Acid Red 18 Dyes",
+                        "slug": "acid-red-18-dyes"
+                    },
+                    {
+                        "name": "Acid Red 34 Dyes",
+                        "slug": "acid-red-34-dyes"
+                    },
+                    {
+                        "name": "Acid Red 52 Dyes",
+                        "slug": "acid-red-52-dyes"
+                    },
+                    {
+                        "name": "Acid Red 87 Dyes",
+                        "slug": "acid-red-87-dyes"
+                    },
+                    {
+                        "name": "Acid Red 88 Dyes",
+                        "slug": "acid-red-88-dyes"
+                    },
+                    {
+                        "name": "Acid Red 97 Dyes",
+                        "slug": "acid-red-97-dyes"
+                    },
+                    {
+                        "name": "Acid Red 106 Dyes",
+                        "slug": "acid-red-106-dyes"
+                    },
+                    {
+                        "name": "Acid Red 119 Dyes",
+                        "slug": "acid-red-119-dyes"
+                    },
+                    {
+                        "name": "Acid Red 131 Dyes",
+                        "slug": "acid-red-131-dyes"
+                    },
+                    {
+                        "name": "Acid Red 141 Dyes",
+                        "slug": "acid-red-141-dyes"
+                    },
+                    {
+                        "name": "Acid Red 151 Dyes",
+                        "slug": "acid-red-151-dyes"
+                    },
+                    {
+                        "name": "Acid Red 182 Dyes",
+                        "slug": "acid-red-182-dyes"
+                    },
+                    {
+                        "name": "Acid Red 183 Dyes",
+                        "slug": "acid-red-183-dyes"
+                    },
+                    {
+                        "name": "Acid Red 186 Dyes",
+                        "slug": "acid-red-186-dyes"
+                    },
+                    {
+                        "name": "Acid Red 249 Dyes",
+                        "slug": "acid-red-249-dyes"
+                    },
+                    {
+                        "name": "Acid Red 299 Dyes",
+                        "slug": "acid-red-299-dyes"
+                    },
+                    {
+                        "name": "Acid Red 315 Dyes",
+                        "slug": "acid-red-315-dyes"
+                    },
+                    {
+                        "name": "Acid Red 357 Dyes",
+                        "slug": "acid-red-357-dyes"
+                    },
+                    {
+                        "name": "Acid Red 362 Dyes",
+                        "slug": "acid-red-362-dyes"
+                    },
+                    {
+                        "name": "Acid Red 410 Dyes",
+                        "slug": "acid-red-410-dyes"
+                    },
+                    {
+                        "name": "Acid Violet 1 Dyes",
+                        "slug": "acid-violet-1-dyes"
+                    },
+                    {
+                        "name": "Acid Violet 12  Dyes",
+                        "slug": "acid-violet-12-dyes"
+                    },
+                    {
+                        "name": "Acid Violet 17 Dyes",
+                        "slug": "acid-violet-17-dyes"
+                    },
+                    {
+                        "name": "Acid Violet 54 Dyes",
+                        "slug": "acid-violet-54-dyes"
+                    },
+                    {
+                        "name": "Acid Violet 90 Dyes",
+                        "slug": "acid-violet-90-dyes"
+                    },
+                    {
+                        "name": "Acid Violet 92 Dyes",
+                        "slug": "acid-violet-92-dyes"
+                    },
+                    {
+                        "name": "Acid Violet 131 Dyes",
+                        "slug": "acid-violet-131-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 1 Dyes",
+                        "slug": "acid-blue-1-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 7 Dyes",
+                        "slug": "acid-blue-7-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 9 Dyes",
+                        "slug": "acid-blue-9-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 15 Dyes",
+                        "slug": "acid-blue-15-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 25 Dyes",
+                        "slug": "acid-blue-25-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 80 Dyes",
+                        "slug": "acid-blue-80-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 83 Dyes",
+                        "slug": "acid-blue-83-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 93 Dyes",
+                        "slug": "acid-blue-93-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 113 Dyes",
+                        "slug": "acid-blue-113-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 158 Dyes",
+                        "slug": "acid-blue-158-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 185 Dyes",
+                        "slug": "acid-blue-185-dyes"
+                    },
+                    {
+                        "name": "Acid Green 1 Dyes",
+                        "slug": "acid-green-1-dyes"
+                    },
+                    {
+                        "name": "Acid Green 9 Dyes",
+                        "slug": "acid-green-9-dyes"
+                    },
+                    {
+                        "name": "Acid Green 12 Dyes",
+                        "slug": "acid-green-12-dyes"
+                    },
+                    {
+                        "name": "Acid Green 16 Dyes",
+                        "slug": "acid-green-16-dyes"
+                    },
+                    {
+                        "name": "Acid Green 20 Dyes",
+                        "slug": "acid-green-20-dyes"
+                    },
+                    {
+                        "name": "Acid Green 68 Dyes",
+                        "slug": "acid-green-68-dyes"
+                    },
+                    {
+                        "name": "Acid Green 73 Dyes",
+                        "slug": "acid-green-73-dyes"
+                    },
+                    {
+                        "name": "Acid Green 04 Dyes",
+                        "slug": "acid-green-04-dyes"
+                    },
+                    {
+                        "name": "Acid Green 111 Dyes",
+                        "slug": "acid-green-111-dyes"
+                    },
+                    {
+                        "name": "Acid Green 112 Dyes",
+                        "slug": "acid-green-112-dyes"
+                    },
+                    {
+                        "name": "Acid Blue 193 Dye",
+                        "slug": "acid-blue-193-dyes"
+                    },
+                    {
+                        "name": "Acid Black 1 Dyes",
+                        "slug": "acid-black-1-dyes"
+                    },
+                    {
+                        "name": "Acid Black 2 Dyes",
+                        "slug": "acid-black-2-dyes"
+                    },
+                    {
+                        "name": "Acid Black 24 Dyes",
+                        "slug": "acid-black-24-dyes"
+                    },
+                    {
+                        "name": "Acid Black 26 Dyes",
+                        "slug": "acid-black-26-dyes"
+                    },
+                    {
+                        "name": "Acid Black 52 Dyes",
+                        "slug": "acid-black-52-dyes"
+                    },
+                    {
+                        "name": "Acid Black 63 Dyes",
+                        "slug": "acid-black-63-dyes"
+                    },
+                    {
+                        "name": "Acid Black 71 Dyes",
+                        "slug": "acid-black-71-dyes"
+                    },
+                    {
+                        "name": "Acid Black 84 Dyes",
+                        "slug": "acid-black-84-dyes"
+                    },
+                    {
+                        "name": "Acid Black 194 Dyes",
+                        "slug": "acid-black-194-dyes"
+                    },
+                    {
+                        "name": "Acid Black 210 Dyes",
+                        "slug": "acid-black-210-dyes"
+                    },
+                    {
+                        "name": "Acid Black 234 Dyes",
+                        "slug": "acid-black-234-dyes"
+                    },
+                    {
+                        "name": "Acid Black 235 Dyes",
+                        "slug": "acid-black-235-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 4 Dyes",
+                        "slug": "acid-brown-4-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 14 Dyes",
+                        "slug": "acid-brown-14-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 15 Dyes",
+                        "slug": "acid-brown-15-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 58 Dyes",
+                        "slug": "acid-brown-58-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 75 Dyes",
+                        "slug": "acid-brown-75-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 83 Dyes",
+                        "slug": "acid-brown-83-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 85 Dyes",
+                        "slug": "acid-brown-85-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 97 Dyes",
+                        "slug": "acid-brown-97-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 98 Dyes",
+                        "slug": "acid-brown-98-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 100 Dyes",
+                        "slug": "acid-brown-100-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 106 Dyes",
+                        "slug": "acid-brown-106-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 161 Dyes",
+                        "slug": "acid-brown-161-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 165 Dyes",
+                        "slug": "acid-brown-165-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 188 Dyes",
+                        "slug": "acid-brown-188-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 214 Dyes",
+                        "slug": "acid-brown-214-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 235 Dyes",
+                        "slug": "acid-brown-235-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 282 Dyes",
+                        "slug": "acid-brown-282-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 283 Dyes",
+                        "slug": "acid-brown-283-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 322 Dyes",
+                        "slug": "acid-brown-322-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 348 Dyes",
+                        "slug": "acid-brown-348-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 349 Dyes",
+                        "slug": "acid-brown-349-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 354 Dyes",
+                        "slug": "acid-brown-354-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 355 Dyes",
+                        "slug": "acid-brown-355-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 360 Dyes",
+                        "slug": "acid-brown-360-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 365 Dyes",
+                        "slug": "acid-brown-365-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 369 Dyes",
+                        "slug": "acid-brown-369-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 402 Dyes",
+                        "slug": "acid-brown-402-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 420 Dyes",
+                        "slug": "acid-brown-420-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 422 Dyes",
+                        "slug": "acid-brown-422-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 425 Dyes",
+                        "slug": "acid-brown-425-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 432 Dyes",
+                        "slug": "acid-brown-432-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 434 Dyes",
+                        "slug": "acid-brown-434-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 440 Dyes",
+                        "slug": "acid-brown-440-dyes"
+                    },
+                    {
+                        "name": "Acid Brown 452 Dyes",
+                        "slug": "acid-brown-452-dyes"
+                    }
+                ]
+            },
+            "Cationic Dyes": {
+                "slug": "cationic-dyes",
+                "products": [
+                    {
+                        "name": "Basic Yellow 28 Dyes",
+                        "slug": "basic-yellow-28-dyes"
+                    },
+                    {
+                        "name": "Basic Yellow 29 Dyes",
+                        "slug": "basic-yellow-29-dyes"
+                    },
+                    {
+                        "name": "Basic Yellow 51 Dyes",
+                        "slug": "basic-yellow-51-dyes"
+                    },
+                    {
+                        "name": "Basic Red 14 Dyes",
+                        "slug": "basic-red-14-dyes"
+                    },
+                    {
+                        "name": "Basic Red 15 Dyes",
+                        "slug": "basic-red-15-dyes"
+                    },
+                    {
+                        "name": "Basic Red 18 Dyes",
+                        "slug": "basic-red-18-dyes"
+                    },
+                    {
+                        "name": "Basic Red 18:1 Dyes",
+                        "slug": "basic-red-181-dyes"
+                    },
+                    {
+                        "name": "Basic Red 24 Dyes",
+                        "slug": "basic-red-24-dyes"
+                    },
+                    {
+                        "name": "Basic Red 46 Dyes",
+                        "slug": "basic-red-46-dyes"
+                    },
+                    {
+                        "name": "Basic Red 49 Dyes",
+                        "slug": "basic-red-49-dyes"
+                    },
+                    {
+                        "name": "Basic Violet 16 Dyes",
+                        "slug": "basic-violet-16-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 1 Dyes",
+                        "slug": "basic-blue-1-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 3 Dyes",
+                        "slug": "basic-blue-3-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 41 Dyes",
+                        "slug": "basic-blue-41-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 41:1 Dyes",
+                        "slug": "basic-blue-411-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 54 Dyes",
+                        "slug": "basic-blue-54-dyes"
+                    },
+                    {
+                        "name": "Basic Blue 159 Dyes",
+                        "slug": "basic-blue-159-dyes"
+                    },
+                    {
+                        "name": "Basic Orange 22 Dyes",
+                        "slug": "basic-orange-22-dyes"
+                    },
+                    {
+                        "name": "Basic Orange 30 Dyes",
+                        "slug": "basic-orange-30-dyes"
+                    },
+                    {
+                        "name": "Sdcryl Black Gll Dyes",
+                        "slug": "sdcryl-black-gll-dyes"
+                    },
+                    {
+                        "name": "Sdcryl Black Xbgw Dyes",
+                        "slug": "sdcryl-black-xbgw-dyes"
+                    },
+                    {
+                        "name": "Sdcryl Black Fbl 300% Dyes",
+                        "slug": "sdcryl-black-fbl-300-dyes"
+                    },
+                    {
+                        "name": "Sdcryl Black 2Gh Dyes",
+                        "slug": "sdcryl-black-2gh-dyes"
+                    },
+                    {
+                        "name": "Sdcryl Black Vm Liquid Dyes",
+                        "slug": "sdcryl-black-vm-liquid-dyes"
+                    },
+                    {
+                        "name": "Sdcryl Black On Dyes",
+                        "slug": "sdcryl-black-on-dyes"
+                    },
+                    {
+                        "name": "Sdcryl Black Lxs Dyes",
+                        "slug": "sdcryl-black-lxs-dyes"
+                    }
+                ]
+            },
+            "Direct Dyes": {
+                "slug": "direct-dyes",
+                "products": [
+                    {
+                        "name": "Direct Yellow 4 Dyes",
+                        "slug": "direct-yellow-4-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 6 Dyes",
+                        "slug": "direct-yellow-6-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 8 Dyes",
+                        "slug": "direct-yellow-8-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 11 Dyes",
+                        "slug": "direct-yellow-11-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 12 Dyes",
+                        "slug": "direct-yellow-12-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 27 Dyes",
+                        "slug": "direct-yellow-27-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 28 Dyes",
+                        "slug": "direct-yellow-28-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 34 Dyes",
+                        "slug": "direct-yellow-34-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 44 Dyes",
+                        "slug": "direct-yellow-44-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 50 Dyes",
+                        "slug": "direct-yellow-50-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 86 Dyes",
+                        "slug": "direct-yellow-86-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 99 Dyes",
+                        "slug": "direct-yellow-99-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 106 Dyes",
+                        "slug": "direct-yellow-106-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 107 Dyes",
+                        "slug": "direct-yellow-107-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 120 Dyes",
+                        "slug": "direct-yellow-120-dyes"
+                    },
+                    {
+                        "name": "Direct Yellow 142 Dyes",
+                        "slug": "direct-yellow-142-dyes"
+                    },
+                    {
+                        "name": "Direct Red 7 Dyes",
+                        "slug": "direct-red-7-dyes"
+                    },
+                    {
+                        "name": "Direct Red 23 Dyes",
+                        "slug": "direct-red-23-dyes"
+                    },
+                    {
+                        "name": "Direct Red 16 Dyes",
+                        "slug": "direct-red-16-dyes"
+                    },
+                    {
+                        "name": "Direct Red 31 Dyes",
+                        "slug": "direct-red-31-dyes"
+                    },
+                    {
+                        "name": "Direct Red 72 Dyes",
+                        "slug": "direct-red-72-dyes"
+                    },
+                    {
+                        "name": "Direct Red 74 Dyes",
+                        "slug": "direct-red-74-dyes"
+                    },
+                    {
+                        "name": "Direct Red 75 Dyes",
+                        "slug": "direct-red-75-dyes"
+                    },
+                    {
+                        "name": "Direct Red 79 Dyes",
+                        "slug": "direct-red-79-dyes"
+                    },
+                    {
+                        "name": "Direct Red 80 Dyes",
+                        "slug": "direct-red-80-dyes"
+                    },
+                    {
+                        "name": "Direct Red 81 Dyes",
+                        "slug": "direct-red-81-dyes"
+                    },
+                    {
+                        "name": "Direct Red 83 Dyes",
+                        "slug": "direct-red-83-dyes"
+                    },
+                    {
+                        "name": "Direct Red 111 Dyes",
+                        "slug": "direct-red-111-dyes"
+                    },
+                    {
+                        "name": "Direct Red 112 Dyes",
+                        "slug": "direct-red-112-dyes"
+                    },
+                    {
+                        "name": "Direct Red 227 Dyes",
+                        "slug": "direct-red-227-dyes"
+                    },
+                    {
+                        "name": "Direct Red 239 Dyes",
+                        "slug": "direct-red-239-dyes"
+                    },
+                    {
+                        "name": "Direct Red 243 Dyes",
+                        "slug": "direct-red-243-dyes"
+                    },
+                    {
+                        "name": "Direct Red 254 Dyes",
+                        "slug": "direct-red-254-dyes"
+                    },
+                    {
+                        "name": "Direct Blue 1 Dyes",
+                        "slug": "direct-blue-1-dyes"
+                    },
+                    {
+                        "name": "Direct Blue 8 Dyes",
+                        "slug": "direct-blue-8-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  14 Dyes",
+                        "slug": "direct-blue-14-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  15 Dyes",
+                        "slug": "direct-blue-15-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  25 Dyes",
+                        "slug": "direct-blue-25-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  40 Dyes",
+                        "slug": "direct-blue-40-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  67 Dyes",
+                        "slug": "direct-blue-67-dyes"
+                    },
+                    {
+                        "name": "Direct Blue 54 Dyes",
+                        "slug": "direct-blue-54-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  71 Dyes",
+                        "slug": "direct-blue-71-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  80 Dyes",
+                        "slug": "direct-blue-80-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  86 Dyes",
+                        "slug": "direct-blue-86-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  151 Dyes",
+                        "slug": "direct-blue-151-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  199 Dyes",
+                        "slug": "direct-blue-199-dyes"
+                    },
+                    {
+                        "name": "Direct Blue  218 Dyes",
+                        "slug": "direct-blue-218-dyes"
+                    },
+                    {
+                        "name": "Direct Violet 1 Dyes",
+                        "slug": "direct-violet-1-dyes"
+                    },
+                    {
+                        "name": "Direct Violet  7 Dyes",
+                        "slug": "direct-violet-7-dyes"
+                    },
+                    {
+                        "name": "Direct Violet  9 Dyes",
+                        "slug": "direct-violet-9-dyes"
+                    },
+                    {
+                        "name": "Direct Violet  13 Dyes",
+                        "slug": "direct-violet-13-dyes"
+                    },
+                    {
+                        "name": "Direct Violet  35 Dyes",
+                        "slug": "direct-violet-35-dyes"
+                    },
+                    {
+                        "name": "Direct Violet  51 Dyes",
+                        "slug": "direct-violet-51-dyes"
+                    },
+                    {
+                        "name": "Direct Violet  66 Dyes",
+                        "slug": "direct-violet-66-dyes"
+                    },
+                    {
+                        "name": "Direct Orange 26 Dyes",
+                        "slug": "direct-orange-26-dyes"
+                    },
+                    {
+                        "name": "Direct Orange 34 Dyes",
+                        "slug": "direct-orange-34-dyes"
+                    },
+                    {
+                        "name": "Direct Orange  37 Dyes",
+                        "slug": "direct-orange-37-dyes"
+                    },
+                    {
+                        "name": "Direct Orange  39 Dyes",
+                        "slug": "direct-orange-39-dyes"
+                    },
+                    {
+                        "name": "Direct Orange  102 Dyes",
+                        "slug": "direct-orange-102-dyes"
+                    },
+                    {
+                        "name": "Direct Orange  108 Dyes",
+                        "slug": "direct-orange-108-dyes"
+                    },
+                    {
+                        "name": "Direct Brown 78 Dyes",
+                        "slug": "direct-brown-78-dyes"
+                    },
+                    {
+                        "name": "Direct Brown 44 Dyes",
+                        "slug": "direct-brown-44-dyes"
+                    },
+                    {
+                        "name": "Direct Brown  95 Dyes",
+                        "slug": "direct-brown-95-dyes"
+                    },
+                    {
+                        "name": "Direct Brown  210 Dyes",
+                        "slug": "direct-brown-210-dyes"
+                    },
+                    {
+                        "name": "Direct Brown 422 Dyes",
+                        "slug": "direct-brown-422-dyes"
+                    },
+                    {
+                        "name": "Direct Brown  494 Dyes",
+                        "slug": "direct-brown-494-dyes"
+                    },
+                    {
+                        "name": "Direct Green 26 Dyes",
+                        "slug": "direct-green-26-dyes"
+                    },
+                    {
+                        "name": "Direct Green 96 Dyes",
+                        "slug": "direct-green-96-dyes"
+                    },
+                    {
+                        "name": "Direct Green 114 Dyes",
+                        "slug": "direct-green-114-dyes"
+                    },
+                    {
+                        "name": "Direct Black 19 Dyes",
+                        "slug": "direct-black-19-dyes"
+                    },
+                    {
+                        "name": "Direct Black  22 Dyes",
+                        "slug": "direct-black-22-dyes"
+                    },
+                    {
+                        "name": "Direct Black  51 Dyes",
+                        "slug": "direct-black-51-dyes"
+                    },
+                    {
+                        "name": "Direct Black  56 Dyes",
+                        "slug": "direct-black-56-dyes"
+                    },
+                    {
+                        "name": "Direct Black  80 Dyes",
+                        "slug": "direct-black-80-dyes"
+                    },
+                    {
+                        "name": "Direct Black  155 Dyes",
+                        "slug": "direct-black-155-dyes"
+                    },
+                    {
+                        "name": "Direct Black  168 Dyes",
+                        "slug": "direct-black-168-dyes"
+                    },
+                    {
+                        "name": "Direct Black  170 Dyes",
+                        "slug": "direct-black-170-dyes"
+                    },
+                    {
+                        "name": "Direct Black  179 Dyes",
+                        "slug": "direct-black-179-dyes"
+                    },
+                    {
+                        "name": "Direct Black 201 Dyes",
+                        "slug": "direct-black-201-dyes"
+                    }
+                ]
+            },
+            "Reactive Dyes": {
+                "slug": "reactive-dyes",
+                "products": [
+                    {
+                        "name": "Red Ed-R Red 195 Dyes",
+                        "slug": "red-ed-r-red-195-dyes"
+                    },
+                    {
+                        "name": "Yellow Ed-G Yellow 145 Dyes",
+                        "slug": "yellow-ed-g-yellow-145-dyes"
+                    },
+                    {
+                        "name": "Blue Ed-B Blue 5 Dyes",
+                        "slug": "blue-ed-b-blue-5-dyes"
+                    },
+                    {
+                        "name": "Navy Ed-N Blue 222 Dyes",
+                        "slug": "navy-ed-n-blue-222-dyes"
+                    },
+                    {
+                        "name": "Lemon Yellow Sd3G Yellow 160 Dyes",
+                        "slug": "lemon-yellow-sd3g-yellow-160-dyes"
+                    },
+                    {
+                        "name": "G. Yellow Sd3R Yellow 160 Dyes",
+                        "slug": "g-yellow-sd3r-yellow-160-dyes"
+                    },
+                    {
+                        "name": "Orange  Sd3R Orange 131 Dyes",
+                        "slug": "orange-sd3r-orange-131-dyes"
+                    },
+                    {
+                        "name": "Red Sdin Red 195 Dyes",
+                        "slug": "red-sdin-red-195-dyes"
+                    },
+                    {
+                        "name": "Ruby Sd3B Red 194 Dyes",
+                        "slug": "ruby-sd3b-red-194-dyes"
+                    },
+                    {
+                        "name": "Red Sd-Cd Red 278 Dyes",
+                        "slug": "red-sd-cd-red-278-dyes"
+                    },
+                    {
+                        "name": "Dark Red Sdb Mix Dyes",
+                        "slug": "dark-red-sdb-mix-dyes"
+                    },
+                    {
+                        "name": "Scarlet Sdr Mix Dyes",
+                        "slug": "scarlet-sdr-mix-dyes"
+                    },
+                    {
+                        "name": "Ocean Sdr Mix Dyes | 205-788-1",
+                        "slug": "ocean-sdr-mix-dyes"
+                    },
+                    {
+                        "name": "Navy Sdb Black 5 Dyes",
+                        "slug": "navy-sdb-black-5-dyes"
+                    },
+                    {
+                        "name": "Black Sdwn Mix Dyes",
+                        "slug": "black-sdwn-mix-dyes"
+                    },
+                    {
+                        "name": "Sdfix Black Sd-G Mix Dyes",
+                        "slug": "sdfix-black-sd-g-mix-dyes"
+                    },
+                    {
+                        "name": "Sdfix Black Sd-R Mix Dyes",
+                        "slug": "sdfix-black-sd-r-mix-dyes"
+                    },
+                    {
+                        "name": "Sdfix Blue Jrf Blue 221 Dyes",
+                        "slug": "sdfix-blue-jrf-blue-221-dyes"
+                    },
+                    {
+                        "name": "Sdffix Blue Sfng Dyes",
+                        "slug": "sdffix-blue-sfng-dyes"
+                    },
+                    {
+                        "name": "Fast Blue B Base Dyes",
+                        "slug": "fast-blue-b-base-dyes"
+                    }
+                ]
+            },
+            "Metal Complex Solvent Dyes": {
+                "slug": "metal-complex-solvent-dyes",
+                "products": [
+                    {
+                        "name": "Solvent Orange 11 Dyes",
+                        "slug": "solvent-orange-11-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 45 Dyes",
+                        "slug": "solvent-orange-45-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 54 Dyes",
+                        "slug": "solvent-orange-54-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 58  Dyes",
+                        "slug": "solvent-orange-58-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 99  Dyes",
+                        "slug": "solvent-orange-99-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 5 Dyes",
+                        "slug": "solvent-blue-5-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 48 Dyes",
+                        "slug": "solvent-blue-48-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 70 Dyes",
+                        "slug": "solvent-blue-70-dyes"
+                    },
+                    {
+                        "name": "Solvent Brown 41 Dyes",
+                        "slug": "solvent-brown-41-dyes"
+                    },
+                    {
+                        "name": "Solvent Black 27 Dyes",
+                        "slug": "solvent-black-27-dyes"
+                    },
+                    {
+                        "name": "Solvent Black 29 Dyes",
+                        "slug": "solvent-black-29-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 8  Dyes",
+                        "slug": "solvent-red-8-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 32  Dyes",
+                        "slug": "solvent-red-32-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 49  Dyes",
+                        "slug": "solvent-red-49-2-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 109 Dyes",
+                        "slug": "solvent-red-109-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 118 Dyes",
+                        "slug": "solvent-red-118-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 119  Dyes",
+                        "slug": "solvent-red-119-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 122 Dyes",
+                        "slug": "solvent-red-122-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 127 Dyes",
+                        "slug": "solvent-red-127-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 160 Dyes",
+                        "slug": "solvent-red-160-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 218 Dyes",
+                        "slug": "solvent-red-218-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 21  Dyes",
+                        "slug": "solvent-yellow-21-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 62  Dyes",
+                        "slug": "solvent-yellow-62-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 79 Dyes",
+                        "slug": "solvent-yellow-79-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 82  Dyes",
+                        "slug": "solvent-yellow-82-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 88 Dyes",
+                        "slug": "solvent-yellow-88-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 90 Dyes",
+                        "slug": "solvent-yellow-90-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 146 Dyes",
+                        "slug": "solvent-yellow-146-dyes"
+                    }
+                ]
+            },
+            "Liquid Solvent Dyes": {
+                "slug": "liquid-solvent-dyes",
+                "products": [
+                    {
+                        "name": "Solvent Blue 79",
+                        "slug": "solvent-blue-79"
+                    },
+                    {
+                        "name": "Solvent Blue 98",
+                        "slug": "solvent-blue-98"
+                    },
+                    {
+                        "name": "Solvent Green 33",
+                        "slug": "solvent-green-33"
+                    },
+                    {
+                        "name": "Solvent Orange 98",
+                        "slug": "solvent-orange-98"
+                    },
+                    {
+                        "name": "SOLVENT RED 164",
+                        "slug": "solvent-red-164"
+                    },
+                    {
+                        "name": "Solvent Red 19E",
+                        "slug": "solvent-red-19e"
+                    },
+                    {
+                        "name": "Solvent Yellow 107",
+                        "slug": "solvent-yellow-107"
+                    },
+                    {
+                        "name": "Solvent Yellow 124",
+                        "slug": "solvent-yellow-124"
+                    },
+                    {
+                        "name": "Solvent Yellow 175",
+                        "slug": "solvent-yellow-175"
+                    }
+                ]
+            },
+            "Solvent Dyes": {
+                "slug": "solvent-dyes",
+                "products": [
+                    {
+                        "name": "Solvent Black 5 Dyes | 11099-03-9/52276-97-8",
+                        "slug": "solvent-black-5-dyes"
+                    },
+                    {
+                        "name": "Solvent Black 7 Dyes | 2229843",
+                        "slug": "solvent-black-7-dyes"
+                    },
+                    {
+                        "name": "Solvent Black 46 Dyes | 41642-51-7",
+                        "slug": "solvent-black-46-dyes"
+                    },
+                    {
+                        "name": "Solvent Brown 53 Dyes | 64696-98-6",
+                        "slug": "solvent-brown-53-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 4 Dyes | 6786-83-0",
+                        "slug": "solvent-blue-4-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 6 Dyes | 6786-84-1",
+                        "slug": "solvent-blue-6-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 35 Dyes | 17354-14-2",
+                        "slug": "solvent-blue-35-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 36 Dyes | 14233-37-5",
+                        "slug": "solvent-blue-36-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 45 Dyes | 23553-74-1",
+                        "slug": "solvent-blue-45-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 67 Dyes | 12226-78-7",
+                        "slug": "solvent-blue-67-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 101 Dyes | 6737-68-4",
+                        "slug": "solvent-blue-101-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 104 Dyes | 116-75-6",
+                        "slug": "solvent-blue-104-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 122 Dyes | 67905-17-3",
+                        "slug": "solvent-blue-122-dyes"
+                    },
+                    {
+                        "name": "Solvent Blue 128 Dyes | 18038-99-8",
+                        "slug": "solvent-blue-128-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 13 Dyes | 81-48-1",
+                        "slug": "solvent-violet-13-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 14 Dyes | 67577-84-8",
+                        "slug": "solvent-violet-14-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 38 Dyes | 63512-14-1",
+                        "slug": "solvent-violet-38-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 57 Dyes | 742-01-8",
+                        "slug": "solvent-violet-57-dyes"
+                    },
+                    {
+                        "name": "Solvent Violet 59 Dyes | 6408-72-6",
+                        "slug": "solvent-violet-59-dyes"
+                    },
+                    {
+                        "name": "Solvent Green 3 Dyes | 128-80-3",
+                        "slug": "solvent-green-3-dyes"
+                    },
+                    {
+                        "name": "Solvent Green 5 Dyes | 79869-59-3",
+                        "slug": "solvent-green-5-dyes"
+                    },
+                    {
+                        "name": "Solvent Green 7 Dyes | 41642-51-7",
+                        "slug": "solvent-green-7-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 2 Dyes | 2646-17-5",
+                        "slug": "solvent-orange-2-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 3 Dyes | 495-45-5",
+                        "slug": "solvent-orange-3-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 7 Dyes | 3118-97-6",
+                        "slug": "solvent-orange-7-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 60 Dyes | 61969-47-9/6925-69-5",
+                        "slug": "solvent-orange-60-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 63 Dyes | 16294-75-0",
+                        "slug": "solvent-orange-63-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 86 Dyes | 81-64-1/103220-12-8",
+                        "slug": "solvent-orange-86-dyes"
+                    },
+                    {
+                        "name": "Solvent Orange 105 Dyes | 31482-56-1",
+                        "slug": "solvent-orange-105-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 1 Dyes | 1229-55-6",
+                        "slug": "solvent-red-1-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 18 Dyes | 6483-64-3",
+                        "slug": "solvent-red-18-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 19 Dyes | 6368-72-5",
+                        "slug": "solvent-red-19-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 23 Dyes | 85-86-9",
+                        "slug": "solvent-red-23-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 24 Dyes | 85-83-6",
+                        "slug": "solvent-red-24-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 27 Dyes | 1320-06-5",
+                        "slug": "solvent-red-27-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 49 Dyes | 509-34-2",
+                        "slug": "solvent-red-49-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 52 Dyes | 81-39-0",
+                        "slug": "solvent-red-52-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 111 Dyes | 82-38-2",
+                        "slug": "solvent-red-111-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 135 Dyes | 71902-17-5/20749-68-2",
+                        "slug": "solvent-red-135-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 146 Dyes | 70956-30-8",
+                        "slug": "solvent-red-146-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 149 Dyes | 71902-18-6",
+                        "slug": "solvent-red-149-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 164 Dyes | 71819-51-7",
+                        "slug": "solvent-red-164-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 168 Dyes | 63512-13-0",
+                        "slug": "solvent-red-168-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 172 Dyes | 63512-13-0",
+                        "slug": "solvent-red-172-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 179 Dyes | 89106-94-5",
+                        "slug": "solvent-red-179-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 195 Dyes | 164251-88-1",
+                        "slug": "solvent-red-195-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 196 Dyes | 52372-36-8",
+                        "slug": "solvent-red-196-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 197 Dyes | 52372-39-1",
+                        "slug": "solvent-red-197-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 207 Dyes | 15958-69-6",
+                        "slug": "solvent-red-207-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 227 Dyes | 2944-28-7",
+                        "slug": "solvent-red-227-dyes"
+                    },
+                    {
+                        "name": "Solvent Red 242 Dyes | 522-75-8",
+                        "slug": "solvent-red-242-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 2 Dyes | 60-11-7",
+                        "slug": "solvent-yellow-2-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 14 Dyes | 842-07-9",
+                        "slug": "solvent-yellow-14-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 33 Dyes | 8003-22-3",
+                        "slug": "solvent-yellow-33-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 43 Dyes | 19125-99-6/12226-96-9",
+                        "slug": "solvent-yellow-43-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 44 Dyes | 2478-20-8",
+                        "slug": "solvent-yellow-44-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 72 Dyes | 61813-98-7",
+                        "slug": "solvent-yellow-72-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 93 Dyes | 4702-90-3",
+                        "slug": "solvent-yellow-93-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 114 Dyes | 75216-45-4/7576-65-0",
+                        "slug": "solvent-yellow-114-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 145 Dyes | 27425-55-4",
+                        "slug": "solvent-yellow-145-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 157 Dyes | 27908-75-4",
+                        "slug": "solvent-yellow-157-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 160 Dyes | 94945-27-4 / 35773-43-4",
+                        "slug": "solvent-yellow-160-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 163 Dyes | 13676-91-0,106768-99-4",
+                        "slug": "solvent-yellow-163-dyes"
+                    },
+                    {
+                        "name": "Solvent Yellow 172 Dyes | 68427-35-0",
+                        "slug": "solvent-yellow-172-dyes"
+                    },
+                    {
+                        "name": "SOLVENT RED 164",
+                        "slug": "solvent-red-164"
+                    },
+                    {
+                        "name": "Solvent Red 19E",
+                        "slug": "solvent-red-19e"
+                    },
+                    {
+                        "name": "Solvent Blue 98",
+                        "slug": "solvent-blue-98"
+                    },
+                    {
+                        "name": "Solvent Blue 79",
+                        "slug": "solvent-blue-79"
+                    },
+                    {
+                        "name": "Solvent Yellow 107",
+                        "slug": "solvent-yellow-107"
+                    },
+                    {
+                        "name": "Solvent Yellow 175",
+                        "slug": "solvent-yellow-175"
+                    },
+                    {
+                        "name": "Solvent Yellow 124",
+                        "slug": "solvent-yellow-124"
+                    },
+                    {
+                        "name": "Solvent Green 33",
+                        "slug": "solvent-green-33"
+                    },
+                    {
+                        "name": "Solvent Orange 98",
+                        "slug": "solvent-orange-98"
+                    }
+                ]
+            }
+        }
+    },
+    "F D & C Colours": {
+        "slug": "f-d-c-colours",
+        "children": {
+            "Tartrazine Dyes": {
+                "slug": "tartrazine-dyes",
+                "products": []
+            },
+            "Sunset Yellow F D & C Colours": {
+                "slug": "sunset-yellow-f-d-c-colours",
+                "products": []
+            },
+            "Carmoisine  F D & C Colours": {
+                "slug": "carmoisine-f-d-c-colours",
+                "products": []
+            },
+            "Ponceau 4R  F D & C Colours": {
+                "slug": "ponceau-4r-f-d-c-colours",
+                "products": []
+            },
+            "Amaranth F D & C Colours": {
+                "slug": "amaranth-f-d-c-colours",
+                "products": []
+            },
+            "Altura Red F D & C Colours": {
+                "slug": "altura-red-f-d-c-colours",
+                "products": []
+            },
+            "Brilliant Blue Fcf F D & C Colours": {
+                "slug": "brilliant-blue-fcf-f-d-c-colours",
+                "products": []
+            },
+            "Indigo Carmine F D & C Colours": {
+                "slug": "indigo-carmine-f-d-c-colours",
+                "products": []
+            },
+            "Erythrosine F D & C Colours": {
+                "slug": "erythrosine-f-d-c-colours",
+                "products": []
+            },
+            "Black Pn F D & C Colours": {
+                "slug": "black-pn-f-d-c-colours",
+                "products": []
+            },
+            "Red 2G F D & C Colours": {
+                "slug": "red-2g-f-d-c-colours",
+                "products": []
+            },
+            "Chocolate Brown Ht F D & C Colours": {
+                "slug": "chocolate-brown-ht-f-d-c-colours",
+                "products": []
+            },
+            "Patent Blue V  F D & C Colours": {
+                "slug": "patent-blue-v-f-d-c-colours",
+                "products": []
+            },
+            "Quinoline Yellow F D & C Colours": {
+                "slug": "quinoline-yellow-f-d-c-colours",
+                "products": []
+            },
+            "Green S  F D & C Colours": {
+                "slug": "green-s-f-d-c-colours",
+                "products": []
+            },
+            "Fast Green Fcf F D & C Colours": {
+                "slug": "fast-green-fcf-f-d-c-colours",
+                "products": []
+            },
+            "Ponceau Sx  F D & C Colours": {
+                "slug": "ponceau-sx-f-d-c-colours",
+                "products": []
+            },
+            "Eosine Y  F D & C Colours": {
+                "slug": "eosine-y-f-d-c-colours",
+                "products": []
+            },
+            "Phloxin B  F D & C Colours": {
+                "slug": "phloxin-b-f-d-c-colours",
+                "products": []
+            },
+            "Rose Bengal  F D & C Colours": {
+                "slug": "rose-bengal-f-d-c-colours",
+                "products": []
+            }
+        }
+    },
+    "Pigments": {
+        "slug": "pigments",
+        "children": {
+            "Organic Pigments": {
+                "slug": "organic-pigments",
+                "products": [
+                    {
+                        "name": "Organic Pigment Blue",
+                        "slug": "organic-pigment-blue-150"
+                    },
+                    {
+                        "name": "Organic Pigment Blue 15:1",
+                        "slug": "organic-pigment-blue-151"
+                    },
+                    {
+                        "name": "Organic Pigment Blue 15:2",
+                        "slug": "organic-pigment-blue-152"
+                    },
+                    {
+                        "name": "Organic Pigment Blue 15:3",
+                        "slug": "organic-pigment-blue-153"
+                    },
+                    {
+                        "name": "Organic Pigment Blue 15:4",
+                        "slug": "organic-pigment-blue-154"
+                    },
+                    {
+                        "name": "Organic Pigment Orange 5",
+                        "slug": "organic-pigment-orange-5"
+                    },
+                    {
+                        "name": "Organic Pigment Orange 13",
+                        "slug": "organic-pigment-orange-13"
+                    },
+                    {
+                        "name": "Organic Pigment Orange 16",
+                        "slug": "organic-pigment-orange-16"
+                    },
+                    {
+                        "name": "Organic Pigment Orange 36",
+                        "slug": "organic-pigment-orange-36"
+                    },
+                    {
+                        "name": "Organic Pigment Orange 34",
+                        "slug": "organic-pigment-orange-34"
+                    },
+                    {
+                        "name": "Organic Pigment Green 7",
+                        "slug": "organic-pigment-green-7"
+                    },
+                    {
+                        "name": "Organic Pigment Green 8",
+                        "slug": "organic-pigment-green-8"
+                    },
+                    {
+                        "name": "Organic Pigment Red 2",
+                        "slug": "organic-pigment-red-2"
+                    },
+                    {
+                        "name": "Organic Pigment Red 3",
+                        "slug": "organic-pigment-red-3"
+                    },
+                    {
+                        "name": "Organic Pigment Red 8",
+                        "slug": "organic-pigment-red-8"
+                    },
+                    {
+                        "name": "Organic Pigment Red 12",
+                        "slug": "organic-pigment-red-12"
+                    },
+                    {
+                        "name": "Organic Pigment Red 31",
+                        "slug": "organic-pigment-red-31"
+                    },
+                    {
+                        "name": "Organic Pigment Red 32",
+                        "slug": "organic-pigment-red-32"
+                    },
+                    {
+                        "name": "Organic Pigment Red 48:2",
+                        "slug": "organic-pigment-red-482"
+                    },
+                    {
+                        "name": "Organic Pigment Red 49:1",
+                        "slug": "organic-pigment-red-491"
+                    },
+                    {
+                        "name": "Organic Pigment Red 51:1",
+                        "slug": "organic-pigment-red-511"
+                    },
+                    {
+                        "name": "Organic Pigment Red 57:1",
+                        "slug": "organic-pigment-red-571"
+                    },
+                    {
+                        "name": "Organic Pigment Red 112",
+                        "slug": "organic-pigment-red-112"
+                    },
+                    {
+                        "name": "Organic Pigment Red 122",
+                        "slug": "organic-pigment-red-122"
+                    },
+                    {
+                        "name": "Organic Pigment Red 146",
+                        "slug": "organic-pigment-red-146"
+                    },
+                    {
+                        "name": "Organic Pigment Red 170",
+                        "slug": "organic-pigment-red-170"
+                    },
+                    {
+                        "name": "Organic Pigment Red 210",
+                        "slug": "organic-pigment-red-210"
+                    },
+                    {
+                        "name": "Organic Pigment Red 238",
+                        "slug": "organic-pigment-red-238"
+                    },
+                    {
+                        "name": "Organic Pigment Red 266",
+                        "slug": "organic-pigment-red-266"
+                    },
+                    {
+                        "name": "Organic Pigment Violet 23",
+                        "slug": "organic-pigment-violet-23"
+                    },
+                    {
+                        "name": "Organic Pigment Violet 27",
+                        "slug": "organic-pigment-violet-27"
+                    },
+                    {
+                        "name": "Organic Pigment Violet 3",
+                        "slug": "organic-pigment-violet-3"
+                    }
+                ]
+            },
+            "High Performance Pigments": {
+                "slug": "high-performance-pigments",
+                "products": [
+                    {
+                        "name": "Yellow 62 High Performance Pigments",
+                        "slug": "yellow-62-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 74 High Performance Pigments",
+                        "slug": "yellow-74-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 74 (0) High Performance Pigments",
+                        "slug": "yellow-74-0-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 93 High Performance Pigments",
+                        "slug": "yellow-93-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 95 High Performance Pigments",
+                        "slug": "yellow-95-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 97 High Performance Pigments",
+                        "slug": "yellow-97-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 138 High Performance Pigments",
+                        "slug": "yellow-138-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 138 (0) High Performance Pigments",
+                        "slug": "yellow-138-0-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 139 High Performance Pigments",
+                        "slug": "yellow-139-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 139 (0) High Performance Pigments",
+                        "slug": "yellow-139-0-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 147 High Performance Pigments",
+                        "slug": "yellow-147-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 150 High Performance Pigments",
+                        "slug": "yellow-150-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 151 High Performance Pigments",
+                        "slug": "yellow-151-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 154 High Performance Pigments",
+                        "slug": "yellow-154-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 155 High Performance Pigments",
+                        "slug": "yellow-155-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 155 (0) High Performance Pigments",
+                        "slug": "yellow-155-0-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 168 High Performance Pigments",
+                        "slug": "yellow-168-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 170 High Performance Pigments",
+                        "slug": "yellow-170-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 175 High Performance Pigments",
+                        "slug": "yellow-175-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 183 High Performance Pigments",
+                        "slug": "yellow-183-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 185 High Performance Pigments",
+                        "slug": "yellow-185-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 191 High Performance Pigments",
+                        "slug": "yellow-191-high-performance-pigments"
+                    },
+                    {
+                        "name": "Yellow 194 High Performance Pigments",
+                        "slug": "yellow-194-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 38 High Performance Pigments",
+                        "slug": "red-38-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 52:1 High Performance Pigments",
+                        "slug": "red-521-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 60:1 High Performance Pigments",
+                        "slug": "red-601-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 144 High Performance Pigments",
+                        "slug": "red-144-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 166 High Performance Pigments",
+                        "slug": "red-166-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 188 High Performance Pigments",
+                        "slug": "red-188-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 188(O) High Performance Pigments",
+                        "slug": "red-188-o-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 214 High Performance Pigments",
+                        "slug": "red-214-high-performance-pigments"
+                    },
+                    {
+                        "name": "Red 264(O) High Performance Pigments",
+                        "slug": "red-264-o-high-performance-pigments"
+                    },
+                    {
+                        "name": "Orange 16 High Performance Pigments",
+                        "slug": "orange-16-high-performance-pigments"
+                    },
+                    {
+                        "name": "Orange 36 High Performance Pigments",
+                        "slug": "orange-36-high-performance-pigments"
+                    },
+                    {
+                        "name": "Orange 36(O) High Performance Pigments",
+                        "slug": "orange-36-o-high-performance-pigments"
+                    },
+                    {
+                        "name": "Orange 64 High Performance Pigments",
+                        "slug": "orange-64-high-performance-pigments"
+                    }
+                ]
+            },
+            "Fluorescent Pigments": {
+                "slug": "fluorescent-pigments",
+                "products": [
+                    {
+                        "name": "Fluorescent Chrome Pigments",
+                        "slug": "fluorescent-chrome-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Golden Yellow Pigments",
+                        "slug": "fluorescent-golden-yellow-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Green Pigments",
+                        "slug": "fluorescent-green-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Horizon Blue Pigments",
+                        "slug": "fluorescent-horizon-blue-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Lemon Yellow Pigments",
+                        "slug": "fluorescent-lemon-yellow-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Magenta-B Pigments",
+                        "slug": "fluorescent-magenta-b-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Magenta-R Pigments",
+                        "slug": "fluorescent-magenta-r-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Orange Pigments",
+                        "slug": "fluorescent-orange-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Orange Fire Red Pigments",
+                        "slug": "fluorescent-orange-fire-red-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Orange-Red Pigments",
+                        "slug": "fluorescent-orange-red-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Pink-J ( B ) Pigments",
+                        "slug": "fluorescent-pink-j-b-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Pink-J ( R ) Pigments",
+                        "slug": "fluorescent-pink-j-r-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Red Pigments",
+                        "slug": "fluorescent-red-pigments"
+                    },
+                    {
+                        "name": "Fluorescent Violet Pigments",
+                        "slug": "fluorescent-violet-pigments"
+                    }
+                ]
+            },
+            "Pu Foam Pigments": {
+                "slug": "pu-foam-pigments",
+                "products": [
+                    {
+                        "name": "Jet Black PU Foam Pigments",
+                        "slug": "jet-black-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Blue PU Foam Pigments",
+                        "slug": "blue-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Violet (Redder & Bluer) PU Foam Pigments",
+                        "slug": "violet-redder-bluer-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Brown PU Foam Pigments",
+                        "slug": "brown-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Parrot Green PU Foam Pigments",
+                        "slug": "parrot-green-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Green PU Foam Pigments",
+                        "slug": "green-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Red PU Foam Pigments",
+                        "slug": "red-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Pink PU Foam Pigments",
+                        "slug": "pink-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Orange PU Foam Pigments",
+                        "slug": "orange-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Lemon Yellow PU Foam Pigments",
+                        "slug": "lemon-yellow-pu-foam-pigments"
+                    },
+                    {
+                        "name": "Golden Yellow PU Foam Pigments",
+                        "slug": "golden-yellow-pu-foam-pigments"
+                    },
+                    {
+                        "name": "White PU Foam Pigments",
+                        "slug": "white-pu-foam-pigments"
+                    }
+                ]
+            },
+            "Ultra Marine Pigments": {
+                "slug": "ultra-marine-pigments",
+                "products": [
+                    {
+                        "name": "Ultra Marine voilet",
+                        "slug": "ultra-marine-voilet"
+                    },
+                    {
+                        "name": "Ultra Marine Blue",
+                        "slug": "ultra-marine-blue"
+                    }
+                ]
+            }
+        }
+    },
+    "Other Products": {
+        "slug": "other-products",
+        "children": {
+            "Naphthols": {
+                "slug": "naphthols",
+                "products": [
+                    {
+                        "name": "Naphthols As",
+                        "slug": "naphthols-as"
+                    },
+                    {
+                        "name": "Naphthols Asbr",
+                        "slug": "naphthols-asbr"
+                    },
+                    {
+                        "name": "Naphthols Asbo",
+                        "slug": "naphthols-asbo"
+                    },
+                    {
+                        "name": "Naphthol Asg",
+                        "slug": "naphthol-asg"
+                    },
+                    {
+                        "name": "Naphthols Assw",
+                        "slug": "naphthols-assw"
+                    },
+                    {
+                        "name": "Naphthol Asitr",
+                        "slug": "naphthol-asitr"
+                    },
+                    {
+                        "name": "Naphthols Ase",
+                        "slug": "naphthols-ase"
+                    },
+                    {
+                        "name": "Naphthols Asrl",
+                        "slug": "naphthols-asrl"
+                    },
+                    {
+                        "name": "Napthol Asitr",
+                        "slug": "napthol-asitr"
+                    },
+                    {
+                        "name": "Naphthols Assg",
+                        "slug": "naphthols-assg"
+                    },
+                    {
+                        "name": "Naphthols Asph",
+                        "slug": "naphthols-asph"
+                    },
+                    {
+                        "name": "Naphthols Asbs",
+                        "slug": "naphthols-asbs"
+                    },
+                    {
+                        "name": "Naphthols Asd",
+                        "slug": "naphthols-asd"
+                    },
+                    {
+                        "name": "Naphthols Asol",
+                        "slug": "naphthols-asol"
+                    },
+                    {
+                        "name": "Naphthols Askb",
+                        "slug": "naphthols-askb"
+                    },
+                    {
+                        "name": "Naphthols Aslc",
+                        "slug": "naphthols-aslc"
+                    },
+                    {
+                        "name": "Naphthols Asol/Asca",
+                        "slug": "naphthols-asol-asca"
+                    },
+                    {
+                        "name": "Naphthols Asirg",
+                        "slug": "naphthols-asirg"
+                    }
+                ]
+            },
+            "Fast Colour Bases": {
+                "slug": "fast-colour-bases",
+                "products": [
+                    {
+                        "name": "Fast Bordeaux Gp Base Fast Colour Bases",
+                        "slug": "fast-bordeaux-gp-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Orange Gc Base Fast Colour Bases",
+                        "slug": "fast-orange-gc-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Scarlet Ggs Base Fast Colour Bases",
+                        "slug": "fast-scarlet-ggs-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Garnet Gbc Base Fast Colour Bases",
+                        "slug": "fast-garnet-gbc-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red R Base Fast Colour Bases",
+                        "slug": "fast-red-r-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red Gl Base Fast Colour Bases",
+                        "slug": "fast-red-gl-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red 3Gl Base Fast Colour Bases",
+                        "slug": "fast-red-3gl-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red Tr Base Fast Colour Bases",
+                        "slug": "fast-red-tr-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Scarlet G Base Fast Colour Bases",
+                        "slug": "fast-scarlet-g-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Scarlet R Base Fast Colour Bases",
+                        "slug": "fast-scarlet-r-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Scarlet Rc Base Fast Colour Bases",
+                        "slug": "fast-scarlet-rc-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red R Base Fast Colour Bases",
+                        "slug": "fast-red-r-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red Rc Base Fast Colour Bases",
+                        "slug": "fast-red-rc-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Blue Bb Base Fast Colour Bases",
+                        "slug": "fast-blue-bb-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red Kb Base Fast Colour Bases",
+                        "slug": "fast-red-kb-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red Base Frn Fast Colour Bases",
+                        "slug": "fast-red-base-frn-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red Rl Base Fast Colour Bases",
+                        "slug": "fast-red-rl-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Red Itr Base Fast Colour Bases",
+                        "slug": "fast-red-itr-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Yellow Gc Base Fast Colour Bases",
+                        "slug": "fast-yellow-gc-base-fast-colour-bases"
+                    },
+                    {
+                        "name": "Fast Blue B Base Fast Colour Bases",
+                        "slug": "fast-blue-b-base-fast-colour-bases"
+                    }
+                ]
+            },
+            "Fast Colour Salts": {
+                "slug": "fast-colour-salts",
+                "products": [
+                    {
+                        "name": "Fast Bordeaux Gp Salt Fast Colour Salts",
+                        "slug": "fast-bordeaux-gp-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Orange Gc Salt Fast Colour Salts",
+                        "slug": "fast-orange-gc-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Scarlet G Salt Fast Colour Salts",
+                        "slug": "fast-scarlet-g-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Garnet Gbc Salt Fast Colour Salts",
+                        "slug": "fast-garnet-gbc-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Red B Salt Fast Colour Salts",
+                        "slug": "fast-red-b-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Black K Salt Fast Colour Salts",
+                        "slug": "fast-black-k-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Red 3Gl Salt Fast Colour Salts",
+                        "slug": "fast-red-3gl-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Red Tr Salt Fast Colour Salts",
+                        "slug": "fast-red-tr-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Orange Rd Salt Fast Colour Salts",
+                        "slug": "fast-orange-rd-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Scarlet Rc Salt Fast Colour Salts",
+                        "slug": "fast-scarlet-rc-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Red Rc Salt Fast Colour Salts",
+                        "slug": "fast-red-rc-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Blue Bb Salt Fast Colour Salts",
+                        "slug": "fast-blue-bb-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Red Kb Salt Fast Colour Salts",
+                        "slug": "fast-red-kb-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Red Frn Salt Fast Colour Salts",
+                        "slug": "fast-red-frn-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Yellow Gc Salt Fast Colour Salts",
+                        "slug": "fast-yellow-gc-salt-fast-colour-salts"
+                    },
+                    {
+                        "name": "Fast Blue B Salt Fast Colour Salts",
+                        "slug": "fast-blue-b-salt-fast-colour-salts"
+                    }
+                ]
+            },
+            "Pyrazolone Intermediates": {
+                "slug": "pyrazolone-intermediates",
+                "products": [
+                    {
+                        "name": "1 : 4 Spcp Pyrazolone Intermediates",
+                        "slug": "1-4-spcp-pyrazolone-intermediates"
+                    },
+                    {
+                        "name": "1:4 Spmp Pyrazolone Intermediates",
+                        "slug": "14-spmp-pyrazolone-intermediates"
+                    },
+                    {
+                        "name": "1:3 Spmp Pyrazolone Intermediates",
+                        "slug": "13-spmp-pyrazolone-intermediates-2"
+                    },
+                    {
+                        "name": "Ptmp Pyrazolone Intermediates",
+                        "slug": "ptmp-pyrazolone-intermediates"
+                    },
+                    {
+                        "name": "Pt Pmp Pyrazolone Intermediates",
+                        "slug": "pt-pmp-pyrazolone-intermediates"
+                    },
+                    {
+                        "name": "1:3 Spmp Pyrazolone Intermediates",
+                        "slug": "13-spmp-pyrazolone-intermediates"
+                    },
+                    {
+                        "name": "1:4 Spcp Pyrazolone Intermediates",
+                        "slug": "14-spcp-pyrazolone-intermediates"
+                    },
+                    {
+                        "name": "1:4 Spmp Pyrazolone Intermediates",
+                        "slug": "14-spmp-pyrazolone-intermediates-2"
+                    }
+                ]
+            },
+            "Auxiliaries": {
+                "slug": "auxiliaries",
+                "products": [
+                    {
+                        "name": "Sdcol Levelling Agent  Auxiliaries",
+                        "slug": "sdcol-levelling-agent-auxiliaries"
+                    },
+                    {
+                        "name": "Sd23  Anti-Microbial And Anti-Odour Polymer  Auxiliaries",
+                        "slug": "sd23-anti-microbial-and-anti-odour-polymer-auxiliaries"
+                    },
+                    {
+                        "name": "Sd19 Anti Static Hydrophilic Agent Auxiliaries",
+                        "slug": "sd19-anti-static-hydrophilic-agent-auxiliaries"
+                    },
+                    {
+                        "name": "Sd17 Stiffening Agent Auxiliaries",
+                        "slug": "sd17-stiffening-agent-auxiliaries"
+                    },
+                    {
+                        "name": "Sd 13 Anti Back Staining Agent Auxiliaries",
+                        "slug": "sd-13-anti-back-staining-agent-auxiliaries"
+                    }
+                ]
+            }
+        }
+    }
+}

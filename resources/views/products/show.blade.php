@@ -1039,85 +1039,9 @@
                 </main>
 
                 <!-- Right Sidebar: PRODUCTS RANGE Bellows Accordion -->
-                <aside class="product-right-sidebar">
-                    <div class="bellows-sidebar-header">
-                        PRODUCTS RANGE
-                    </div>
-                    <div class="bellows-sidebar-card">
-                        <ul class="bellows-tree-root">
-                            <!-- Dyes -->
-                            <li class="bellows-tree-item">
-                                <div class="bellows-header-row" onclick="toggleProdSidebarAccordion('pcat-dyes')">
-                                    <span id="chev-pcat-dyes" class="bellows-chevron {{ $isDyesActive ? 'open' : '' }}">&#8964;</span>
-                                    <a href="{{ url('/dyes') }}" onclick="event.stopPropagation()">Dyes</a>
-                                </div>
-                                <ul id="pcat-dyes" class="bellows-sub-tree" style="display: {{ $isDyesActive ? 'block' : 'none' }};">
-                                    <li><a href="{{ url('/basic-dyes') }}" class="{{ $activeCatSlug === 'basic-dyes' ? 'active' : '' }}">Basic Dyes</a></li>
-                                    <li><a href="{{ url('/disperse-dyes') }}" class="{{ $activeCatSlug === 'disperse-dyes' ? 'active' : '' }}">Disperse Dyes</a></li>
-                                    <li><a href="{{ url('/solvent-dyes') }}" class="{{ $activeCatSlug === 'solvent-dyes' ? 'active' : '' }}">Solvent Dyes</a></li>
-                                    <li><a href="{{ url('/vat-dyes') }}" class="{{ $activeCatSlug === 'vat-dyes' ? 'active' : '' }}">Vat Dyes</a></li>
-                                    <li><a href="{{ url('/acid-dyes') }}" class="{{ $activeCatSlug === 'acid-dyes' ? 'active' : '' }}">Acid Dyes</a></li>
-                                    <li><a href="{{ url('/cationic-dyes') }}" class="{{ $activeCatSlug === 'cationic-dyes' ? 'active' : '' }}">Cationic Dyes</a></li>
-                                    <li><a href="{{ url('/direct-dyes') }}" class="{{ $activeCatSlug === 'direct-dyes' ? 'active' : '' }}">Direct Dyes</a></li>
-                                    <li><a href="{{ url('/reactive-dyes') }}" class="{{ $activeCatSlug === 'reactive-dyes' ? 'active' : '' }}">Reactive Dyes</a></li>
-                                    <li><a href="{{ url('/metal-complex-solvent-dyes') }}" class="{{ $activeCatSlug === 'metal-complex-solvent-dyes' ? 'active' : '' }}">Metal Complex Solvent Dyes</a></li>
-                                    <li><a href="{{ url('/powder-solvent-dyes') }}" class="{{ $activeCatSlug === 'powder-solvent-dyes' ? 'active' : '' }}">Powder Solvent Dyes</a></li>
-                                    <li><a href="{{ url('/liquid-solvent-dyes') }}" class="{{ $activeCatSlug === 'liquid-solvent-dyes' ? 'active' : '' }}">Liquid Solvent Dyes</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- F D & C Colours -->
-                            <li class="bellows-tree-item">
-                                <div class="bellows-header-row" onclick="toggleProdSidebarAccordion('pcat-fdc')">
-                                    <span id="chev-pcat-fdc" class="bellows-chevron {{ $isFdcActive ? 'open' : '' }}">&#8964;</span>
-                                    <a href="{{ url('/f-d-c-colours') }}" onclick="event.stopPropagation()">F D &amp; C Colours</a>
-                                </div>
-                                <ul id="pcat-fdc" class="bellows-sub-tree" style="display: {{ $isFdcActive ? 'block' : 'none' }};">
-                                    <li><a href="{{ url('/tartrazine-dyes') }}">Tartrazine</a></li>
-                                    <li><a href="{{ url('/sunset-yellow-f-d-c-colours') }}">Sunset Yellow</a></li>
-                                    <li><a href="{{ url('/carmoisine-f-d-c-colours') }}">Carmoisine</a></li>
-                                    <li><a href="{{ url('/ponceau-4r-f-d-c-colours') }}">Ponceau 4R</a></li>
-                                    <li><a href="{{ url('/amaranth-f-d-c-colours') }}">Amaranth</a></li>
-                                    <li><a href="{{ url('/allura-red-f-d-c-colours') }}">Allura Red</a></li>
-                                    <li><a href="{{ url('/brilliant-blue-fcf-f-d-c-colours') }}">Brilliant Blue FCF</a></li>
-                                    <li><a href="{{ url('/indigo-carmine-f-d-c-colours') }}">Indigo Carmine</a></li>
-                                    <li><a href="{{ url('/erythrosine-f-d-c-colours') }}">Erythrosine</a></li>
-                                    <li><a href="{{ url('/lake-colours') }}">Lake Colours</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Pigments -->
-                            <li class="bellows-tree-item">
-                                <div class="bellows-header-row" onclick="toggleProdSidebarAccordion('pcat-pigments')">
-                                    <span id="chev-pcat-pigments" class="bellows-chevron {{ $isPigmentsActive ? 'open' : '' }}">&#8964;</span>
-                                    <a href="{{ url('/pigments') }}" onclick="event.stopPropagation()">Pigments</a>
-                                </div>
-                                <ul id="pcat-pigments" class="bellows-sub-tree" style="display: {{ $isPigmentsActive ? 'block' : 'none' }};">
-                                    <li><a href="{{ url('/organic-pigments') }}" class="{{ $activeCatSlug === 'organic-pigments' ? 'active' : '' }}">Organic Pigments</a></li>
-                                    <li><a href="{{ url('/high-performance-pigments') }}" class="{{ $activeCatSlug === 'high-performance-pigments' ? 'active' : '' }}">High Performance Pigments</a></li>
-                                    <li><a href="{{ url('/fluorescent-pigments') }}" class="{{ $activeCatSlug === 'fluorescent-pigments' ? 'active' : '' }}">Fluorescent Pigments</a></li>
-                                    <li><a href="{{ url('/pu-foam-pigments') }}" class="{{ $activeCatSlug === 'pu-foam-pigments' ? 'active' : '' }}">PU Foam Pigments</a></li>
-                                    <li><a href="{{ url('/ultramarine-pigments') }}" class="{{ $activeCatSlug === 'ultramarine-pigments' ? 'active' : '' }}">Ultramarine Pigments</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Other Products -->
-                            <li class="bellows-tree-item">
-                                <div class="bellows-header-row" onclick="toggleProdSidebarAccordion('pcat-other')">
-                                    <span id="chev-pcat-other" class="bellows-chevron {{ $isOtherActive ? 'open' : '' }}">&#8964;</span>
-                                    <a href="{{ url('/other-products') }}" onclick="event.stopPropagation()">Other Products</a>
-                                </div>
-                                <ul id="pcat-other" class="bellows-sub-tree" style="display: {{ $isOtherActive ? 'block' : 'none' }};">
-                                    <li><a href="{{ url('/naphthols') }}" class="{{ $activeCatSlug === 'naphthols' ? 'active' : '' }}">Naphthols</a></li>
-                                    <li><a href="{{ url('/fast-colour-bases') }}" class="{{ $activeCatSlug === 'fast-colour-bases' ? 'active' : '' }}">Fast Colour Bases</a></li>
-                                    <li><a href="{{ url('/fast-colour-salts') }}" class="{{ $activeCatSlug === 'fast-colour-salts' ? 'active' : '' }}">Fast Colour Salts</a></li>
-                                    <li><a href="{{ url('/pyrazolone-intermediates') }}" class="{{ $activeCatSlug === 'pyrazolone-intermediates' ? 'active' : '' }}">Pyrazolone Intermediates</a></li>
-                                    <li><a href="{{ url('/auxiliaries') }}" class="{{ $activeCatSlug === 'auxiliaries' ? 'active' : '' }}">Auxiliaries</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
+                <div class="product-right-sidebar">
+                    @include('partials.products_range_sidebar', ['currentSlug' => $product->slug])
+                </div>
             </div>
         </div>
     </section>
