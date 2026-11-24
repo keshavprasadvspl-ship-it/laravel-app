@@ -4,34 +4,37 @@
 <link rel="stylesheet" href="{{ asset('css/live/post-2858.css') }}">
 <style>
     /* Applications Page Pixel-Perfect Overrides - Matching sdinternational.com/applications/ 1:1 */
-    .ast-separate-container .site-content #primary {
+    #content,
+    #content.site-content,
+    .site-content,
+    .ast-container,
+    #content.site-content .ast-container,
+    .site-content .ast-container,
+    #primary,
+    .site-content #primary,
+    .content-area,
+    .site-main,
+    .ast-article-single,
+    .entry-content {
+        margin: 0 !important;
         padding: 0 !important;
-        margin: 0 !important;
-    }
-    .ast-separate-container .ast-article-single {
-        padding: 0 !important;
-        margin: 0 !important;
-        background: transparent !important;
-    }
-    .ast-separate-container .entry-content {
-        margin: 0 !important;
-    }
-    .ast-separate-container #content.site-content .ast-container {
         max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        width: 100% !important;
+        background: transparent !important;
+        border: none !important;
     }
+
     .elementor-2858 .elementor-element.elementor-element-3b976c8f {
         background-color: #FFFFFF !important;
         padding: 0 !important;
         margin: 0 !important;
     }
     .elementor-2858 .elementor-element.elementor-element-3fa096aa {
-        margin: 25px 0 !important;
+        margin: 0 !important;
         padding: 0 !important;
     }
-    .elementor-2858 .elementor-element.elementor-element-3fa096aa .elementor-widget-container {
-        margin: 0 !important;
+    .elementor-2858 .elementor-element.elementor-element-3fa096aa > .elementor-widget-container {
+        margin: 28px 0px 28px 0px !important;
         padding: 0 !important;
     }
     .elementor-2858 .elementor-element.elementor-element-3fa096aa p {

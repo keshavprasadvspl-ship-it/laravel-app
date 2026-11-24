@@ -2108,7 +2108,7 @@ html, body {
 
 @stack("styles")
 </head>
-<body itemtype="https://schema.org/WebPage" itemscope="itemscope" class="home wp-singular page-template-default page page-id-136 wp-custom-logo wp-theme-astra theme-astra woocommerce-no-js ast-desktop ast-plain-container ast-no-sidebar astra-3.7.10 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent above-header-nav-padding-support ast-full-width-layout ast-sticky-header-shrink ast-inherit-site-logo-sticky elementor-default elementor-kit-17 elementor-page elementor-page-136 astra-addon-3.6.6">
+<body itemtype="https://schema.org/WebPage" itemscope="itemscope" class="{{ Request::is('applications*') ? 'wp-singular page-template-default page page-id-2858 page-parent wp-custom-logo wp-theme-astra theme-astra woocommerce-no-js ast-desktop ast-page-builder-template ast-no-sidebar astra-3.7.10 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent above-header-nav-padding-support ast-full-width-layout ast-sticky-header-shrink ast-inherit-site-logo-sticky elementor-default elementor-kit-17 elementor-page elementor-page-2858 astra-addon-3.6.6' : 'home wp-singular page-template-default page page-id-136 wp-custom-logo wp-theme-astra theme-astra woocommerce-no-js ast-desktop ast-plain-container ast-no-sidebar astra-3.7.10 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent above-header-nav-padding-support ast-full-width-layout ast-sticky-header-shrink ast-inherit-site-logo-sticky elementor-default elementor-kit-17 elementor-page elementor-page-136 astra-addon-3.6.6' }}">
 <div id="page" class="hfeed site">
 <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
