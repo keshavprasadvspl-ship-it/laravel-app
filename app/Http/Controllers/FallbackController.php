@@ -49,58 +49,19 @@ class FallbackController extends Controller
             return app(PageController::class)->showApplication($appSlug);
         }
 
-        // 2. Check Product (most common)
+        // 2. Check Exact Product
         $product = Product::where('slug', $cleanSlug)->where('status', 'publish')->first();
-        if (!$product) {
-            // Suffix variations
-            $suffixes = [
-                '-dyes',
-                '-f-d-c-colours',
-                '-fast-colour-bases',
-                '-fast-colour-salts',
-                '-pyrazolone-intermediates',
-                '-intermediates',
-                '-organic-pigments',
-                '-pigments',
-                '-pigment',
-            ];
-            foreach ($suffixes as $suffix) {
-                $candidate = Product::where('slug', $cleanSlug . $suffix)->where('status', 'publish')->first();
-                if ($candidate) {
-                    return redirect('/' . $candidate->slug, 301);
-                }
-                if (str_ends_with($cleanSlug, $suffix)) {
-                    $stripped = substr($cleanSlug, 0, -strlen($suffix));
-                    $candidate = Product::where('slug', $stripped)->where('status', 'publish')->first();
-                    if ($candidate) {
-                        return redirect('/' . $candidate->slug, 301);
-                    }
-                }
-            }
-
-            // Prefix variations (e.g. organic-pigment-blue-150 for pigment-blue-150)
-            $candidate = Product::where('slug', 'like', '%' . $cleanSlug)->where('status', 'publish')->first();
-            if ($candidate) {
-                return redirect('/' . $candidate->slug, 301);
-            }
-
-            // Broad partial match (e.g. altura-red -> altura-red-f-d-c-colours)
-            $candidate = Product::where('slug', 'like', $cleanSlug . '-%')->where('status', 'publish')->first();
-            if ($candidate) {
-                return redirect('/' . $candidate->slug, 301);
-            }
-        }
         if ($product) {
             return app(ProductController::class)->show($cleanSlug);
         }
 
-        // 3. Check Category
+        // 3. Check Exact Category
         $category = Category::where('slug', $cleanSlug)->first();
         if ($category) {
             return app(CategoryController::class)->show($cleanSlug);
         }
 
-        // 4. Check Page
+        // 4. Check Exact Page
         $page = Page::where('slug', $cleanSlug)->first();
         if ($page) {
             return app(PageController::class)->show($cleanSlug);
@@ -118,6 +79,42 @@ class FallbackController extends Controller
             }
 
             $category = Category::where('slug', $childSlug)->orWhere('slug', $cleanSlug)->first();
+            if ($category) {
+                return app(CategoryController::class)->show($category->slug);
+            }
+        }
+
+        // 5. Fuzzy Product Resolution (Only if exact Product, Category, and Page did not match)
+        $suffixes = [
+            '-dyes',
+            '-f-d-c-colours',
+            '-fast-colour-bases',
+            '-fast-colour-salts',
+            '-pyrazolone-intermediates',
+            '-intermediates',
+            '-organic-pigments',
+            '-pigments',
+            '-pigment',
+        ];
+        foreach ($suffixes as $suffix) {
+            $candidate = Product::where('slug', $cleanSlug . $suffix)->where('status', 'publish')->first();
+            if ($candidate) {
+                return redirect('/' . $candidate->slug, 301);
+            }
+            if (str_ends_with($cleanSlug, $suffix)) {
+                $stripped = substr($cleanSlug, 0, -strlen($suffix));
+                $candidate = Product::where('slug', $stripped)->where('status', 'publish')->first();
+                if ($candidate) {
+                    return redirect('/' . $candidate->slug, 301);
+                }
+            }
+        }
+
+        // Broad partial match (e.g. altura-red -> altura-red-f-d-c-colours)
+        $candidate = Product::where('slug', 'like', $cleanSlug . '-%')->where('status', 'publish')->first();
+        if ($candidate) {
+            return redirect('/' . $candidate->slug, 301);
+        }
             if ($category) {
                 return app(CategoryController::class)->show($category->slug);
             }
