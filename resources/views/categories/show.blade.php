@@ -961,6 +961,9 @@
                             $rawDesc = $category->description ?? '';
                             // Ensure Properties of ... is cleanly on its own line
                             $desc = preg_replace('/(<\/?span[^>]*>)?\s*(<b>|<strong>)(Properties of [^<]+)(<\/b>|<\/strong>)/i', '$1<div class="category-properties-title">$3</div>', $rawDesc);
+                            if (!str_contains($desc, '<p>') && (str_contains($desc, "\n") || str_contains($desc, "\r"))) {
+                                $desc = wpautop($desc);
+                            }
                             $hasColMd5 = str_contains($desc, 'col-md-5');
                         @endphp
 

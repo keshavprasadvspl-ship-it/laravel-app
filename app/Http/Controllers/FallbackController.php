@@ -49,6 +49,18 @@ class FallbackController extends Controller
             return app(PageController::class)->showApplication($appSlug);
         }
 
+        // Canonical redirect for bare application slugs
+        $applicationSlugs = [
+            'plastic-polymers', 'coating', 'paint', 'rubber', 'food-drug-cosmetics',
+            'intermediates', 'pigment-intermediates', 'wax', 'textiles', 'leather',
+            'paper-pulp', 'printing-inks', 'wood-stains', 'smoke-dyes', 'acrylic-fibre',
+            'petroleum-lubricants', 'plastic-polymer', 'plastics-polymers', 'coatings',
+            'paper-and-pulp', 'food-drugs-cosmetics', 'wood-stain', 'smoke-dye'
+        ];
+        if (in_array($cleanSlug, $applicationSlugs)) {
+            return redirect('/applications/' . $cleanSlug, 301);
+        }
+
         // 2. Check Exact Product
         $product = Product::where('slug', $cleanSlug)->where('status', 'publish')->first();
         if ($product) {

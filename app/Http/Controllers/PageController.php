@@ -121,11 +121,14 @@ class PageController extends Controller
         }
 
         // 1. Convert legacy /product/... links to direct /{slug}
-        $content = preg_replace_callback('/href="\/product\/([^"]+)"/i', function ($m) {
+        $content = preg_replace_callback('/href=["\'](?:https?:\/\/(?:www\.)?(?:sdinternational\.com|moccasin-worm-620280\.hostingersite\.com))?\/product\/([^"\']+)["\']/i', function ($m) {
             $parts = explode('/', trim($m[1], '/'));
             $prodSlug = end($parts);
             return 'href="/' . $prodSlug . '"';
         }, $content);
+
+        // Strip staging and live hostnames from internal links
+        $content = preg_replace('#https?://(?:www\.)?(?:sdinternational\.com|moccasin-worm-620280\.hostingersite\.com)(?!/wp-content/uploads/)#i', '', $content);
 
         // 2. Ensure all image tags have a valid source
         $content = preg_replace_callback('/<img([^>]+)>/i', function ($m) {
