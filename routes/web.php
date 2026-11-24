@@ -174,23 +174,23 @@ Route::get('/contact-us', [PageController::class, 'contact'])->name('contact-us'
 // 8b. International Country Landing Pages (5 Families x 39 Countries)
 Route::get('/dyes/{slug}', function ($slug) {
     return app(PageController::class)->showCountryPage('dyes', $slug);
-})->where('slug', '[a-zA-Z0-9_\-\s]+');
+})->where('slug', '[^/]+');
 
 Route::get('/pigments/{slug}', function ($slug) {
     return app(PageController::class)->showCountryPage('pigments', $slug);
-})->where('slug', '[a-zA-Z0-9_\-\s]+');
+})->where('slug', '[^/]+');
 
 Route::get('/f-d-c-colours/{slug}', function ($slug) {
     return app(PageController::class)->showCountryPage('f-d-c-colours', $slug);
-})->where('slug', '[a-zA-Z0-9_\-\s]+');
+})->where('slug', '[^/]+');
 
 Route::get('/naphthols-fast-bases-fast-salts/{slug}', function ($slug) {
     return app(PageController::class)->showCountryPage('naphthols-fast-bases-fast-salts', $slug);
-})->where('slug', '[a-zA-Z0-9_\-\s]+');
+})->where('slug', '[^/]+');
 
 Route::get('/intermediates/{slug}', function ($slug) {
     return app(PageController::class)->showCountryPage('intermediates', $slug);
-})->where('slug', '[a-zA-Z0-9_\-\s]+');
+})->where('slug', '[^/]+');
 
 // 9. Universal Dynamic Slug Resolver (Must be last)
 Route::get('/{slug}', [FallbackController::class, 'resolve'])->where('slug', '^(?!admin).*$')->name('fallback.resolve');

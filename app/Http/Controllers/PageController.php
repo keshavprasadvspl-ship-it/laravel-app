@@ -312,10 +312,13 @@ class PageController extends Controller
      */
     public function showCountryPage(string $prefix, string $slug)
     {
-        $cleanSlug = trim($slug, " /\t\n\r\0\x0B");
+        $cleanSlug = trim(urldecode($slug), " /\t\n\r\0\x0B");
+        $hyphenSlug = preg_replace('/[\s_]+/', '-', $cleanSlug);
 
         $page = Page::where('slug', $cleanSlug)
+            ->orWhere('slug', $hyphenSlug)
             ->orWhere('slug', $prefix . '-' . $cleanSlug)
+            ->orWhere('slug', $prefix . '-' . $hyphenSlug)
             ->first();
 
         if ($page) {
@@ -323,13 +326,17 @@ class PageController extends Controller
         }
 
         // Check if $cleanSlug is a category
-        $cat = \App\Models\Category::where('slug', $cleanSlug)->first();
+        $cat = \App\Models\Category::where('slug', $cleanSlug)
+            ->orWhere('slug', $hyphenSlug)
+            ->first();
         if ($cat) {
             return app(CategoryController::class)->show($cat->slug);
         }
 
         // Check if $cleanSlug is a product
-        $prod = Product::where('slug', $cleanSlug)->where('status', 'publish')->first();
+        $prod = Product::where(function($q) use ($cleanSlug, $hyphenSlug) {
+            $q->where('slug', $cleanSlug)->orWhere('slug', $hyphenSlug);
+        })->where('status', 'publish')->first();
         if ($prod) {
             return app(ProductController::class)->show($prod->slug);
         }

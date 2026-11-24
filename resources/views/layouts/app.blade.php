@@ -2374,7 +2374,7 @@ function googleTranslateElementInit() {
 		</div>
 			
 
-@if(Request::is("/") || Request::routeIs("home") || Request::is("blogs") || Request::is("blogs/*") || Request::is("blogs/page/*") || isset($product) || isset($category))
+@if(Request::is("/") || Request::routeIs("home") || Request::is("blogs") || Request::is("blogs/*") || Request::is("blogs/page/*") || Request::is("applications") || Request::is("applications/*") || Request::is("dyes/*") || Request::is("pigments/*") || Request::is("f-d-c-colours/*") || Request::is("naphthols-fast-bases-fast-salts/*") || Request::is("intermediates/*") || isset($product) || isset($category) || isset($parentSection))
     @yield("content")
 @else
     <div id="content" class="site-content">
