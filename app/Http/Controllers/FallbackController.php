@@ -115,17 +115,8 @@ class FallbackController extends Controller
         if ($candidate) {
             return redirect('/' . $candidate->slug, 301);
         }
-            if ($category) {
-                return app(CategoryController::class)->show($category->slug);
-            }
 
-            $product = Product::where('slug', $childSlug)->orWhere('slug', $cleanSlug)->where('status', 'publish')->first();
-            if ($product) {
-                return app(ProductController::class)->show($product->slug);
-            }
-        }
-
-        // 5. Check Blog / Post (Redirect to canonical /blogs/{slug})
+        // 6. Check Blog / Post (Redirect to canonical /blogs/{slug})
         $post = Post::where('slug', $cleanSlug)->first();
         if ($post) {
             return redirect('/blogs/' . $cleanSlug, 301);
