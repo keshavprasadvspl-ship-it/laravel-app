@@ -197,7 +197,7 @@
 						<div class="elementor-element elementor-element-85f9ce6 elementor-widget elementor-widget-image" data-id="85f9ce6" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img fetchpriority="high" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/textile.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img fetchpriority="high" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/textile.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/textile.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 						</div>
@@ -332,7 +332,7 @@
 						<div class="elementor-element elementor-element-0b71f99 elementor-widget elementor-widget-image" data-id="0b71f99" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/plastics.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/plastics.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/plastics.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 				<div class="elementor-element elementor-element-9a70048 elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="9a70048" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
@@ -361,7 +361,7 @@
 						<div class="elementor-element elementor-element-1c2454b elementor-widget elementor-widget-image" data-id="1c2454b" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/papper.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/papper.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/papper.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 						</div>
@@ -441,7 +441,7 @@
 						<div class="elementor-element elementor-element-497b151e elementor-widget elementor-widget-image" data-id="497b151e" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/lather.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/lather.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/lather.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 				<div class="elementor-element elementor-element-8625905 elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="8625905" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
@@ -470,7 +470,7 @@
 						<div class="elementor-element elementor-element-2163892 elementor-widget elementor-widget-image" data-id="2163892" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/paint.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/paint.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/paint.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 						</div>
@@ -550,7 +550,7 @@
 						<div class="elementor-element elementor-element-7150902b elementor-widget elementor-widget-image" data-id="7150902b" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/ink.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/ink.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/ink.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 				<div class="elementor-element elementor-element-1fefb5e elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="1fefb5e" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
@@ -579,7 +579,7 @@
 						<div class="elementor-element elementor-element-2a0967e elementor-widget elementor-widget-image" data-id="2a0967e" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/petro.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/petro.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/petro.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 						</div>
@@ -659,7 +659,7 @@
 						<div class="elementor-element elementor-element-7967efba elementor-widget elementor-widget-image" data-id="7967efba" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/food_drug_cos.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/food_drug_cos.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/food_drug_cos.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 				<div class="elementor-element elementor-element-0b92713 elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="0b92713" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
@@ -688,7 +688,7 @@
 						<div class="elementor-element elementor-element-1e54882 elementor-widget elementor-widget-image" data-id="1e54882" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/wood_stain.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/wood_stain.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/wood_stain.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 						</div>
@@ -768,7 +768,7 @@
 						<div class="elementor-element elementor-element-3c862975 elementor-widget elementor-widget-image" data-id="3c862975" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/coatings.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/coatings.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/coatings.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 				<div class="elementor-element elementor-element-5b8f753 elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="5b8f753" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
@@ -797,7 +797,7 @@
 						<div class="elementor-element elementor-element-6703bae elementor-widget elementor-widget-image" data-id="6703bae" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/smoke.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/smoke.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/smoke.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 						</div>
@@ -878,7 +878,7 @@
 						<div class="elementor-element elementor-element-0aa043a elementor-widget elementor-widget-image" data-id="0aa043a" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/pigmanets_intermediates_app.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/pigmanets_intermediates_app.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/pigmanets_intermediates_app.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 				<div class="elementor-element elementor-element-b39c61f elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="b39c61f" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
@@ -907,7 +907,7 @@
 						<div class="elementor-element elementor-element-759d37d elementor-widget elementor-widget-image" data-id="759d37d" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/wax.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/wax.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/wax.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 						</div>
@@ -987,7 +987,7 @@
 						<div class="elementor-element elementor-element-4b3555e elementor-widget elementor-widget-image" data-id="4b3555e" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/rubberq.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/rubberq.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/rubberq.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 				<div class="elementor-element elementor-element-eb9b50f elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="eb9b50f" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
@@ -1016,7 +1016,7 @@
 						<div class="elementor-element elementor-element-d0688be elementor-widget elementor-widget-image" data-id="d0688be" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/glass.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/glass.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/glass.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 						</div>
@@ -1096,7 +1096,7 @@
 						<div class="elementor-element elementor-element-e48dced elementor-widget elementor-widget-image" data-id="e48dced" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/interm.jpg') }}" class="attachment-full size-full" alt="" />														</div>
+												<img loading="lazy" decoding="async" width="1004" height="398" src="{{ asset('uploads/applications/interm.jpg') }}" onerror="this.onerror=null;this.src='https://sdinternational.com/wp-content/uploads/2020/11/interm.jpg';" class="attachment-full size-full" alt="" />														</div>
 						</div>
 				</div>
 				<div class="elementor-element elementor-element-360fd5b elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="360fd5b" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
