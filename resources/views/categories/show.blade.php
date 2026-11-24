@@ -175,20 +175,44 @@
         color: #1e293b;
     }
 
+    /* Term Description Headings and Properties - Matching live image11.png & image71.png */
     .term-description-box h2 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        color: #1e293b;
-        margin: 24px 0 10px 0;
+        font-family: 'Teko', 'Montserrat', sans-serif !important;
+        font-size: 28px !important;
+        font-weight: 700 !important;
+        color: #73001B !important;
+        margin: 22px 0 10px 0 !important;
+        text-transform: capitalize !important;
+        letter-spacing: 0.5px !important;
+        line-height: 1.2 !important;
     }
 
     .term-description-box h3 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 19px;
-        font-weight: 700;
-        color: #1e293b;
-        margin: 22px 0 10px 0;
+        font-family: 'Teko', 'Montserrat', sans-serif !important;
+        font-size: 23px !important;
+        font-weight: 700 !important;
+        color: #73001B !important;
+        margin: 18px 0 8px 0 !important;
+        text-transform: capitalize !important;
+        letter-spacing: 0.5px !important;
+        line-height: 1.2 !important;
+    }
+
+    .term-description-box b,
+    .term-description-box strong {
+        font-weight: 700 !important;
+        color: #000000 !important;
+    }
+
+    .category-properties-title,
+    .term-description-box b.properties-heading,
+    .term-description-box strong.properties-heading {
+        display: block !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #000000 !important;
+        margin: 18px 0 8px 0 !important;
     }
 
     .term-description-box p {
@@ -207,17 +231,83 @@
         color: #334155;
     }
 
-    /* Right Column: Products Range Bellows Accordion */
+    /* Subcategory Overlay Cards - Matching live image26.png 1:1 */
+    .product-category-card {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .cat-thumb-box {
+        position: relative !important;
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        overflow: hidden !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+        display: block !important;
+    }
+
+    .cat-thumb-box img {
+        width: 100% !important;
+        height: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        object-fit: cover !important;
+        display: block !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .product-category-card:hover .cat-thumb-box img {
+        transform: scale(1.05) !important;
+    }
+
+    .cat-overlay-box {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        background: rgba(255, 255, 255, 0.88) !important;
+        padding: 12px 14px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12) !important;
+        width: 82% !important;
+        box-sizing: border-box !important;
+        pointer-events: none !important;
+    }
+
+    .cat-overlay-title {
+        font-family: 'Teko', 'Montserrat', sans-serif !important;
+        font-size: 21px !important;
+        font-weight: 700 !important;
+        color: #73001B !important;
+        text-transform: uppercase !important;
+        display: block !important;
+        line-height: 1.1 !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .cat-overlay-count {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 11px !important;
+        font-weight: 500 !important;
+        color: #64748b !important;
+        text-transform: uppercase !important;
+        display: block !important;
+        margin-top: 4px !important;
+    }
+
+    /* Right Column: Products Range Bellows Accordion - Matching live image64.png & image46.png */
     .bellows-sidebar-header {
-        background-image: linear-gradient(180deg, #941533 0%, #74001B 100%);
-        color: #ffffff;
-        padding: 12px 18px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-        border-radius: 4px 4px 0 0;
-        letter-spacing: 0.5px;
+        background: #73001B !important;
+        color: #ffffff !important;
+        padding: 12px 18px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
     }
 
     .bellows-sidebar-card {
@@ -227,6 +317,97 @@
         border-radius: 0 0 4px 4px;
         margin-bottom: 25px;
         overflow: hidden;
+    }
+
+    .bellows-tree-root {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bellows-tree-item {
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .bellows-tree-item:last-child {
+        border-bottom: none;
+    }
+
+    .bellows-header-row {
+        display: flex !important;
+        align-items: center !important;
+        padding: 12px 16px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 14.5px !important;
+        font-weight: 600 !important;
+        color: #1e293b !important;
+        background: #f8fafc !important;
+        cursor: pointer !important;
+        user-select: none !important;
+        transition: background 0.2s, color 0.2s !important;
+    }
+
+    .bellows-header-row:hover {
+        background: #f1f5f9 !important;
+        color: #73001B !important;
+    }
+
+    .bellows-chevron {
+        margin-right: 10px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 16px !important;
+        height: 16px !important;
+        transition: transform 0.2s ease !important;
+        color: #1e293b !important;
+    }
+
+    .bellows-header-row.open .bellows-chevron {
+        transform: rotate(180deg) !important;
+    }
+
+    .bellows-title-text {
+        flex: 1 !important;
+    }
+
+    .bellows-sub-tree {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .bellows-sub-tree li {
+        border-bottom: 1px solid #f8fafc;
+    }
+
+    .bellows-sub-tree li:last-child {
+        border-bottom: none;
+    }
+
+    .bellows-sub-tree li a {
+        display: block;
+        padding: 9px 18px 9px 36px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 13.5px;
+        color: #334155;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+
+    .bellows-sub-tree li a:hover {
+        background: #f8fafc;
+        color: #73001B;
+        padding-left: 40px;
+    }
+
+    .bellows-sub-tree li a.active {
+        border-left: 4px solid #73001B !important;
+        background: #fff5f5 !important;
+        color: #73001B !important;
+        font-weight: 600 !important;
+        padding-left: 32px !important;
     }
 
     .bellows-tree-root {
@@ -777,7 +958,9 @@
 
                     <div class="term-description-box">
                         @php
-                            $desc = $category->description ?? '';
+                            $rawDesc = $category->description ?? '';
+                            // Ensure Properties of ... is cleanly on its own line
+                            $desc = preg_replace('/(<\/?span[^>]*>)?\s*(<b>|<strong>)(Properties of [^<]+)(<\/b>|<\/strong>)/i', '$1<div class="category-properties-title">$3</div>', $rawDesc);
                             $hasColMd5 = str_contains($desc, 'col-md-5');
                         @endphp
 
@@ -812,7 +995,13 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Products Range Bellows Accordion -->
+                <!-- Right Column: Products Range Bellows Accordion - Matching live image64.png & image46.png -->
+                @php
+                    $isDyesOpen = ($category->slug === 'dyes' || ($category->parent && $category->parent->slug === 'dyes') || in_array($category->slug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes', 'liquid-solvent-dyes']));
+                    $isFdcOpen = ($category->slug === 'fd-c-colours' || str_contains($category->slug, 'f-d-c') || str_contains($category->slug, 'colours'));
+                    $isPigmentsOpen = ($category->slug === 'pigments' || ($category->parent && $category->parent->slug === 'pigments') || str_contains($category->slug, 'pigment'));
+                    $isOtherOpen = ($category->slug === 'other-products' || ($category->parent && $category->parent->slug === 'other-products') || in_array($category->slug, ['naphthols', 'fast-colour-bases', 'fast-colour-salts', 'pyrazolone-intermediates', 'auxiliaries']));
+                @endphp
                 <aside class="archive-right-sidebar">
                     <div class="bellows-sidebar-header">
                         Products Range
@@ -821,11 +1010,15 @@
                         <ul class="bellows-tree-root">
                             <!-- DYES -->
                             <li class="bellows-tree-item">
-                                <div class="bellows-header-row" onclick="toggleArchiveAccordion('cat-dyes')">
-                                    <a href="{{ url('/dyes') }}">DYES</a>
-                                    <span id="indicator-cat-dyes" class="bellows-toggle-indicator">{{ ($category->slug === 'dyes' || ($category->parent && $category->parent->slug === 'dyes') || in_array($category->slug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes', 'liquid-solvent-dyes'])) ? '−' : '+' }}</span>
+                                <div class="bellows-header-row {{ $isDyesOpen ? 'open' : '' }}" onclick="toggleArchiveAccordion('cat-dyes', this)">
+                                    <span class="bellows-chevron">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="bellows-title-text">DYES</span>
                                 </div>
-                                <ul id="cat-dyes" class="bellows-sub-tree" style="display: {{ ($category->slug === 'dyes' || ($category->parent && $category->parent->slug === 'dyes') || in_array($category->slug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes', 'liquid-solvent-dyes'])) ? 'block' : 'none' }};">
+                                <ul id="cat-dyes" class="bellows-sub-tree" style="display: {{ $isDyesOpen ? 'block' : 'none' }};">
                                     <li><a href="{{ url('/basic-dyes') }}" class="{{ $category->slug === 'basic-dyes' ? 'active' : '' }}">Basic Dyes</a></li>
                                     <li><a href="{{ url('/disperse-dyes') }}" class="{{ $category->slug === 'disperse-dyes' ? 'active' : '' }}">Disperse Dyes</a></li>
                                     <li><a href="{{ url('/solvent-dyes') }}" class="{{ $category->slug === 'solvent-dyes' ? 'active' : '' }}">Solvent Dyes</a></li>
@@ -842,11 +1035,15 @@
 
                             <!-- F D & C COLOURS -->
                             <li class="bellows-tree-item">
-                                <div class="bellows-header-row" onclick="toggleArchiveAccordion('cat-fdc')">
-                                    <a href="{{ url('/fd-c-colours') }}">F D &amp; C COLOURS</a>
-                                    <span id="indicator-cat-fdc" class="bellows-toggle-indicator">{{ ($category->slug === 'fd-c-colours' || str_contains($category->slug, 'f-d-c') || str_contains($category->slug, 'colours')) ? '−' : '+' }}</span>
+                                <div class="bellows-header-row {{ $isFdcOpen ? 'open' : '' }}" onclick="toggleArchiveAccordion('cat-fdc', this)">
+                                    <span class="bellows-chevron">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="bellows-title-text">F D &amp; C COLOURS</span>
                                 </div>
-                                <ul id="cat-fdc" class="bellows-sub-tree" style="display: {{ ($category->slug === 'fd-c-colours' || str_contains($category->slug, 'f-d-c') || str_contains($category->slug, 'colours')) ? 'block' : 'none' }};">
+                                <ul id="cat-fdc" class="bellows-sub-tree" style="display: {{ $isFdcOpen ? 'block' : 'none' }};">
                                     <li><a href="{{ url('/tartrazine-dyes') }}" class="{{ $category->slug === 'tartrazine-dyes' ? 'active' : '' }}">Tartrazine Dyes</a></li>
                                     <li><a href="{{ url('/sunset-yellow-f-d-c-colours') }}" class="{{ $category->slug === 'sunset-yellow-f-d-c-colours' ? 'active' : '' }}">Sunset Yellow F D &amp; C Colours</a></li>
                                     <li><a href="{{ url('/carmoisine-f-d-c-colours') }}" class="{{ $category->slug === 'carmoisine-f-d-c-colours' ? 'active' : '' }}">Carmoisine F D &amp; C Colours</a></li>
@@ -860,11 +1057,15 @@
 
                             <!-- PIGMENTS -->
                             <li class="bellows-tree-item">
-                                <div class="bellows-header-row" onclick="toggleArchiveAccordion('cat-pigments')">
-                                    <a href="{{ url('/pigments') }}">PIGMENTS</a>
-                                    <span id="indicator-cat-pigments" class="bellows-toggle-indicator">{{ ($category->slug === 'pigments' || ($category->parent && $category->parent->slug === 'pigments') || str_contains($category->slug, 'pigment')) ? '−' : '+' }}</span>
+                                <div class="bellows-header-row {{ $isPigmentsOpen ? 'open' : '' }}" onclick="toggleArchiveAccordion('cat-pigments', this)">
+                                    <span class="bellows-chevron">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="bellows-title-text">PIGMENTS</span>
                                 </div>
-                                <ul id="cat-pigments" class="bellows-sub-tree" style="display: {{ ($category->slug === 'pigments' || ($category->parent && $category->parent->slug === 'pigments') || str_contains($category->slug, 'pigment')) ? 'block' : 'none' }};">
+                                <ul id="cat-pigments" class="bellows-sub-tree" style="display: {{ $isPigmentsOpen ? 'block' : 'none' }};">
                                     <li><a href="{{ url('/organic-pigments') }}" class="{{ $category->slug === 'organic-pigments' ? 'active' : '' }}">Organic Pigments</a></li>
                                     <li><a href="{{ url('/high-performance-pigments') }}" class="{{ $category->slug === 'high-performance-pigments' ? 'active' : '' }}">High Performance Pigments</a></li>
                                     <li><a href="{{ url('/fluorescent-pigments') }}" class="{{ $category->slug === 'fluorescent-pigments' ? 'active' : '' }}">Fluorescent Pigments</a></li>
@@ -875,11 +1076,15 @@
 
                             <!-- OTHER PRODUCTS -->
                             <li class="bellows-tree-item">
-                                <div class="bellows-header-row" onclick="toggleArchiveAccordion('cat-other')">
-                                    <a href="{{ url('/other-products') }}">OTHER PRODUCTS</a>
-                                    <span id="indicator-cat-other" class="bellows-toggle-indicator">{{ ($category->slug === 'other-products' || ($category->parent && $category->parent->slug === 'other-products') || in_array($category->slug, ['naphthols', 'fast-colour-bases', 'fast-colour-salts', 'pyrazolone-intermediates', 'auxiliaries'])) ? '−' : '+' }}</span>
+                                <div class="bellows-header-row {{ $isOtherOpen ? 'open' : '' }}" onclick="toggleArchiveAccordion('cat-other', this)">
+                                    <span class="bellows-chevron">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="bellows-title-text">OTHER PRODUCTS</span>
                                 </div>
-                                <ul id="cat-other" class="bellows-sub-tree" style="display: {{ ($category->slug === 'other-products' || ($category->parent && $category->parent->slug === 'other-products') || in_array($category->slug, ['naphthols', 'fast-colour-bases', 'fast-colour-salts', 'pyrazolone-intermediates', 'auxiliaries'])) ? 'block' : 'none' }};">
+                                <ul id="cat-other" class="bellows-sub-tree" style="display: {{ $isOtherOpen ? 'block' : 'none' }};">
                                     <li><a href="{{ url('/naphthols') }}" class="{{ $category->slug === 'naphthols' ? 'active' : '' }}">Naphthols</a></li>
                                     <li><a href="{{ url('/fast-colour-bases') }}" class="{{ $category->slug === 'fast-colour-bases' ? 'active' : '' }}">Fast Colour Bases</a></li>
                                     <li><a href="{{ url('/fast-colour-salts') }}" class="{{ $category->slug === 'fast-colour-salts' ? 'active' : '' }}">Fast Colour Salts</a></li>
@@ -899,7 +1104,7 @@
         <div class="archive-container">
             <h2 class="category-section-heading">Browse related {{ $category->name }} chemical products offered by SD International</h2>
 
-            {{-- 3A. Subcategories Grid (shown when category has children, matching dyes_live.html) --}}
+            {{-- 3A. Subcategories Grid (shown when category has children, matching live image26.png 1:1) --}}
             @if($childCategories->isNotEmpty())
                 <ul class="products-grid-columns-6">
                     @foreach($childCategories as $child)
@@ -907,11 +1112,11 @@
                             <a href="{{ url('/' . $child->slug) }}">
                                 <div class="cat-thumb-box">
                                     <img src="{{ $child->thumbnail_url }}" alt="{{ $child->name }}" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2022/04/{{ $child->slug }}-120x120.jpg';">
+                                    <div class="cat-overlay-box">
+                                        <span class="cat-overlay-title">{{ $child->name }}</span>
+                                        <span class="cat-overlay-count">{{ $child->products_count }} PRODUCTS</span>
+                                    </div>
                                 </div>
-                                <h2 class="woocommerce-loop-category__title">
-                                    {{ $child->name }}
-                                    <mark class="count">{{ $child->products_count }} Products</mark>
-                                </h2>
                             </a>
                         </li>
                     @endforeach
@@ -1143,16 +1348,15 @@
 @push('scripts')
 <script>
     // Accordion Toggle for Bellows Sidebar
-    function toggleArchiveAccordion(id) {
+    function toggleArchiveAccordion(id, headerEl) {
         const el = document.getElementById(id);
-        const indicator = document.getElementById('indicator-' + id);
         if (!el) return;
         if (el.style.display === 'none' || el.style.display === '') {
             el.style.display = 'block';
-            if (indicator) indicator.textContent = '−';
+            if (headerEl) headerEl.classList.add('open');
         } else {
             el.style.display = 'none';
-            if (indicator) indicator.textContent = '+';
+            if (headerEl) headerEl.classList.remove('open');
         }
     }
 

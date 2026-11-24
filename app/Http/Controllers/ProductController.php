@@ -178,11 +178,11 @@ class ProductController extends Controller
 
         // Attach exact category subtitle label matching live site
         foreach ($relatedProducts as $rel) {
-            $rel->setAttribute(
-                'related_cat_label',
-                $wpRelatedLabels[(string) $rel->wp_id]
-                    ?? ($rel->categories->first()?->name ?? 'Dyes & Chemicals')
-            );
+            $label = $wpRelatedLabels[(string) $rel->wp_id] ?? null;
+            if (!$label || str_contains($label, 'Manufacturers') || str_contains($label, 'Suppliers') || str_contains($label, 'Exporters')) {
+                $label = $rel->primary_category?->name ?? 'Dyes & Chemicals';
+            }
+            $rel->setAttribute('related_cat_label', $label);
         }
 
         // Process rich product content & generate dynamic TOC items

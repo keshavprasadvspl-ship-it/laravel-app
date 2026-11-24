@@ -2124,7 +2124,7 @@ html, body {
 				<div class="elementor-widget-container">
 					<ul class="elementor-icon-list-items elementor-inline-items">
 							<li class="elementor-icon-list-item elementor-inline-item">
-											<a href="tel:+9199206%2069561%20" target="_blank">
+											<a href="https://wa.me/919920669561" target="_blank" rel="noopener noreferrer">
 
 												<span class="elementor-icon-list-icon">
 							<i aria-hidden="true" class="fas fa-phone-alt"></i>						</span>
@@ -2747,33 +2747,6 @@ function googleTranslateElementInit() {
 								</div>
 					</div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-section-stretched elementor-section-boxed" style="background:#4d0c15; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.08); width: 100%;">
-						<div class="elementor-container" style="max-width: 1240px; margin: 0 auto; padding: 0 20px;">
-							<div style="color: #D2AF77; font-family: 'Teko', 'Montserrat', sans-serif; font-size: 22px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-								Global Export Presence & International Markets
-							</div>
-							<div style="font-size: 12.5px; color: rgba(255,255,255,0.7); line-height: 1.8;">
-								<strong style="color: #fff;">Exporting to 50+ Countries:</strong>
-								<a href="/dyes/dyes-supplier-in-bangladesh" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Bangladesh</a> |
-								<a href="/dyes/dyes-supplier-in-brazil" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Brazil</a> |
-								<a href="/dyes/dyes-supplier-in-china" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">China</a> |
-								<a href="/dyes/dyes-supplier-in-egypt" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Egypt</a> |
-								<a href="/dyes/dyes-supplier-in-germany" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Germany</a> |
-								<a href="/dyes/dyes-supplier-in-ghana" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Ghana</a> |
-								<a href="/dyes/dyes-supplier-in-indonesia" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Indonesia</a> |
-								<a href="/pigments/pigments-supplier-in-kenya" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Kenya</a> |
-								<a href="/dyes/dyes-supplier-in-mexico" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Mexico</a> |
-								<a href="/vat-dyes-manufacturer-in-nigeria" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Nigeria</a> |
-								<a href="/pigments/pigments-supplier-in-spain" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Spain</a> |
-								<a href="/dyes/dyes-supplier-in-thailand" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Thailand</a> |
-								<a href="/dyes/dyes-supplier-in-turkey" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Turkey</a> |
-								<a href="/dyes/dyes-supplier-in-uae" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">UAE</a> |
-								<a href="/dyes/dyes-supplier-in-uk" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">United Kingdom</a> |
-								<a href="/pigments/pigments-supplier-in-usa" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">United States</a> |
-								<a href="/dyes/dyes-supplier-in-vietnam" style="color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 4px;">Vietnam</a>
-							</div>
-						</div>
-				</section>
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-095d978 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="095d978" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
 						<div class="elementor-container elementor-column-gap-default">
 							<div class="elementor-row">

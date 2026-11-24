@@ -31,7 +31,16 @@ class Product extends Model
 
     public function getPrimaryCategoryAttribute(): ?Category
     {
-        return $this->categories->first();
+        $nonLocation = $this->categories->first(function ($cat) {
+            $slug = $cat->slug;
+            return !str_contains($slug, '-manufacturers-in-')
+                && !str_contains($slug, '-suppliers-in-')
+                && !str_contains($slug, '-exporters-in-')
+                && !str_contains($slug, '-supplier-in-')
+                && !str_contains($slug, '-manufacturer-in-');
+        });
+
+        return $nonLocation ?: $this->categories->first();
     }
 
     public function getThumbnailUrlAttribute(): string

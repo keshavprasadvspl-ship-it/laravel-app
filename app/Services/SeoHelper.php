@@ -39,6 +39,24 @@ class SeoHelper
             }
         }
 
+        // Replace RankMath / Yoast placeholders if present
+        $modelTitle = $model->title ?? ($model->name ?? ($defaults['title'] ?? ''));
+        $replacements = [
+            '%title%' => $modelTitle,
+            '%sep%' => '-',
+            '%sitename%' => $siteName,
+            '%site_title%' => $siteName,
+            '%page%' => '',
+            '%currentyear%' => date('Y'),
+        ];
+        $metaTitle = str_ireplace(array_keys($replacements), array_values($replacements), $metaTitle);
+        $metaTitle = preg_replace('/%[a-zA-Z0-9_-]+%/', '', $metaTitle);
+        $metaTitle = trim(preg_replace('/\s+/', ' ', $metaTitle));
+
+        $metaDescription = str_ireplace(array_keys($replacements), array_values($replacements), $metaDescription);
+        $metaDescription = preg_replace('/%[a-zA-Z0-9_-]+%/', '', $metaDescription);
+        $metaDescription = trim(preg_replace('/\s+/', ' ', $metaDescription));
+
         return [
             'site_name' => $siteName,
             'title' => $metaTitle,

@@ -52,12 +52,42 @@ class FallbackController extends Controller
         // 2. Check Product (most common)
         $product = Product::where('slug', $cleanSlug)->where('status', 'publish')->first();
         if (!$product) {
-            $product = Product::where('slug', $cleanSlug . '-dyes')
-                ->orWhere('slug', str_replace('-dyes', '', $cleanSlug))
-                ->where('status', 'publish')
-                ->first();
-            if ($product) {
-                return redirect('/' . $product->slug, 301);
+            // Suffix variations
+            $suffixes = [
+                '-dyes',
+                '-f-d-c-colours',
+                '-fast-colour-bases',
+                '-fast-colour-salts',
+                '-pyrazolone-intermediates',
+                '-intermediates',
+                '-organic-pigments',
+                '-pigments',
+                '-pigment',
+            ];
+            foreach ($suffixes as $suffix) {
+                $candidate = Product::where('slug', $cleanSlug . $suffix)->where('status', 'publish')->first();
+                if ($candidate) {
+                    return redirect('/' . $candidate->slug, 301);
+                }
+                if (str_ends_with($cleanSlug, $suffix)) {
+                    $stripped = substr($cleanSlug, 0, -strlen($suffix));
+                    $candidate = Product::where('slug', $stripped)->where('status', 'publish')->first();
+                    if ($candidate) {
+                        return redirect('/' . $candidate->slug, 301);
+                    }
+                }
+            }
+
+            // Prefix variations (e.g. organic-pigment-blue-150 for pigment-blue-150)
+            $candidate = Product::where('slug', 'like', '%' . $cleanSlug)->where('status', 'publish')->first();
+            if ($candidate) {
+                return redirect('/' . $candidate->slug, 301);
+            }
+
+            // Broad partial match (e.g. altura-red -> altura-red-f-d-c-colours)
+            $candidate = Product::where('slug', 'like', $cleanSlug . '-%')->where('status', 'publish')->first();
+            if ($candidate) {
+                return redirect('/' . $candidate->slug, 301);
             }
         }
         if ($product) {

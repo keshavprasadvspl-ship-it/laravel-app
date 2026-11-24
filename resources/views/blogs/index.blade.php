@@ -221,21 +221,21 @@
                                                     @endphp
                                                     <article class="elementor-post elementor-grid-item post-{{ $post->id }} post type-post status-publish format-standard has-post-thumbnail hentry category-blogs">
                                                         <div class="elementor-post__card">
-                                                            <a class="elementor-post__thumbnail__link" href="{{ url('/blogs/' . $post->slug) }}">
+                                                            <a class="elementor-post__thumbnail__link" href="{{ url('/blogs/' . $post->slug) }}" target="_blank" rel="noopener noreferrer">
                                                                 <div class="elementor-post__thumbnail">
                                                                     <img src="{{ asset($post->image_url) }}" alt="{{ $post->title }}" decoding="async" loading="lazy" onerror="this.onerror=null;this.src='{{ $blogImgFallback }}';" />
                                                                 </div>
                                                             </a>
                                                             <div class="elementor-post__text">
                                                                 <h1 class="elementor-post__title">
-                                                                    <a href="{{ url('/blogs/' . $post->slug) }}">
+                                                                    <a href="{{ url('/blogs/' . $post->slug) }}" target="_blank" rel="noopener noreferrer">
                                                                         {{ $post->title }}
                                                                     </a>
                                                                 </h1>
                                                                 <div class="elementor-post__excerpt">
                                                                     <p>{{ $cardExcerpt }}</p>
                                                                 </div>
-                                                                <a class="elementor-post__read-more" href="{{ url('/blogs/' . $post->slug) }}">
+                                                                <a class="elementor-post__read-more" href="{{ url('/blogs/' . $post->slug) }}" target="_blank" rel="noopener noreferrer">
                                                                     Read More »
                                                                 </a>
                                                             </div>

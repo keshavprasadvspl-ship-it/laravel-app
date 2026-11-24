@@ -20,6 +20,8 @@ yarn-error.log
 !/public/uploads/2020/**
 !/public/uploads/2022
 !/public/uploads/2022/**
+!/public/uploads/2024
+!/public/uploads/2024/**
 !/public/uploads/applications
 !/public/uploads/applications/**
 !/public/uploads/icons

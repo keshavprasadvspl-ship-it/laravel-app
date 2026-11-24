@@ -137,7 +137,8 @@ class PageController extends Controller
             // If src starts with /uploads/ or /wp-content/uploads/
             if (preg_match('/src="([^"]+)"/i', $tag, $srcMatch)) {
                 $src = $srcMatch[1];
-                $cleanUploadPath = preg_replace('#^/(?:wp-content/)?uploads/#i', '', $src);
+                $cleanUploadPath = preg_replace('#^(?:https?://[^/]+)?/(?:wp-content/)?uploads/#i', '', $src);
+                $cleanUploadPath = ltrim($cleanUploadPath, '/');
                 $liveUrl = 'https://sdinternational.com/wp-content/uploads/' . $cleanUploadPath;
                 $localPath = public_path('uploads/' . $cleanUploadPath);
 
@@ -146,15 +147,34 @@ class PageController extends Controller
                     if (!str_contains($newTag, 'onerror=')) {
                         $newTag .= ' onerror="this.onerror=null; this.src=\'' . $liveUrl . '\';"';
                     }
-                    return '<img' . $newTag . '>';
                 } else {
                     $newTag = preg_replace('/src="[^"]+"/i', 'src="' . $liveUrl . '"', $tag);
-                    $newTag = preg_replace_callback('/srcset="([^"]+)"/i', function ($sm) {
-                        $fixed = preg_replace('#/(?:wp-content/)?uploads/#i', 'https://sdinternational.com/wp-content/uploads/', $sm[1]);
-                        return 'srcset="' . $fixed . '"';
-                    }, $newTag);
-                    return '<img' . $newTag . '>';
                 }
+
+                // Clean srcset so it never doubles domain or breaks paths
+                $newTag = preg_replace_callback('/srcset="([^"]+)"/i', function ($ssm) {
+                    $pairs = explode(',', $ssm[1]);
+                    $fixedPairs = [];
+                    foreach ($pairs as $p) {
+                        $p = trim($p);
+                        if (empty($p)) continue;
+                        $parts = preg_split('/\s+/', $p, 2);
+                        $pUrl = $parts[0];
+                        $pSize = $parts[1] ?? '';
+                        $pClean = preg_replace('#^(?:https?://[^/]+)?/(?:wp-content/)?uploads/#i', '', $pUrl);
+                        $pClean = ltrim($pClean, '/');
+                        $pLocal = public_path('uploads/' . $pClean);
+                        if (file_exists($pLocal)) {
+                            $fixedUrl = asset('uploads/' . $pClean);
+                        } else {
+                            $fixedUrl = 'https://sdinternational.com/wp-content/uploads/' . $pClean;
+                        }
+                        $fixedPairs[] = $fixedUrl . ($pSize ? ' ' . $pSize : '');
+                    }
+                    return 'srcset="' . implode(', ', $fixedPairs) . '"';
+                }, $newTag);
+
+                return '<img ' . trim($newTag) . '>';
             }
             return '<img' . $tag . '>';
         }, $content);

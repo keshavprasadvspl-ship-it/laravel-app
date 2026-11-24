@@ -231,31 +231,31 @@
                                         <div class="elementor-container elementor-column-gap-default">
                                             <div class="elementor-row">
                                                 
-                                                <!-- Left Column: Details -->
+                                                <!-- Left Column: Details (Golden Card matching image55.png 1:1) -->
                                                 <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3314565" data-id="3314565" data-element_type="column">
-                                                    <div class="elementor-column-wrap elementor-element-populated">
+                                                    <div class="elementor-column-wrap elementor-element-populated" style="background: #b89758; padding: 40px 35px; border-radius: 6px;">
                                                         <div class="elementor-widget-wrap">
                                                             <div class="elementor-element elementor-element-58cb732 elementor-widget elementor-widget-heading" data-id="58cb732" data-element_type="widget" data-widget_type="heading.default">
                                                                 <div class="elementor-widget-container">
-                                                                    <h2 class="elementor-heading-title elementor-size-default">S D International</h2>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="elementor-element elementor-element-d079d28 elementor-widget elementor-widget-heading" data-id="d079d28" data-element_type="widget" data-widget_type="heading.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <span class="elementor-heading-title elementor-size-default">
-                                                                        <b>Corporate Address</b><br>
-                                                                        701, Ashok heights, Off Old Nagardas Road, Near Saraswati Towers, Gundavali Hill, Andheri East, Mumbai, Maharashtra, India. Pincode: 400069
-                                                                    </span>
+                                                                    <h2 class="elementor-heading-title elementor-size-default" style="color: #000000 !important; font-family: 'Montserrat', sans-serif !important; font-size: 24px !important; font-weight: 700 !important; text-transform: uppercase !important; margin-bottom: 24px !important; letter-spacing: 0.5px !important;">OFFICE CONTACTS</h2>
                                                                 </div>
                                                             </div>
 
                                                             <div class="elementor-element elementor-element-a681365 elementor-widget elementor-widget-heading" data-id="a681365" data-element_type="widget" data-widget_type="heading.default">
                                                                 <div class="elementor-widget-container">
-                                                                    <span class="elementor-heading-title elementor-size-default">
-                                                                        <b>Contact Person</b><br>
+                                                                    <span class="elementor-heading-title elementor-size-default" style="color: #000000 !important; font-family: 'Open Sans', sans-serif !important; font-size: 15px !important; line-height: 1.7 !important; margin-bottom: 20px !important; display: block !important;">
+                                                                        <b style="font-size: 16px; font-weight: 700;">Contact Person</b><br>
                                                                         Mr. Jagdeep Mehta ( Chairman &amp; Managing Director )<br>
                                                                         Mr. Dhruv Mehta &nbsp;&nbsp;&nbsp;( Sales &amp; Marketing Director )
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="elementor-element elementor-element-d079d28 elementor-widget elementor-widget-heading" data-id="d079d28" data-element_type="widget" data-widget_type="heading.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <span class="elementor-heading-title elementor-size-default" style="color: #000000 !important; font-family: 'Open Sans', sans-serif !important; font-size: 15px !important; line-height: 1.7 !important; margin-bottom: 22px !important; display: block !important;">
+                                                                        <b style="font-size: 16px; font-weight: 700;">Corporate Address</b><br>
+                                                                        701, Ashok heights, Off Old Nagardas Road, Near Saraswati Towers, Gundavali Hill, Andheri East, Mumbai, Maharashtra, India. Pincode: 400069
                                                                     </span>
                                                                 </div>
                                                             </div>
