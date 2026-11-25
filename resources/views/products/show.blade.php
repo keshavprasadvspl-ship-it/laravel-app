@@ -77,34 +77,40 @@
     }
 
     .single-product-subtitle {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        font-style: italic;
-        color: #73001B;
-        margin: 0 0 18px 0;
-        line-height: 1.4;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        font-style: italic !important;
+        color: #73001B !important;
+        margin: 0 0 16px 0 !important;
+        line-height: 1.4 !important;
     }
 
     /* Short Description Rounded Card */
     .product-short-desc-card {
         background: #FAFAFA;
-        border-radius: 14px;
-        padding: 24px 28px;
-        margin-bottom: 26px;
+        border: 1px solid #f0f0f0;
+        border-radius: 12px;
+        padding: 22px 26px;
+        margin-bottom: 24px;
         font-family: 'Merriweather', Georgia, serif;
-        font-size: 17px;
-        line-height: 1.82;
+        font-size: 16.5px;
+        line-height: 1.8;
         color: #000000;
     }
 
     .product-short-desc-card p {
-        margin: 0 0 18px 0;
+        margin: 0 0 16px 0;
         color: #000000;
+        line-height: 1.8;
     }
 
     .product-short-desc-card p:last-child {
         margin-bottom: 0;
+    }
+
+    .product-short-desc-card img {
+        display: none !important;
     }
 
     /* Inner 2-Column Row: Product Swatch Image + Enquiry & TOC */
@@ -811,21 +817,37 @@
     $isPigmentsActive = ($activeCatSlug === 'pigments' || $activeParentSlug === 'pigments' || in_array($activeCatSlug, ['organic-pigments', 'high-performance-pigments', 'fluorescent-pigments', 'pu-foam-pigments', 'ultramarine-pigments']));
     $isOtherActive = ($activeCatSlug === 'other-products' || $activeParentSlug === 'other-products' || in_array($activeCatSlug, ['naphthols', 'fast-colour-bases', 'fast-colour-salts', 'pyrazolone-intermediates', 'auxiliaries']));
 
-    // Format short description into clean 2 paragraphs matching live site
-    $shortDescRaw = trim(strip_tags($product->short_description ?? ''));
-    if ($shortDescRaw !== '' && !str_contains($product->short_description, '<p>')) {
-        $shortDescHtml = preg_replace(
-            '/\s+(SD International is one of the leading)/i',
-            "</p><p>$1",
-            e($shortDescRaw)
-        );
-        $shortDescHtml = '<p>' . $shortDescHtml . '</p>';
-    } elseif ($shortDescRaw !== '') {
-        $shortDescHtml = $product->short_description;
+    // Dynamic category-accurate subtitle matching sdinternational.com 1:1
+    $cleanTitleForSub = trim(preg_replace('/\s*\|\s*.*$/', '', $product->title));
+    if ($primaryCat && (str_contains(strtolower($primaryCat->name), 'pigment') || str_contains(strtolower($primaryCat->slug), 'pigment') || str_contains(strtolower($product->title), 'pigment'))) {
+        $subNoPigment = trim(preg_replace('/\s*pigments?\s*$/i', '', $cleanTitleForSub));
+        $subtitleText = "High Performance {$subNoPigment} Pigment";
+    } elseif ($primaryCat && (str_contains(strtolower($primaryCat->name), 'dye') || str_contains(strtolower($primaryCat->slug), 'dye') || str_contains(strtolower($product->title), 'dye'))) {
+        $subtitleText = "Superior purity {$cleanTitleForSub} by S D International";
+    } elseif ($primaryCat && (str_contains(strtolower($primaryCat->name), 'f-d-c') || str_contains(strtolower($primaryCat->name), 'colour') || str_contains(strtolower($primaryCat->name), 'color'))) {
+        $subtitleText = "High Purity {$cleanTitleForSub} Food Colour by SD International";
+    } else {
+        $subtitleText = "Suppliers and Exporter of {$product->title}";
+    }
+
+    // Format short description into clean overview paragraphs matching live site
+    $rawShortDesc = $product->short_description ?? '';
+    // Strip any technical specification headings, raw image tables, or specification text from short desc card
+    $cleanShortDesc = preg_split('/(?:<strong[^>]*>)?\s*(?:IDENTIFICATION|GENERAL SPECIFICATIONS|PHYSICAL CHARACTERISTICS|TECHNICAL SPECIFICATIONS|APPLICATIONS|Features:)\s*:?/i', $rawShortDesc)[0] ?? $rawShortDesc;
+    $cleanShortDesc = preg_replace('/<img[^>]*>/i', '', $cleanShortDesc);
+    $cleanShortDesc = trim(strip_tags($cleanShortDesc, '<p><br><strong><b><span><em><i>'));
+
+    if ($cleanShortDesc !== '' && str_contains($cleanShortDesc, '<p>')) {
+        $shortDescHtml = $cleanShortDesc;
+    } elseif ($cleanShortDesc !== '') {
+        $shortDescHtml = wpautop($cleanShortDesc);
     } else {
         $shortDescHtml = '<p>Buy high purity ' . e($product->title) . ' from SD International &ndash; leading manufacturer, supplier, and exporter of ' . e($product->title) . '. SD International offers ' . e($product->title) . ' well known for using superior purity chemicals from trusted vendors to meet International Industry standards.</p>'
             . '<p>SD International is one of the leading Dyes &amp; Chemicals exporters of high grade and superior quality products in India to an industry-wide customer base.</p>';
     }
+
+    // Replace any legacy dead staging domains in rendered content
+    $renderedContent = str_replace('https://moccasin-worm-620280.hostingersite.com', 'https://sdinternational.com', $renderedContent);
 
     $productImgFallback = $product->image_url
         ? (str_starts_with($product->image_url, 'http') ? $product->image_url : 'https://sdinternational.com/wp-content' . (str_starts_with($product->image_url, '/') ? '' : '/') . $product->image_url)
@@ -874,7 +896,7 @@
                 <!-- Left Main Column -->
                 <main class="product-left-main">
                     <h1 class="single-product-h1">{{ $product->title }}</h1>
-                    <p class="single-product-subtitle">Suppliers and Exporter of {{ $product->title }}</p>
+                    <p class="single-product-subtitle">{{ $subtitleText }}</p>
 
                     <!-- Short Description Rounded Card -->
                     <div class="product-short-desc-card">
@@ -958,7 +980,7 @@
                         <a href="{{ $rel->url }}" class="related-prod-thumb">
                             <img src="{{ $rel->thumbnail_url }}"
                                  alt="{{ $rel->title }}"
-                                 onerror="this.onerror=null; this.src='{{ $relFallback }}';">
+                                 onerror="this.onerror=function(){this.src='https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';}; this.src='{{ $relFallback }}';">
                         </a>
                         <span class="related-prod-cat">{{ $relCatLabel }}</span>
                         <a href="{{ $rel->url }}" class="related-prod-title">{{ $rel->title }}</a>

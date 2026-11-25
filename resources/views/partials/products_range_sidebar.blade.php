@@ -45,7 +45,7 @@
         if ($primaryCat) {
             foreach ($menuData as $catKey => $c) {
                 foreach ($c['children'] as $subKey => $s) {
-                    if ($s['slug'] === $primaryCat->slug) {
+                    if ($s['slug'] === $primaryCat->slug || ($primaryCat->parent && $s['slug'] === $primaryCat->parent->slug)) {
                         $openCatSlugs[] = $c['slug'];
                         $openSubSlugs[] = $s['slug'];
                         break 2;
@@ -374,7 +374,7 @@
                                 $hasProducts = !empty($sub['products']);
                                 $subId = 'bellows-sub-' . \Illuminate\Support\Str::slug($sub['slug']);
                                 $isSubOpen = in_array($sub['slug'], $openSubSlugs);
-                                $isSubActive = ($activeTargetSlug === $sub['slug'] || $normSlug === $sub['slug']);
+                                $isSubActive = ($activeTargetSlug === $sub['slug'] || $normSlug === $sub['slug'] || in_array($sub['slug'], $openSubSlugs));
                             @endphp
                             <li class="bellows-sub-item {{ $isSubActive ? 'active' : '' }}">
                                 @if($hasProducts)
