@@ -938,7 +938,7 @@
                     <a href="{{ url('/') }}">Home</a>
                     @if($category->parent)
                         <span class="delimiter">&#47;</span>
-                        <a href="{{ url('/' . $category->parent->slug) }}">{{ $category->parent->name }}</a>
+                        <a href="{{ url('/' . $category->parent->slug . '/') }}">{{ $category->parent->name }}</a>
                     @endif
                     <span class="delimiter">&#47;</span>
                     <span>{{ $category->name }}</span>
@@ -1016,7 +1016,7 @@
                 <ul class="products-grid-columns-6">
                     @foreach($childCategories as $child)
                         <li class="product-category-card">
-                            <a href="{{ url('/' . $child->slug) }}">
+                            <a href="{{ url('/' . $child->slug . '/') }}">
                                 <div class="cat-thumb-box">
                                     <img src="{{ $child->thumbnail_url }}" alt="{{ $child->name }}" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2022/04/{{ $child->slug }}-120x120.jpg';">
                                     <div class="cat-overlay-box">
@@ -1061,7 +1061,7 @@
                 <div class="industries-grid-5">
                     <!-- 1. Plastic & Polymers -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/plastic-polymers') }}">
+                        <a href="{{ url('/applications/plastic-polymers/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/plastic_polymer.jpg') }}" alt="Plastic & Polymers" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/plastic_polymer.jpg';">
                             </div>
@@ -1070,7 +1070,7 @@
                     </div>
                     <!-- 2. Textiles -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/textiles') }}">
+                        <a href="{{ url('/applications/textiles/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/textiles.jpg') }}" alt="Textiles" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/textiles.jpg';">
                             </div>
@@ -1079,7 +1079,7 @@
                     </div>
                     <!-- 3. Leather -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/leather') }}">
+                        <a href="{{ url('/applications/leather/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/lather.jpg') }}" alt="Leather" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/lather.jpg';">
                             </div>
@@ -1088,7 +1088,7 @@
                     </div>
                     <!-- 4. Petroleum & Lubricants -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/petroleum-lubricants') }}">
+                        <a href="{{ url('/applications/petroleum-lubricants/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/petroleum_and_lubricant.jpg') }}" alt="Petroleum & Lubricants" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/petroleum_and_lubricant.jpg';">
                             </div>
@@ -1097,7 +1097,7 @@
                     </div>
                     <!-- 5. Paper & Pulp -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/paper-pulp') }}">
+                        <a href="{{ url('/applications/paper-pulp/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/paper_and_pulp.jpg') }}" alt="Paper & Pulp" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/paper_and_pulp.jpg';">
                             </div>
@@ -1106,7 +1106,7 @@
                     </div>
                     <!-- 6. Printing Inks -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/printing-inks') }}">
+                        <a href="{{ url('/applications/printing-inks/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/ink_industry.jpg') }}" alt="Printing Inks" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/ink_industry.jpg';">
                             </div>
@@ -1115,7 +1115,7 @@
                     </div>
                     <!-- 7. Food Drug & Cosmetics -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/food-drug-cosmetics') }}">
+                        <a href="{{ url('/applications/food-drug-cosmetics/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/food_drug_app-1.jpg') }}" alt="Food Drug & Cosmetics" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/food_drug_app-1.jpg';">
                             </div>
@@ -1124,7 +1124,7 @@
                     </div>
                     <!-- 8. Coatings -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/coating') }}">
+                        <a href="{{ url('/applications/coating/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/coating_dyes.jpg') }}" alt="Coatings" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/coating_dyes.jpg';">
                             </div>
@@ -1133,7 +1133,7 @@
                     </div>
                     <!-- 9. Wood Stains -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/wood-stains') }}">
+                        <a href="{{ url('/applications/wood-stains/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/wood_stain_treatment.jpg') }}" alt="Wood Stains" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/wood_stain_treatment.jpg';">
                             </div>
@@ -1142,7 +1142,7 @@
                     </div>
                     <!-- 10. Smoke Dyes -->
                     <div class="industry-card-item">
-                        <a href="{{ url('/applications/smoke-dyes') }}">
+                        <a href="{{ url('/applications/smoke-dyes/') }}">
                             <div class="industry-image-wrap">
                                 <img src="{{ asset('uploads/2020/07/smoke-dyes.jpg') }}" alt="Smoke Dyes" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2020/07/smoke-dyes.jpg';">
                             </div>

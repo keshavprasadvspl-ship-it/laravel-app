@@ -19,7 +19,7 @@ class FallbackController extends Controller
         // Normalize spaces or pluses into hyphens for canonical SEO URLs
         if (preg_match('/[\s+]/', $cleanSlug)) {
             $normalizedSlug = preg_replace('/[\s+]+/', '-', $cleanSlug);
-            return redirect('/' . $normalizedSlug, 301);
+            return redirect('/' . $normalizedSlug . '/', 301);
         }
 
         // 1. Check SEO Redirects first
@@ -58,7 +58,7 @@ class FallbackController extends Controller
             'paper-and-pulp', 'food-drugs-cosmetics', 'wood-stain', 'smoke-dye'
         ];
         if (in_array($cleanSlug, $applicationSlugs)) {
-            return redirect('/applications/' . $cleanSlug, 301);
+            return redirect('/applications/' . $cleanSlug . '/', 301);
         }
 
         // 2. Check Exact Product
@@ -111,13 +111,13 @@ class FallbackController extends Controller
         foreach ($suffixes as $suffix) {
             $candidate = Product::where('slug', $cleanSlug . $suffix)->where('status', 'publish')->first();
             if ($candidate) {
-                return redirect('/' . $candidate->slug, 301);
+                return redirect('/' . $candidate->slug . '/', 301);
             }
             if (str_ends_with($cleanSlug, $suffix)) {
                 $stripped = substr($cleanSlug, 0, -strlen($suffix));
                 $candidate = Product::where('slug', $stripped)->where('status', 'publish')->first();
                 if ($candidate) {
-                    return redirect('/' . $candidate->slug, 301);
+                    return redirect('/' . $candidate->slug . '/', 301);
                 }
             }
         }
@@ -125,13 +125,13 @@ class FallbackController extends Controller
         // Broad partial match (e.g. altura-red -> altura-red-f-d-c-colours)
         $candidate = Product::where('slug', 'like', $cleanSlug . '-%')->where('status', 'publish')->first();
         if ($candidate) {
-            return redirect('/' . $candidate->slug, 301);
+            return redirect('/' . $candidate->slug . '/', 301);
         }
 
-        // 6. Check Blog / Post (Redirect to canonical /blogs/{slug})
+        // 6. Check Blog / Post (Redirect to canonical /blogs/{slug}/)
         $post = Post::where('slug', $cleanSlug)->first();
         if ($post) {
-            return redirect('/blogs/' . $cleanSlug, 301);
+            return redirect('/blogs/' . $cleanSlug . '/', 301);
         }
 
         // 6. If not found, return custom branded 404

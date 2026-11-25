@@ -13,10 +13,14 @@
     RewriteCond %{HTTP:x-xsrf-token} .
     RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
-    # Redirect Trailing Slashes If Not A Folder (Disabled to allow WP-style trailing slash URL compatibility)
-    # RewriteCond %{REQUEST_FILENAME} !-d
-    # RewriteCond %{REQUEST_URI} (.+)/$
-    # RewriteRule ^ %1 [L,R=301]
+    # Force Trailing Slash on All Public URLs (Matching WordPress / SD International)
+    RewriteCond %{REQUEST_METHOD} !^(POST|PUT|DELETE|PATCH)$ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/(api|webhook|system|uploads|wp-content|admin) [NC]
+    RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteRule ^(.*)$ /$1/ [L,R=301]
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d

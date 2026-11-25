@@ -39,7 +39,7 @@ class ProductController extends Controller
             'site_name' => 'S D International',
             'title' => 'Products Catalog | Dyes, Pigments, Intermediates | SD International',
             'description' => 'Explore our complete catalog of industrial Dyes, Pigments, Food Colours, Naphthols, Fast Bases and chemical intermediates manufactured by SD International.',
-            'canonical' => url('/products'),
+            'canonical' => url('/products/'),
             'og_image' => 'https://sdinternational.com/wp-content/uploads/2020/07/logo.png',
             'og_type' => 'website',
             'robots' => 'index,follow',
@@ -94,7 +94,7 @@ class ProductController extends Controller
         $seo = SeoHelper::generateTags($product, [
             'title' => "{$product->title} | CAS no {$product->cas_number} manufacturer, exporter, supplier in Mumbai- India",
             'description' => $product->short_description ?: "Buy high purity {$product->title} from SD International - leading manufacturer, supplier and exporter in India.",
-            'canonical' => url('/' . $product->slug),
+            'canonical' => url('/' . $product->slug . '/'),
             'og_image' => $product->thumbnail_url,
             'og_type' => 'product',
         ]);
@@ -119,11 +119,11 @@ class ProductController extends Controller
                 $c = $c->parent;
             }
             foreach (array_reverse($catAncestors) as $anc) {
-                $breadcrumbs[$anc->name] = url('/' . $anc->slug);
+                $breadcrumbs[$anc->name] = url('/' . $anc->slug . '/');
             }
-            $breadcrumbs[$primaryCat->name] = url('/' . $primaryCat->slug);
+            $breadcrumbs[$primaryCat->name] = url('/' . $primaryCat->slug . '/');
         }
-        $breadcrumbs[$product->title] = url('/' . $product->slug);
+        $breadcrumbs[$product->title] = url('/' . $product->slug . '/');
 
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
         $productSchema = SeoHelper::productSchema($product);

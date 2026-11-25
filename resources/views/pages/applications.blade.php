@@ -424,7 +424,7 @@
 				<div class="elementor-element elementor-element-2609bdb9 elementor-align-center elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-button" data-id="2609bdb9" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="/applications/leather" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink" role="button">
+			<a href="/applications/leather/" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink" role="button">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Click here</span>
 		</span>
@@ -447,7 +447,7 @@
 				<div class="elementor-element elementor-element-8625905 elementor-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="8625905" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="/applications/leather" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink" role="button">
+			<a href="/applications/leather/" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink" role="button">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Click here</span>
 		</span>
@@ -496,7 +496,7 @@
 				<div class="elementor-element elementor-element-799c3a95 elementor-align-center elementor-widget elementor-widget-button" data-id="799c3a95" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="/applications/paint" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink" role="button">
+			<a href="/applications/paint/" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink" role="button">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Click here</span>
 		</span>

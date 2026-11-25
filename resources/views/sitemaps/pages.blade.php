@@ -7,19 +7,19 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>{{ url('/products') }}</loc>
+        <loc>{{ url('/products/') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>{{ url('/blogs') }}</loc>
+        <loc>{{ url('/blogs/') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>{{ url('/contact-us') }}</loc>
+        <loc>{{ url('/contact-us/') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -40,7 +40,7 @@
         }
     @endphp
     <url>
-        <loc>{{ $pageUrl }}</loc>
+        <loc>{{ rtrim($pageUrl, '/') . '/' }}</loc>
         <lastmod>{{ optional($page->updated_at)->toAtomString() ?: now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

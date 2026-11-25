@@ -33,7 +33,7 @@ class Category extends Model
 
     public function getUrlAttribute(): string
     {
-        return url('/' . $this->slug);
+        return url('/' . $this->slug . '/');
     }
 
     public function getFeaturedImageUrlAttribute(): string

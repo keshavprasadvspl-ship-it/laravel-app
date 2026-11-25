@@ -275,7 +275,7 @@
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span>
-                        <a href="{{ url('/' . $cat['slug']) }}" class="bellows-title-link" onclick="event.stopPropagation()">
+                        <a href="{{ url('/' . $cat['slug'] . '/') }}" class="bellows-title-link" onclick="event.stopPropagation()">
                             {{ $catKey }}
                         </a>
                     </div>
@@ -296,7 +296,7 @@
                                                 <polyline points="6 9 12 15 18 9"></polyline>
                                             </svg>
                                         </span>
-                                        <a href="{{ url('/' . $sub['slug']) }}" class="bellows-sub-link {{ $isSubActive ? 'active' : '' }}" onclick="event.stopPropagation()">
+                                        <a href="{{ url('/' . $sub['slug'] . '/') }}" class="bellows-sub-link {{ $isSubActive ? 'active' : '' }}" onclick="event.stopPropagation()">
                                             {{ $subKey }}
                                         </a>
                                     </div>
@@ -307,7 +307,7 @@
                                                 $isProdActive = ($activeTargetSlug === $prod['slug']);
                                             @endphp
                                             <li class="bellows-prod-item">
-                                                <a href="{{ url('/' . $prod['slug']) }}" class="bellows-prod-link {{ $isProdActive ? 'active' : '' }}" title="{{ $prod['name'] }}">
+                                                <a href="{{ url('/' . $prod['slug'] . '/') }}" class="bellows-prod-link {{ $isProdActive ? 'active' : '' }}" title="{{ $prod['name'] }}">
                                                     {{ $prod['name'] }}
                                                 </a>
                                             </li>
@@ -315,7 +315,7 @@
                                     </ul>
                                 @else
                                     <div class="bellows-sub-header no-children">
-                                        <a href="{{ url('/' . $sub['slug']) }}" class="bellows-sub-link {{ $isSubActive ? 'active' : '' }}">
+                                        <a href="{{ url('/' . $sub['slug'] . '/') }}" class="bellows-sub-link {{ $isSubActive ? 'active' : '' }}">
                                             {{ $subKey }}
                                         </a>
                                     </div>

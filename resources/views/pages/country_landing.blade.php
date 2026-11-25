@@ -621,7 +621,7 @@
             <a href="{{ url('/') }}">Home</a>
             @if(!empty($parentSection))
                 <span class="separator">/</span>
-                <a href="{{ url('/' . $parentSection['slug']) }}">{{ $parentSection['title'] }}</a>
+                <a href="{{ url('/' . $parentSection['slug'] . '/') }}">{{ $parentSection['title'] }}</a>
             @endif
             <span class="separator">/</span>
             <span>{{ $page->title }}</span>

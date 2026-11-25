@@ -57,6 +57,14 @@ class SeoHelper
         $metaDescription = preg_replace('/%[a-zA-Z0-9_-]+%/', '', $metaDescription);
         $metaDescription = trim(preg_replace('/\s+/', ' ', $metaDescription));
 
+        // Ensure canonical and URL have trailing slash matching WordPress / SD International
+        if ($canonical && !str_ends_with($canonical, '/') && !preg_match('/\.[a-zA-Z0-9]{2,5}$/', parse_url($canonical, PHP_URL_PATH) ?? '')) {
+            $canonical = rtrim($canonical, '/') . '/';
+        }
+        if ($currentUrl && !str_ends_with($currentUrl, '/') && !preg_match('/\.[a-zA-Z0-9]{2,5}$/', parse_url($currentUrl, PHP_URL_PATH) ?? '')) {
+            $currentUrl = rtrim($currentUrl, '/') . '/';
+        }
+
         return [
             'site_name' => $siteName,
             'title' => $metaTitle,
@@ -75,11 +83,15 @@ class SeoHelper
         $elements = [];
         $pos = 1;
         foreach ($items as $name => $url) {
+            $itemUrl = $url;
+            if ($itemUrl && !str_ends_with($itemUrl, '/') && !preg_match('/\.[a-zA-Z0-9]{2,5}$/', parse_url($itemUrl, PHP_URL_PATH) ?? '')) {
+                $itemUrl = rtrim($itemUrl, '/') . '/';
+            }
             $elements[] = [
                 '@type' => 'ListItem',
                 'position' => $pos++,
                 'item' => [
-                    '@id' => $url,
+                    '@id' => $itemUrl,
                     'name' => $name,
                 ],
             ];

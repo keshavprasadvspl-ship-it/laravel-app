@@ -16,7 +16,7 @@ class HandleRankMathRedirects
         // Check if legacy /product/{slug}
         if (str_starts_with($path, 'product/')) {
             $productSlug = substr($path, strlen('product/'));
-            return redirect('/' . $productSlug, 301);
+            return redirect('/' . trim($productSlug, '/') . '/', 301);
         }
 
         // Check against redirects database
@@ -29,6 +29,9 @@ class HandleRankMathRedirects
             $destination = $redirect->destination_url;
             if (!str_starts_with($destination, 'http://') && !str_starts_with($destination, 'https://')) {
                 $destination = '/' . ltrim($destination, '/');
+            }
+            if (!str_ends_with($destination, '/') && !preg_match('/\.[a-zA-Z0-9]{2,5}$/', parse_url($destination, PHP_URL_PATH) ?? '')) {
+                $destination = rtrim($destination, '/') . '/';
             }
             return redirect($destination, $redirect->status_code ?: 301);
         }

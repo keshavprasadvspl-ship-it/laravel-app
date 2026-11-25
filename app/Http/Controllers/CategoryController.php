@@ -156,7 +156,7 @@ class CategoryController extends Controller
         $seo = SeoHelper::generateTags($category, [
             'title' => $seoTitle,
             'description' => $seoDesc,
-            'canonical' => url('/' . $category->slug),
+            'canonical' => url('/' . $category->slug . '/'),
             'og_type' => 'website',
         ]);
 
@@ -173,10 +173,10 @@ class CategoryController extends Controller
         }
 
         foreach (array_reverse($ancestors) as $anc) {
-            $breadcrumbs[$anc->name] = url('/' . $anc->slug);
+            $breadcrumbs[$anc->name] = url('/' . $anc->slug . '/');
         }
 
-        $breadcrumbs[$category->name] = url('/' . $category->slug);
+        $breadcrumbs[$category->name] = url('/' . $category->slug . '/');
 
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
         $allCategories = Category::getSidebarCategories();

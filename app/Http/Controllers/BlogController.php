@@ -14,8 +14,8 @@ class BlogController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         $canonical = $posts->currentPage() > 1 
-            ? url('/blogs/page/' . $posts->currentPage()) 
-            : url('/blogs');
+            ? url('/blogs/page/' . $posts->currentPage() . '/') 
+            : url('/blogs/');
 
         $seo = [
             'site_name' => 'S D International',
@@ -32,7 +32,7 @@ class BlogController extends Controller
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Blogs' => url('/blogs'),
+            'Blogs' => url('/blogs/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -80,15 +80,15 @@ class BlogController extends Controller
         $seo = SeoHelper::generateTags($post, [
             'title' => "{$post->title} | SD International",
             'description' => $post->excerpt ?: substr(strip_tags($post->content), 0, 160),
-            'canonical' => url('/blogs/' . $post->slug),
+            'canonical' => url('/blogs/' . $post->slug . '/'),
             'og_image' => $post->image_url ?: 'https://sdinternational.com/wp-content/uploads/2020/07/logo.png',
             'og_type' => 'article',
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Blogs' => url('/blogs'),
-            $post->title => url('/blogs/' . $post->slug),
+            'Blogs' => url('/blogs/'),
+            $post->title => url('/blogs/' . $post->slug . '/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 

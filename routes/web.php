@@ -117,7 +117,7 @@ Route::get('/products/{slug}/tds', [ProductController::class, 'tds'])->name('pro
 Route::get('/product/{slug}', function ($slug) {
     $parts = explode('/', trim($slug, '/'));
     $productSlug = array_pop($parts);
-    return redirect('/' . $productSlug, 301);
+    return redirect('/' . $productSlug . '/', 301);
 })->where('slug', '.*');
 Route::get('/api/products/search', [ProductController::class, 'searchApi'])->name('api.products.search');
 
@@ -132,20 +132,20 @@ Route::get('/sample-request', [PageController::class, 'requestQuote'])->name('sa
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/page/{page}', function($page) {
     if ((int)$page <= 1) {
-        return redirect()->route('blogs.index', [], 301);
+        return redirect('/blogs/', 301);
     }
     request()->merge(['page' => $page]);
     return app(BlogController::class)->index();
 })->where('page', '[0-9]+');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 Route::get('/blog/{slug}', function($slug) {
-    return redirect('/blogs/' . trim($slug, '/'), 301);
+    return redirect('/blogs/' . trim($slug, '/') . '/', 301);
 });
 Route::get('/blog', function() {
-    return redirect()->route('blogs.index', [], 301);
+    return redirect('/blogs/', 301);
 });
 Route::get('/uncategorized/{slug}', function($slug) {
-    return redirect('/blogs/' . trim($slug, '/'), 301);
+    return redirect('/blogs/' . trim($slug, '/') . '/', 301);
 });
 
 // 6. Inquiries Form submissions (Contact, Quote, Sample)
@@ -165,10 +165,12 @@ Route::get('/robots.txt', [SitemapController::class, 'robots']);
 Route::get('/applications', [PageController::class, 'applications'])->name('applications.index');
 Route::get('/applications/{slug}', [PageController::class, 'showApplication'])->name('applications.show');
 Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about.index');
-Route::get('/about', [PageController::class, 'aboutUs']);
-Route::get('/certifications', [PageController::class, 'certifications'])->name('certifications.index');
-Route::get('/sustainability', [PageController::class, 'sustainability'])->name('sustainability.index');
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/about', function() {
+    return redirect('/about-us/', 301);
+});
+Route::get('/contact', function() {
+    return redirect('/contact-us/', 301);
+});
 Route::get('/contact-us', [PageController::class, 'contact'])->name('contact-us');
 
 // 8b. International Country Landing Pages (5 Families x 39 Countries)

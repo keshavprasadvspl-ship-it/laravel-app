@@ -48,12 +48,12 @@ class PageController extends Controller
         $seo = SeoHelper::generateTags($page, [
             'title' => "{$page->title} | SD International",
             'description' => "Learn more about {$page->title} at SD International - premier manufacturer and global exporter of industrial dyes and chemicals.",
-            'canonical' => url('/' . $page->slug),
+            'canonical' => url('/' . $page->slug . '/'),
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            $page->title => url('/' . $page->slug),
+            $page->title => url('/' . $page->slug . '/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -67,12 +67,12 @@ class PageController extends Controller
         $seo = SeoHelper::generateTags($page, [
             'title' => 'Industrial Colorant Applications | Textiles, Plastics, Inks, Paints | SD International',
             'description' => 'Discover tailored color chemistry and industrial applications for Vat Dyes, Solvent Dyes, Pigments and Food Colours across Textiles, Plastics, Inks, Paints, Paper, and Food industries.',
-            'canonical' => url('/applications'),
+            'canonical' => url('/applications/'),
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Applications' => url('/applications'),
+            'Applications' => url('/applications/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -188,13 +188,13 @@ class PageController extends Controller
         $seo = SeoHelper::generateTags($page, [
             'title' => "{$page->title} Applications | SD International",
             'description' => "Explore {$page->title} industrial colorant applications at SD International.",
-            'canonical' => url('/applications/' . $cleanSlug),
+            'canonical' => url('/applications/' . $cleanSlug . '/'),
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Applications' => url('/applications'),
-            $page->title => url('/applications/' . $cleanSlug),
+            'Applications' => url('/applications/'),
+            $page->title => url('/applications/' . $cleanSlug . '/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -208,12 +208,12 @@ class PageController extends Controller
         $seo = SeoHelper::generateTags($page, [
             'title' => 'Sustainability | Social & Environmental Responsibility | SD International',
             'description' => 'SD International is committed to sustainable chemical manufacturing, environmental responsibility, and maintaining healthy communities with eco-friendly dyes and pigments.',
-            'canonical' => url('/sustainability'),
+            'canonical' => url('/sustainability/'),
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Sustainability' => url('/sustainability'),
+            'Sustainability' => url('/sustainability/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -227,12 +227,12 @@ class PageController extends Controller
         $seo = SeoHelper::generateTags($page, [
             'title' => 'Certifications | ISO 9001:2015 & Export House | SD International',
             'description' => 'SD International is an ISO 9001:2015 Certified company, recognized Two Star Export House, and AEO-T1 Certified exporter by the Ministry of Finance & Commerce, India.',
-            'canonical' => url('/certifications'),
+            'canonical' => url('/certifications/'),
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Certifications' => url('/certifications'),
+            'Certifications' => url('/certifications/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -246,12 +246,12 @@ class PageController extends Controller
         $seo = SeoHelper::generateTags($page, [
             'title' => 'About Us | SD International - Leading Dyes & Chemicals Manufacturer',
             'description' => 'S D International is an ISO 9001: 2015-Certified premier dyes & chemicals manufacturer and supplier offering a vast portfolio of Colorants to customers across 50+ countries.',
-            'canonical' => url('/about-us'),
+            'canonical' => url('/about-us/'),
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'About Us' => url('/about-us'),
+            'About Us' => url('/about-us/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -265,12 +265,12 @@ class PageController extends Controller
         $seo = SeoHelper::generateTags($page, [
             'title' => 'Contact Us | SD International - Vat & Solvent Dyes Manufacturer in India',
             'description' => 'Get in touch with SD International for high quality Vat Dyes, Solvent Dyes, Pigments, and Food Colours. Contact: +91 99206 69561 / info@sdinternational.com',
-            'canonical' => url('/contact-us'),
+            'canonical' => url('/contact-us/'),
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Contact Us' => url('/contact-us'),
+            'Contact Us' => url('/contact-us/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -291,7 +291,7 @@ class PageController extends Controller
             'site_name' => 'S D International',
             'title' => 'Request Commercial Quotation & Free Lab Sample | SD International Mumbai',
             'description' => 'Submit your technical specifications for bulk FOB/CIF pricing, laboratory test samples (50g-500g), Technical Data Sheets (TDS), and Material Safety Data Sheets (MSDS).',
-            'canonical' => url('/request-quote'),
+            'canonical' => url('/request-quote/'),
             'og_image' => 'https://sdinternational.com/wp-content/uploads/2020/07/logo.png',
             'og_type' => 'website',
             'robots' => 'index,follow',
@@ -300,7 +300,7 @@ class PageController extends Controller
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Request a Quote' => url('/request-quote'),
+            'Request a Quote' => url('/request-quote/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
@@ -381,7 +381,7 @@ class PageController extends Controller
             'title' => $sectionTitles[$prefix] ?? ucwords(str_replace('-', ' ', $prefix)),
         ];
 
-        $canonicalUrl = url('/' . $prefix . '/' . $page->slug);
+        $canonicalUrl = url('/' . $prefix . '/' . $page->slug . '/');
         $seo = SeoHelper::generateTags($page, [
             'title' => "{$page->title} | SD International",
             'description' => "SD International is a premier manufacturer, supplier, and exporter of {$page->title}. Browse high-grade products, technical specifications, and request quotes.",
@@ -390,7 +390,7 @@ class PageController extends Controller
 
         $breadcrumbs = [
             'Home' => url('/'),
-            $parentSection['title'] => url('/' . $parentSection['slug']),
+            $parentSection['title'] => url('/' . $parentSection['slug'] . '/'),
             $page->title => $canonicalUrl,
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
@@ -416,7 +416,7 @@ class PageController extends Controller
                 'slug' => $sib->slug,
                 'title' => $sib->title,
                 'country_name' => $countryName,
-                'url' => '/' . $prefix . '/' . $sib->slug,
+                'url' => '/' . $prefix . '/' . $sib->slug . '/',
                 'is_current' => $sib->slug === $page->slug,
             ];
         }

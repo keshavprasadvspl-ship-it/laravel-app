@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'api/*',
         ]);
         $middleware->web(append: [
+            \App\Http\Middleware\EnsureTrailingSlash::class,
             \App\Http\Middleware\HandleRankMathRedirects::class,
         ]);
     })
