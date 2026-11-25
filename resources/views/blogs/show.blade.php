@@ -11,6 +11,10 @@
     }
     .elementor-13570 .elementor-element-f5efd57 {
         margin: 20px 0 25px;
+        text-align: left !important;
+    }
+    .elementor-13570 .elementor-element-f5efd57 .elementor-widget-container {
+        text-align: left !important;
     }
     .elementor-13570 .elementor-element-f5efd57 .elementor-heading-title {
         color: #870B28 !important;
@@ -19,7 +23,7 @@
         font-weight: 600 !important;
         line-height: 1.3 !important;
         margin: 0 !important;
-        text-align: left;
+        text-align: left !important;
     }
     .elementor-13570 .elementor-element-3fe7c4b {
         margin-bottom: 35px;
@@ -47,29 +51,34 @@
         margin-top: 0 !important;
         margin-bottom: 22px !important;
     }
-    .elementor-13570 .elementor-element-b5b2aa4 h2 {
+    .elementor-13570 .elementor-element-b5b2aa4 h2,
+    .elementor-13570 .elementor-element-b5b2aa4 h2 *,
+    .elementor-13570 .elementor-element-b5b2aa4 h3,
+    .elementor-13570 .elementor-element-b5b2aa4 h3 *,
+    .elementor-13570 .elementor-element-b5b2aa4 h4,
+    .elementor-13570 .elementor-element-b5b2aa4 h4 *,
+    .elementor-13570 .elementor-element-b5b2aa4 h5,
+    .elementor-13570 .elementor-element-b5b2aa4 h5 *,
+    .elementor-13570 .elementor-element-b5b2aa4 h6,
+    .elementor-13570 .elementor-element-b5b2aa4 h6 * {
         font-family: "Poppins", "Montserrat", sans-serif !important;
-        color: #000000 !important;
+        color: #951634 !important;
+        font-weight: 600 !important;
+    }
+    .elementor-13570 .elementor-element-b5b2aa4 h2 {
         font-size: 26px !important;
-        font-weight: 700 !important;
         line-height: 1.35 !important;
         margin-top: 36px !important;
         margin-bottom: 16px !important;
     }
     .elementor-13570 .elementor-element-b5b2aa4 h3 {
-        font-family: "Poppins", "Montserrat", sans-serif !important;
-        color: #000000 !important;
         font-size: 20px !important;
-        font-weight: 700 !important;
         line-height: 1.4 !important;
         margin-top: 28px !important;
         margin-bottom: 14px !important;
     }
     .elementor-13570 .elementor-element-b5b2aa4 h4 {
-        font-family: "Poppins", "Montserrat", sans-serif !important;
-        color: #000000 !important;
         font-size: 18px !important;
-        font-weight: 700 !important;
         line-height: 1.4 !important;
         margin-top: 24px !important;
         margin-bottom: 12px !important;
@@ -87,20 +96,29 @@
         margin-bottom: 10px !important;
         line-height: 1.75 !important;
     }
-    .elementor-13570 .elementor-element-b5b2aa4 a {
-        color: #64141F !important;
-        text-decoration: none !important;
+    .elementor-13570 .elementor-element-b5b2aa4 a,
+    .elementor-13570 .elementor-element-b5b2aa4 a * {
+        color: #0073aa !important;
+        text-decoration: underline !important;
         font-weight: 600 !important;
         transition: color 0.2s ease !important;
     }
-    .elementor-13570 .elementor-element-b5b2aa4 a:hover {
-        color: #000000 !important;
+    .elementor-13570 .elementor-element-b5b2aa4 a:hover,
+    .elementor-13570 .elementor-element-b5b2aa4 a:hover * {
+        color: #005177 !important;
         text-decoration: underline !important;
+    }
+    .elementor-13570 .elementor-element-b5b2aa4 mark,
+    .elementor-13570 .elementor-element-b5b2aa4 .highlight {
+        background-color: #fff2a8 !important;
+        color: #951634 !important;
+        padding: 2px 4px !important;
+        font-weight: 600 !important;
     }
     .elementor-13570 .elementor-element-b5b2aa4 b,
     .elementor-13570 .elementor-element-b5b2aa4 strong {
         font-weight: 600 !important;
-        color: #111111 !important;
+        color: #111111;
     }
     .elementor-13570 .elementor-element-b5b2aa4 table {
         width: 100% !important;
