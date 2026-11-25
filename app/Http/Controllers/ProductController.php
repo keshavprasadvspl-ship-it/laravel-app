@@ -73,7 +73,7 @@ class ProductController extends Controller
                 'id' => $p->id,
                 'title' => $p->title,
                 'slug' => $p->slug,
-                'url' => url('/' . $p->slug),
+                'url' => slash_url($p->slug),
                 'cas_number' => $p->cas_number,
                 'ci_number' => $p->ci_number,
                 'category' => $cat ? $cat->name : null,

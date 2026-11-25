@@ -247,11 +247,11 @@
                 </div>
 
                 <!-- Search form -->
-                <form action="{{ url('/products') }}" method="GET" style="display: flex; gap: 8px;">
+                <form action="{{ slash_url('/products') }}" method="GET" style="display: flex; gap: 8px;">
                     @if(request('category'))
                         <input type="hidden" name="category" value="{{ request('category') }}">
                     @endif
-                    <input type="text" name="q" value="{{ request('q') }}" class="form-control" placeholder="Search product or CAS..." style="width: 220px;">
+                    <input type="text" name="s" value="{{ request('s') ?? request('q') }}" class="form-control" placeholder="Search product or CAS..." style="width: 220px;">
                     <button type="submit" class="btn-submit" style="width: auto; padding: 0 16px;">Filter</button>
                 </form>
             </div>
@@ -260,13 +260,13 @@
                 <div style="background: #f8fafc; padding: 40px; text-align: center; border-radius: 8px;">
                     <h3>No products found matching your criteria</h3>
                     <p style="color: #64748b; margin: 10px 0 20px;">Try searching with different keywords or clearing your filter.</p>
-                    <a href="{{ url('/products') }}" class="btn-enquire">Reset Catalog</a>
+                    <a href="{{ slash_url('/products') }}" class="btn-enquire">Reset Catalog</a>
                 </div>
             @else
                 <div class="catalog-grid">
                     @foreach($products as $prod)
                     <div class="product-catalog-card">
-                        <a href="{{ url('/' . $prod->slug) }}" class="prod-thumb">
+                        <a href="{{ slash_url($prod->slug) }}" class="prod-thumb">
                             @if($prod->image_url)
                                 <img src="{{ $prod->image_url }}" alt="{{ $prod->title }}" loading="lazy">
                             @else
@@ -275,13 +275,13 @@
                         </a>
                         <div class="prod-info">
                             <div>
-                                <a href="{{ url('/' . $prod->slug) }}" class="prod-name">{{ $prod->title }}</a>
+                                <a href="{{ slash_url($prod->slug) }}" class="prod-name">{{ $prod->title }}</a>
                                 @if($prod->cas_number)
                                     <div class="prod-cas-tag">CAS: {{ $prod->cas_number }}</div>
                                 @endif
                             </div>
                             <div class="prod-card-actions">
-                                <a href="{{ url('/' . $prod->slug) }}" style="font-size: 13px; font-weight: 600;">Details →</a>
+                                <a href="{{ slash_url($prod->slug) }}" style="font-size: 13px; font-weight: 600;">Details →</a>
                                 <button type="button" class="btn-card-quote" onclick="openQuoteModal('{{ addslashes($prod->title) }}', '{{ $prod->slug }}')">Get Quote</button>
                             </div>
                         </div>

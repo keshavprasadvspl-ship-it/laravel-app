@@ -2204,14 +2204,15 @@ function googleTranslateElementInit() {
 							<div class="elementor-widget-wrap">
 						<div class="elementor-element elementor-element-18d08e4 elementor-search-form--skin-classic elementor-search-form--button-type-icon elementor-search-form--icon-search elementor-widget elementor-widget-search-form" data-id="18d08e4" data-element_type="widget" data-settings="{&quot;skin&quot;:&quot;classic&quot;,&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="search-form.default">
 				<div class="elementor-widget-container">
-					<form class="elementor-search-form" role="search" action="https://sdinternational.com" method="get">
+					<form class="elementor-search-form" role="search" action="{{ slash_url('/products') }}" method="get" style="position: relative;">
 									<div class="elementor-search-form__container">
-								<input placeholder="Search..." class="elementor-search-form__input" type="search" name="s" title="Search" value="">
+								<input placeholder="Search..." class="elementor-search-form__input" type="search" name="s" title="Search" value="{{ request('s') ?? request('q') ?? '' }}" autocomplete="off">
 													<button class="elementor-search-form__submit" type="submit" title="Search" aria-label="Search">
 													<i class="fa fa-search" aria-hidden="true"></i>
 							<span class="elementor-screen-only">Search</span>
 											</button>
 											</div>
+									<div class="header-search-results-dropdown" style="display: none; position: absolute; top: calc(100% + 4px); right: 0; left: 0; min-width: 280px; max-height: 380px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.18); overflow-y: auto; z-index: 999999; text-align: left;"></div>
 		</form>
 				</div>
 				</div>
@@ -2230,7 +2231,7 @@ function googleTranslateElementInit() {
 						<div class="elementor-element elementor-element-6318580 elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="6318580" data-element_type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="theme-site-logo.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-													<a href="https://sdinternational.com">
+													<a href="{{ slash_url('/') }}">
 							<img width="300" height="91" src="/uploads/2020/07/logo-180x55.png" class="attachment-full size-full" alt="" srcset="/uploads/2020/07/logo.png 300w, /uploads/2020/07/logo-120x36.png 120w, /uploads/2020/07/logo-64x19.png 64w, /uploads/2020/07/logo-180x55.png 180w" sizes="(max-width: 300px) 100vw, 300px" />								</a>
 														</div>
 						</div>
@@ -3247,6 +3248,76 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }, { threshold: 0.2 });
         counters.forEach(c => observer.observe(c));
+    }
+
+    // Header search live autocomplete
+    const searchForm = document.querySelector('.elementor-search-form');
+    if (searchForm) {
+        const searchInput = searchForm.querySelector('.elementor-search-form__input');
+        const searchDropdown = searchForm.querySelector('.header-search-results-dropdown');
+        let searchTimer = null;
+
+        if (searchInput && searchDropdown) {
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimer);
+                const query = this.value.trim();
+                if (query.length < 2) {
+                    searchDropdown.style.display = 'none';
+                    searchDropdown.innerHTML = '';
+                    return;
+                }
+
+                searchTimer = setTimeout(() => {
+                    fetch('/api/products/search?q=' + encodeURIComponent(query))
+                        .then(r => r.json())
+                        .then(items => {
+                            if (!items || items.length === 0) {
+                                searchDropdown.innerHTML = '<div style="padding: 12px 16px; font-size: 13px; color: #64748b;">No products found for "' + query.replace(/</g, '&lt;') + '". Press Enter to search catalog.</div>';
+                                searchDropdown.style.display = 'block';
+                                return;
+                            }
+
+                            let html = '<div style="padding: 6px 0;">';
+                            items.forEach(item => {
+                                html += '<a href="' + item.url + '" style="display: flex; align-items: center; gap: 10px; padding: 8px 14px; text-decoration: none; color: #1e293b; border-bottom: 1px solid #f1f5f9; transition: background 0.15s;" onmouseover="this.style.background=\'#f8fafc\'" onmouseout="this.style.background=\'transparent\'">';
+                                if (item.image_url) {
+                                    html += '<img src="' + item.image_url + '" alt="" style="width: 34px; height: 34px; object-fit: cover; border-radius: 4px; border: 1px solid #e2e8f0; flex-shrink: 0;" onerror="this.style.display=\'none\'">';
+                                }
+                                html += '<div style="min-width: 0; flex: 1;">';
+                                html += '<div style="font-size: 13px; font-weight: 600; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #64141f;">' + item.title + '</div>';
+                                let meta = [];
+                                if (item.category) meta.push(item.category);
+                                if (item.cas_number) meta.push('CAS: ' + item.cas_number);
+                                if (meta.length > 0) {
+                                    html += '<div style="font-size: 11.5px; color: #64748b; margin-top: 2px;">' + meta.join(' &bull; ') + '</div>';
+                                }
+                                html += '</div>';
+                                html += '</a>';
+                            });
+                            html += '<a href="/products/?s=' + encodeURIComponent(query) + '" style="display: block; text-align: center; padding: 10px; background: #fafafa; font-size: 12.5px; font-weight: 600; color: #64141f; text-decoration: none; border-top: 1px solid #e2e8f0;">View all results for "' + query.replace(/</g, '&lt;') + '" &rarr;</a>';
+                            html += '</div>';
+
+                            searchDropdown.innerHTML = html;
+                            searchDropdown.style.display = 'block';
+                        })
+                        .catch(() => {
+                            searchDropdown.style.display = 'none';
+                        });
+                }, 250);
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!searchForm.contains(e.target)) {
+                    searchDropdown.style.display = 'none';
+                }
+            });
+
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    searchDropdown.style.display = 'none';
+                }
+            });
+        }
     }
 });
 </script>

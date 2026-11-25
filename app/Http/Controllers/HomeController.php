@@ -11,8 +11,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->filled('s') || $request->filled('search') || $request->filled('q')) {
+            return app(ProductController::class)->index($request);
+        }
+
         $page = Page::where('slug', 'home')->first();
 
         $seo = SeoHelper::generateTags($page, [
