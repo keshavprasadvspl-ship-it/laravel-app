@@ -16,7 +16,7 @@ class Post extends Model
 
     public function getUrlAttribute(): string
     {
-        return url('/blogs/' . $this->slug . '/');
+        return slash_url('/blogs/' . $this->slug);
     }
 
     public function getFormattedContentAttribute(): string

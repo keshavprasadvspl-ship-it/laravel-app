@@ -26,7 +26,7 @@ class Product extends Model
 
     public function getUrlAttribute(): string
     {
-        return url('/' . $this->slug . '/');
+        return slash_url('/' . $this->slug);
     }
 
     public function getPrimaryCategoryAttribute(): ?Category

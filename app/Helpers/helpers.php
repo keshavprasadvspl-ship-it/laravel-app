@@ -107,4 +107,24 @@ if (!function_exists('wpautop')) {
     }
 }
 
+if (!function_exists('slash_url')) {
+    /**
+     * Generate an absolute URL with a mandatory trailing slash matching sdinternational.com 1:1,
+     * while preserving static file URLs (images, documents, etc.).
+     */
+    function slash_url(string $path = ''): string
+    {
+        $trimmed = trim($path);
+        if ($trimmed === '' || $trimmed === '/') {
+            return rtrim(url('/'), '/') . '/';
+        }
+        $full = url($trimmed);
+        $urlPath = parse_url($full, PHP_URL_PATH) ?? '';
+        if (preg_match('/\.[a-zA-Z0-9]{2,5}$/', $urlPath)) {
+            return $full;
+        }
+        return rtrim($full, '/') . '/';
+    }
+}
+
 

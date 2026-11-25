@@ -110,79 +110,6 @@
         text-transform: none !important;
     }
 
-    /* Products Range Sidebar Card */
-    .country-sidebar-card {
-        background-color: #f7f9fa;
-        border: 1px solid #eef2f5;
-        border-radius: 4px;
-        padding: 24px 22px;
-    }
-
-    .country-sidebar-title {
-        font-family: 'Poppins', sans-serif !important;
-        font-size: 18px !important;
-        font-weight: 700 !important;
-        color: #64141f !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.5px !important;
-        margin: 0 0 12px 0 !important;
-        line-height: 1.2 !important;
-    }
-
-    .country-sidebar-cat {
-        font-family: 'Poppins', sans-serif !important;
-        font-size: 16px !important;
-        font-weight: 700 !important;
-        color: #64141f !important;
-        text-transform: uppercase !important;
-        margin: 0 0 14px 0 !important;
-        line-height: 1.2 !important;
-    }
-
-    .country-sidebar-cat a {
-        color: #64141f !important;
-        text-decoration: none !important;
-    }
-
-    .country-sidebar-menu {
-        list-style: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    .country-sidebar-menu li {
-        padding: 7px 0 !important;
-        border-bottom: 1px solid #edf0f2 !important;
-        margin: 0 !important;
-    }
-
-    .country-sidebar-menu li:last-child {
-        border-bottom: none !important;
-    }
-
-    .country-sidebar-menu a {
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        color: #334155 !important;
-        font-size: 13.5px !important;
-        font-weight: 500 !important;
-        text-decoration: none !important;
-        transition: color 0.15s ease, transform 0.15s ease !important;
-    }
-
-    .country-sidebar-menu a:hover {
-        color: #64141f !important;
-        transform: translateX(2px) !important;
-    }
-
-    .country-sidebar-arrow {
-        color: #888888 !important;
-        font-size: 16px !important;
-        font-weight: bold !important;
-        line-height: 1 !important;
-    }
-
     /* Headings in Main Body */
     .country-page-wrap h1,
     .country-page-wrap h2,
@@ -649,26 +576,9 @@
             </div>
 
             <!-- Right Sidebar Column: PRODUCTS RANGE -->
-            @if(!empty($sidebarData['items']))
             <aside class="country-intro-sidebar">
-                <div class="country-sidebar-card">
-                    <h4 class="country-sidebar-title">PRODUCTS RANGE</h4>
-                    <h5 class="country-sidebar-cat">
-                        <a href="{{ $sidebarData['category_url'] ?? '#' }}">{{ $sidebarData['category'] ?? 'DYES' }}</a>
-                    </h5>
-                    <ul class="country-sidebar-menu">
-                        @foreach($sidebarData['items'] as $item)
-                            <li>
-                                <a href="{{ $item['url'] }}">
-                                    <span class="country-sidebar-arrow">&rsaquo;</span>
-                                    <span>{{ $item['title'] }}</span>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
+                @include('partials.products_range_sidebar', ['currentSlug' => $page->slug])
             </aside>
-            @endif
         </div>
 
         <!-- Main Product Content -->

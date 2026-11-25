@@ -18,16 +18,16 @@ class Page extends Model
     {
         $slug = $this->slug;
         if (str_starts_with($slug, 'dyes-supplier-in-')) {
-            return url('/dyes/' . $slug . '/');
+            return slash_url('/dyes/' . $slug);
         } elseif (str_starts_with($slug, 'pigments-supplier-in-')) {
-            return url('/pigments/' . $slug . '/');
+            return slash_url('/pigments/' . $slug);
         } elseif (str_starts_with($slug, 'f-d-c-colours-supplier-in-')) {
-            return url('/f-d-c-colours/' . $slug . '/');
+            return slash_url('/f-d-c-colours/' . $slug);
         } elseif (str_starts_with($slug, 'naphthols-fast-bases-fast-salts-supplier-in-')) {
-            return url('/naphthols-fast-bases-fast-salts/' . $slug . '/');
+            return slash_url('/naphthols-fast-bases-fast-salts/' . $slug);
         } elseif (str_starts_with($slug, 'intermediates-supplier-in-')) {
-            return url('/intermediates/' . $slug . '/');
+            return slash_url('/intermediates/' . $slug);
         }
-        return url('/' . $slug . '/');
+        return slash_url('/' . $slug);
     }
 }
