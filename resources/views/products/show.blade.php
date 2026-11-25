@@ -271,21 +271,39 @@
     .product-rich-content table {
         width: 100%;
         border-collapse: collapse;
-        margin: 12px 0 16px 0;
+        margin: 16px 0 24px 0;
         background: #ffffff;
         font-size: 14.5px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .product-rich-content table thead th {
+        background-color: #f8fafc;
+        color: #73001B;
+        font-weight: 700;
+        font-size: 13.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border: 1px solid #e2e8f0;
+        padding: 12px 16px;
+        text-align: left;
     }
 
     .product-rich-content table td,
     .product-rich-content table th {
         border: 1px solid #e2e8f0;
-        padding: 12px 16px;
-        color: #111111;
+        padding: 11px 16px;
+        color: #1e293b;
         text-align: left;
+        line-height: 1.5;
     }
 
-    .product-rich-content table td:last-child {
-        width: 150px;
+    .product-rich-content table tr:nth-child(even) td {
+        background-color: #fafbfc;
+    }
+
+    .product-rich-content table tr:hover td {
+        background-color: #f1f5f9;
     }
 
     .inline-enquiry-link {
