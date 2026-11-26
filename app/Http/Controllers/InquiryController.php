@@ -29,6 +29,9 @@ class InquiryController extends Controller
         if (!$request->has('country') && $request->filled('text-589')) {
             $request->merge(['country' => $request->input('text-589')]);
         }
+        if (!$request->has('company') && $request->filled('company-name')) {
+            $request->merge(['company' => $request->input('company-name')]);
+        }
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:150',

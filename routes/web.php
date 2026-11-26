@@ -168,10 +168,10 @@ Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about.index')
 Route::get('/about', function() {
     return redirect('/about-us/', 301);
 });
-Route::get('/contact', function() {
-    return redirect('/contact-us/', 301);
-});
-Route::get('/contact-us', [PageController::class, 'contact'])->name('contact-us');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/contact-us', function() {
+    return redirect('/contact/', 301);
+})->name('contact-us');
 
 // 8b. International Country Landing Pages (5 Families x 39 Countries)
 Route::get('/dyes/{slug}', function ($slug) {

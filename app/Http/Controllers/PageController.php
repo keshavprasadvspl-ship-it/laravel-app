@@ -268,17 +268,17 @@ class PageController extends Controller
 
     public function contact()
     {
-        $page = Page::whereIn('slug', ['contact-us', 'contact'])->first();
+        $page = Page::whereIn('slug', ['contact', 'contact-us'])->first();
 
         $seo = SeoHelper::generateTags($page, [
-            'title' => 'Contact Us | SD International - Vat & Solvent Dyes Manufacturer in India',
-            'description' => 'Get in touch with SD International for high quality Vat Dyes, Solvent Dyes, Pigments, and Food Colours. Contact: +91 99206 69561 / info@sdinternational.com',
-            'canonical' => url('/contact-us/'),
+            'title' => 'Contact - S D International',
+            'description' => 'Fill out the form and we’ll be in touch as soon as possible.',
+            'canonical' => url('/contact/'),
         ]);
 
         $breadcrumbs = [
             'Home' => url('/'),
-            'Contact Us' => url('/contact-us/'),
+            'Contact' => url('/contact/'),
         ];
         $breadcrumbSchema = SeoHelper::breadcrumbSchema($breadcrumbs);
 
