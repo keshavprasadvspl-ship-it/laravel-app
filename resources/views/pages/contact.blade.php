@@ -8,16 +8,16 @@
     .elementor-page-9833 .site-content > .ast-container {
         max-width: 1240px !important;
         margin: 0 auto !important;
-        padding: 0 20px !important;
+        padding: 0 !important;
         box-sizing: border-box !important;
     }
     .page-id-9833 #primary,
     .elementor-page-9833 #primary {
-        margin: 60px 0 !important;
+        margin: 0 !important;
         padding: 0 !important;
         float: none !important;
-        width: 1200px !important;
-        max-width: 1200px !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     .page-id-9833 #main,
     .elementor-page-9833 #main,
@@ -34,14 +34,14 @@
 
     /* Section 1: Page Header Title */
     .elementor-9833 .elementor-element.elementor-element-15da2a0 {
-        margin-top: 50px !important;
+        margin-top: 110px !important;
         margin-bottom: 0px !important;
         overflow: visible !important;
     }
     .elementor-9833 .elementor-element.elementor-element-15da2a0 > .elementor-container {
         max-width: 1200px !important;
         margin: 0 auto !important;
-        padding: 0 !important;
+        padding: 0 20px !important;
     }
     .elementor-9833 .elementor-element.elementor-element-9d6a900 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-9d6a900 > .elementor-element-populated {
