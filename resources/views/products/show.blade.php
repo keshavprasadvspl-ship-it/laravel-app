@@ -851,7 +851,7 @@
     // Format short description into clean overview paragraphs matching live site
     $rawShortDesc = $product->short_description ?? '';
     // Strip any technical specification headings, raw image tables, or specification text from short desc card
-    $cleanShortDesc = preg_split('/(?:<strong[^>]*>)?\s*(?:IDENTIFICATION|GENERAL SPECIFICATIONS|PHYSICAL CHARACTERISTICS|TECHNICAL SPECIFICATIONS|APPLICATIONS|Features:)\s*:?/i', $rawShortDesc)[0] ?? $rawShortDesc;
+    $cleanShortDesc = preg_split('/(?:<strong[^>]*>|\r?\n|^)\s*(?:IDENTIFICATION|GENERAL SPECIFICATIONS|PHYSICAL CHARACTERISTICS|TECHNICAL SPECIFICATIONS|APPLICATIONS|Features)\s*(?::|<\/strong>)/i', $rawShortDesc)[0] ?? $rawShortDesc;
     $cleanShortDesc = preg_replace('/<img[^>]*>/i', '', $cleanShortDesc);
     $cleanShortDesc = trim(strip_tags($cleanShortDesc, '<p><br><strong><b><span><em><i>'));
 
@@ -865,7 +865,7 @@
     }
 
     // Replace any legacy dead staging domains in rendered content
-    $renderedContent = str_replace('https://moccasin-worm-620280.hostingersite.com', 'https://sdinternational.com', $renderedContent);
+    $renderedContent = isset($renderedContent) ? str_replace('https://moccasin-worm-620280.hostingersite.com', 'https://sdinternational.com', $renderedContent) : '';
 
     $productImgFallback = $product->image_url
         ? (str_starts_with($product->image_url, 'http') ? $product->image_url : 'https://sdinternational.com/wp-content' . (str_starts_with($product->image_url, '/') ? '' : '/') . $product->image_url)
