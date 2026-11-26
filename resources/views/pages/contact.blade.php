@@ -9,12 +9,13 @@
         max-width: 1240px !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
     }
     .page-id-9833 #primary,
     .elementor-page-9833 #primary {
-        margin: 0 !important;
+        margin: 60px 0 !important;
         padding: 0 !important;
         float: none !important;
         width: 100% !important;
@@ -46,25 +47,20 @@
         line-height: 1.3 !important;
     }
 
-    /* Section 2: Contact Info & Form (Stretched Full-Width Background, 1240px inner container) */
+    /* Section 2: Contact Info & Form (Boxed 1240px container matching SD International) */
     .elementor-9833 .elementor-element.elementor-element-141bac8 {
         background-color: #FFFFFF !important;
         margin-top: 10px !important;
         margin-bottom: 0px !important;
         padding: 74px 0px 80px 0px !important;
-        width: 100vw !important;
-        position: relative !important;
-        left: 50% !important;
-        right: 50% !important;
-        margin-left: -50vw !important;
-        margin-right: -50vw !important;
+        width: 100% !important;
         box-sizing: border-box !important;
         overflow: visible !important;
     }
     .elementor-9833 .elementor-element.elementor-element-141bac8 > .elementor-container {
-        max-width: 1240px !important;
+        max-width: 1200px !important;
         margin: 0 auto !important;
-        padding: 0 15px !important;
+        padding: 0 !important;
         display: flex !important;
         flex-wrap: wrap !important;
         box-sizing: border-box !important;
@@ -94,11 +90,11 @@
     }
     .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-element-populated {
-        padding: 10px 10px 10px 10px !important;
+        padding: 0px 40px 0px 0px !important;
     }
     .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-element-populated {
-        padding: 40px 10px 10px 10px !important;
+        padding: 10px 0px 10px 10px !important;
     }
 
     /* Left Column Typography */
@@ -135,31 +131,33 @@
         margin-bottom: 0px !important;
     }
     .elementor-9833 .elementor-element.elementor-element-a681365 {
-        margin-top: 25px !important;
+        margin-top: 28px !important;
         margin-bottom: 0px !important;
     }
 
     /* Inner Section for Icons */
     .elementor-9833 .elementor-element.elementor-element-085ceb9 {
-        margin-top: -22px !important;
+        margin-top: 12px !important;
         margin-bottom: 0px !important;
         overflow: visible !important;
     }
     .elementor-9833 .elementor-element.elementor-element-297a994 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-297a994 > .elementor-element-populated {
-        margin: 0px 0px 0px -10px !important;
-        padding: 10px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* Icon Lists */
+    /* Icon Lists - Strictly 1 Horizontal Line per List without wrapping */
     .elementor-9833 .elementor-element.elementor-element-ff31485,
     .elementor-9833 .elementor-element.elementor-element-32d2d27,
     .elementor-9833 .elementor-element.elementor-element-cb2b55b {
-        padding: 15px 0px 0px 0px !important;
+        padding: 0 !important;
+        margin-bottom: 20px !important;
     }
     .elementor-9833 .elementor-icon-list-items.elementor-inline-items {
         display: flex !important;
-        flex-wrap: wrap !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
         align-items: center !important;
         margin-right: -12.5px !important;
         margin-left: -12.5px !important;
@@ -171,6 +169,8 @@
         margin-left: 12.5px !important;
         display: inline-flex !important;
         align-items: center !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
     }
     .elementor-9833 .elementor-icon-list-item a,
     .elementor-9833 .elementor-icon-list-item span.elementor-icon-list-text {
@@ -196,7 +196,7 @@
         vertical-align: middle !important;
     }
 
-    /* Right Column: Paragraph */
+    /* Right Column: Text & Form */
     .elementor-9833 .elementor-element.elementor-element-708a053 {
         text-align: center !important;
         margin-bottom: 24px !important;
