@@ -7,28 +7,28 @@
     .page-id-9833 .site-content > .ast-container,
     .elementor-page-9833 .site-content > .ast-container {
         max-width: 1240px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
         box-sizing: border-box !important;
     }
     .page-id-9833 #primary,
-    .elementor-page-9833 #primary {
-        margin: 60px 0 !important;
-        padding: 0 !important;
-        float: none !important;
-        width: 100% !important;
-    }
+    .elementor-page-9833 #primary,
+    .page-id-9833 #main,
+    .elementor-page-9833 #main,
+    .page-id-9833 article.post-9833,
+    .elementor-page-9833 article.post-9833,
+    .page-id-9833 header.entry-header,
     .page-id-9833 .entry-content,
     .elementor-page-9833 .entry-content {
         margin: 0 !important;
         padding: 0 !important;
+        float: none !important;
+        width: 100% !important;
     }
 
-    /* Section 1: Page Header */
+    /* Section 1: Page Header Title */
     .elementor-9833 .elementor-element.elementor-element-15da2a0 {
-        margin-top: 50px !important;
+        margin-top: 110px !important;
         margin-bottom: 0px !important;
         overflow: visible !important;
     }
@@ -58,7 +58,7 @@
         overflow: visible !important;
     }
     .elementor-9833 .elementor-element.elementor-element-141bac8 > .elementor-container {
-        max-width: 1200px !important;
+        max-width: 1240px !important;
         margin: 0 auto !important;
         padding: 0 !important;
         display: flex !important;
@@ -90,7 +90,7 @@
     }
     .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-element-populated {
-        padding: 0px 40px 0px 0px !important;
+        padding: 0px 20px 0px 0px !important;
     }
     .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-element-populated {
