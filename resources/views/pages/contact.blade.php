@@ -111,7 +111,7 @@
     }
     .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-column-wrap > .elementor-element-populated > .elementor-widget-wrap,
     .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-element-populated > .elementor-widget-wrap {
-        padding: 0px 40px 0px 0px !important;
+        padding: 0px 15px 0px 0px !important;
         margin: 0 !important;
     }
     .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-column-wrap > .elementor-element-populated,
