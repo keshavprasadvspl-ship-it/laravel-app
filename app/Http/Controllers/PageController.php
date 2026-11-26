@@ -109,22 +109,30 @@ class PageController extends Controller
             abort(404);
         }
 
-        if ($targetSlug === 'plastic-polymers') {
-            $partialPath = resource_path('views/pages/partials/plastic_polymers_content.html');
-            if (file_exists($partialPath)) {
-                $content = file_get_contents($partialPath);
-            } else {
-                $content = $page->content;
+        $partialCandidates = [
+            resource_path("views/pages/partials/{$targetSlug}_content.html"),
+            resource_path("views/pages/partials/" . str_replace('-', '_', $targetSlug) . "_content.html"),
+            resource_path("views/pages/partials/{$cleanSlug}_content.html"),
+            resource_path("views/pages/partials/" . str_replace('-', '_', $cleanSlug) . "_content.html"),
+        ];
+
+        $content = null;
+        foreach ($partialCandidates as $candidate) {
+            if (file_exists($candidate)) {
+                $content = file_get_contents($candidate);
+                break;
             }
-        } else {
+        }
+
+        if ($content === null) {
             $content = $page->content;
         }
 
-        // 1. Convert legacy /product/... links to direct /{slug}
+        // 1. Convert legacy /product/... links to direct /{slug}/
         $content = preg_replace_callback('/href=["\'](?:https?:\/\/(?:www\.)?(?:sdinternational\.com|moccasin-worm-620280\.hostingersite\.com))?\/product\/([^"\']+)["\']/i', function ($m) {
             $parts = explode('/', trim($m[1], '/'));
             $prodSlug = end($parts);
-            return 'href="/' . $prodSlug . '"';
+            return 'href="/' . $prodSlug . '/"';
         }, $content);
 
         // Strip staging and live hostnames from internal links
@@ -186,7 +194,7 @@ class PageController extends Controller
         $content = preg_replace('/<ul>/i', '<ul class="products columns-6 products-grid-columns-6">', $content, 1);
 
         $seo = SeoHelper::generateTags($page, [
-            'title' => "{$page->title} Applications | SD International",
+            'title' => "{$page->title} - S D International",
             'description' => "Explore {$page->title} industrial colorant applications at SD International.",
             'canonical' => url('/applications/' . $cleanSlug . '/'),
         ]);
