@@ -8,29 +8,44 @@
     .elementor-page-9833 .site-content > .ast-container {
         max-width: 1240px !important;
         margin: 0 auto !important;
-        padding: 0 !important;
+        padding: 0 20px !important;
         box-sizing: border-box !important;
     }
     .page-id-9833 #primary,
-    .elementor-page-9833 #primary,
+    .elementor-page-9833 #primary {
+        margin: 60px 0 !important;
+        padding: 0 !important;
+        float: none !important;
+        width: 1200px !important;
+        max-width: 1200px !important;
+    }
     .page-id-9833 #main,
     .elementor-page-9833 #main,
     .page-id-9833 article.post-9833,
     .elementor-page-9833 article.post-9833,
     .page-id-9833 header.entry-header,
     .page-id-9833 .entry-content,
-    .elementor-page-9833 .entry-content {
+    .elementor-page-9833 .entry-content,
+    .elementor-page-9833 .elementor-9833 {
         margin: 0 !important;
         padding: 0 !important;
-        float: none !important;
         width: 100% !important;
     }
 
     /* Section 1: Page Header Title */
     .elementor-9833 .elementor-element.elementor-element-15da2a0 {
-        margin-top: 110px !important;
+        margin-top: 50px !important;
         margin-bottom: 0px !important;
         overflow: visible !important;
+    }
+    .elementor-9833 .elementor-element.elementor-element-15da2a0 > .elementor-container {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    .elementor-9833 .elementor-element.elementor-element-9d6a900 > .elementor-column-wrap > .elementor-element-populated,
+    .elementor-9833 .elementor-element.elementor-element-9d6a900 > .elementor-element-populated {
+        padding: 10px !important;
     }
     .elementor-9833 .elementor-element.elementor-element-7d5c8f7 {
         text-align: center !important;
@@ -45,9 +60,10 @@
         margin: 0 !important;
         padding: 0 !important;
         line-height: 1.3 !important;
+        text-align: center !important;
     }
 
-    /* Section 2: Contact Info & Form (Boxed 1240px container matching SD International) */
+    /* Section 2: Contact Info & Form (Stretched Section, Boxed 1240px container) */
     .elementor-9833 .elementor-element.elementor-element-141bac8 {
         background-color: #FFFFFF !important;
         margin-top: 10px !important;
@@ -90,16 +106,30 @@
     }
     .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-element-populated {
-        padding: 0px 20px 0px 0px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-column-wrap > .elementor-element-populated > .elementor-widget-wrap,
+    .elementor-9833 .elementor-element.elementor-element-3314565 > .elementor-element-populated > .elementor-widget-wrap {
+        padding: 0px 40px 0px 0px !important;
+        margin: 0 !important;
     }
     .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-element-populated {
-        padding: 10px 0px 10px 10px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-column-wrap > .elementor-element-populated > .elementor-widget-wrap,
+    .elementor-9833 .elementor-element.elementor-element-d89efb4 > .elementor-element-populated > .elementor-widget-wrap {
+        padding: 10px 10px 10px 10px !important;
+        margin: 0 !important;
     }
 
     /* Left Column Typography */
     .elementor-9833 .elementor-element.elementor-element-58cb732 {
         text-align: left !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     .elementor-9833 .elementor-element.elementor-element-58cb732 .elementor-heading-title {
         color: #000000 !important;
@@ -111,11 +141,26 @@
         padding: 0 !important;
         line-height: 1.3 !important;
     }
-    .elementor-9833 .elementor-element.elementor-element-d079d28,
+    .elementor-9833 .elementor-element.elementor-element-d079d28 {
+        text-align: left !important;
+        margin: 0px 0px 20px 0px !important;
+        padding: 0 !important;
+    }
+    .elementor-9833 .elementor-element.elementor-element-d079d28 .elementor-heading-title {
+        color: #000000 !important;
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
     .elementor-9833 .elementor-element.elementor-element-a681365 {
         text-align: left !important;
+        margin: 0px 0px 20px 0px !important;
+        padding: 0 !important;
     }
-    .elementor-9833 .elementor-element.elementor-element-d079d28 .elementor-heading-title,
     .elementor-9833 .elementor-element.elementor-element-a681365 .elementor-heading-title {
         color: #000000 !important;
         font-family: 'Open Sans', sans-serif !important;
@@ -126,33 +171,37 @@
         padding: 0 !important;
         display: block !important;
     }
-    .elementor-9833 .elementor-element.elementor-element-d079d28 {
-        margin-top: 23px !important;
-        margin-bottom: 0px !important;
-    }
-    .elementor-9833 .elementor-element.elementor-element-a681365 {
-        margin-top: 28px !important;
-        margin-bottom: 0px !important;
-    }
 
     /* Inner Section for Icons */
     .elementor-9833 .elementor-element.elementor-element-085ceb9 {
-        margin-top: 12px !important;
+        margin-top: -22px !important;
         margin-bottom: 0px !important;
         overflow: visible !important;
+        padding: 0 !important;
+    }
+    .elementor-9833 .elementor-element.elementor-element-085ceb9 > .elementor-container {
+        padding: 0 !important;
     }
     .elementor-9833 .elementor-element.elementor-element-297a994 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-297a994 > .elementor-element-populated {
-        margin: 0 !important;
+        margin: 0px 0px 0px -10px !important;
         padding: 0 !important;
     }
 
     /* Icon Lists - Strictly 1 Horizontal Line per List without wrapping */
     .elementor-9833 .elementor-element.elementor-element-ff31485,
-    .elementor-9833 .elementor-element.elementor-element-32d2d27,
+    .elementor-9833 .elementor-element.elementor-element-32d2d27 {
+        padding: 0 !important;
+        margin: 0px 0px 20px 0px !important;
+    }
     .elementor-9833 .elementor-element.elementor-element-cb2b55b {
         padding: 0 !important;
-        margin-bottom: 20px !important;
+        margin: 0px 0px 0px 0px !important;
+    }
+    .elementor-9833 .elementor-element.elementor-element-ff31485 > .elementor-widget-container,
+    .elementor-9833 .elementor-element.elementor-element-32d2d27 > .elementor-widget-container,
+    .elementor-9833 .elementor-element.elementor-element-cb2b55b > .elementor-widget-container {
+        padding: 15px 0px 0px 0px !important;
     }
     .elementor-9833 .elementor-icon-list-items.elementor-inline-items {
         display: flex !important;
@@ -199,17 +248,24 @@
     /* Right Column: Text & Form */
     .elementor-9833 .elementor-element.elementor-element-708a053 {
         text-align: center !important;
-        margin-bottom: 24px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     .elementor-9833 .elementor-element.elementor-element-708a053 p {
         color: #000000 !important;
         font-family: 'Open Sans', sans-serif !important;
         font-size: 15px !important;
-        margin: 0 !important;
-        line-height: 1.6 !important;
+        margin: 0px 0px 24px 0px !important;
+        padding: 0 !important;
+        line-height: 28px !important;
+        text-align: center !important;
     }
 
     /* Form Fields 1:1 Matching SD International */
+    .elementor-9833 .elementor-element.elementor-element-f609084 {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
     .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form p {
         margin: 0 0 20px 0 !important;
         padding: 0 !important;
@@ -221,12 +277,12 @@
     .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form-control.wpcf7-text {
         width: 100% !important;
         height: 45px !important;
-        padding: 11.25px 15px !important;
+        padding: 11.25px !important;
         border: 1px solid #e1e1e1 !important;
         border-radius: 0px !important;
         font-family: 'Open Sans', sans-serif !important;
         font-size: 15px !important;
-        font-weight: 400 !important;
+        font-weight: 500 !important;
         color: #333333 !important;
         background-color: #ffffff !important;
         box-shadow: none !important;
@@ -237,12 +293,12 @@
     .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form-control.wpcf7-textarea {
         width: 100% !important;
         height: 164px !important;
-        padding: 11.25px 15px !important;
+        padding: 11.25px !important;
         border: 1px solid #e1e1e1 !important;
         border-radius: 0px !important;
         font-family: 'Open Sans', sans-serif !important;
         font-size: 15px !important;
-        font-weight: 400 !important;
+        font-weight: 500 !important;
         color: #333333 !important;
         background-color: #ffffff !important;
         box-shadow: none !important;
@@ -251,30 +307,44 @@
         outline: none !important;
         transition: border-color 0.2s ease-in-out;
     }
+    .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form-control::placeholder {
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        color: #7a7a7a !important;
+    }
     .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form-control.wpcf7-text:focus,
     .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form-control.wpcf7-textarea:focus {
         border-color: #64141f !important;
     }
     .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form p:nth-last-of-type(1) {
-        text-align: left !important;
-        margin-top: 20px !important;
-        margin-bottom: 0 !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .elementor-9833 .elementor-element.elementor-element-f609084 .elementor-button-content-wrapper {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form input[type="submit"] {
-        display: inline-block !important;
+        display: block !important;
         width: 100px !important;
         height: 35px !important;
         background-color: #64141f !important;
         color: #ffffff !important;
         border: none !important;
-        border-radius: 0px !important;
+        border-radius: 2px !important;
         font-family: 'Open Sans', sans-serif !important;
         font-size: 15px !important;
         font-weight: 500 !important;
-        padding: 0 !important;
+        padding: 10px 20px !important;
         text-align: center !important;
-        line-height: 35px !important;
+        line-height: 15px !important;
         cursor: pointer !important;
+        box-sizing: border-box !important;
         transition: background-color 0.2s ease-in-out !important;
     }
     .elementor-9833 .elementor-element.elementor-element-f609084 .pp-contact-form-7 .wpcf7-form input[type="submit"]:hover {
