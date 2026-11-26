@@ -65,13 +65,18 @@
     .prod-name {
         font-size: 14.5px;
         font-weight: 700;
-        color: #1e293b;
+        color: #73001B !important;
         margin-bottom: 6px;
         line-height: 1.35;
+        transition: color 0.15s ease;
+    }
+    .prod-name:hover,
+    a:hover .prod-name {
+        color: #333333 !important;
     }
     .prod-cas-tag {
         font-size: 12px;
-        color: #64748b;
+        color: #73001B !important;
         font-family: monospace;
         margin-bottom: 12px;
     }

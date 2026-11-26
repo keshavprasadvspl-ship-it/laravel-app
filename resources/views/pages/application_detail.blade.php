@@ -123,7 +123,7 @@
         font-family: 'Open Sans', sans-serif !important;
         font-size: 13.5px !important;
         font-weight: 600 !important;
-        color: #333333 !important;
+        color: #73001B !important;
         line-height: 1.35 !important;
         margin: 0 !important;
         text-transform: none !important;
@@ -138,12 +138,15 @@
     .woocommerce-LoopProduct-link,
     .app-products-wrap ul.products > li a {
         text-decoration: none !important;
-        color: inherit !important;
+        color: #73001B !important;
     }
 
+    .pp-loop-product__link:hover,
+    .woocommerce-LoopProduct-link:hover,
+    .app-products-wrap ul.products > li a:hover,
     .pp-loop-product__link:hover .woocommerce-loop-product__title,
     .app-products-wrap ul.products > li a:hover h2 {
-        color: #73001B !important;
+        color: #333333 !important;
     }
 
     /* Industries We Serve Section */

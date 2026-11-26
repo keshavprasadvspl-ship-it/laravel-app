@@ -450,21 +450,23 @@
 
     .product-title-link {
         text-decoration: none;
-        color: inherit;
+        color: #73001B !important;
     }
 
     .product-loop-title {
         font-family: 'Poppins', sans-serif;
         font-size: 13px;
         font-weight: 600;
-        color: #0f172a;
+        color: #73001B !important;
         margin: 0;
         line-height: 1.35;
         transition: color 0.15s;
     }
 
-    .product-title-link:hover .product-loop-title {
-        color: #73001B;
+    .product-title-link:hover .product-loop-title,
+    .product-title-link:hover,
+    .product-loop-title:hover {
+        color: #333333 !important;
     }
 
     /* 4. Industries We Serve (Elementor Inner Sections 1986e67 & a33570f) */

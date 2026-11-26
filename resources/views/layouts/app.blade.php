@@ -2104,6 +2104,28 @@ html, body {
     cursor: pointer;
     color: #64141f;
 }
+/* Product title & color codes styling matching sdinternational.com */
+.woocommerce-loop-product__title,
+.pp-loop-product__link,
+.ast-loop-product__link,
+.woocommerce-LoopProduct-link .woocommerce-loop-product__title,
+.pp-loop-product__link .woocommerce-loop-product__title,
+.product-loop-title,
+.prod-name {
+    color: #73001B !important;
+    transition: color 0.15s ease !important;
+}
+
+.woocommerce-loop-product__title:hover,
+.pp-loop-product__link:hover,
+.pp-loop-product__link:hover .woocommerce-loop-product__title,
+.ast-loop-product__link:hover,
+.ast-loop-product__link:hover .woocommerce-loop-product__title,
+.product-title-link:hover .product-loop-title,
+.prod-name:hover,
+a:hover .prod-name {
+    color: #333333 !important;
+}
 </style>
 
 @stack("styles")
