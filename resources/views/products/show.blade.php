@@ -1,1197 +1,835 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="/css/live/post-2712.css">
 <style>
-    /* ==========================================================================
-       SD International - Single Product Template (Elementor 2712)
-       Replicated 1:1 from https://sdinternational.com/basic-blue-11-bluer-dyes/
-       ========================================================================== */
-
-    .product-page-wrap {
-        background: #ffffff;
+    /* Elementor 2712 Layout & Theme Overrides */
+    .elementor-2712 {
+        background-color: #ffffff;
         color: #000000;
         font-family: 'Poppins', sans-serif;
         width: 100%;
         overflow-x: hidden;
     }
 
-    .product-full-container {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0 30px;
+    .elementor-2712 .elementor-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
         box-sizing: border-box;
     }
 
-    /* 1. Full-Width Breadcrumb Bar */
-    .product-breadcrumb-bar {
-        background-color: #F6F6F6;
-        padding: 12px 0;
-        border-bottom: 1px solid #eeeeee;
-    }
-
-    .product-breadcrumb-nav {
-        font-family: 'Poppins', sans-serif;
-        font-size: 13.5px;
-        color: #222222;
-        margin: 0;
-        line-height: 1.5;
-    }
-
-    .product-breadcrumb-nav a {
-        color: #000000;
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-
-    .product-breadcrumb-nav a:hover {
-        color: #73001B;
-    }
-
-    .product-breadcrumb-nav .delim {
-        margin: 0 6px;
-        color: #666666;
-    }
-
-    /* 2. Main 2-Column Section (80% Left / 20% Right Sidebar) */
-    .product-main-section {
-        padding: 24px 0 35px;
-    }
-
-    .product-main-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 80%) minmax(0, 20%);
-        gap: 28px;
-        align-items: start;
-    }
-
-    /* Left Column: Title & Subtitle */
-    .single-product-h1 {
-        font-family: 'Teko', 'Montserrat', sans-serif !important;
-        font-size: 38px !important;
-        font-weight: 600 !important;
-        color: #000000 !important;
-        line-height: 1.08 !important;
-        margin: 0 0 4px 0 !important;
-        letter-spacing: 0.3px;
-    }
-
-    .single-product-subtitle {
-        font-family: 'Poppins', sans-serif !important;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        font-style: italic !important;
-        color: #73001B !important;
-        margin: 0 0 16px 0 !important;
-        line-height: 1.4 !important;
-    }
-
-    /* Short Description Rounded Card */
-    .product-short-desc-card {
-        background: #FAFAFA;
-        border: 1px solid #f0f0f0;
-        border-radius: 12px;
-        padding: 22px 26px;
-        margin-bottom: 24px;
-        font-family: 'Merriweather', Georgia, serif;
-        font-size: 16.5px;
-        line-height: 1.8;
-        color: #000000;
-    }
-
-    .product-short-desc-card p {
-        margin: 0 0 16px 0;
-        color: #000000;
-        line-height: 1.8;
-    }
-
-    .product-short-desc-card p:last-child {
-        margin-bottom: 0;
-    }
-
-    .product-short-desc-card img {
-        display: none !important;
-    }
-
-    /* Inner 2-Column Row: Product Swatch Image + Enquiry & TOC */
-    .product-media-toc-row {
-        display: grid;
-        grid-template-columns: 373px minmax(0, 1fr);
-        gap: 26px;
-        align-items: start;
-        margin-bottom: 32px;
-    }
-
-    /* Interactive Zoomable Swatch Box */
-    .product-gallery-stage {
-        position: relative;
-        width: 373px;
-        max-width: 100%;
-        aspect-ratio: 1 / 1;
-        border-radius: 16px;
-        overflow: hidden;
-        background: #f5f5f5;
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-        cursor: zoom-in;
-    }
-
-    .product-gallery-stage img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.25s ease-out;
-        transform-origin: center center;
-    }
-
-    .product-gallery-stage:hover img {
-        transform: scale(1.22);
-    }
-
-    .product-zoom-trigger {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: #ffffff;
-        color: #111111;
-        border: none;
+    .elementor-2712 .elementor-row {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-        transition: transform 0.2s, background 0.2s, color 0.2s;
-        z-index: 5;
-        padding: 0;
-    }
-
-    .product-zoom-trigger:hover {
-        transform: scale(1.08);
-        background: #73001B;
-        color: #ffffff;
-    }
-
-    /* Right of Swatch: Compact Enquiry Button + Borderless Bulleted TOC */
-    .product-enquiry-toc-col {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .btn-product-enquiry {
-        display: inline-block;
-        padding: 11px 32px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        color: #ffffff !important;
-        background-image: linear-gradient(180deg, #951634 0%, #73001B 100%);
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        box-shadow: 0 2px 8px rgba(115, 0, 27, 0.28);
-        transition: opacity 0.2s, transform 0.2s;
-        margin-bottom: 22px;
-    }
-
-    .btn-product-enquiry:hover {
-        opacity: 0.94;
-        transform: translateY(-1px);
-    }
-
-    .product-toc-box {
+        flex-wrap: wrap;
         width: 100%;
     }
 
-    .product-toc-heading {
-        font-family: 'Poppins', sans-serif !important;
-        font-size: 18px !important;
-        font-weight: 700 !important;
-        color: #000000 !important;
-        margin: 0 0 12px 0 !important;
-    }
-
-    .product-toc-list {
-        list-style-type: disc;
-        margin: 0;
-        padding-left: 18px;
-    }
-
-    .product-toc-list li {
-        margin-bottom: 10px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        line-height: 1.45;
-        color: #111111;
-    }
-
-    .product-toc-list li a {
-        color: #111111;
-        text-decoration: none;
-        transition: color 0.15s;
-    }
-
-    .product-toc-list li a:hover {
-        color: #73001B;
-        text-decoration: underline;
-    }
-
-    /* Rich Product Content Section (Matches Elementor 2712 & 11806) */
-    .product-rich-content {
-        margin-top: 10px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
-        line-height: 1.78;
-        color: #111111;
-    }
-
-    .product-rich-content h2,
-    .product-rich-content h3,
-    .product-rich-content h4 {
-        font-family: 'Teko', 'Montserrat', sans-serif;
-        font-size: 29px;
-        font-weight: 600;
-        color: #73001B;
-        line-height: 1.15;
-        margin: 26px 0 10px 0;
-        scroll-margin-top: 90px;
-        letter-spacing: 0.3px;
-    }
-
-    .product-rich-content p {
-        margin: 0 0 14px 0;
-        color: #111111;
-    }
-
-    .product-rich-content table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 16px 0 24px 0;
-        background: #ffffff;
-        font-size: 14.5px;
-        border: 1px solid #e2e8f0;
-    }
-
-    .product-rich-content table thead th {
-        background-color: #f8fafc;
-        color: #73001B;
-        font-weight: 700;
-        font-size: 13.5px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        border: 1px solid #e2e8f0;
-        padding: 12px 16px;
-        text-align: left;
-    }
-
-    .product-rich-content table td,
-    .product-rich-content table th {
-        border: 1px solid #e2e8f0;
-        padding: 11px 16px;
-        color: #1e293b;
-        text-align: left;
-        line-height: 1.5;
-    }
-
-    .product-rich-content table tr:nth-child(even) td {
-        background-color: #fafbfc;
-    }
-
-    .product-rich-content table tr:hover td {
-        background-color: #f1f5f9;
-    }
-
-    .inline-enquiry-link {
-        color: #73001B;
-        text-decoration: underline;
-        font-weight: 700;
-        cursor: pointer;
-    }
-
-    .inline-enquiry-link:hover {
-        color: #000000;
-    }
-
-    /* Gold Gradient CTA Callout Banner (Elementor Section 11806) */
-    .product-gold-cta-banner {
-        background: linear-gradient(180deg, #C7A46C 0%, #9E783B 100%);
-        color: #ffffff;
-        border-radius: 14px;
-        padding: 22px 26px;
-        margin: 24px 0 26px 0;
-        font-family: 'Poppins', sans-serif;
-        font-size: 19px;
-        font-weight: 400;
-        line-height: 1.55;
-        box-shadow: 0 3px 10px rgba(158, 120, 59, 0.25);
-    }
-
-    .product-gold-cta-banner a {
-        color: #ffffff;
-        font-weight: 600;
-        text-decoration: none;
-        border-bottom: 1px dashed rgba(255, 255, 255, 0.65);
-    }
-
-    .product-gold-cta-banner a:hover {
-        border-bottom-style: solid;
-    }
-
-    /* Authentic Red Adobe-style Download PDF Button */
-    .sd-download-pdf-btn {
-        display: inline-flex;
-        align-items: center;
-        vertical-align: middle;
-        margin-left: 8px;
-        background: linear-gradient(180deg, #C62828 0%, #8B0000 100%);
-        color: #ffffff !important;
-        text-decoration: none !important;
-        border-radius: 6px;
-        overflow: hidden;
-        box-shadow: 0 3px 8px rgba(139, 0, 0, 0.32);
-        border: 1px solid #7f0000;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .sd-download-pdf-btn:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 12px rgba(139, 0, 0, 0.42);
-        color: #ffffff !important;
-    }
-
-    .sd-pdf-icon-box {
-        background: #ffffff;
-        color: #B71C1C;
-        padding: 5px 8px;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 9px;
-        font-weight: 800;
-        line-height: 1;
-        gap: 2px;
-        border-right: 1px solid #e5e7eb;
-    }
-
-    .sd-pdf-label {
-        padding: 8px 16px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-        color: #ffffff;
-    }
-
-    /* 3. Browse Related Products (Full-Width 6-Column Grid, 12 Products) */
-    .related-products-section {
-        padding: 15px 0 35px;
-    }
-
-    .section-teko-heading {
-        font-family: 'Teko', 'Montserrat', sans-serif;
-        font-size: 31px;
-        font-weight: 600;
-        color: #73001B;
-        margin: 0 0 22px 0;
-        line-height: 1.15;
-        letter-spacing: 0.3px;
-        scroll-margin-top: 90px;
-    }
-
-    .related-grid-6 {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 22px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .related-prod-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background: #ffffff;
-        transition: transform 0.2s;
-    }
-
-    .related-prod-card:hover {
-        transform: translateY(-3px);
-    }
-
-    .related-prod-thumb {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        overflow: hidden;
-        margin-bottom: 10px;
-        background: #f8fafc;
-        display: block;
-    }
-
-    .related-prod-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.3s ease;
-    }
-
-    .related-prod-card:hover .related-prod-thumb img {
-        transform: scale(1.04);
-    }
-
-    .related-prod-cat {
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        color: #222222;
-        margin-bottom: 4px;
-        line-height: 1.3;
-    }
-
-    .related-prod-title {
-        font-family: 'Teko', 'Montserrat', sans-serif;
-        font-size: 22px;
-        font-weight: 600;
-        color: #73001B;
-        line-height: 1.18;
-        margin: 0;
-        text-decoration: none;
-        display: block;
-        scroll-margin-top: 90px;
-    }
-
-    .related-prod-title:hover {
-        color: #000000;
-    }
-
-    /* 4. Industries We Serve (15 Cards in 3 Rows of 5) */
-    .product-industries-section {
-        padding: 30px 0 35px;
-        border-top: 1px solid #f0f0f0;
-    }
-
-    .industries-grid-5 {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 22px;
-    }
-
-    .industry-card-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .industry-card-item a {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        width: 100%;
-    }
-
-    .industry-image-wrap {
-        width: 100%;
-        overflow: hidden;
-        border: 6px solid #FFFFFF;
-        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.35);
-        margin-bottom: 10px;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        box-sizing: border-box;
-    }
-
-    .industry-image-wrap:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    }
-
-    .industry-image-wrap img {
-        width: 100%;
-        height: 205px;
-        aspect-ratio: 5 / 4;
-        object-fit: cover;
-        display: block;
-    }
-
-    .industry-title {
-        font-family: 'Poppins', sans-serif !important;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        color: #000000 !important;
-        margin: 0 !important;
-        text-align: center;
-        line-height: 1.3;
-        transition: color 0.2s;
-    }
-
-    .industry-card-item a:hover .industry-title {
-        color: #73001B !important;
-    }
-
-    /* 5. Why SD International & Market Area (64% / 36% Bordered Boxes) */
-    .why-market-section {
-        padding: 25px 0 30px;
-    }
-
-    .why-market-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 64%) minmax(0, 36%);
-        gap: 24px;
-        align-items: start;
-    }
-
-    .why-market-box {
-        background: #ffffff;
-        border: 1px solid #dddddd;
-        padding: 24px 28px;
-        box-sizing: border-box;
-    }
-
-    .why-market-box h3 {
-        font-family: 'Teko', 'Montserrat', sans-serif;
-        font-size: 29px;
-        font-weight: 600;
-        color: #73001B;
-        margin: 0 0 14px 0;
-        line-height: 1.15;
-        scroll-margin-top: 90px;
-    }
-
-    .why-sd-list {
-        margin: 0 0 18px 20px;
-        padding: 0;
-    }
-
-    .why-sd-list li {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14.5px;
-        line-height: 1.75;
-        color: #111111;
-        margin-bottom: 4px;
-    }
-
-    .why-market-box p {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14.5px;
-        line-height: 1.75;
-        color: #111111;
-        margin: 0 0 14px 0;
-    }
-
-    .why-market-box p:last-child {
-        margin-bottom: 0;
-    }
-
-    /* 6. SEO Keywords & Legal Disclaimer */
-    .product-seo-disclaimer-section {
-        padding: 10px 0 35px;
-        border-top: 1px solid #f0f0f0;
-    }
-
-    .seo-keywords-text {
-        font-family: 'Poppins', sans-serif;
-        font-size: 11px;
-        line-height: 1.75;
-        color: #222222;
-        margin: 0 0 14px 0;
-    }
-
-    .legal-note-text {
-        font-family: 'Poppins', sans-serif;
-        font-size: 11px;
-        line-height: 1.75;
-        color: #222222;
-        margin: 0;
-    }
-
-    /* Lightbox Modal for Product Image Zoom */
-    .product-lightbox-backdrop {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.88);
-        z-index: 100000;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-    }
-
-    .product-lightbox-content {
-        position: relative;
-        max-width: 90vw;
-        max-height: 88vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-lightbox-content img {
-        max-width: 85vw;
-        max-height: 78vh;
-        border-radius: 10px;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-        background: #ffffff;
-    }
-
-    .product-lightbox-caption {
-        color: #ffffff;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        margin-top: 14px;
-        text-align: center;
-    }
-
-    .product-lightbox-close {
-        position: fixed;
-        top: 20px;
-        right: 26px;
-        background: rgba(255, 255, 255, 0.16);
-        color: #ffffff;
-        border: 1px solid rgba(255, 255, 255, 0.35);
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        font-size: 26px;
-        line-height: 1;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-    }
-
-    .product-lightbox-close:hover {
-        background: #73001B;
-    }
-
-    /* Enquiry Modal */
-    .product-quote-modal-backdrop {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.65);
-        z-index: 99999;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
-
-    .product-quote-modal-dialog {
-        background: #ffffff;
-        width: 100%;
-        max-width: 520px;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        animation: prodModalFadeIn 0.2s ease-out;
-    }
-
-    @keyframes prodModalFadeIn {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .product-quote-modal-header {
-        background-image: linear-gradient(180deg, #951634 0%, #73001B 100%);
-        color: #ffffff;
-        padding: 16px 22px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .product-quote-modal-header h3 {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        color: #ffffff;
-    }
-
-    .product-quote-modal-close {
-        background: transparent;
-        border: none;
-        color: #ffffff;
-        font-size: 26px;
-        line-height: 1;
-        cursor: pointer;
-        padding: 0;
-    }
-
-    .product-quote-modal-body {
-        padding: 22px;
-    }
-
-    .prod-quote-group {
-        margin-bottom: 13px;
-    }
-
-    .prod-quote-group label {
-        display: block;
-        font-size: 13px;
-        font-weight: 600;
-        color: #334155;
-        margin-bottom: 5px;
-    }
-
-    .prod-quote-group input,
-    .prod-quote-group textarea {
-        width: 100%;
-        padding: 9px 12px;
-        border: 1px solid #cbd5e1;
-        border-radius: 4px;
-        font-size: 14px;
-        font-family: inherit;
-        box-sizing: border-box;
-    }
-
-    .prod-quote-group input:focus,
-    .prod-quote-group textarea:focus {
-        outline: none;
-        border-color: #73001B;
-        box-shadow: 0 0 0 2px rgba(115, 0, 27, 0.14);
-    }
-
-    /* Responsive Breakpoints */
-    @media (max-width: 1180px) {
-        .product-media-toc-row {
-            grid-template-columns: 310px minmax(0, 1fr);
+    .elementor-2712 .elementor-col-100 { width: 100%; }
+    .elementor-2712 .elementor-col-66 { width: 66.666%; }
+    .elementor-2712 .elementor-col-50 { width: 50%; }
+    .elementor-2712 .elementor-col-33 { width: 33.333%; }
+    .elementor-2712 .elementor-col-20 { width: 20%; }
+
+    @media (max-width: 1024px) {
+        .elementor-2712 .elementor-col-66,
+        .elementor-2712 .elementor-col-33 {
+            width: 100% !important;
         }
-        .product-gallery-stage {
-            width: 310px;
+        .elementor-2712 .elementor-col-50 {
+            width: 50%;
         }
-        .related-grid-6 {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    @media (max-width: 991px) {
-        .product-main-grid {
-            grid-template-columns: 1fr;
-        }
-        .product-media-toc-row {
-            grid-template-columns: 1fr;
-        }
-        .product-gallery-stage {
-            width: 100%;
-            max-width: 380px;
-        }
-        .related-grid-6 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .industries-grid-5 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .why-market-grid {
-            grid-template-columns: 1fr;
+        .elementor-2712 .elementor-col-20 {
+            width: 33.333%;
         }
     }
 
     @media (max-width: 767px) {
-        .product-full-container {
-            padding: 0 15px;
+        .elementor-2712 .elementor-col-50,
+        .elementor-2712 .elementor-col-20 {
+            width: 100% !important;
         }
-        .single-product-h1 {
-            font-size: 30px;
-        }
-        .product-short-desc-card {
-            padding: 18px 18px;
-            font-size: 15px;
-        }
-        .product-gold-cta-banner {
-            font-size: 16px;
-            padding: 18px 18px;
-        }
-        .related-grid-6 {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-        }
-        .industries-grid-5 {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-        }
-        .industry-image-wrap img {
-            height: 145px;
-        }
-        .why-market-box {
-            padding: 18px;
-        }
+    }
+
+    /* Breadcrumbs styling */
+    .elementor-element-340ce43 {
+        background-color: #F6F6F6;
+        padding: 12px 0;
+        border-bottom: 1px solid #eeeeee;
+    }
+    .elementor-element-9d5a440 .woocommerce-breadcrumb {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        color: #000000;
+        margin: 0;
+        line-height: 1.5;
+    }
+    .elementor-element-9d5a440 .woocommerce-breadcrumb a {
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .elementor-element-9d5a440 .woocommerce-breadcrumb a:hover {
+        color: #73001B;
+    }
+
+    /* Headings */
+    .elementor-element-03a0b17 .elementor-heading-title {
+        color: #000000 !important;
+        font-family: "Teko", sans-serif !important;
+        font-size: 36px !important;
+        font-weight: 600 !important;
+        text-transform: capitalize !important;
+        margin: 0 0 -26px 0 !important;
+        line-height: 1.1 !important;
+    }
+
+    .elementor-element-73fd0fa .elementor-heading-title {
+        color: #73001B !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        margin: -11px 0 15px 0 !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Short Description */
+    .elementor-element-e21bf1e .woocommerce-product-details__short-description {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        line-height: 1.7;
+        color: #333333;
+        background-color: #FAFAFA;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        padding: 20px 20px 10px 20px;
+        margin-bottom: 25px;
+    }
+    .elementor-element-e21bf1e .woocommerce-product-details__short-description img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #eeeeee;
+        border-radius: 4px;
+        margin: 8px 0;
+        display: block;
+    }
+    .elementor-element-e21bf1e .woocommerce-product-details__short-description p {
+        margin-bottom: 14px;
+    }
+
+    /* Product Swatch Image with Curved Corners */
+    .elementor-element-0bba525 .product-image-frame {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px 0px 20px 0px;
+        border: 1px solid #eeeeee;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        background: #ffffff;
+        cursor: pointer;
+    }
+    .elementor-element-0bba525 .product-image-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    .elementor-element-0bba525 .product-image-frame:hover img {
+        transform: scale(1.03);
+    }
+    .product-zoom-icon-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        color: #73001B;
+    }
+
+    /* Enquiry Button */
+    .elementor-element-5032e29 .elementor-button {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        background-color: #73001B !important;
+        color: #ffffff !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        padding: 12px 24px !important;
+        border-radius: 6px !important;
+        border: none !important;
+        cursor: pointer !important;
+        transition: background-color 0.2s, transform 0.1s !important;
+        box-shadow: 0 4px 12px rgba(115, 0, 27, 0.25) !important;
+        margin-bottom: 18px !important;
+    }
+    .elementor-element-5032e29 .elementor-button:hover {
+        background-color: #550014 !important;
+        color: #ffffff !important;
+    }
+
+    /* Table of Contents Box */
+    .pp-toc {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .pp-toc__header-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: #000000;
+        margin: 0 0 10px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #edf2f7;
+    }
+    .pp-toc__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .pp-toc__list-item {
+        font-family: "Poppins", sans-serif;
+        font-size: 13.5px;
+        margin-bottom: 6px;
+    }
+    .pp-toc__list-item a {
+        color: #4a5568;
+        text-decoration: none;
+        transition: color 0.15s;
+    }
+    .pp-toc__list-item a:hover {
+        color: #73001B;
+    }
+
+    /* Products Range Sidebar Header */
+    .elementor-element-e64c1d7 .elementor-heading-title {
+        background-color: #73001B;
+        color: #ffffff !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        padding: 12px 18px !important;
+        margin: 0 !important;
+        border-radius: 6px 6px 0 0 !important;
+    }
+    .sidebar-tree-container {
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+        background: #ffffff;
+        padding: 12px;
+        margin-bottom: 30px;
+    }
+
+    /* Section 2: Related Products & Industries */
+    .elementor-element-4cf059b {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid #eeeeee;
+    }
+    .elementor-element-7961484 .elementor-heading-title,
+    .elementor-element-e2186c9 .elementor-heading-title {
+        color: #73001B !important;
+        font-family: "Teko", sans-serif !important;
+        font-size: 32px !important;
+        font-weight: 600 !important;
+        margin: 0 0 20px 0 !important;
+    }
+
+    /* 6-Column Product Grid */
+    .related-products-grid-6 {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 40px 0;
+    }
+    @media (max-width: 1200px) {
+        .related-products-grid-6 { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 768px) {
+        .related-products-grid-6 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    }
+    .related-product-card {
+        background: #ffffff;
+        border: 1px solid #f0f0f0;
+        border-radius: 6px;
+        padding: 10px;
+        text-align: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .related-product-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .related-product-card img {
+        width: 100%;
+        max-width: 140px;
+        height: 140px;
+        object-fit: contain;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    .related-product-cat {
+        font-size: 11px;
+        color: #888888;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+    .related-product-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: #73001B !important;
+        text-decoration: none;
+        line-height: 1.35;
+    }
+
+    /* Industries We Serve 5-Column Grid */
+    .industries-grid-5 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    @media (max-width: 992px) {
+        .industries-grid-5 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 576px) {
+        .industries-grid-5 { grid-template-columns: repeat(2, 1fr); }
+    }
+    .industry-card-item {
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        color: inherit;
+    }
+    .industry-card-item img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid #eeeeee;
+        margin-bottom: 8px;
+        transition: transform 0.2s;
+    }
+    .industry-card-item:hover img {
+        transform: scale(1.03);
+    }
+    .industry-card-item h5 {
+        font-family: "Poppins", sans-serif;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #222222;
+        margin: 0;
+    }
+
+    /* Section 3: Why SD & Market Area */
+    .elementor-element-4136403 {
+        padding: 30px 0;
+        border-top: 1px solid #eeeeee;
+    }
+    .why-market-heading {
+        color: #73001B !important;
+        font-family: "Teko", sans-serif !important;
+        font-size: 28px !important;
+        font-weight: 600 !important;
+        margin: 0 0 12px 0 !important;
+    }
+    .why-market-list {
+        font-family: "Poppins", sans-serif;
+        font-size: 13.5px;
+        line-height: 1.7;
+        color: #444444;
+        padding-left: 20px;
+    }
+
+    /* Section 4: SEO Disclaimer */
+    .elementor-element-a2e20fd {
+        padding: 20px 0 40px 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #888888;
+        border-top: 1px solid #eeeeee;
+    }
+
+    /* Lightbox Modal */
+    .product-lightbox-modal {
+        display: none;
+        position: fixed;
+        z-index: 999999;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.85);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .product-lightbox-modal.active {
+        display: flex;
+    }
+    .product-lightbox-modal img {
+        max-width: 90vw;
+        max-height: 85vh;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .product-lightbox-close {
+        position: absolute;
+        top: 20px; right: 25px;
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 700;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    /* Quotation Modal */
+    .product-quote-modal-wrap {
+        display: none;
+        position: fixed;
+        z-index: 999999;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.65);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .product-quote-card {
+        background: #ffffff;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 520px;
+        padding: 25px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 </style>
 
 @php
-    $activeCatSlug = $primaryCat ? $primaryCat->slug : '';
-    $activeParentSlug = ($primaryCat && $primaryCat->parent) ? $primaryCat->parent->slug : '';
-
-    $isDyesActive = ($activeCatSlug === 'dyes' || $activeParentSlug === 'dyes' || in_array($activeCatSlug, ['basic-dyes', 'disperse-dyes', 'solvent-dyes', 'vat-dyes', 'acid-dyes', 'cationic-dyes', 'direct-dyes', 'reactive-dyes', 'metal-complex-solvent-dyes', 'powder-solvent-dyes', 'liquid-solvent-dyes']));
-    $isFdcActive = ($activeCatSlug === 'f-d-c-colours' || $activeParentSlug === 'f-d-c-colours' || str_contains($activeCatSlug, 'f-d-c') || str_contains($activeCatSlug, 'lake'));
-    $isPigmentsActive = ($activeCatSlug === 'pigments' || $activeParentSlug === 'pigments' || in_array($activeCatSlug, ['organic-pigments', 'high-performance-pigments', 'fluorescent-pigments', 'pu-foam-pigments', 'ultramarine-pigments']));
-    $isOtherActive = ($activeCatSlug === 'other-products' || $activeParentSlug === 'other-products' || in_array($activeCatSlug, ['naphthols', 'fast-colour-bases', 'fast-colour-salts', 'pyrazolone-intermediates', 'auxiliaries']));
-
-    // Dynamic category-accurate subtitle matching sdinternational.com 1:1
-    $cleanTitleForSub = trim(preg_replace('/\s*\|\s*.*$/', '', $product->title));
-    if ($primaryCat && (str_contains(strtolower($primaryCat->name), 'pigment') || str_contains(strtolower($primaryCat->slug), 'pigment') || str_contains(strtolower($product->title), 'pigment'))) {
-        $subNoPigment = trim(preg_replace('/\s*pigments?\s*$/i', '', $cleanTitleForSub));
-        $subtitleText = "High Performance {$subNoPigment} Pigment";
-    } elseif ($primaryCat && (str_contains(strtolower($primaryCat->name), 'dye') || str_contains(strtolower($primaryCat->slug), 'dye') || str_contains(strtolower($product->title), 'dye'))) {
-        $subtitleText = "Superior purity {$cleanTitleForSub} by S D International";
-    } elseif ($primaryCat && (str_contains(strtolower($primaryCat->name), 'f-d-c') || str_contains(strtolower($primaryCat->name), 'colour') || str_contains(strtolower($primaryCat->name), 'color'))) {
-        $subtitleText = "High Purity {$cleanTitleForSub} Food Colour by SD International";
-    } else {
-        $subtitleText = "Suppliers and Exporter of {$product->title}";
+    $prodImage = $product->image_url ?: 'https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';
+    if (!str_starts_with($prodImage, 'http')) {
+        $prodImage = asset($prodImage);
     }
-
-    // Format short description into clean overview paragraphs matching live site
-    $rawShortDesc = $product->short_description ?? '';
-    // Strip any technical specification headings, raw image tables, or specification text from short desc card
-    $cleanShortDesc = preg_split('/(?:<strong[^>]*>|\r?\n|^)\s*(?:IDENTIFICATION|GENERAL SPECIFICATIONS|PHYSICAL CHARACTERISTICS|TECHNICAL SPECIFICATIONS|APPLICATIONS|Features)\s*(?::|<\/strong>)/i', $rawShortDesc)[0] ?? $rawShortDesc;
-    $cleanShortDesc = preg_replace('/<img[^>]*>/i', '', $cleanShortDesc);
-    $cleanShortDesc = trim(strip_tags($cleanShortDesc, '<p><br><strong><b><span><em><i>'));
-
-    if ($cleanShortDesc !== '' && str_contains($cleanShortDesc, '<p>')) {
-        $shortDescHtml = $cleanShortDesc;
-    } elseif ($cleanShortDesc !== '') {
-        $shortDescHtml = wpautop($cleanShortDesc);
-    } else {
-        $shortDescHtml = '<p>Buy high purity ' . e($product->title) . ' from SD International &ndash; leading manufacturer, supplier, and exporter of ' . e($product->title) . '. SD International offers ' . e($product->title) . ' well known for using superior purity chemicals from trusted vendors to meet International Industry standards.</p>'
-            . '<p>SD International is one of the leading Dyes &amp; Chemicals exporters of high grade and superior quality products in India to an industry-wide customer base.</p>';
-    }
-
-    // Replace any legacy dead staging domains in rendered content
-    $renderedContent = isset($renderedContent) ? str_replace('https://moccasin-worm-620280.hostingersite.com', 'https://sdinternational.com', $renderedContent) : '';
-
-    $productImgFallback = $product->image_url
-        ? (str_starts_with($product->image_url, 'http') ? $product->image_url : 'https://sdinternational.com/wp-content' . (str_starts_with($product->image_url, '/') ? '' : '/') . $product->image_url)
-        : 'https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';
-
     $industriesList = [
-        ['title' => 'Plastic & Polymers', 'url' => '/applications/plastic-polymers', 'path' => 'uploads/2020/07/plastic_polymer.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/plastic_polymer.jpg'],
-        ['title' => 'Textiles', 'url' => '/applications/textiles', 'path' => 'uploads/2020/07/textiles.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/textiles.jpg'],
-        ['title' => 'Leather', 'url' => '/applications/leather', 'path' => 'uploads/2020/07/lather.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/lather.jpg'],
-        ['title' => 'Petroleum & Lubricants', 'url' => '/applications/petroleum-lubricants', 'path' => 'uploads/2020/07/petroleum_and_lubricant.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/petroleum_and_lubricant.jpg'],
-        ['title' => 'Paper & Pulp', 'url' => '/applications/paper-pulp', 'path' => 'uploads/2020/07/paper_and_pulp.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/paper_and_pulp.jpg'],
-        ['title' => 'Printing Inks', 'url' => '/applications/printing-inks', 'path' => 'uploads/2020/07/ink_industry.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/ink_industry.jpg'],
-        ['title' => 'Food Drug & Cosmetics', 'url' => '/applications/food-drug-cosmetics', 'path' => 'uploads/2020/07/food_drug_app-1.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/food_drug_app-1.jpg'],
-        ['title' => 'Coatings', 'url' => '/applications/coating', 'path' => 'uploads/2020/07/coating_dyes.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/coating_dyes.jpg'],
-        ['title' => 'Wood Stains', 'url' => '/applications/wood-stains', 'path' => 'uploads/2020/07/wood_stain_treatment.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/wood_stain_treatment.jpg'],
-        ['title' => 'Smoke Dyes', 'url' => '/applications/smoke-dyes', 'path' => 'uploads/2020/07/smoke-dyes.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/2020/07/smoke-dyes.jpg'],
-        ['title' => 'Pigment Intermediates', 'url' => '/applications/pigment-intermediates', 'path' => 'uploads/applications/pigmanets_intermediates_app.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/pigmanets_intermediates_app.jpg'],
-        ['title' => 'Wax', 'url' => '/applications/wax', 'path' => 'uploads/applications/wax.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/wax.jpg'],
-        ['title' => 'Rubber', 'url' => '/applications/rubber', 'path' => 'uploads/applications/rubberq.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/rubberq.jpg'],
-        ['title' => 'Glass', 'url' => '/applications/glass', 'path' => 'uploads/applications/glass.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/glass.jpg'],
-        ['title' => 'Intermediates', 'url' => '/applications/intermediates', 'path' => 'uploads/applications/interm.jpg', 'live' => 'https://sdinternational.com/wp-content/uploads/applications/interm.jpg'],
+        ['title' => 'Plastic & Polymers', 'url' => '/applications/plastic-polymers', 'img' => 'uploads/2020/07/plastic-polymer.jpg'],
+        ['title' => 'Textiles', 'url' => '/applications/textiles', 'img' => 'uploads/2020/07/textiles.jpg'],
+        ['title' => 'Leather', 'url' => '/applications/leather', 'img' => 'uploads/2020/07/lather.jpg'],
+        ['title' => 'Petroleum & Lubricants', 'url' => '/applications/petroleum-lubricants', 'img' => 'uploads/2020/07/petroleum.jpg'],
+        ['title' => 'Paper & Pulp', 'url' => '/applications/paper-pulp', 'img' => 'uploads/2020/07/paper_and_pulp.jpg'],
+        ['title' => 'Printing Inks', 'url' => '/applications/printing-inks', 'img' => 'uploads/2020/07/ink_and_paint.jpg'],
+        ['title' => 'Food Drug & Cosmetics', 'url' => '/applications/food-drug-cosmetics', 'img' => 'uploads/2020/07/cosmetic.jpg'],
+        ['title' => 'Coatings', 'url' => '/applications/coating', 'img' => 'uploads/2020/07/coating_dyes.jpg'],
+        ['title' => 'Wood Stains', 'url' => '/applications/wood-stains', 'img' => 'uploads/2020/07/wood_stain.jpg'],
+        ['title' => 'Smoke Dyes', 'url' => '/applications/smoke-dyes', 'img' => 'uploads/2020/07/smoke-dyes.jpg'],
+        ['title' => 'Pigment Intermediates', 'url' => '/applications/pigment-intermediates', 'img' => 'uploads/2020/07/textiles.jpg'],
+        ['title' => 'Wax', 'url' => '/applications/wax', 'img' => 'uploads/applications/wax.jpg'],
+        ['title' => 'Rubber', 'url' => '/applications/rubber', 'img' => 'uploads/applications/rubberq.jpg'],
+        ['title' => 'Glass', 'url' => '/applications/glass', 'img' => 'uploads/applications/glass.jpg'],
+        ['title' => 'Intermediates', 'url' => '/applications/intermediates', 'img' => 'uploads/applications/intermediates.jpg'],
     ];
 @endphp
 
-<div class="product-page-wrap">
-    <!-- 1. Full-Width Breadcrumb Bar -->
-    <section class="product-breadcrumb-bar">
-        <div class="product-full-container">
-            <nav class="product-breadcrumb-nav" aria-label="Breadcrumb">
-                @foreach($breadcrumbs as $label => $link)
-                    @if(!$loop->last)
-                        <a href="{{ $link }}">{{ $label }}</a>
-                        <span class="delim">/</span>
-                    @else
-                        <span>{{ $label }}</span>
-                    @endif
-                @endforeach
-            </nav>
-        </div>
-    </section>
+<div class="elementor elementor-2712 elementor-location-single product">
+    <div class="elementor-section-wrap">
 
-    <!-- 2. Main Product Content (80%) & Right Sidebar (20%) -->
-    <section class="product-main-section">
-        <div class="product-full-container">
-            <div class="product-main-grid">
-                <!-- Left Main Column -->
-                <main class="product-left-main">
-                    <h1 class="single-product-h1">{{ $product->title }}</h1>
-                    <p class="single-product-subtitle">{{ $subtitleText }}</p>
+        <!-- SECTION 0: Full-Width Breadcrumbs (Elementor 340ce43) -->
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-340ce43 elementor-section-full_width elementor-section-height-default" data-id="340ce43">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-row">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-09d53d4">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <div class="elementor-element elementor-element-9d5a440 elementor-widget elementor-widget-woocommerce-breadcrumb">
+                                    <div class="elementor-widget-container">
+                                        <nav class="woocommerce-breadcrumb">
+                                            @foreach($breadcrumbs as $name => $link)
+                                                @if(!$loop->last)
+                                                    <a href="{{ $link }}">{{ $name }}</a> /
+                                                @else
+                                                    <span>{{ $name }}</span>
+                                                @endif
+                                            @endforeach
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Short Description Rounded Card -->
-                    <div class="product-short-desc-card">
-                        {!! $shortDescHtml !!}
+        <!-- SECTION 1: Main Product Details & Products Range Sidebar (Elementor d5e1b5c) -->
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-d5e1b5c elementor-section-full_width elementor-section-stretched elementor-section-height-default" data-id="d5e1b5c">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-row">
+                    <!-- Left Column (66% Width) -->
+                    <div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-91a9eb7">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <!-- Product H1 Title -->
+                                <div class="elementor-element elementor-element-03a0b17 elementor-widget elementor-widget-woocommerce-product-title elementor-page-title elementor-widget-heading">
+                                    <div class="elementor-widget-container">
+                                        <h1 class="product_title entry-title elementor-heading-title elementor-size-default">
+                                            {{ $product->title }}
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <!-- Product Subtitle -->
+                                <div class="elementor-element elementor-element-73fd0fa elementor-widget elementor-widget-woocommerce-product-title elementor-page-title elementor-widget-heading">
+                                    <div class="elementor-widget-container">
+                                        <p class="product_title entry-title elementor-heading-title elementor-size-default">
+                                            {{ $product->subtitle ?: "Suppliers and Exporter of " . $product->title }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Short Description -->
+                                <div class="elementor-element elementor-element-e21bf1e elementor-widget elementor-widget-woocommerce-product-short-description">
+                                    <div class="elementor-widget-container">
+                                        <div class="woocommerce-product-details__short-description">
+                                            {!! $product->short_description ?: $product->content !!}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Inner Section: Image Left (50%) + Enquiry & TOC Right (50%) -->
+                                <section class="elementor-section elementor-inner-section elementor-element elementor-element-55dd4da elementor-section-boxed elementor-section-height-default" data-id="55dd4da">
+                                    <div class="elementor-container elementor-column-gap-default">
+                                        <div class="elementor-row">
+                                            <!-- Product Swatch Image (50%) -->
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7db0e45">
+                                                <div class="elementor-column-wrap elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-0bba525 elementor-widget elementor-widget-woocommerce-product-images">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="product-image-frame" onclick="openProductLightbox('{{ $prodImage }}')">
+                                                                    <img src="{{ $prodImage }}"
+                                                                         alt="{{ $product->title }}"
+                                                                         onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';">
+                                                                    <div class="product-zoom-icon-badge" title="Click to Zoom">
+                                                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Enquiry Button & Table of Contents (50%) -->
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-e7a198d">
+                                                <div class="elementor-column-wrap elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <!-- Enquiry Button -->
+                                                        <div class="elementor-element elementor-element-5032e29 elementor-widget elementor-widget-button">
+                                                            <div class="elementor-widget-container">
+                                                                <button type="button" class="elementor-button elementor-size-md" onclick="openProductQuoteModal('{{ addslashes($product->title) }}', '{{ $product->slug }}')">
+                                                                    Enquiry Now
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Table of Contents -->
+                                                        <div class="elementor-element elementor-element-2acfc1c elementor-widget elementor-widget-pp-table-of-contents">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="pp-toc">
+                                                                    <h3 class="pp-toc__header-title">Table of Contents</h3>
+                                                                    <ul class="pp-toc__list">
+                                                                        @if(!empty($tocItems))
+                                                                            @foreach($tocItems as $item)
+                                                                                <li class="pp-toc__list-item"><a href="#{{ $item['id'] }}">{{ $item['label'] }}</a></li>
+                                                                            @endforeach
+                                                                        @else
+                                                                            <li class="pp-toc__list-item"><a href="#related-products">Browse Related Products</a></li>
+                                                                            <li class="pp-toc__list-item"><a href="#industries-we-serve">Industries We Serve</a></li>
+                                                                            <li class="pp-toc__list-item"><a href="#why-sd-international">Why SD International</a></li>
+                                                                            <li class="pp-toc__list-item"><a href="#market-area-sd">Market Area of SD International</a></li>
+                                                                        @endif
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- Additional Rich Specifications/TDS if present -->
+                                @if(!empty($renderedContent) && strlen(strip_tags($renderedContent)) > 200)
+                                    <div class="product-rich-extra-specs" style="margin-top: 25px; font-family: 'Poppins', sans-serif;">
+                                        {!! $renderedContent !!}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Inner 2-Column Split: Swatch Image (with Zoom & Lightbox) + Enquiry Now & TOC -->
-                    <div class="product-media-toc-row">
-                        <div class="product-gallery-stage" id="productGalleryStage" onclick="openProductLightbox()">
-                            <img id="productMainImage"
-                                 src="{{ $product->thumbnail_url }}"
-                                 alt="{{ $product->title }}"
-                                 onerror="this.onerror=null; this.src='{{ $productImgFallback }}';">
-                            <button type="button"
-                                    class="product-zoom-trigger"
-                                    title="Zoom Image"
-                                    aria-label="Zoom product image"
-                                    onclick="event.stopPropagation(); openProductLightbox();">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                </svg>
-                            </button>
+                    <!-- Right Column (33% Width): PRODUCTS RANGE Sidebar -->
+                    <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-26cd99a">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <div class="elementor-element elementor-element-e64c1d7 elementor-widget elementor-widget-heading">
+                                    <div class="elementor-widget-container">
+                                        <h3 class="elementor-heading-title elementor-size-default">Products Range</h3>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-bb74f12 elementor-widget elementor-widget-shortcode">
+                                    <div class="elementor-widget-container">
+                                        <div class="sidebar-tree-container">
+                                            @include('partials.products_range_sidebar', ['currentSlug' => $product->slug])
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="product-enquiry-toc-col">
-                            <button type="button"
-                                    class="btn-product-enquiry"
-                                    onclick="openProductQuoteModal('{{ addslashes($product->title) }}', '{{ $product->slug }}')">
-                                Enquiry Now
-                            </button>
+        <!-- SECTION 2: Browse Related Products & Industries We Serve (Elementor 4cf059b) -->
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-4cf059b elementor-section-full_width elementor-section-stretched elementor-section-height-default" data-id="4cf059b">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-row">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-513f4f2">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <!-- Browse Related Products Heading -->
+                                <div class="elementor-element elementor-element-7961484 elementor-widget elementor-widget-heading">
+                                    <div class="elementor-widget-container">
+                                        <h2 id="related-products" class="elementor-heading-title elementor-size-default">
+                                            Browse Related Products offered by SD International
+                                        </h2>
+                                    </div>
+                                </div>
 
-                            <div class="product-toc-box">
-                                <h2 class="product-toc-heading">Table of Contents</h2>
-                                <ul class="product-toc-list">
-                                    @foreach($tocItems as $item)
-                                        <li><a href="#{{ $item['id'] }}">{{ $item['label'] }}</a></li>
+                                <!-- 12 Related Products in 6-Column Grid -->
+                                <div class="elementor-element elementor-element-f9a736d elementor-widget elementor-widget-pp-woo-products">
+                                    <div class="elementor-widget-container">
+                                        <ul class="related-products-grid-6">
+                                            @foreach($relatedProducts as $rel)
+                                                @php
+                                                    $relImg = $rel->image_url ?: 'https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';
+                                                    if (!str_starts_with($relImg, 'http')) {
+                                                        $relImg = asset($relImg);
+                                                    }
+                                                    $relCat = $rel->categories->first()?->name ?? 'Dyes & Chemicals';
+                                                @endphp
+                                                <li class="related-product-card">
+                                                    <a href="/{{ $rel->slug }}/" style="text-decoration:none; display:flex; flex-direction:column; align-items:center;">
+                                                        <img src="{{ $relImg }}"
+                                                             alt="{{ $rel->title }}"
+                                                             onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';">
+                                                        <span class="related-product-cat">{{ $relCat }}</span>
+                                                        <span class="related-product-title">{{ $rel->title }}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Industries We Serve Heading -->
+                                <div class="elementor-element elementor-element-e2186c9 elementor-widget elementor-widget-heading">
+                                    <div class="elementor-widget-container">
+                                        <h2 id="industries-we-serve" class="elementor-heading-title elementor-size-default">
+                                            Industries We Serve
+                                        </h2>
+                                    </div>
+                                </div>
+
+                                <!-- Industries We Serve Grid (15 Items) -->
+                                <div class="industries-grid-5">
+                                    @foreach($industriesList as $ind)
+                                        <a href="{{ $ind['url'] }}/" class="industry-card-item">
+                                            <img src="/{{ $ind['img'] }}"
+                                                 alt="{{ $ind['title'] }}"
+                                                 onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/{{ basename($ind['img']) }}';">
+                                            <h5>{{ $ind['title'] }}</h5>
+                                        </a>
                                     @endforeach
-                                    @if($relatedProducts->isNotEmpty())
-                                        <li><a href="#related-products">Browse Related Products offered by SD International</a></li>
-                                        @foreach($relatedProducts as $rel)
-                                            <li><a href="#related-prod-{{ $rel->id }}">{{ $rel->title }}</a></li>
-                                        @endforeach
-                                    @endif
-                                    <li><a href="#industries-we-serve">Industries We Serve</a></li>
-                                    <li><a href="#why-sd-international">Why SD International</a></li>
-                                    <li><a href="#market-area-sd">Market Area of SD International</a></li>
-                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Why SD International & Market Area (Elementor 4136403) -->
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-4136403 elementor-section-full_width elementor-section-height-default" data-id="4136403">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-row">
+                    <!-- Column 1: Why SD International -->
+                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-213bb47">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <div class="elementor-element elementor-element-8a76c5a elementor-widget elementor-widget-heading">
+                                    <div class="elementor-widget-container">
+                                        <h4 id="why-sd-international" class="why-market-heading">Why SD International</h4>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-241ebbc elementor-widget elementor-widget-text-editor">
+                                    <div class="elementor-widget-container">
+                                        <ul class="why-market-list">
+                                            <li>More than 30 years of rich industry experience.</li>
+                                            <li>Wide product range of high purity chemicals.</li>
+                                            <li>Leading exporter of dyeing and auxiliaries chemicals.</li>
+                                            <li>Focus is to create trustworthy and responsive relationships.</li>
+                                            <li>Reliable and dependable service.</li>
+                                            <li>Great Value, quality products, and huge range in stocks.</li>
+                                            <li>Chemicals and services we provide achieve consistent standards and exceed your expectations.</li>
+                                            <li>Strong logistics support with an extensive network of worldwide agents to make deliveries safe and on time.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Full Rich Product Content (Intro, Gold CTA Banner, Latest Price, Specs + PDF, Properties, Applications) -->
-                    <div class="product-rich-content">
-                        {!! $renderedContent !!}
-                    </div>
-                </main>
-
-                <!-- Right Sidebar: PRODUCTS RANGE Bellows Accordion -->
-                <div class="product-right-sidebar">
-                    @include('partials.products_range_sidebar', ['currentSlug' => $product->slug])
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Browse Related Products offered by SD International (12 Products, 2 Rows x 6 Columns) -->
-    @if($relatedProducts->isNotEmpty())
-    <section class="related-products-section">
-        <div class="product-full-container">
-            <h2 id="related-products" class="section-teko-heading">Browse Related Products offered by SD International</h2>
-            <ul class="related-grid-6">
-                @foreach($relatedProducts as $rel)
-                    @php
-                        $relCatLabel = $rel->related_cat_label ?: ($rel->categories->first()?->name ?? 'Dyes & Chemicals');
-                        $relFallback = $rel->image_url
-                            ? (str_starts_with($rel->image_url, 'http') ? $rel->image_url : 'https://sdinternational.com/wp-content' . (str_starts_with($rel->image_url, '/') ? '' : '/') . $rel->image_url)
-                            : 'https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';
-                    @endphp
-                    <li class="related-prod-card" id="related-prod-{{ $rel->id }}">
-                        <a href="{{ $rel->url }}" class="related-prod-thumb">
-                            <img src="{{ $rel->thumbnail_url }}"
-                                 alt="{{ $rel->title }}"
-                                 onerror="this.onerror=function(){this.src='https://sdinternational.com/wp-content/uploads/woocommerce-placeholder-120x120.png';}; this.src='{{ $relFallback }}';">
-                        </a>
-                        <span class="related-prod-cat">{{ $relCatLabel }}</span>
-                        <a href="{{ $rel->url }}" class="related-prod-title">{{ $rel->title }}</a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </section>
-    @endif
-
-    <!-- 4. Industries We Serve (15 Cards in 3 Rows of 5) -->
-    <section class="product-industries-section">
-        <div class="product-full-container">
-            <h2 id="industries-we-serve" class="section-teko-heading">Industries We Serve</h2>
-            <div class="industries-grid-5">
-                @foreach($industriesList as $ind)
-                    <div class="industry-card-item">
-                        <a href="{{ url($ind['url']) }}">
-                            <div class="industry-image-wrap">
-                                <img src="{{ asset($ind['path']) }}"
-                                     alt="{{ $ind['title'] }}"
-                                     onerror="this.onerror=null; this.src='{{ $ind['live'] }}';">
+                    <!-- Column 2: Market Area of SD International -->
+                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-acdac98">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <div class="elementor-element elementor-element-edcd751 elementor-widget elementor-widget-heading">
+                                    <div class="elementor-widget-container">
+                                        <h4 id="market-area-sd" class="why-market-heading">Market Area of SD International</h4>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-fd3064d elementor-widget elementor-widget-text-editor">
+                                    <div class="elementor-widget-container">
+                                        <p style="font-family:'Poppins',sans-serif; font-size:13.5px; line-height:1.7; color:#444444; margin-bottom:12px;">
+                                            SD International supply and export to listed Countries:
+                                        </p>
+                                        <p style="font-family:'Poppins',sans-serif; font-size:13px; line-height:1.6; color:#555555; background:#f9fafb; padding:12px; border-radius:6px; border:1px solid #edf2f7; font-weight:500;">
+                                            China | Ningbo | Shanghai | Guangzhou | Bangladesh | Brazil | Colombia | South Korea | Mexico | Turkey | Germany | Poland | Russia | Singapore | South Korea | Taiwan | UAE | Uganda | USA | Vietnam | Argentina | Bolivia | Chile | Italy | Spain | Kenya
+                                        </p>
+                                        <p style="font-family:'Poppins',sans-serif; font-size:13px; line-height:1.6; color:#666666; margin-top:10px;">
+                                            If your country or region is not mentioned above, please reach out directly to our global commercial desk at <a href="tel:+919920669561" style="color:#73001B; font-weight:600;">+91 99206 69561</a> or submit your export requirements online.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <h5 class="industry-title">{{ $ind['title'] }}</h5>
-                        </a>
+                        </div>
                     </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Why SD International & Market Area of SD International (64% / 36% Bordered Boxes) -->
-    <section class="why-market-section">
-        <div class="product-full-container">
-            <div class="why-market-grid">
-                <!-- Left Box: Why SD International -->
-                <div class="why-market-box">
-                    <h3 id="why-sd-international">Why SD International</h3>
-                    <ul class="why-sd-list">
-                        <li>ISO 9001:2015 Certified and Govt. of India Recognised Two Star Export House.</li>
-                        <li>One of the leading exporters of dye and pigment chemicals.</li>
-                        <li>More than 30 years of rich industry experience.</li>
-                        <li>Wide product range of high purity chemicals.</li>
-                        <li>Leading exporter of dyeing and auxiliaries&rsquo; chemicals.</li>
-                        <li>Focus is to create trustworthy and responsive relationships.</li>
-                        <li>Reliable and dependable service.</li>
-                        <li>Great Value, quality products, and huge range in stocks.</li>
-                        <li>Chemicals and services we provide achieve consistent standards and exceed your expectations.</li>
-                        <li>Vast knowledge of colour and colouration allows us to tailor our products to your needs.</li>
-                    </ul>
-                    <p>
-                        SD International is committed to customer fulfilment by delivering best quality chemical substances and compounds at competitive market prices. We offer these product categories to companies in the sector of plastics, paints and printing inks, textile, food colouring, pharmaceuticals, wood, leather factories, and paper mills across markets to several destinations including India and Indian Subcontinent, East Asia, South East Asia and the Middle East.
-                    </p>
-                </div>
-
-                <!-- Right Box: Market Area of SD International -->
-                <div class="why-market-box">
-                    <h3 id="market-area-sd">Market Area of SD International</h3>
-                    <p>SD International supply and export to listed Countries</p>
-                    <p>
-                        <strong>China</strong> &ndash; <strong>Ningbo</strong> &ndash; <strong>Shanghai</strong>&ndash;<strong>Guangzhou</strong> | Bangladesh | Brazil | Egypt | Gambia | Germany | Ghana | Guinea | Conakry | Honduras | Indonesia | Israel | Italy | Japan | Mali | Mauritania | Mexico | Myanmar | Netherlands | Poland | Peru | Singapore | South Korea | Taiwan | UAE | Uganda | UK | USA | Vietnam | Argentina | Malaysia | Thailand | Turkey | Iran | Spain | Kenya
-                    </p>
-                    <p>
-                        Thank you for visiting SD International &rsquo;s website. Do you have any questions or Need any help with Our products and their applications to your requirements? Contact Us at <a href="tel:+919920669561" style="color: #73001B; font-weight: 600; text-decoration: none;">+91 99206 69561</a> or <a href="javascript:void(0)" class="inline-enquiry-link" onclick="openProductQuoteModal('{{ addslashes($product->title) }}', '{{ $product->slug }}')">Enquiry Form</a>.
-                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 6. SEO Keywords & Legal Disclaimer -->
-    <section class="product-seo-disclaimer-section">
-        <div class="product-full-container">
-            <p class="seo-keywords-text">
-                Manufacturer, Supplier, Importer, Exporter, Dealer, Distributor &amp; Service Provider of Industrial Chemicals, Pharma Excipients, Pharma Raw material importer, Pharmaceutical, Active Pharmaceutical Ingredients, Bulk Drugs, Industrial Acid &amp; Salts, Agriculture Chemicals, Food chemicals, Phase Transfer Catalyst, Quats, Agriculture Chemicals, Fine Chemicals, Epoxy Coating chemicals, Construction Chemicals, Cosmetic Chemicals, Bulk Drugs, Oil field chemicals, Phase Transfer Catalyst, Water Treatment Chemicals, Swimming Pool Chemicals, Chlorinated Intermediates, Cosmetic Chemicals, Gujarat, India. Top chemicals &amp; pharmaceutical company in India. Industrial Chemicals, Surplus Chemicals, Intermediates in Vadodara, Industrial Acid, Specialty Chemicals, Pharmaceutical Chemicals, Active Pharma Ingredients, By-product/Waste Grade Chemicals Buyer &amp; Seller in India, Best &amp; Contract Manufacturer of Pharmaceuticals &amp; Chemicals, Top Chemical &amp; Pharma companies in India, Pharma Impurities for formulation manufacturer &amp; pharma companies, Chlorine Chemicals, Importer of Industrial &amp; Pharma Chemicals in India, ETP Chemicals, STP Chemicals, Buyer &amp; Seller Used Machinery for Pharma &amp; Chemicals Industries in India, Pharma Raw Materials, Surplus/Non-Moving Chemicals buyer &amp; seller in India, Solvents (Distilled, Recovered &amp; Pure), Quats &amp; Phase transfer catalyst, Ashland pharma excipients dealer &amp; distributor in India, Detergent Chemicals, Detergent Raw materials, BASF Products, oil &amp; gas chemicals, Biocides &amp; Hygiene chemicals, hand sanitizer, disinfection &amp; sanitation spray (corona-covid virus spray), Pharmaceutical sanitization, lubrication additives.
-            </p>
-            <p class="legal-note-text">
-                <strong>Note :</strong> Please note that the information on this document is for illustration purposes only as information may vary with individual chemical compounds and their purity, concentration and applications subjects and therefore cannot be guaranteed as accurate. &copy; Copyright {{ date('Y') }} &copy; SD International. All Rights Reserved (Terms of Use). Recreation of any materials from the site is strictly prohibited without permission. SD International&rsquo;s products are sold exclusively through SD International&rsquo;s website. Use Terms | Privacy. Please contact us to discuss precise product specifications and requirements and obtain advice on which products are required to suit your exact application needs info@sdinternational.com
-            </p>
-        </div>
-    </section>
-</div>
+        <!-- SECTION 4: Bottom SEO Disclaimer (Elementor a2e20fd) -->
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-a2e20fd elementor-section-full_width elementor-section-height-default" data-id="a2e20fd">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-row">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-37bae79">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <div class="elementor-element elementor-element-9ac6f25 elementor-widget elementor-widget-text-editor">
+                                    <div class="elementor-widget-container">
+                                        <p style="margin:0;">
+                                            Manufacturer, Supplier, Importer, Exporter, Dealer, Distributor & Service Provider of {{ $product->title }} in Mumbai, Maharashtra, India to various domestic and international locations including UAE, Saudi Arabia, Qatar, Oman, Egypt, Nigeria, Kenya, South Africa, Bangladesh, Vietnam, Indonesia, Thailand, Malaysia, Brazil, Argentina, USA, UK, Germany, Italy, Spain and European markets. All trademarks, logos and trade names belong to their respective owners.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Full-Screen Image Lightbox Modal -->
-<div id="productLightboxModal" class="product-lightbox-backdrop" onclick="closeProductLightbox()">
-    <button type="button" class="product-lightbox-close" aria-label="Close lightbox" onclick="closeProductLightbox()">&times;</button>
-    <div class="product-lightbox-content" onclick="event.stopPropagation()">
-        <img id="productLightboxImg" src="{{ $product->thumbnail_url }}" alt="{{ $product->title }}">
-        <div class="product-lightbox-caption">{{ $product->title }}</div>
     </div>
 </div>
 
-<!-- Product Quotation / Enquiry Modal -->
-<div id="productQuoteModal" class="product-quote-modal-backdrop" onclick="closeProductQuoteModalOnBackdrop(event)">
-    <div class="product-quote-modal-dialog" onclick="event.stopPropagation()">
-        <div class="product-quote-modal-header">
-            <h3>Request Product Quotation</h3>
-            <button type="button" class="product-quote-modal-close" aria-label="Close" onclick="closeProductQuoteModal()">&times;</button>
-        </div>
-        <div class="product-quote-modal-body">
-            <form id="productQuoteForm" onsubmit="submitProductQuote(event)">
-                @csrf
-                <input type="hidden" name="product_name" id="modalProdName" value="{{ $product->title }}">
-                <input type="hidden" name="product_slug" id="modalProdSlug" value="{{ $product->slug }}">
-                <input type="hidden" name="cas_number" value="{{ $product->cas_number }}">
+<!-- Image Lightbox Modal -->
+<div id="productLightbox" class="product-lightbox-modal" onclick="closeProductLightbox()">
+    <span class="product-lightbox-close" onclick="closeProductLightbox()">&times;</span>
+    <img id="productLightboxImg" src="" alt="Product Full View" onclick="event.stopPropagation()">
+</div>
 
-                <div class="prod-quote-group">
-                    <label>Product Selected</label>
-                    <input type="text" id="displayProdName" value="{{ $product->title }}" readonly style="background: #f8fafc; font-weight: 600; color: #73001B;">
-                </div>
-                <div class="prod-quote-group">
-                    <label for="prodQuoteName">Your Full Name *</label>
-                    <input type="text" id="prodQuoteName" name="name" required placeholder="e.g. Rajesh Sharma">
-                </div>
-                <div class="prod-quote-group">
-                    <label for="prodQuoteCompany">Company / Organization</label>
-                    <input type="text" id="prodQuoteCompany" name="company" placeholder="e.g. Global Textiles Ltd.">
-                </div>
-                <div class="prod-quote-group">
-                    <label for="prodQuoteEmail">Business Email *</label>
-                    <input type="email" id="prodQuoteEmail" name="email" required placeholder="name@company.com">
-                </div>
-                <div class="prod-quote-group">
-                    <label for="prodQuotePhone">Phone / WhatsApp Number *</label>
-                    <input type="tel" id="prodQuotePhone" name="phone" required placeholder="+91 99206 69561">
-                </div>
-                <div class="prod-quote-group">
-                    <label for="prodQuoteQuantity">Required Quantity (Kg / Tons)</label>
-                    <input type="text" id="prodQuoteQuantity" name="quantity" placeholder="e.g. 500 Kg, 2 MT">
-                </div>
-                <div class="prod-quote-group">
-                    <label for="prodQuoteMessage">Specifications / Application Notes</label>
-                    <textarea id="prodQuoteMessage" name="message" rows="3" placeholder="Mention destination port, COA/MSDS requirement, or customisation needs."></textarea>
-                </div>
+<!-- Product Quotation Modal -->
+<div id="productQuoteModal" class="product-quote-modal-wrap" onclick="closeProductQuoteModalOnBackdrop(event)">
+    <div class="product-quote-card">
+        <button type="button" class="product-lightbox-close" style="color:#222; top:12px; right:15px;" onclick="closeProductQuoteModal()">&times;</button>
+        <h3 style="font-family:'Teko',sans-serif; font-size:26px; color:#73001B; margin:0 0 6px 0;">Request Product Quotation</h3>
+        <p style="font-size:13px; color:#666; margin:0 0 16px 0;">Submit your inquiry for <strong id="displayProdName" style="color:#000;">{{ $product->title }}</strong> and our commercial desk will reply promptly.</p>
 
-                <div id="prodQuoteFormStatus" style="display: none; padding: 10px 12px; margin-bottom: 12px; font-size: 13.5px; border-radius: 4px;"></div>
+        <form id="productQuoteForm" onsubmit="submitProductQuote(event)">
+            @csrf
+            <input type="hidden" name="product_name" id="modalProdName" value="{{ $product->title }}">
+            <input type="hidden" name="product_slug" id="modalProdSlug" value="{{ $product->slug }}">
 
-                <button type="submit" id="btnSubmitProdQuote" class="btn-product-enquiry" style="width: 100%; margin-bottom: 0;">
-                    Send Inquiry Now
-                </button>
-            </form>
-        </div>
+            <div style="margin-bottom:12px;">
+                <label style="display:block; font-size:12px; font-weight:600; color:#333; margin-bottom:4px;">Full Name *</label>
+                <input type="text" name="name" required style="width:100%; height:40px; border:1px solid #ddd; border-radius:4px; padding:0 12px; font-size:14px; box-sizing:border-box;">
+            </div>
+            <div style="display:flex; gap:10px; margin-bottom:12px;">
+                <div style="flex:1;">
+                    <label style="display:block; font-size:12px; font-weight:600; color:#333; margin-bottom:4px;">Email Address *</label>
+                    <input type="email" name="email" required style="width:100%; height:40px; border:1px solid #ddd; border-radius:4px; padding:0 12px; font-size:14px; box-sizing:border-box;">
+                </div>
+                <div style="flex:1;">
+                    <label style="display:block; font-size:12px; font-weight:600; color:#333; margin-bottom:4px;">Phone / WhatsApp *</label>
+                    <input type="text" name="phone" required style="width:100%; height:40px; border:1px solid #ddd; border-radius:4px; padding:0 12px; font-size:14px; box-sizing:border-box;">
+                </div>
+            </div>
+            <div style="display:flex; gap:10px; margin-bottom:12px;">
+                <div style="flex:1;">
+                    <label style="display:block; font-size:12px; font-weight:600; color:#333; margin-bottom:4px;">Country *</label>
+                    <input type="text" name="country" required style="width:100%; height:40px; border:1px solid #ddd; border-radius:4px; padding:0 12px; font-size:14px; box-sizing:border-box;">
+                </div>
+                <div style="flex:1;">
+                    <label style="display:block; font-size:12px; font-weight:600; color:#333; margin-bottom:4px;">Company Name</label>
+                    <input type="text" name="company" style="width:100%; height:40px; border:1px solid #ddd; border-radius:4px; padding:0 12px; font-size:14px; box-sizing:border-box;">
+                </div>
+            </div>
+            <div style="margin-bottom:16px;">
+                <label style="display:block; font-size:12px; font-weight:600; color:#333; margin-bottom:4px;">Inquiry / Quantity Details</label>
+                <textarea name="message" rows="3" placeholder="Provide destination port, quantity (kg/MT), packing requirement..." style="width:100%; border:1px solid #ddd; border-radius:4px; padding:8px 12px; font-size:13.5px; box-sizing:border-box; font-family:inherit;"></textarea>
+            </div>
+
+            <div id="prodQuoteFormStatus" style="display:none; padding:10px; border-radius:4px; font-size:13px; margin-bottom:12px;"></div>
+
+            <button type="submit" id="btnSubmitProdQuote" style="width:100%; height:44px; background:#73001B; color:#fff; font-size:15px; font-weight:600; border:none; border-radius:4px; cursor:pointer;">
+                Submit Inquiry
+            </button>
+        </form>
     </div>
 </div>
-@endsection
 
-@push('scripts')
 <script>
-    // Sidebar Bellows Accordion Toggle
-    function toggleProdSidebarAccordion(id) {
-        var el = document.getElementById(id);
-        var chev = document.getElementById('chev-' + id);
-        if (!el) return;
-        if (el.style.display === 'none' || el.style.display === '') {
-            el.style.display = 'block';
-            if (chev) chev.classList.add('open');
-        } else {
-            el.style.display = 'none';
-            if (chev) chev.classList.remove('open');
-        }
+    function openProductLightbox(src) {
+        var modal = document.getElementById('productLightbox');
+        var img = document.getElementById('productLightboxImg');
+        if (img && src) img.src = src;
+        if (modal) modal.classList.add('active');
     }
-
-    // Interactive Cursor Pan-Zoom on Product Swatch
-    (function() {
-        var stage = document.getElementById('productGalleryStage');
-        var img = document.getElementById('productMainImage');
-        if (!stage || !img) return;
-        stage.addEventListener('mousemove', function(e) {
-            var rect = stage.getBoundingClientRect();
-            var x = ((e.clientX - rect.left) / rect.width) * 100;
-            var y = ((e.clientY - rect.top) / rect.height) * 100;
-            img.style.transformOrigin = x + '% ' + y + '%';
-        });
-        stage.addEventListener('mouseleave', function() {
-            img.style.transformOrigin = 'center center';
-        });
-    })();
-
-    // Full-Screen Image Lightbox
-    function openProductLightbox() {
-        var modal = document.getElementById('productLightboxModal');
-        var mainImg = document.getElementById('productMainImage');
-        var lbImg = document.getElementById('productLightboxImg');
-        if (mainImg && lbImg) lbImg.src = mainImg.src;
-        if (modal) modal.style.display = 'flex';
-    }
-
     function closeProductLightbox() {
-        var modal = document.getElementById('productLightboxModal');
-        if (modal) modal.style.display = 'none';
+        var modal = document.getElementById('productLightbox');
+        if (modal) modal.classList.remove('active');
     }
-
-    // Product Quotation Modal
     function openProductQuoteModal(title, slug) {
         var modal = document.getElementById('productQuoteModal');
         var modalName = document.getElementById('modalProdName');
@@ -1204,91 +842,57 @@
         if (slug && modalSlug) modalSlug.value = slug;
         if (modal) modal.style.display = 'flex';
     }
-
     function closeProductQuoteModal() {
         var modal = document.getElementById('productQuoteModal');
         if (modal) modal.style.display = 'none';
     }
-
     function closeProductQuoteModalOnBackdrop(e) {
         if (e.target && e.target.id === 'productQuoteModal') {
             closeProductQuoteModal();
         }
     }
-
-    // Also alias global openQuoteModal in case any external trigger calls it
-    window.openQuoteModal = openProductQuoteModal;
-
-    // Keyboard Escape handler for modals
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeProductLightbox();
-            closeProductQuoteModal();
-        }
-    });
-
-    // Smooth Scroll for TOC Anchor Links
-    document.querySelectorAll('.product-toc-list a[href^="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            var targetId = this.getAttribute('href').slice(1);
-            var targetEl = document.getElementById(targetId);
-            if (targetEl) {
-                e.preventDefault();
-                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-
-    // AJAX Form Submission to /inquiries
     async function submitProductQuote(e) {
         e.preventDefault();
         var form = document.getElementById('productQuoteForm');
         var statusBox = document.getElementById('prodQuoteFormStatus');
-        var submitBtn = document.getElementById('btnSubmitProdQuote');
+        var btn = document.getElementById('btnSubmitProdQuote');
         if (!form) return;
-
         var formData = new FormData(form);
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending Inquiry...';
-
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
         statusBox.style.display = 'block';
         statusBox.style.background = '#eff6ff';
         statusBox.style.color = '#1e40af';
-        statusBox.textContent = 'Submitting your inquiry, please wait...';
-
+        statusBox.textContent = 'Sending your inquiry, please wait...';
         try {
-            var response = await fetch('{{ route("inquiries.store") }}', {
+            var response = await fetch('/inquiries', {
                 method: 'POST',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Accept': 'application/json'
-                },
+                headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' },
                 body: formData
             });
             var data = await response.json();
-
             if (response.ok && data.success) {
                 statusBox.style.background = '#dcfce7';
                 statusBox.style.color = '#166534';
-                statusBox.textContent = data.message || 'Thank you! Your quotation request has been sent successfully.';
+                statusBox.textContent = data.message || 'Thank you! Your quotation request has been sent.';
                 form.reset();
                 setTimeout(function() {
                     closeProductQuoteModal();
                     statusBox.style.display = 'none';
-                }, 3200);
+                }, 2500);
             } else {
                 statusBox.style.background = '#fee2e2';
                 statusBox.style.color = '#991b1b';
-                statusBox.textContent = data.message || 'Submission failed. Please check the fields and try again.';
+                statusBox.textContent = data.message || 'Failed to submit. Please check fields.';
             }
-        } catch (err) {
+        } catch(err) {
             statusBox.style.background = '#fee2e2';
             statusBox.style.color = '#991b1b';
-            statusBox.textContent = 'Network error. Please try again or reach us at +91 99206 69561.';
+            statusBox.textContent = 'Network error. Please try again.';
         } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Inquiry Now';
+            btn.disabled = false;
+            btn.textContent = 'Submit Inquiry';
         }
     }
 </script>
-@endpush
+@endsection

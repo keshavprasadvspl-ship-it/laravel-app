@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="/css/live/post-2994.css">
 <style>
     /* ==========================================================================
        SD International - Product Archive / Category Template (Elementor 2994)
@@ -727,9 +728,9 @@
     }
 </style>
 
-<div class="archive-page-wrap">
+<div class="elementor elementor-2994 elementor-location-archive product archive-page-wrap">
     <!-- 1. Breadcrumb Bar -->
-    <section class="category-breadcrumb-section">
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-7b8eef9 elementor-section-full_width elementor-section-height-default category-breadcrumb-section" data-id="7b8eef9">
         <div class="archive-container">
             <nav class="woocommerce-breadcrumb">
                 @if(!empty($breadcrumbs))
@@ -755,13 +756,17 @@
     </section>
 
     <!-- 2. Main Archive Section (2 Columns: Left 78%, Right 22%) -->
-    <section class="archive-main-section">
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-2af8bd7 elementor-section-full_width elementor-section-height-default archive-main-section" data-id="2af8bd7">
         <div class="archive-container">
             <div class="archive-main-grid">
                 <!-- Left Column: Title, Subtitle, Inner Banner, Rich Description -->
                 <div class="archive-left-col">
-                    <h1 class="archive-title-heading">{{ $category->name }}</h1>
-                    <p class="archive-subtitle-italic">Superior purity {{ $category->name }} by S D International</p>
+                    <div class="elementor-element elementor-element-f299dd6 elementor-widget elementor-widget-theme-archive-title elementor-page-title elementor-widget-heading">
+                        <h1 class="elementor-heading-title elementor-size-default archive-title-heading">{{ $category->name }}</h1>
+                    </div>
+                    <div class="elementor-element elementor-element-6448fe1 elementor-widget elementor-widget-theme-archive-title elementor-page-title elementor-widget-heading">
+                        <p class="elementor-heading-title elementor-size-default archive-subtitle-italic">Superior purity {{ $category->name }} by S D International</p>
+                    </div>
 
                     <div class="term-description-box">
                         @php
@@ -814,9 +819,11 @@
     </section>
 
     <!-- 3. Section 3: Browse Related Products / Subcategories (Elementor Section 65c54ca) -->
-    <section class="archive-products-section">
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-65c54ca elementor-section-full_width elementor-section-height-default archive-products-section" data-id="65c54ca">
         <div class="archive-container">
-            <h2 class="category-section-heading">Browse related {{ $category->name }} chemical products offered by SD International</h2>
+            <div class="elementor-element elementor-element-b37d3d7 elementor-widget elementor-widget-heading">
+                <h2 class="elementor-heading-title elementor-size-default category-section-heading">Browse related {{ $category->name }} chemical products offered by SD International</h2>
+            </div>
 
             {{-- 3A. Subcategories Grid (shown when category has children, matching live image26.png 1:1) --}}
             @if($childCategories->isNotEmpty())
@@ -864,7 +871,9 @@
 
             <!-- 4. Industries We Serve (Elementor Inner Sections 1986e67 & a33570f) -->
             <div class="industries-section">
-                <h4 class="category-section-heading">Industries We Serve</h4>
+                <div class="elementor-element elementor-element-4ca5794 elementor-widget elementor-widget-heading">
+                    <h4 class="elementor-heading-title elementor-size-default category-section-heading">Industries We Serve</h4>
+                </div>
                 <div class="industries-grid-5">
                     <!-- 1. Plastic & Polymers -->
                     <div class="industry-card-item">
@@ -958,50 +967,58 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- 5. Why SD International & Market Area (Elementor Section 9ca7d48) -->
-            <div class="features-market-section">
-                <div class="features-market-grid">
-                    <!-- Left: Why SD International -->
-                    <div class="features-col">
-                        <h4 class="category-section-heading" style="margin-top: 0;">Why SD International</h4>
-                        <div class="features-box-card">
-                            <ul>
-                                <li>More than 50 years of rich industry experience.</li>
-                                <li>Wide product range of high purity chemicals.</li>
-                                <li>Leading exporter of dyeing and auxiliaries’ chemicals.</li>
-                                <li>Focus is to create trustworthy and responsive relationships.</li>
-                                <li>Reliable and dependable service.</li>
-                                <li>Great Value, quality products, and huge range in stocks.</li>
-                                <li>Chemicals and services we provide achieve consistent standards and exceed your expectations.</li>
-                                <li>Strong logistics support with an extensive network of worldwide agents to make deliveries safe and on time.</li>
-                                <li>Continuous development through research &amp; development.</li>
-                                <li>Customer service is an integral part of our business.</li>
-                            </ul>
-                        </div>
+    <!-- 4. Why SD International & Market Area (Elementor Section 9ca7d48) -->
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-9ca7d48 elementor-section-full_width elementor-section-height-default features-market-section" data-id="9ca7d48">
+        <div class="archive-container">
+            <div class="features-market-grid">
+                <!-- Left: Why SD International -->
+                <div class="features-col elementor-column elementor-col-50">
+                    <div class="elementor-element elementor-element-0d3d795 elementor-widget elementor-widget-heading">
+                        <h4 class="elementor-heading-title elementor-size-default category-section-heading" style="margin-top: 0;">Why SD International</h4>
                     </div>
+                    <div class="features-box-card elementor-element elementor-element-cee73bf elementor-widget elementor-widget-text-editor">
+                        <ul>
+                            <li>More than 50 years of rich industry experience.</li>
+                            <li>Wide product range of high purity chemicals.</li>
+                            <li>Leading exporter of dyeing and auxiliaries’ chemicals.</li>
+                            <li>Focus is to create trustworthy and responsive relationships.</li>
+                            <li>Reliable and dependable service.</li>
+                            <li>Great Value, quality products, and huge range in stocks.</li>
+                            <li>Chemicals and services we provide achieve consistent standards and exceed your expectations.</li>
+                            <li>Strong logistics support with an extensive network of worldwide agents to make deliveries safe and on time.</li>
+                            <li>Continuous development through research &amp; development.</li>
+                            <li>Customer service is an integral part of our business.</li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <!-- Right: Market Area of SD International -->
-                    <div class="market-col">
-                        <h4 class="category-section-heading" style="margin-top: 0;">Market Area of SD International</h4>
-                        <div class="market-box-card">
-                            <p class="market-countries-list">
-                                China | Turkey | USA | Germany | Brazil | UAE | Bangladesh | Egypt | Gambia | Ghana | Guinea | Conakry | Honduras | Indonesia | Israel | Italy | Japan | Mali | Mauritania | Mexico | Myanmar | Netherlands | Poland | Peru | Singapore | South Korea | Taiwan | Uganda | UK | Vietnam | Argentina | Malaysia | Thailand | Iran | Spain | Kenya
-                            </p>
-                            <p style="margin-bottom: 0;">
-                                Thank you for visiting <strong>SD International’s</strong> website. Do you have any questions or Need any help with Our products and their applications to your requirements? Contact Us at <strong>+91 99206 69561</strong> or Enquiry Form.
-                            </p>
-                        </div>
+                <!-- Right: Market Area of SD International -->
+                <div class="market-col elementor-column elementor-col-50">
+                    <div class="elementor-element elementor-element-47d6e5a elementor-widget elementor-widget-heading">
+                        <h4 class="elementor-heading-title elementor-size-default category-section-heading" style="margin-top: 0;">Market Area of SD International</h4>
+                    </div>
+                    <div class="market-box-card elementor-element elementor-element-e847fbe elementor-widget elementor-widget-text-editor">
+                        <p class="market-countries-list">
+                            China | Turkey | USA | Germany | Brazil | UAE | Bangladesh | Egypt | Gambia | Ghana | Guinea | Conakry | Honduras | Indonesia | Israel | Italy | Japan | Mali | Mauritania | Mexico | Myanmar | Netherlands | Poland | Peru | Singapore | South Korea | Taiwan | Uganda | UK | Vietnam | Argentina | Malaysia | Thailand | Iran | Spain | Kenya
+                        </p>
+                        <p style="margin-bottom: 0;">
+                            Thank you for visiting <strong>SD International’s</strong> website. Do you have any questions or Need any help with Our products and their applications to your requirements? Contact Us at <strong>+91 99206 69561</strong> or Enquiry Form.
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- 6. Disclaimer & SEO keywords block (Elementor Section d6733c9) -->
-            <div class="seo-disclaimer-section">
-                <div class="seo-disclaimer-text">
-                    <p>Manufacturer, Supplier, Importer, Exporter, Dealer, Distributor &amp; Service Provider of Industrial Chemicals, Pharma Excipients, Pharma Raw material importer, Pharmaceutical, Active Pharmaceutical Ingredients, Bulk Drugs, Industrial Acid &amp; Salts, Agriculture Chemicals, Food chemicals, Phase Transfer Catalyst, Quats, Agriculture Chemicals, Fine Chemicals, Epoxy Coating chemicals, Construction Chemicals, Cosmetic Chemicals, Bulk Drugs, Oil field chemicals, Phase Transfer Catalyst, Water Treatment Chemicals, Swimming Pool Chemicals, Chlorinated Intermediates, Cosmetic Chemicals, Gujarat, India. Top chemicals &amp; pharmaceutical company in India. Industrial Chemicals, Surplus Chemicals, Intermediates in Vadodara, Industrial Acid, Specialty Chemicals, Pharmaceutical Chemicals, Active Pharma Ingredients, By-product/Waste Grade Chemicals Buyer &amp; Seller in India, Best &amp; Contract Manufacturer of Pharmaceuticals &amp; Chemicals, Top Chemical &amp; Pharma companies in India, Pharma Impurities for formulation manufacturer &amp; pharma companies, Chlorine Chemicals, Importer of Industrial &amp; Pharma Chemicals in India, ETP Chemicals, STP Chemicals, Buyer &amp; Seller Used Machinery for Pharma &amp; Chemicals Industries in India, Pharma Raw Materials, Surplus/Non-Moving Chemicals buyer &amp; Seller in India, Solvents (Distilled, Recovered &amp; Pure), Quats &amp; Phase transfer catalyst, Ashland pharma excipients dealer &amp; distributor in India, Detergent Chemicals, Detergent Raw materials, BASF Products, oil &amp; gas chemicals, Biocides &amp; Hygiene chemicals, hand sanitizer, disinfection &amp; sanitation spray (corona-covid virus spray), Pharmaceutical sanitization, lubrication additives.</p>
-                    <p><strong>Note :</strong> Please note that the information on this document is for illustration purposes only as information may vary with individual chemical compounds and their purity, concentration and applications subjects and therefore cannot be guaranteed as accurate. &copy; Copyright 2022 &copy; <strong>SD International</strong>. All Rights Reserved (Terms of Use). Recreation of any materials from the site is strictly prohibited without permission. SD International’s products are sold exclusively through SD International’s website. Use Terms | Privacy. Please contact us to discuss precise product specifications and requirements and obtain advice on which products are required to suit your exact application needs <strong>info@sdinternational.com</strong></p>
-                </div>
+    <!-- 5. Disclaimer & SEO keywords block (Elementor Section d6733c9) -->
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-d6733c9 elementor-section-full_width elementor-section-height-default seo-disclaimer-section" data-id="d6733c9">
+        <div class="archive-container">
+            <div class="seo-disclaimer-text elementor-element elementor-element-32a216c elementor-widget elementor-widget-text-editor">
+                <p>Manufacturer, Supplier, Importer, Exporter, Dealer, Distributor &amp; Service Provider of Industrial Chemicals, Pharma Excipients, Pharma Raw material importer, Pharmaceutical, Active Pharmaceutical Ingredients, Bulk Drugs, Industrial Acid &amp; Salts, Agriculture Chemicals, Food chemicals, Phase Transfer Catalyst, Quats, Agriculture Chemicals, Fine Chemicals, Epoxy Coating chemicals, Construction Chemicals, Cosmetic Chemicals, Bulk Drugs, Oil field chemicals, Phase Transfer Catalyst, Water Treatment Chemicals, Swimming Pool Chemicals, Chlorinated Intermediates, Cosmetic Chemicals, Gujarat, India. Top chemicals &amp; pharmaceutical company in India. Industrial Chemicals, Surplus Chemicals, Intermediates in Vadodara, Industrial Acid, Specialty Chemicals, Pharmaceutical Chemicals, Active Pharma Ingredients, By-product/Waste Grade Chemicals Buyer &amp; Seller in India, Best &amp; Contract Manufacturer of Pharmaceuticals &amp; Chemicals, Top Chemical &amp; Pharma companies in India, Pharma Impurities for formulation manufacturer &amp; pharma companies, Chlorine Chemicals, Importer of Industrial &amp; Pharma Chemicals in India, ETP Chemicals, STP Chemicals, Buyer &amp; Seller Used Machinery for Pharma &amp; Chemicals Industries in India, Pharma Raw Materials, Surplus/Non-Moving Chemicals buyer &amp; Seller in India, Solvents (Distilled, Recovered &amp; Pure), Quats &amp; Phase transfer catalyst, Ashland pharma excipients dealer &amp; distributor in India, Detergent Chemicals, Detergent Raw materials, BASF Products, oil &amp; gas chemicals, Biocides &amp; Hygiene chemicals, hand sanitizer, disinfection &amp; sanitation spray (corona-covid virus spray), Pharmaceutical sanitization, lubrication additives.</p>
+                <p><strong>Note :</strong> Please note that the information on this document is for illustration purposes only as information may vary with individual chemical compounds and their purity, concentration and applications subjects and therefore cannot be guaranteed as accurate. &copy; Copyright 2022 &copy; <strong>SD International</strong>. All Rights Reserved (Terms of Use). Recreation of any materials from the site is strictly prohibited without permission. SD International’s products are sold exclusively through SD International’s website. Use Terms | Privacy. Please contact us to discuss precise product specifications and requirements and obtain advice on which products are required to suit your exact application needs <strong>info@sdinternational.com</strong></p>
             </div>
         </div>
     </section>
