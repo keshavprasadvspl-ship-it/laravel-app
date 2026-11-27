@@ -45,7 +45,7 @@
     }
     .elementor-9833 .elementor-element.elementor-element-9d6a900 > .elementor-column-wrap > .elementor-element-populated,
     .elementor-9833 .elementor-element.elementor-element-9d6a900 > .elementor-element-populated {
-        padding: 10px !important;
+        padding: 0px 10px !important;
     }
     .elementor-9833 .elementor-element.elementor-element-7d5c8f7 {
         text-align: center !important;
@@ -488,7 +488,7 @@
                                                                                                         <span class="elementor-icon-list-icon">
                                                                                                             <i aria-hidden="true" class="fas fa-phone-square-alt"></i>
                                                                                                         </span>
-                                                                                                        <span class="elementor-icon-list-text">+91 98204 54441</span>
+                                                                                                        <span class="elementor-icon-list-text">+91 98204 54441 </span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                             </ul>
@@ -512,7 +512,7 @@
                                                                                                         <span class="elementor-icon-list-icon">
                                                                                                             <i aria-hidden="true" class="fab fa-weixin"></i>
                                                                                                         </span>
-                                                                                                        <span class="elementor-icon-list-text">+91 99206 69561</span>
+                                                                                                        <span class="elementor-icon-list-text">+91 99206 69561 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="elementor-icon-list-item elementor-inline-item">
