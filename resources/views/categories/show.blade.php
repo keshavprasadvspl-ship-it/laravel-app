@@ -241,7 +241,8 @@
     .archive-products-section .archive-container {
         max-width: 1867px !important;
         margin: 0 auto !important;
-        padding: 0 10px !important;
+        padding: 0 !important;
+        width: 1867px !important;
     }
 
     .category-section-heading {
