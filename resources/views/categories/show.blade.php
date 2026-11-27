@@ -301,173 +301,195 @@
 
     /* 3. Section 3: Browse Related Products / Subcategories (Elementor Section 65c54ca) */
     .archive-products-section {
-        padding: 10px 0 40px;
-        border-top: 1px solid #eef2f6;
+        padding: 0 0 40px;
+        border-top: none;
     }
 
     .category-section-heading {
-        color: #73001B;
-        font-family: 'Teko', 'Montserrat', sans-serif;
-        font-size: 29px;
-        font-weight: 600;
-        margin: 25px 0 20px 0;
-        letter-spacing: 0.3px;
+        color: #951634 !important;
+        font-family: 'Teko', sans-serif !important;
+        font-size: 29px !important;
+        font-weight: 600 !important;
+        line-height: 29px !important;
+        margin: 25px 0 20px 0 !important;
+        letter-spacing: normal !important;
+        text-align: left !important;
     }
 
     /* 6-Column Grid matching WooCommerce columns-6 */
     .products-grid-columns-6 {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 20px;
-        list-style: none;
-        padding: 0;
-        margin: 0 0 35px 0;
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        column-gap: 20px !important;
+        row-gap: 40px !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 0 40px 0 !important;
     }
 
     /* Subcategory Card (ul.products li.product-category) */
     .product-category-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background: #ffffff;
-        padding: 0 0 12px 0;
-        border-radius: 6px;
-        transition: transform 0.2s, box-shadow 0.2s;
-        border: 1px solid transparent;
-        overflow: hidden;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        background: transparent !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        transition: none !important;
+        border: none !important;
+        overflow: visible !important;
+        box-shadow: none !important;
     }
 
     .product-category-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        border-color: #f1f5f9;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
     }
 
     .product-category-card a {
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+        text-decoration: none !important;
+        color: inherit !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
     }
 
     .cat-thumb-box {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        border-radius: 0;
-        background: #f8fafc;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        margin-bottom: 0 !important;
+        display: block !important;
+        overflow: hidden !important;
+        border-radius: 0 !important;
+        background: transparent !important;
     }
 
     .cat-thumb-box img {
-        width: 100%;
-        height: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.3s ease;
+        width: 100% !important;
+        height: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        object-fit: fill !important;
+        display: block !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        transition: none !important;
     }
 
     .product-category-card:hover .cat-thumb-box img {
-        transform: scale(1.05);
+        transform: none !important;
     }
 
     .woocommerce-loop-category__title {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        color: #1e293b;
-        margin: 0;
-        line-height: 1.35;
-        text-align: center;
+        font-family: 'Teko', sans-serif !important;
+        font-size: 29px !important;
+        font-weight: 600 !important;
+        color: #951634 !important;
+        margin: 8px 0 0 0 !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
     }
 
     .woocommerce-loop-category__title mark.count {
-        display: block;
-        font-size: 12px;
-        font-weight: 400;
-        color: #64748b;
-        background: transparent;
-        margin-top: 4px;
+        display: block !important;
+        font-family: 'Teko', sans-serif !important;
+        font-size: 21.75px !important;
+        font-weight: 400 !important;
+        color: #000000 !important;
+        background: transparent !important;
+        margin-top: 2px !important;
+        text-transform: capitalize !important;
     }
 
     /* Regular Product Card (li.product) */
     .product-item-card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 6px;
-        padding: 0 0 14px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: transform 0.2s, box-shadow 0.2s;
-        overflow: hidden;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        transition: none !important;
+        overflow: visible !important;
+        box-shadow: none !important;
     }
 
     .product-item-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-        border-color: #cbd5e1;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
     }
 
     .product-thumb-wrap {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        background: #f8fafc;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        margin: 0 !important;
+        display: block !important;
+        overflow: hidden !important;
+        background: transparent !important;
+    }
+
+    .product-thumb-wrap a {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 
     .product-thumb-wrap img {
-        width: 100%;
-        height: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        display: block;
-        border-radius: 0;
+        width: 100% !important;
+        height: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        object-fit: fill !important;
+        display: block !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
     }
 
     .product-category-label {
-        font-size: 11px;
-        font-weight: 500;
-        color: #64748b;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 4px;
-        display: block;
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 12.75px !important;
+        font-weight: 400 !important;
+        color: #000000 !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        margin: 8px 0 4px 0 !important;
+        display: block !important;
+        text-align: center !important;
     }
 
     .product-title-link {
-        text-decoration: none;
-        color: #73001B !important;
+        text-decoration: none !important;
+        color: #951634 !important;
+        display: block !important;
+        width: 100% !important;
     }
 
     .product-loop-title {
-        font-family: 'Poppins', sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        color: #73001B !important;
-        margin: 0;
-        line-height: 1.35;
-        transition: color 0.15s;
+        font-family: 'Teko', sans-serif !important;
+        font-size: 29px !important;
+        font-weight: 600 !important;
+        color: #951634 !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        transition: color 0.15s ease !important;
     }
 
     .product-title-link:hover .product-loop-title,
     .product-title-link:hover,
     .product-loop-title:hover {
-        color: #333333 !important;
+        color: #64141f !important;
     }
 
     /* 4. Industries We Serve (Elementor Inner Sections 1986e67 & a33570f) */
@@ -833,11 +855,11 @@
                             <a href="{{ url('/' . $child->slug . '/') }}">
                                 <div class="cat-thumb-box">
                                     <img src="{{ $child->thumbnail_url }}" alt="{{ $child->name }}" onerror="this.onerror=null; this.src='https://sdinternational.com/wp-content/uploads/2022/04/{{ $child->slug }}-120x120.jpg';">
-                                    <div class="cat-overlay-box">
-                                        <span class="cat-overlay-title">{{ $child->name }}</span>
-                                        <span class="cat-overlay-count">{{ $child->products_count }} PRODUCTS</span>
-                                    </div>
                                 </div>
+                                <h2 class="woocommerce-loop-category__title">
+                                    {{ $child->name }}
+                                    <mark class="count">{{ $child->products_count ?? $child->products()->count() }} Products</mark>
+                                </h2>
                             </a>
                         </li>
                     @endforeach

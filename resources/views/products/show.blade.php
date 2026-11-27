@@ -262,7 +262,8 @@
     .related-products-grid-6 {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: 20px;
+        column-gap: 20px;
+        row-gap: 40px;
         list-style: none;
         padding: 0;
         margin: 0 0 40px 0;
@@ -271,44 +272,63 @@
         .related-products-grid-6 { grid-template-columns: repeat(4, 1fr); }
     }
     @media (max-width: 768px) {
-        .related-products-grid-6 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .related-products-grid-6 { grid-template-columns: repeat(2, 1fr); column-gap: 15px; row-gap: 25px; }
     }
     .related-product-card {
-        background: #ffffff;
-        border: 1px solid #f0f0f0;
-        border-radius: 6px;
-        padding: 10px;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
         text-align: center;
-        transition: transform 0.2s, box-shadow 0.2s;
+        transition: none;
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-shadow: none;
     }
     .related-product-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transform: none;
+        box-shadow: none;
     }
     .related-product-card img {
         width: 100%;
-        max-width: 140px;
-        height: 140px;
-        object-fit: contain;
-        border-radius: 4px;
-        margin-bottom: 10px;
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: fill;
+        border-radius: 0;
+        margin-bottom: 0;
+        border: none;
+        box-shadow: none;
+        display: block;
     }
     .related-product-cat {
-        font-size: 11px;
-        color: #888888;
-        text-transform: uppercase;
-        margin-bottom: 4px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12.75px;
+        font-weight: 400;
+        color: #000000;
+        text-transform: none;
+        letter-spacing: normal;
+        margin: 8px 0 4px 0;
+        display: block;
+        text-align: center;
     }
     .related-product-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 13px;
+        font-family: 'Teko', sans-serif;
+        font-size: 29px;
         font-weight: 600;
-        color: #73001B !important;
+        color: #951634 !important;
         text-decoration: none;
-        line-height: 1.35;
+        line-height: 1.3;
+        margin: 0;
+        text-align: center;
+        display: block;
+    }
+    #related-products {
+        color: #951634 !important;
+        font-family: 'Teko', sans-serif !important;
+        font-size: 29px !important;
+        font-weight: 600 !important;
+        line-height: 29px !important;
     }
 
     /* Industries We Serve 5-Column Grid */
