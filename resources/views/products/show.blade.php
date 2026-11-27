@@ -86,12 +86,12 @@
         font-size: 36px !important;
         font-weight: 600 !important;
         text-transform: capitalize !important;
-        margin: 0 0 4px 0 !important;
+        margin: 0 0 18px 0 !important;
         line-height: 1.2 !important;
     }
 
     .elementor-element-73fd0fa {
-        margin: 0 0 15px 0 !important;
+        margin: 0 0 20px 0 !important;
     }
     .elementor-element-73fd0fa > .elementor-widget-container {
         margin: 0 0 0px 0 !important;
@@ -101,32 +101,47 @@
         font-family: "Poppins", sans-serif !important;
         font-size: 14px !important;
         font-weight: 600 !important;
-        margin: 0 0 15px 0 !important;
+        margin: 0 0 20px 0 !important;
         line-height: 1.4 !important;
     }
 
-    /* Short Description */
+    /* Short Description - Exact SD International Parity (Merriweather 18px, transparent, borderless) */
+    .elementor-element-e21bf1e > .elementor-widget-container {
+        margin: 0 0 20px 0 !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
     .elementor-element-e21bf1e .woocommerce-product-details__short-description {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        line-height: 1.7;
-        color: #333333;
-        background-color: #FAFAFA;
-        border: 1px solid #eaeaea;
-        border-radius: 8px;
-        padding: 20px 20px 10px 20px;
-        margin-bottom: 25px;
+        font-family: 'Merriweather', serif !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 1.85 !important;
+        color: #0a0909 !important;
+        background-color: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin: 0 0 20px 0 !important;
+        box-shadow: none !important;
+    }
+    .elementor-element-e21bf1e .woocommerce-product-details__short-description p {
+        font-family: 'Merriweather', serif !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 1.85 !important;
+        color: #0a0909 !important;
+        margin: 0 0 20px 0 !important;
     }
     .elementor-element-e21bf1e .woocommerce-product-details__short-description img {
         max-width: 100%;
         height: auto;
-        border: 1px solid #eeeeee;
-        border-radius: 4px;
+        border: none !important;
+        border-radius: 0 !important;
         margin: 8px 0;
         display: block;
-    }
-    .elementor-element-e21bf1e .woocommerce-product-details__short-description p {
-        margin-bottom: 14px;
     }
 
     /* Product Swatch Image with Curved Corners */
@@ -224,23 +239,21 @@
 
     /* Products Range Sidebar Header */
     .elementor-element-e64c1d7 .elementor-heading-title {
-        background-color: #73001B;
+        background-color: #73001B !important;
         color: #ffffff !important;
         font-family: "Poppins", sans-serif !important;
-        font-size: 18px !important;
+        font-size: 19px !important;
         font-weight: 600 !important;
         text-transform: uppercase !important;
-        padding: 12px 18px !important;
+        padding: 10px 15px !important;
         margin: 0 !important;
-        border-radius: 6px 6px 0 0 !important;
+        border-radius: 4px 4px 0 0 !important;
     }
     .sidebar-tree-container {
-        border: 1px solid #e2e8f0;
-        border-top: none;
-        border-radius: 0 0 6px 6px;
-        background: #ffffff;
-        padding: 12px;
-        margin-bottom: 30px;
+        border: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin-bottom: 30px !important;
     }
 
     /* Section 2: Related Products & Industries */

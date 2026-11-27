@@ -18,81 +18,6 @@
 
     $openCatSlugs = [];
     $openSubSlugs = [];
-
-    // Find direct matches in menuData
-    foreach ($menuData as $catKey => $cat) {
-        if ($cat['slug'] === $activeTargetSlug || $cat['slug'] === $normSlug) {
-            $openCatSlugs[] = $cat['slug'];
-        }
-        foreach ($cat['children'] as $subKey => $sub) {
-            if ($sub['slug'] === $activeTargetSlug || $sub['slug'] === $normSlug) {
-                $openCatSlugs[] = $cat['slug'];
-                $openSubSlugs[] = $sub['slug'];
-            }
-            foreach ($sub['products'] as $prod) {
-                if ($prod['slug'] === $activeTargetSlug || $prod['slug'] === $normSlug) {
-                    $openCatSlugs[] = $cat['slug'];
-                    $openSubSlugs[] = $sub['slug'];
-                    break 2;
-                }
-            }
-        }
-    }
-
-    // Secondary fallback: if viewing a Product instance, resolve via primary category
-    if (empty($openSubSlugs) && isset($product) && $product instanceof \App\Models\Product) {
-        $primaryCat = $product->primary_category ?: $product->categories->first();
-        if ($primaryCat) {
-            foreach ($menuData as $catKey => $c) {
-                foreach ($c['children'] as $subKey => $s) {
-                    if ($s['slug'] === $primaryCat->slug || ($primaryCat->parent && $s['slug'] === $primaryCat->parent->slug)) {
-                        $openCatSlugs[] = $c['slug'];
-                        $openSubSlugs[] = $s['slug'];
-                        break 2;
-                    }
-                }
-            }
-        }
-    }
-
-    // Secondary fallback: if viewing a Category instance with parent
-    if (empty($openSubSlugs) && isset($category) && $category instanceof \App\Models\Category) {
-        foreach ($menuData as $catKey => $c) {
-            foreach ($c['children'] as $subKey => $s) {
-                if ($s['slug'] === $category->slug) {
-                    $openCatSlugs[] = $c['slug'];
-                    $openSubSlugs[] = $s['slug'];
-                    break 2;
-                }
-            }
-        }
-    }
-
-    // Tertiary fallback: prefix / substring matching (for subcategory variants)
-    if (empty($openSubSlugs)) {
-        foreach ($menuData as $catKey => $c) {
-            foreach ($c['children'] as $subKey => $s) {
-                if (str_starts_with($activeTargetSlug, $s['slug']) || str_starts_with($normSlug, $s['slug'])) {
-                    $openCatSlugs[] = $c['slug'];
-                    $openSubSlugs[] = $s['slug'];
-                    break 2;
-                }
-            }
-        }
-    }
-
-    // Default open Dyes if dyes-related
-    if (empty($openCatSlugs)) {
-        if (str_contains($activeTargetSlug, 'dye')) {
-            $openCatSlugs[] = 'dyes';
-        } elseif (str_contains($activeTargetSlug, 'pigment')) {
-            $openCatSlugs[] = 'pigments';
-        } elseif (str_contains($activeTargetSlug, 'colour') || str_contains($activeTargetSlug, 'f-d-c')) {
-            $openCatSlugs[] = 'f-d-c-colours';
-        } else {
-            $openCatSlugs[] = 'dyes';
-        }
-    }
 @endphp
 
 <style>
@@ -106,18 +31,7 @@
     }
 
     .bellows-sidebar-header {
-        background-color: #73001B !important;
-        background-image: linear-gradient(180deg, #941533 0%, #74001B 100%) !important;
-        color: #ffffff !important;
-        padding: 12px 18px !important;
-        font-family: 'Poppins', sans-serif !important;
-        font-size: 16.5px !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        border-radius: 4px 4px 0 0 !important;
-        letter-spacing: 0.5px !important;
-        line-height: 1.3 !important;
-        margin: 0 !important;
+        display: none !important;
     }
 
     .bellows-sidebar-card {
@@ -200,7 +114,7 @@
 
     .bellows-chevron.open,
     .bellows-header-row.open .bellows-chevron {
-        transform: rotate(-90deg) !important;
+        transform: rotate(180deg) !important;
         color: #73001B !important;
     }
 
@@ -360,7 +274,7 @@
                     <div class="bellows-header-row {{ $isCatOpen ? 'open' : '' }}" onclick="toggleBellowsMenu('{{ $catId }}', this, event)">
                         <span class="bellows-chevron {{ $isCatOpen ? 'open' : '' }}">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6"></polyline>
+                                <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span>
                         <a href="{{ slash_url('/' . $cat['slug']) }}" class="bellows-title-link" onclick="event.stopPropagation()">
