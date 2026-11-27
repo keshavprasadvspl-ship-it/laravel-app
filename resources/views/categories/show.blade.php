@@ -176,27 +176,27 @@
         color: #1e293b;
     }
 
-    /* Term Description Headings and Properties - Matching live image11.png & image71.png */
+    /* Term Description Headings and Properties - Matching SD International 1:1 */
     .term-description-box h2 {
-        font-family: 'Teko', 'Montserrat', sans-serif !important;
-        font-size: 28px !important;
-        font-weight: 700 !important;
-        color: #73001B !important;
+        font-family: 'Teko', sans-serif !important;
+        font-size: 29px !important;
+        font-weight: 600 !important;
+        color: #951634 !important;
         margin: 22px 0 10px 0 !important;
         text-transform: capitalize !important;
-        letter-spacing: 0.5px !important;
-        line-height: 1.2 !important;
+        letter-spacing: normal !important;
+        line-height: 1.3 !important;
     }
 
     .term-description-box h3 {
-        font-family: 'Teko', 'Montserrat', sans-serif !important;
-        font-size: 23px !important;
-        font-weight: 700 !important;
-        color: #73001B !important;
+        font-family: 'Teko', sans-serif !important;
+        font-size: 29px !important;
+        font-weight: 600 !important;
+        color: #951634 !important;
         margin: 18px 0 8px 0 !important;
         text-transform: capitalize !important;
-        letter-spacing: 0.5px !important;
-        line-height: 1.2 !important;
+        letter-spacing: normal !important;
+        line-height: 1.3 !important;
     }
 
     .term-description-box b,
@@ -232,77 +232,16 @@
         color: #334155;
     }
 
-    /* Subcategory Overlay Cards - Matching live image26.png 1:1 */
-    .product-category-card {
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow: hidden !important;
-    }
-
-    .cat-thumb-box {
-        position: relative !important;
-        width: 100% !important;
-        aspect-ratio: 1 / 1 !important;
-        overflow: hidden !important;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
-        display: block !important;
-    }
-
-    .cat-thumb-box img {
-        width: 100% !important;
-        height: 100% !important;
-        aspect-ratio: 1 / 1 !important;
-        object-fit: cover !important;
-        display: block !important;
-        transition: transform 0.3s ease !important;
-    }
-
-    .product-category-card:hover .cat-thumb-box img {
-        transform: scale(1.05) !important;
-    }
-
-    .cat-overlay-box {
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        background: rgba(255, 255, 255, 0.88) !important;
-        padding: 12px 14px !important;
-        text-align: center !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12) !important;
-        width: 82% !important;
-        box-sizing: border-box !important;
-        pointer-events: none !important;
-    }
-
-    .cat-overlay-title {
-        font-family: 'Teko', 'Montserrat', sans-serif !important;
-        font-size: 21px !important;
-        font-weight: 700 !important;
-        color: #73001B !important;
-        text-transform: uppercase !important;
-        display: block !important;
-        line-height: 1.1 !important;
-        letter-spacing: 0.5px !important;
-    }
-
-    .cat-overlay-count {
-        font-family: 'Poppins', sans-serif !important;
-        font-size: 11px !important;
-        font-weight: 500 !important;
-        color: #64748b !important;
-        text-transform: uppercase !important;
-        display: block !important;
-        margin-top: 4px !important;
-    }
-
     /* 3. Section 3: Browse Related Products / Subcategories (Elementor Section 65c54ca) */
     .archive-products-section {
         padding: 0 0 40px;
         border-top: none;
+    }
+
+    .archive-products-section .archive-container {
+        max-width: 1867px !important;
+        margin: 0 auto !important;
+        padding: 0 10px !important;
     }
 
     .category-section-heading {
@@ -463,7 +402,9 @@
         color: #000000 !important;
         text-transform: none !important;
         letter-spacing: normal !important;
-        margin: 8px 0 4px 0 !important;
+        margin: 0 0 6.375px 0 !important;
+        line-height: 16.575px !important;
+        width: 100% !important;
         display: block !important;
         text-align: center !important;
     }

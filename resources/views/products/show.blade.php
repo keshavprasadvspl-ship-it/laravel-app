@@ -308,7 +308,9 @@
         color: #000000;
         text-transform: none;
         letter-spacing: normal;
-        margin: 8px 0 4px 0;
+        margin: 0 0 6.375px 0;
+        line-height: 16.575px;
+        width: 100%;
         display: block;
         text-align: center;
     }
