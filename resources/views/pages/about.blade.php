@@ -6,9 +6,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&family=Teko:wght@500;600&display=swap" rel="stylesheet">
 <style>
-    /* Exact About Us Pixel-Perfect Styling */
+    /* Exact About Us Pixel-Perfect Styling Matching sdinternational.com */
+    .page-id-2835 .site-content,
+    .elementor-page-2835 .site-content,
+    .page-id-2835 .site-content > .ast-container,
+    .elementor-page-2835 .site-content > .ast-container,
+    .page-id-2835 #primary,
+    .elementor-page-2835 #primary,
+    .page-id-2835 #main,
+    .elementor-page-2835 #main,
+    .page-id-2835 article.post-2835,
+    .elementor-page-2835 article.post-2835,
+    .page-id-2835 .entry-content,
+    .elementor-page-2835 .entry-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
     .elementor-2835 {
-        padding: 40px 0 60px 0;
+        padding: 0px !important;
+        margin: 0px !important;
     }
     .elementor-2835 .elementor-heading-title {
         color: #202020 !important;
@@ -65,8 +84,8 @@
     }
     /* Closing Brand Card */
     .elementor-2835 .elementor-element.elementor-element-41864eb2 {
-        padding: 40px 0 20px 0 !important;
-        margin-top: 20px !important;
+        padding: 20px 0 20px 0 !important;
+        margin: 0px !important;
     }
     .elementor-2835 .elementor-element.elementor-element-504cd57 .elementor-heading-title {
         font-size: 29px !important;
