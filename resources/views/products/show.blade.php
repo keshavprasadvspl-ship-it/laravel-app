@@ -74,22 +74,34 @@
     }
 
     /* Headings */
+    .elementor-element-03a0b17 {
+        margin: 0 0 0px 0 !important;
+    }
+    .elementor-element-03a0b17 > .elementor-widget-container {
+        margin: 0 0 0px 0 !important;
+    }
     .elementor-element-03a0b17 .elementor-heading-title {
         color: #000000 !important;
         font-family: "Teko", sans-serif !important;
         font-size: 36px !important;
         font-weight: 600 !important;
         text-transform: capitalize !important;
-        margin: 0 0 -26px 0 !important;
-        line-height: 1.1 !important;
+        margin: 0 0 4px 0 !important;
+        line-height: 1.2 !important;
     }
 
+    .elementor-element-73fd0fa {
+        margin: 0 0 15px 0 !important;
+    }
+    .elementor-element-73fd0fa > .elementor-widget-container {
+        margin: 0 0 0px 0 !important;
+    }
     .elementor-element-73fd0fa .elementor-heading-title {
         color: #73001B !important;
         font-family: "Poppins", sans-serif !important;
         font-size: 14px !important;
         font-weight: 600 !important;
-        margin: -11px 0 15px 0 !important;
+        margin: 0 0 15px 0 !important;
         line-height: 1.4 !important;
     }
 
