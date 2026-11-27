@@ -56,7 +56,7 @@
 
     /* 2. Main Archive Section (Elementor Section 2af8bd7) */
     .archive-main-section {
-        padding: 25px 0 40px;
+        padding: 25px 0 20px;
     }
 
     .archive-main-grid {
@@ -222,7 +222,7 @@
     }
 
     .term-description-box ul {
-        margin: 0 0 18px 24px;
+        margin: 0 0 22.5px 24px;
         padding: 0;
     }
 
@@ -258,10 +258,11 @@
     }
 
     .archive-products-section .archive-container {
+        width: 100% !important;
         max-width: 1867px !important;
         margin: 0 auto !important;
-        padding: 0 !important;
-        width: 1867px !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
     }
 
     .category-section-heading {
@@ -270,7 +271,7 @@
         font-size: 29px !important;
         font-weight: 600 !important;
         line-height: 29px !important;
-        margin: 25px 0 20px 0 !important;
+        margin: 0 0 20px 0 !important;
         letter-spacing: normal !important;
         text-align: left !important;
     }
