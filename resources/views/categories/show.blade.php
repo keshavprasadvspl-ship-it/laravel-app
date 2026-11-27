@@ -19,9 +19,9 @@
 
     .archive-container {
         width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0 30px;
+        max-width: 1867px;
+        margin: 0 auto;
+        padding: 0 10px;
         box-sizing: border-box;
     }
 
@@ -62,20 +62,20 @@
     .archive-main-grid {
         display: grid;
         grid-template-columns: minmax(0, 80%) minmax(0, 20%);
-        gap: 25px;
+        gap: 20px;
         align-items: start;
     }
 
     /* Left Column Content */
     .archive-title-heading {
         color: #000000;
-        font-family: 'Teko', 'Montserrat', sans-serif;
-        font-size: 38px;
+        font-family: 'Teko', sans-serif;
+        font-size: 36px;
         font-weight: 600;
         text-transform: capitalize;
-        line-height: 1.1;
+        line-height: 1.0;
         margin: 0 0 4px 0;
-        letter-spacing: 0.5px;
+        letter-spacing: normal;
     }
 
     .archive-subtitle-italic {
@@ -84,7 +84,7 @@
         font-size: 14px;
         font-weight: 600;
         font-style: italic;
-        margin: 0 0 22px 0;
+        margin: 8px 0 22px 0;
     }
 
     /* Term Description & Inner 2-Col Banner (Elementor Inner Section 13303) */
@@ -230,6 +230,25 @@
         margin-bottom: 6px;
         line-height: 1.6;
         color: #334155;
+    }
+
+    /* Sidebar Header on Category Archives */
+    .archive-right-sidebar .elementor-element-5dcd9cb {
+        margin: 0 !important;
+    }
+    .archive-right-sidebar .elementor-element-5dcd9cb .elementor-heading-title {
+        color: #FFFFFF !important;
+        background-color: #73001B !important;
+        background-image: linear-gradient(180deg, #941533 0%, #74001B 100%) !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 19px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        padding: 10px 15px !important;
+        margin: 0 !important;
+        border-radius: 4px 4px 0 0 !important;
+        letter-spacing: 0.5px !important;
+        line-height: 1.3 !important;
     }
 
     /* 3. Section 3: Browse Related Products / Subcategories (Elementor Section 65c54ca) */
@@ -736,7 +755,9 @@
                         @php
                             $rawDesc = $category->description ?? '';
                             // Ensure Properties of ... is cleanly on its own line
-                            $desc = preg_replace('/(<\/?span[^>]*>)?\s*(<b>|<strong>)(Properties of [^<]+)(<\/b>|<\/strong>)/i', '$1<div class="category-properties-title">$3</div>', $rawDesc);
+                            $desc = preg_replace('/(<\/?span[^>]*>)?\s*(<b>|<strong>)\s*(Properties of [^<]+)(<\/b>|<\/strong>)/i', '$1<div class="category-properties-title">$3</div>', $rawDesc);
+                            // Wrap unwrapped text after h2 in p
+                            $desc = preg_replace('/<\/h2>\s*(<span[^>]*>.*?<\/span>)\s*(<div class="category-properties-title">)/is', '</h2><p>$1</p>$2', $desc);
                             if (!str_contains($desc, '<p>') && (str_contains($desc, "\n") || str_contains($desc, "\r"))) {
                                 $desc = wpautop($desc);
                             }
@@ -776,6 +797,11 @@
 
                 <!-- Right Column: Products Range Bellows Accordion -->
                 <div class="archive-right-sidebar">
+                    <div class="elementor-element elementor-element-5dcd9cb elementor-widget elementor-widget-heading">
+                        <div class="elementor-widget-container">
+                            <h3 class="elementor-heading-title">PRODUCTS RANGE</h3>
+                        </div>
+                    </div>
                     @include('partials.products_range_sidebar', ['currentSlug' => $category->slug])
                 </div>
             </div>
