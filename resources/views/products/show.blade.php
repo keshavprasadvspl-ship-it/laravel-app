@@ -393,16 +393,40 @@
     .why-market-heading {
         color: #73001B !important;
         font-family: "Teko", sans-serif !important;
-        font-size: 28px !important;
+        font-size: 29px !important;
         font-weight: 600 !important;
         margin: 0 0 12px 0 !important;
     }
     .why-market-list {
         font-family: "Poppins", sans-serif;
-        font-size: 13.5px;
-        line-height: 1.7;
-        color: #444444;
+        font-size: 15px;
+        line-height: 1.85;
+        color: #000000;
         padding-left: 20px;
+        margin: 0;
+    }
+    .why-market-list li {
+        margin-bottom: 4px;
+    }
+    .elementor-element-213bb47 {
+        width: 64% !important;
+        max-width: 64% !important;
+        flex: 0 0 64% !important;
+        box-sizing: border-box !important;
+    }
+    .elementor-element-acdac98 {
+        width: 36% !important;
+        max-width: 36% !important;
+        flex: 0 0 36% !important;
+        box-sizing: border-box !important;
+    }
+    @media (max-width: 991px) {
+        .elementor-element-213bb47,
+        .elementor-element-acdac98 {
+            width: 100% !important;
+            max-width: 100% !important;
+            flex: 0 0 100% !important;
+        }
     }
 
     /* Section 4: SEO Disclaimer */
@@ -742,15 +766,16 @@
                                 <div class="elementor-element elementor-element-241ebbc elementor-widget elementor-widget-text-editor">
                                     <div class="elementor-widget-container">
                                         <ul class="why-market-list">
-                                            <li>More than 30 years of rich industry experience.</li>
+                                            <li>More than 50 years of rich industry experience.</li>
                                             <li>Wide product range of high purity chemicals.</li>
-                                            <li>Leading exporter of dyeing and auxiliaries chemicals.</li>
+                                            <li>Leading exporter of dyeing and auxiliaries’ chemicals.</li>
                                             <li>Focus is to create trustworthy and responsive relationships.</li>
                                             <li>Reliable and dependable service.</li>
                                             <li>Great Value, quality products, and huge range in stocks.</li>
                                             <li>Chemicals and services we provide achieve consistent standards and exceed your expectations.</li>
-                                            <li>Strong logistics support with an extensive network of worldwide agents to make deliveries safe and on time.</li>
+                                            <li>Vast knowledge of colour and colouration allows us to tailor our products to your needs.</li>
                                         </ul>
+                                        <p style="font-family:'Poppins',sans-serif; font-size:15px; line-height:1.85; color:#000000; margin-top:16px;">SD International is committed to customer fulfilment by delivering best quality chemical substances and compounds at competitive market prices. We offer these product categories to companies in the sector of plastics, paints and printing inks, textile, food colouring, pharmaceuticals, wood, leather factories, and paper mills across markets to several destinations including India and Indian Subcontinent, East Asia, South East Asia and the Middle East.</p>
                                     </div>
                                 </div>
                             </div>
@@ -768,14 +793,14 @@
                                 </div>
                                 <div class="elementor-element elementor-element-fd3064d elementor-widget elementor-widget-text-editor">
                                     <div class="elementor-widget-container">
-                                        <p style="font-family:'Poppins',sans-serif; font-size:13.5px; line-height:1.7; color:#444444; margin-bottom:12px;">
-                                            SD International supply and export to listed Countries:
+                                        <p style="font-family:'Poppins',sans-serif; font-size:15px; line-height:1.85; color:#000000; margin-bottom:14px;">
+                                            SD International supply and export to listed Countries
                                         </p>
-                                        <p style="font-family:'Poppins',sans-serif; font-size:13px; line-height:1.6; color:#555555; background:#f9fafb; padding:12px; border-radius:6px; border:1px solid #edf2f7; font-weight:500;">
-                                            China | Ningbo | Shanghai | Guangzhou | Bangladesh | Brazil | Colombia | South Korea | Mexico | Turkey | Germany | Poland | Russia | Singapore | South Korea | Taiwan | UAE | Uganda | USA | Vietnam | Argentina | Bolivia | Chile | Italy | Spain | Kenya
+                                        <p style="font-family:'Poppins',sans-serif; font-size:15px; line-height:1.85; color:#000000; margin-bottom:14px;">
+                                            <b>China </b>– <b>Ningbo </b>– <b>Shanghai</b>–<b>Guangzhou</b> | Bangladesh | Brazil | Egypt | Gambia | Germany | Ghana | Guinea | Conakry | Honduras | Indonesia | Israel | Italy | Japan | Mali | Mauritania | Mexico | Myanmar | Netherlands | Poland | Peru | Singapore | South Korea | Taiwan | UAE | Uganda | UK | USA | Vietnam | Argentina | Malaysia | Thailand | Turkey | Iran | Spain | Kenya
                                         </p>
-                                        <p style="font-family:'Poppins',sans-serif; font-size:13px; line-height:1.6; color:#666666; margin-top:10px;">
-                                            If your country or region is not mentioned above, please reach out directly to our global commercial desk at <a href="tel:+919920669561" style="color:#73001B; font-weight:600;">+91 99206 69561</a> or submit your export requirements online.
+                                        <p style="font-family:'Poppins',sans-serif; font-size:15px; line-height:1.85; color:#000000; margin-top:10px;">
+                                            Thank you for visiting SD International ’s website. Do you have any questions or Need any help with Our products and their applications to your requirements? Contact Us at +91 99206 69561 or Enquiry Form.
                                         </p>
                                     </div>
                                 </div>
