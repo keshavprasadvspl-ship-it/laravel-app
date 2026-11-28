@@ -539,6 +539,7 @@
         width: 64% !important;
         max-width: 64% !important;
         flex: 0 0 64% !important;
+        display: block !important;
         padding: 0 10px !important;
         box-sizing: border-box !important;
     }
@@ -547,7 +548,24 @@
         width: 36% !important;
         max-width: 36% !important;
         flex: 0 0 36% !important;
+        display: block !important;
         padding: 0 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .features-col .elementor-widget,
+    .market-col .elementor-widget,
+    .features-col .elementor-widget-heading,
+    .market-col .elementor-widget-heading,
+    .features-col .elementor-widget-container,
+    .market-col .elementor-widget-container,
+    .features-col .category-section-heading,
+    .market-col .category-section-heading,
+    .features-col .features-box-card,
+    .market-col .market-box-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
         box-sizing: border-box !important;
     }
 
@@ -1015,25 +1033,27 @@
             <div class="features-market-grid">
                 <!-- Left: Why SD International -->
                 <div class="features-col elementor-column elementor-top-column elementor-element elementor-element-3a04f53" data-id="3a04f53">
-                    <div class="elementor-element elementor-element-0d3d795 elementor-widget elementor-widget-heading">
-                        <div class="elementor-widget-container" style="margin: 8px 0px 12px 0px;">
-                            <h4 class="elementor-heading-title elementor-size-default category-section-heading" style="margin: 0;">Why SD International</h4>
+                    <div class="elementor-widget-wrap" style="width: 100%; display: block;">
+                        <div class="elementor-element elementor-element-0d3d795 elementor-widget elementor-widget-heading">
+                            <div class="elementor-widget-container" style="margin: 8px 0px 12px 0px;">
+                                <h4 class="elementor-heading-title elementor-size-default category-section-heading" style="margin: 0;">Why SD International</h4>
+                            </div>
                         </div>
-                    </div>
-                    <div class="features-box-card elementor-element elementor-element-cee73bf elementor-widget elementor-widget-text-editor">
-                        <div class="elementor-widget-container">
-                            <div class="elementor-text-editor elementor-clearfix">
-                                <ul>
-                                    <li>More than 50 years of rich industry experience.</li>
-                                    <li>Wide product range of high purity chemicals.</li>
-                                    <li>Leading exporter of dyeing and auxiliaries’ chemicals.</li>
-                                    <li>Focus is to create trustworthy and responsive relationships.</li>
-                                    <li>Reliable and dependable service.</li>
-                                    <li>Great Value, quality products, and huge range in stocks.</li>
-                                    <li>Chemicals and services we provide achieve consistent standards and exceed your expectations.</li>
-                                    <li>Vast knowledge of colour and colouration allows us to tailor our products to your needs.</li>
-                                </ul>
-                                <p>SD International is committed to customer fulfilment by delivering best quality chemical substances and compounds at competitive market prices. We offer these product categories to companies in the sector of plastics, paints and printing inks, textile, food colouring, pharmaceuticals, wood, leather factories, and paper mills across markets to several destinations including India and Indian Subcontinent, East Asia, South East Asia and the Middle East.</p>
+                        <div class="features-box-card elementor-element elementor-element-cee73bf elementor-widget elementor-widget-text-editor">
+                            <div class="elementor-widget-container">
+                                <div class="elementor-text-editor elementor-clearfix">
+                                    <ul>
+                                        <li>More than 50 years of rich industry experience.</li>
+                                        <li>Wide product range of high purity chemicals.</li>
+                                        <li>Leading exporter of dyeing and auxiliaries’ chemicals.</li>
+                                        <li>Focus is to create trustworthy and responsive relationships.</li>
+                                        <li>Reliable and dependable service.</li>
+                                        <li>Great Value, quality products, and huge range in stocks.</li>
+                                        <li>Chemicals and services we provide achieve consistent standards and exceed your expectations.</li>
+                                        <li>Vast knowledge of colour and colouration allows us to tailor our products to your needs.</li>
+                                    </ul>
+                                    <p>SD International is committed to customer fulfilment by delivering best quality chemical substances and compounds at competitive market prices. We offer these product categories to companies in the sector of plastics, paints and printing inks, textile, food colouring, pharmaceuticals, wood, leather factories, and paper mills across markets to several destinations including India and Indian Subcontinent, East Asia, South East Asia and the Middle East.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1041,17 +1061,19 @@
 
                 <!-- Right: Market Area of SD International -->
                 <div class="market-col elementor-column elementor-top-column elementor-element elementor-element-5aed7d3" data-id="5aed7d3">
-                    <div class="elementor-element elementor-element-47d6e5a elementor-widget elementor-widget-heading">
-                        <div class="elementor-widget-container" style="margin: 8px 0px 12px 0px;">
-                            <h4 class="elementor-heading-title elementor-size-default category-section-heading" style="margin: 0;">Market Area of SD International</h4>
+                    <div class="elementor-widget-wrap" style="width: 100%; display: block;">
+                        <div class="elementor-element elementor-element-47d6e5a elementor-widget elementor-widget-heading">
+                            <div class="elementor-widget-container" style="margin: 8px 0px 12px 0px;">
+                                <h4 class="elementor-heading-title elementor-size-default category-section-heading" style="margin: 0;">Market Area of SD International</h4>
+                            </div>
                         </div>
-                    </div>
-                    <div class="market-box-card elementor-element elementor-element-e847fbe elementor-widget elementor-widget-text-editor">
-                        <div class="elementor-widget-container">
-                            <div class="elementor-text-editor elementor-clearfix">
-                                <p>SD International supply and export to listed Countries</p>
-                                <p class="market-countries-list"><b>China </b>– <b>Ningbo </b>– <b>Shanghai</b>–<b>Guangzhou</b> | Bangladesh | Brazil | Egypt | Gambia | Germany | Ghana | Guinea | Conakry | Honduras | Indonesia | Israel | Italy | Japan | Mali | Mauritania | Mexico | Myanmar | Netherlands | Poland | Peru | Singapore | South Korea | Taiwan | UAE | Uganda | UK | USA | Vietnam | Argentina | Malaysia | Thailand | Turkey | Iran | Spain | Kenya</p>
-                                <p style="margin-bottom: 0;">Thank you for visiting SD International ’s website. Do you have any questions or Need any help with Our products and their applications to your requirements? Contact Us at +91 99206 69561 or Enquiry Form.</p>
+                        <div class="market-box-card elementor-element elementor-element-e847fbe elementor-widget elementor-widget-text-editor">
+                            <div class="elementor-widget-container">
+                                <div class="elementor-text-editor elementor-clearfix">
+                                    <p>SD International supply and export to listed Countries</p>
+                                    <p class="market-countries-list"><b>China </b>– <b>Ningbo </b>– <b>Shanghai</b>–<b>Guangzhou</b> | Bangladesh | Brazil | Egypt | Gambia | Germany | Ghana | Guinea | Conakry | Honduras | Indonesia | Israel | Italy | Japan | Mali | Mauritania | Mexico | Myanmar | Netherlands | Poland | Peru | Singapore | South Korea | Taiwan | UAE | Uganda | UK | USA | Vietnam | Argentina | Malaysia | Thailand | Turkey | Iran | Spain | Kenya</p>
+                                    <p style="margin-bottom: 0;">Thank you for visiting SD International ’s website. Do you have any questions or Need any help with Our products and their applications to your requirements? Contact Us at +91 99206 69561 or Enquiry Form.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
