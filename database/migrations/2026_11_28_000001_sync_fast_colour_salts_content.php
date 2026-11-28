@@ -24,7 +24,6 @@ return new class extends Migration
 <li style="font-weight: 400"><span style="font-weight: 400">Pharmaceutical</span></li>
 <li style="font-weight: 400"><span style="font-weight: 400">Plastic</span></li>
 </ul>
-</div>
 HTML;
 
         DB::table('categories')->where('slug', 'fast-colour-salts')->update(['description' => $saltsDesc]);
@@ -46,7 +45,6 @@ HTML;
 <li style="font-weight: 400"><span style="font-weight: 400">Pharmaceutical</span></li>
 <li style="font-weight: 400"><span style="font-weight: 400">Plastic</span></li>
 </ul>
-</div>
 HTML;
 
         DB::table('categories')->where('slug', 'fast-colour-bases')->update(['description' => $basesDesc]);
@@ -69,7 +67,6 @@ HTML;
 <li style="font-weight: 400"><span style="font-weight: 400">Pharmaceutical</span></li>
 <li style="font-weight: 400"><span style="font-weight: 400">Plastic</span></li>
 </ul>
-</div>
 HTML;
 
         DB::table('categories')->where('slug', 'naphthols')->update(['description' => $naphDesc]);
