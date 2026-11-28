@@ -529,9 +529,17 @@
     .features-market-grid {
         display: flex !important;
         flex-wrap: wrap !important;
+        align-items: stretch !important;
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .features-col,
+    .market-col {
+        display: flex !important;
+        flex-direction: column !important;
         box-sizing: border-box !important;
     }
 
@@ -539,47 +547,54 @@
         width: 64% !important;
         max-width: 64% !important;
         flex: 0 0 64% !important;
-        display: block !important;
         padding: 0 10px !important;
-        box-sizing: border-box !important;
     }
 
     .market-col {
         width: 36% !important;
         max-width: 36% !important;
         flex: 0 0 36% !important;
-        display: block !important;
         padding: 0 10px !important;
+    }
+
+    .features-col .elementor-widget-wrap,
+    .market-col .elementor-widget-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 0 auto !important;
+        height: 100% !important;
+        width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    .features-col .elementor-widget,
-    .market-col .elementor-widget,
     .features-col .elementor-widget-heading,
-    .market-col .elementor-widget-heading,
-    .features-col .elementor-widget-container,
-    .market-col .elementor-widget-container,
-    .features-col .category-section-heading,
-    .market-col .category-section-heading,
-    .features-col .features-box-card,
-    .market-col .market-box-card {
+    .market-col .elementor-widget-heading {
+        flex: 0 0 auto !important;
         width: 100% !important;
-        max-width: 100% !important;
         display: block !important;
-        box-sizing: border-box !important;
     }
 
     .features-box-card,
     .market-box-card {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 0 auto !important;
+        height: 100% !important;
+        width: 100% !important;
         padding: 0 !important;
         border: none !important;
         box-shadow: none !important;
         background: transparent !important;
-        box-sizing: border-box;
+        box-sizing: border-box !important;
     }
 
     .features-box-card > .elementor-widget-container,
     .market-box-card > .elementor-widget-container {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 0 auto !important;
+        height: 100% !important;
+        width: 100% !important;
         padding: 10px 10px 0px 10px !important;
         border: 0px solid #ffffff !important;
         box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5) !important;
@@ -1043,7 +1058,7 @@
             <div class="features-market-grid">
                 <!-- Left: Why SD International -->
                 <div class="features-col elementor-column elementor-top-column elementor-element elementor-element-3a04f53" data-id="3a04f53">
-                    <div class="elementor-widget-wrap" style="width: 100%; display: block;">
+                    <div class="elementor-widget-wrap">
                         <div class="elementor-element elementor-element-0d3d795 elementor-widget elementor-widget-heading">
                             <div class="elementor-widget-container" style="margin: 8px 0px 12px 0px;">
                                 <h4 class="elementor-heading-title elementor-size-default category-section-heading" style="margin: 0;">Why SD International</h4>
@@ -1071,7 +1086,7 @@
 
                 <!-- Right: Market Area of SD International -->
                 <div class="market-col elementor-column elementor-top-column elementor-element elementor-element-5aed7d3" data-id="5aed7d3">
-                    <div class="elementor-widget-wrap" style="width: 100%; display: block;">
+                    <div class="elementor-widget-wrap">
                         <div class="elementor-element elementor-element-47d6e5a elementor-widget elementor-widget-heading">
                             <div class="elementor-widget-container" style="margin: 8px 0px 12px 0px;">
                                 <h4 class="elementor-heading-title elementor-size-default category-section-heading" style="margin: 0;">Market Area of SD International</h4>
