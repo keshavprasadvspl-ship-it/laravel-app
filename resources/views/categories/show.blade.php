@@ -183,7 +183,7 @@
         font-weight: 600 !important;
         color: #951634 !important;
         margin: 22px 0 10px 0 !important;
-        text-transform: capitalize !important;
+        text-transform: none !important;
         letter-spacing: normal !important;
         line-height: 1.3 !important;
     }
@@ -194,7 +194,7 @@
         font-weight: 600 !important;
         color: #951634 !important;
         margin: 18px 0 8px 0 !important;
-        text-transform: capitalize !important;
+        text-transform: none !important;
         letter-spacing: normal !important;
         line-height: 1.3 !important;
     }
@@ -207,7 +207,8 @@
 
     .category-properties-title,
     .term-description-box b.properties-heading,
-    .term-description-box strong.properties-heading {
+    .term-description-box strong.properties-heading,
+    .term-description-box p.category-properties-title {
         display: block !important;
         font-family: 'Poppins', sans-serif !important;
         font-size: 15px !important;
@@ -755,10 +756,11 @@
                     <div class="term-description-box">
                         @php
                             $rawDesc = $category->description ?? '';
-                            // Ensure Properties of ... is cleanly on its own line
+                            // Ensure Properties of ... or any list intro ending with : before <ul> is cleanly on its own line
                             $desc = preg_replace('/(<\/?span[^>]*>)?\s*(<b>|<strong>)\s*(Properties of [^<]+)(<\/b>|<\/strong>)/i', '$1<div class="category-properties-title">$3</div>', $rawDesc);
+                            $desc = preg_replace('/(<b>|<strong>)([^<]+:)(<\/b>|<\/strong>)\s*(<ul>|<ol>)/i', '<p class="category-properties-title"><strong>$2</strong></p>$4', $desc);
                             // Wrap unwrapped text after h2 in p
-                            $desc = preg_replace('/<\/h2>\s*(<span[^>]*>.*?<\/span>)\s*(<div class="category-properties-title">)/is', '</h2><p>$1</p>$2', $desc);
+                            $desc = preg_replace('/<\/h2>\s*(<span[^>]*>.*?<\/span>)\s*(<div class="category-properties-title">|<p class="category-properties-title">)/is', '</h2><p>$1</p>$2', $desc);
                             if (!str_contains($desc, '<p>') && (str_contains($desc, "\n") || str_contains($desc, "\r"))) {
                                 $desc = wpautop($desc);
                             }
