@@ -561,8 +561,8 @@
     .market-col .elementor-widget-wrap {
         display: flex !important;
         flex-direction: column !important;
-        flex: 1 0 auto !important;
-        height: 100% !important;
+        flex-wrap: nowrap !important;
+        flex: 1 1 auto !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
@@ -578,8 +578,8 @@
     .market-box-card {
         display: flex !important;
         flex-direction: column !important;
-        flex: 1 0 auto !important;
-        height: 100% !important;
+        flex-wrap: nowrap !important;
+        flex: 1 1 auto !important;
         width: 100% !important;
         padding: 0 !important;
         border: none !important;
@@ -592,8 +592,7 @@
     .market-box-card > .elementor-widget-container {
         display: flex !important;
         flex-direction: column !important;
-        flex: 1 0 auto !important;
-        height: 100% !important;
+        flex: 1 1 auto !important;
         width: 100% !important;
         padding: 10px 10px 0px 10px !important;
         border: 0px solid #ffffff !important;
