@@ -569,17 +569,27 @@
         box-sizing: border-box !important;
     }
 
-    .features-box-card, .market-box-card {
-        padding: 10px 10px 0px 10px;
-        border: 1px solid #ffffff;
-        box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
-        background: #ffffff;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 27.8571px;
-        color: #000000;
+    .features-box-card,
+    .market-box-card {
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
         box-sizing: border-box;
+    }
+
+    .features-box-card > .elementor-widget-container,
+    .market-box-card > .elementor-widget-container {
+        padding: 10px 10px 0px 10px !important;
+        border: 0px solid #ffffff !important;
+        box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5) !important;
+        background: #ffffff !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 27.8571px !important;
+        color: #000000 !important;
+        box-sizing: border-box !important;
     }
 
     .features-box-card ul {
